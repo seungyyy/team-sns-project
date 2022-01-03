@@ -1,0 +1,104 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+.main-upload { 
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    width: 390px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.header {
+    height: 48px;
+    box-sizing: border-box;
+    border-bottom: 0.5px solid #DBDBDB;
+    background-color: white;
+    display: flex; 
+    justify-content: space-between;
+    position: fixed;
+    width: 390px;
+    z-index: 10;
+}
+.img-before {
+    height: 22px;
+    width: 22px;
+    margin: 13px 0 13px 16px;
+    cursor: pointer;
+}
+
+/* textarea안에 글자가 있으면 활성화되면서 백그라운드 색상 바뀌게 */
+.btn-upload {
+    background-color: #24732f ;
+    color: white;
+    width: 90px;
+    height: 32px;
+    border: none;
+    margin: 8px 16px;
+    border-radius: 32px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+}
+.sec-upload {
+    position: relative;
+    padding-top: 48px;
+    display: flex;
+}
+.upload-userimg {
+    width: 42px;
+    height: 42px;
+    margin: 20px 13px 0 16px;
+}
+.upload-wrap {
+    margin-top: 32px;
+}
+.upload-textarea {
+    border: none;
+    width: 304px;
+    /* 자동높이조절js 필요 */
+    height: 58px;
+    font-size: 14px;
+    font-family: inherit;
+    margin-bottom: 12px;
+}
+.upload-textarea::placeholder {
+    color: #C4C4C4;
+}
+
+/* 사진 한 개 일 때 */
+.upload-img {
+    width: 304px;
+    height: 228px;
+}
+.upload-imgwrap {
+    position: relative;
+}
+.upload-removeimg {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 22px;
+    cursor: pointer;
+}
+/* 사진 두 개 이상 일 때 */
+.upload-imgs {
+    display: flex;
+    column-gap: 8px;
+    width: 304px;
+    overflow-x: scroll;
+}
+.upload-imgs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+.upload-img {
+    width: 168px;
+    height: 126px;
+}
+
+.img-uploadfile {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 16px;
+    right: 16px;
+    cursor: pointer;
+}
