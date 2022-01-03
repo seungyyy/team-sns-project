@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modules-nav-search</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    /* nav style */
+    .nav {
+      position: fixed;
+      width: 390px;
+      background-color: white;
+      left: 50%;
+      transform: translateX(-175px);
+      border-top: 0.5px solid #DBDBDB;
+      bottom: 0;
+    }
+    
+    .nav-list {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 39px;
+    }
+
+    .nav-list .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-list .menu img {
+      width: 20px;
+    }
+
+    .nav-list .menu p {
+      margin-top: 6px;
+      font-size: 10px;
+      font-weight: 400;
+      color: #767676;
+    }
+
+    /* search */
+    /* search -basic */
+    /* .header {
+      width: 390px;
+      background-color: white;
+      display: flex; 
+      justify-content: space-between;
+      height: 48px;
+      padding: 16px 13px;
+      margin: 0 auto;
+    }
+
+    .header .img-before {
+      width: 22px;
+      height: 22px;
+    }
+
+    .header .img-more {
+      width: 24px;
+      height: 24px;
+    } */
+
+    /* search - 계정검색  */
+  /* .header {
+    width: 390px;
+    background-color: white;
+    display: flex; 
+    height: 48px;
+    margin: 0 auto;
+  }
+
+  .img-before {
+    width: 22px;
+    height: 22px;
+    margin: 13px 20px 13px 16px;
+  }
+
+  .inp-search {
+    border: none;
+    width: 316px;
+    height: 32px;
+    background-color: #F2F2F2;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    margin-top: 8px;
+    border-radius: 32px;
+    padding: 7px 16px; 
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .inp-search::placeholder { 
+    color: #c4c4c4;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  }
+
+  .search-sec {
+    padding-top: 48px;
+    height: 712px;
+  } */
+
+   /* search -main */
+   /* .header {
+      width: 390px;
+      background-color: white;
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+      height: 48px;
+      margin: 0 auto;
+      padding: 13px 16px;
+    }
+
+    .header .img-search {
+      width: 24px;
+      height: 24px;  
+    }
+
+    .header .header-title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+    } */
+
+
+    /* search - chat */
+    /* .header {
+      width: 390px;
+      background-color: white;
+      height: 48px;
+      margin: 0 auto;
+      padding: 13px 16px;
+    }
+
+    .header .header-title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0 0 0 15px;
+      float: left;
+    }
+    .header .img-before {
+      width: 22px;
+      height: 22px;
+      float: left;
+    }
+
+    .header .img-more {
+      width: 24px;
+      height: 24px;
+      float: right;
+    } 
+
+    .header::after {
+      content: '';
+      display: block;
+      clear: both;
+    } */
+
+  /*  search - upload - nav */
+  /* .header {
+      width: 390px;
+      background-color: white;
+      display: flex; 
+      justify-content: space-between;
+      height: 48px;
+      padding: 16px 13px;
+      margin: 0 auto;
+    }
+
+    .header .img-before {
+      width: 22px;
+      height: 22px;
+    }
+
+  */
+
+  </style>
+</head>
+<body>
+  <!-- search 시작 -->
+  <!-- search - basic -->
+  <!-- <header class="header">
+    <img src="./images/icon/icon-arrow-left.png" alt="go before" class="img-before">
+    <img src="./images/icon/icon-more-vertical.png" alt="더보기" class="img-more">
+  </header> -->
+
+  <!-- search - 계정검색 -->
+  <!-- <header class="header">
+    <img src="./images/icon/icon-arrow-left.png" alt="go before" class="img-before">
+    <form action=""><input type="text" name="" placeholder="계정 검색" class="inp-search"></form>
+  </header> -->
+
+   <!-- search -main  -->
+  <!-- <header class="header">
+    <h2 class="header-title">청귤마켓 피드</h2>
+    <img src="./images/icon/icon-search.png" alt="더보기" class="img-search">
+  </header> -->
+
+<!-- search - chat-nav -->
+  <header class="header">
+    <img src="./images/icon/icon-arrow-left.png" alt="go before" class="img-before">
+    <h2 class="header-title">애월읍 위니브 청귤농장</h2>
+    <img src="./images/icon/icon-more-vertical.png" alt="더보기" class="img-more">
+  </header>
+
+  <!--search - upload - nav  -->
+  <!-- <header class="header">
+    <img src="./images/icon/icon-arrow-left.png" alt="go before" class="img-before">
+      <h2 class="header-title">청귤마켓 피드</h2>
+      btn
+    </header> -->
+
+<!-- search 끝  -->
+
+  <!-- nav 시작-->
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-home menu">
+        <img src="./images/icon/icon-home-fill.png" alt="홈" class="nav-home-img">
+        <p class="nav-home-txt">홈</p>
+      </li>
+      <li class="nav-chat menu">
+        <img src="./images/icon/icon-message-circle.png" alt="채팅" class="nav-chat-img">
+        <p class="nav-chat-txt">채팅</p>
+      </li>
+      <li class="nav-edit menu">
+        <img src="./images/icon/icon-edit.png" alt="게시물" class="nav-edit-img">
+        <p class="nav-edit-txt">게시물작성</p>
+      </li>
+      <li class="nav-user menu">
+        <img src="./images/icon/icon-user.png" alt="프로필" class="nav-user-img">
+        <p class="nav-user-txt">프로필</p>
+      </li>
+    </ul>
+  </nav>
+  <!-- nav 끝 -->
+</body>
+</html>
