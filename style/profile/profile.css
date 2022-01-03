@@ -90,7 +90,7 @@
   margin: 0 10px;
   border: none;
   border-radius: 30px;
-  background: #f26e22;
+  background: #24732f;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -102,10 +102,11 @@
   background: #f2f2f2;
   box-sizing: border-box;
   border: none;
-  border-top: 1px solid #dbdbdb;
+  border-top: 0.5px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
 }
 
+/* product */
 .product .product__tit {
   margin: 20px 21px 16px;
   text-align: left;
@@ -140,4 +141,89 @@
   font-size: 12px;
   line-height: 15px;
   color: #24732f;
+}
+
+/* post */
+.post .post__change-view {
+  text-align: right;
+  border-bottom: 0.5px solid #dbdbdb;
+}
+.post .post__change-view .post__change-btn {
+  border: none;
+  background: none;
+  margin: 9px 19px 9px 0;
+}
+.post .post__change-view .post__change-btn .post__change-img {
+  width: 26px;
+  height: 26px;
+}
+.post .post__list .post__item {
+  position: relative;
+  margin: 16px 16px 30px 21px;
+  text-align: right;
+}
+.post .post__list .post__item .post__img-user {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.post .post__list .post__item .post__cont-txt {
+  margin-left: 54px;
+  text-align: left;
+}
+.post .post__list .post__item .post__cont-txt .post__tit strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.post .post__list .post__item .post__cont-txt .post__name {
+  margin: 2px 0 16px;
+  font-size: 12px;
+  color: #767676;
+}
+.post .post__list .post__item .post__cont-txt .post__desc {
+  width: 304px;
+  box-sizing: border-box;
+  line-height: 17px;
+  font-size: 14px;
+}
+.post .post__list .post__item .post__img {
+  width: 304px;
+  margin: 16px 0;
+  border-radius: 10px;
+}
+.post .post__list .post__item .post__btn-setting {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 4px;
+  right: 0;
+}
+.post .post__list .post__item .post__cont-icon {
+  margin-left: 54px;
+  display: flex;
+  align-items: center;
+}
+.post .post__list .post__item .post__cont-icon .post__btn-icon {
+  background: none;
+  border: none;
+}
+.post .post__list .post__item .post__cont-icon .post__btn-icon .post__img-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+.post .post__list .post__item .post__cont-icon .post__txt-icon {
+  margin-right: 16px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #767676;
+}
+.post .post__list .post__item .post__date {
+  margin: 16px 0 2px 54px;
+  text-align: left;
+  font-size: 10px;
+  line-height: 12px;
+  color: #767676;
 }
