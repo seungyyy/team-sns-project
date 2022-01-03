@@ -26,7 +26,4 @@
 
 
 ### Module ###
-.pages/
-*.module.html
-
-# End of https://www.toptal.com/developers/gitignore/api/pages
+pages/module.html
