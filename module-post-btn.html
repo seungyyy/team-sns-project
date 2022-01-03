@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modules-post-btn</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+  /* post - home*/
+  /* .sec-upload {
+      position: relative;
+      padding-top: 48px;
+      display: flex;
+  }
+  .upload-userimg {
+      width: 42px;
+      height: 42px;
+      margin: 20px 13px 0 16px;
+  }
+  .upload-wrap {
+      margin-top: 32px;
+  }
+  .upload-textarea {
+      border: none;
+      width: 304px;
+      /* 자동높이조절js 필요 */
+      /* height: 58px;
+      font-size: 14px;
+      font-family: inherit;
+      margin-bottom: 12px;
+  }
+  .upload-textarea::placeholder {
+      color: #C4C4C4;
+  }
+  .upload-img {
+      width: 304px;
+      height: 228px;
+
+  }
+  .upload-imgwrap {
+      position: relative;
+  }
+  .upload-removeimg {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 22px;
+      cursor: pointer;
+  }
+  .img-uploadfile {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      bottom: 16px;
+      right: 16px;
+  }  */
+  .sec-upload {
+    width: 390px;
+  }
+
+  .upload-wrap .upload-user {
+    display: flex;
+    align-items: center;
+  }
+
+  .upload-wrap .upload-user .upload-userimg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .upload-wrap .upload-user .upload-user-txt {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+  }
+
+  .upload-user .upload-user-txt .upload-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .upload-user .upload-user-txt .upload-userId {
+    font-size: 12px;
+    color: #767676;
+  }
+
+  .upload-wrap .upload-textarea {
+    border: none;
+    width: 304px;
+    /* 자동높이조절js 필요 */
+      height: 58px;
+    font-size: 14px;
+    margin: 16px 0 16px 54px ;
+    overflow: hidden;
+  }
+
+  .upload-textarea::placeholder {
+      color: #C4C4C4;
+  }
+
+  .upload-wrap .upload-img {
+    width: 304px;
+    height: 228px;
+    margin-left: 54px;  
+  }
+
+  .upload-wrap .upload-icon {
+    margin: 14px 0 18px 54px;
+  } 
+
+  .upload-wrap .upload-icon .icon-box {
+    display:flex;
+    align-items: center;
+  }
+
+  .upload-wrap .upload-icon .icon-txt {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #767676;
+  }
+
+  .upload-wrap .upload-icon .icon-box .chat-icon {
+    margin-left: 18px;
+  }
+
+  .upload-wrap .upload-data {
+    font-size: 10px;
+    margin-left: 54px;
+    color: #767676;
+  }
+  </style>
+</head>
+<body>
+  <!-- post 시작 -->
+  <!-- post - home  -->
+  <div class="sec-upload">
+    <div class="upload-wrap">
+      <div class="upload-user">
+        <img src="./images/icon/icon-profile.png" alt="user image" class="upload-userimg">
+        <div class="upload-user-txt">
+          <p class="upload-title">애월읍 위니브 청귤농장</p>
+          <span class="upload-userId">@ weniv_Mandarin</span>
+        </div>
+      </div>
+      <textarea placeholder="게시글 입력하기..."
+        class="upload-textarea">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</textarea>
+      <img src="./images/image/postimg.png" alt="some trees" class="upload-img">
+      <div class="upload-icon">
+        <div class="icon-box">
+          <img src="./images/icon/icon-heart.png" alt="좋아요 아이콘">
+          <span class="icon-txt">58</span>
+          <img src="./images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+          <span class="icon-txt">12</span>
+        </div>
+      </div>
+      <p class="upload-data">2020년 10월 21일</p>
+    </div>
+  </div>
+
+    <!-- post 끝 -->
+</body>
+</html>
