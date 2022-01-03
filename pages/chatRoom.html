@@ -19,16 +19,17 @@
             <img src="../images/icon/icon-more-vertical.png" alt="more menu" class="img-more">
         </header>
         
+        <!-- column-reverse(채팅이 아래에서 위로 올라가기 때문에 이렇게 설정) 새로 입력하는 채팅을 앞에 추가. -->
         <section class="sec-chatroom">
-            <article class="chatroom-mychat">
+            <div class="chatroom-mychat">
                 <img src="../images/image/chat-dog.png" alt="smiling dog" class="mychat-img">
                 <p class="mychat-time chatroom-time">12:51</p>
-            </article>
-            <article class="chatroom-mychat">
+            </div>
+            <div class="chatroom-mychat">
                 <p class="mychat-txt">네 말씀하세요</p>
                 <p class="mychat-time chatroom-time">12:50</p>
-            </article>
-            <article class="chatroom-chatwrap">
+            </div>
+            <div class="chatroom-chatwrap">
                 <img src="../images/icon/icon-profile.png" alt="user profile image" class="chatroom-userimg">
                 <div class="chatroom-txttime">
                     <p class="txttime-chattxt">
@@ -36,8 +37,8 @@
                     </p>
                     <p class="txttime-time chatroom-time">12:41</p>
                 </div>
-            </article>
-            <article class="chatroom-chatwrap">
+            </div>
+            <div class="chatroom-chatwrap">
                 <img src="../images/icon/icon-profile.png" alt="user profile image" class="chatroom-userimg">
                 <div class="chatroom-txttime">
                     <p class="txttime-chattxt">
@@ -45,15 +46,18 @@
                     </p>
                     <p class="txttime-time chatroom-time">12:39</p>
                 </div>
-            </article>
+            </div>
         </section>
-
         <section class="sec-writechat">
             <div class="writechat-wrap">
                 <img src="../images/icon/icon-gray-button.png" alt="add image" class="writechat-addimg">
                 <input type="text" placeholder="댓글 입력하기" class="writechat-inp">
             </div>
             <p class="writechat-sendtxt">전송</p>
+        </section>
+        <section class="sec-modal">
+            <div class="modal-bar"></div>
+            <p class="modal-txt">채팅방 나가기</p>
         </section>
     </main>
 
