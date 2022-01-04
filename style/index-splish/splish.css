@@ -1,11 +1,14 @@
 .splash-main {
-  margin: 0 auto;
+  position: fixed;
+  width: 390px;
+  height: 100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
+  top: 0;
+  left: 50%;
+  transform: translateX(-195px);
   align-items:center;
-  width: 390px;
-  height: 824px;
   background-color: white;
   border: 0.5px solid #DBDBDB;;
 }
