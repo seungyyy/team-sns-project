@@ -1,7 +1,4 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-
 .main-chatroom { 
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   width: 390px;
   background-color: white;
   margin: 0 auto;
@@ -144,7 +141,6 @@
   height: 40px;
   font-size: 14px;
   line-height: 21px;
-  font-family: inherit;
 }
 
 .writechat-sendtxt {

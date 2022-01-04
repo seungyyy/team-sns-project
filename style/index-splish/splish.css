@@ -1,0 +1,22 @@
+.splash-main {
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width: 390px;
+  height: 824px;
+  background-color: white;
+  border: 0.5px solid #DBDBDB;;
+}
+
+.splash-main .splash-logo {
+  width: 98px;
+  height: 118px;
+}
+
+.splash-main .splash-tit {
+  margin-top: 18px;
+  width: 130px;
+  height: 33px;
+}
