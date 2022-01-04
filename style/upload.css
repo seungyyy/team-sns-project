@@ -1,7 +1,4 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-
 .main-upload { 
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     width: 390px;
     background-color: white;
     margin: 0 auto;
@@ -57,8 +54,8 @@
     /* 자동높이조절js 필요 */
     height: 58px;
     font-size: 14px;
-    font-family: inherit;
     margin-bottom: 12px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 .upload-textarea::placeholder {
     color: #C4C4C4;

@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,7 +31,7 @@ footer, header, hgroup, menu, nav, section, main {
     display: block;
 }
 body {
-  line-height: 1;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 ol, ul {
     list-style: none;
