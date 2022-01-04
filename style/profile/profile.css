@@ -1,8 +1,27 @@
+/* 공통요소 */
+.hr {
+  width: 100%;
+  height: 6px;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  border: none;
+  border-top: 0.5px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+.cont--not {
+  height: 530px;
+  border-bottom: none;
+}
+.cont--hide {
+  display: none;
+}
+
 .main-profile {
   text-align: center;
 }
 .main-profile .profile-user .profile-user__cont-follow {
-  margin: 30px 55px 16px;
+  /* 원래 윗 마진 30px */
+  margin: 78px 55px 16px;
   display: flex;
   justify-content: space-between;
 }
@@ -62,14 +81,18 @@
   font-size: 14px;
   color: #767676;
 }
-.main-profile .profile-user .profile-user__cont-btn {
+.main-profile .profile-user .profile-user__cont-other .profile-user__cont-btn {
   width: 208px;
   margin: 0 auto 26px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main-profile .profile-user .profile-user__cont-btn .profile-user__btn {
+.main-profile
+  .profile-user
+  .profile-user__cont-other
+  .profile-user__cont-btn
+  .profile-user__btn {
   width: 34px;
   height: 34px;
   position: relative;
@@ -78,14 +101,23 @@
   border-radius: 30px;
   box-sizing: border-box;
 }
-.main-profile .profile-user .profile-user__cont-btn .profile-user__btn-img {
+.main-profile
+  .profile-user
+  .profile-user__cont-other
+  .profile-user__cont-btn
+  .profile-user__btn-img {
   width: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
 }
-.main-profile .profile-user .profile-user__cont-btn .profile-user__btn-follow {
+/* 다른 유저 프로필 - 언팔로우시 보이는 버튼 */
+.main-profile
+  .profile-user
+  .profile-user__cont-other
+  .profile-user__cont-btn
+  .profile-user__btn-follow {
   padding: 8px 40px;
   margin: 0 10px;
   border: none;
@@ -94,16 +126,56 @@
   color: #fff;
   font-size: 14px;
   font-weight: 500;
+  line-height: 18px;
 }
-
-.hr {
-  width: 100%;
-  height: 6px;
-  background: #f2f2f2;
-  box-sizing: border-box;
-  border: none;
-  border-top: 0.5px solid #dbdbdb;
-  border-bottom: 1px solid #dbdbdb;
+/* 다른 유저 프로필 - 팔로우시 보이는 버튼 */
+.main-profile
+  .profile-user
+  .profile-user__cont-other
+  .profile-user__cont-btn
+  .profile-user__btn-unfollow {
+  padding: 8px 34px;
+  margin: 0 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  background-color: white;
+  color: #767676;
+  font-size: 14px;
+  font-weight: 500;
+}
+/* 내 프로필 */
+.main-profile .profile-user .profile-user__cont-me .profile-user__cont-btnmy {
+  width: 232px;
+  margin: 0 auto 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-profile
+  .profile-user
+  .profile-user__cont-me
+  .profile-user__cont-btnmy
+  .profile-user__fix-me {
+  padding: 8px 26px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  background-color: white;
+  color: #767676;
+  font-size: 14px;
+  font-weight: 500;
+}
+.main-profile
+  .profile-user
+  .profile-user__cont-me
+  .profile-user__cont-btnmy
+  .porfile-user__upload-product {
+  padding: 8px 22px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  background-color: white;
+  color: #767676;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* product */
@@ -143,23 +215,42 @@
   color: #24732f;
 }
 
-/* post */
+/* post list */
 .post .post__change-view {
   text-align: right;
   border-bottom: 0.5px solid #dbdbdb;
 }
-.post .post__change-view .post__change-btn {
-  border: none;
-  background: none;
-  margin: 9px 19px 9px 0;
-}
-.post .post__change-view .post__change-btn .post__change-img {
+.post .post__change-view .post__btn-list {
   width: 26px;
   height: 26px;
+  border: none;
+  background: url("../../images/icon/icon-post-list-on.png");
+  background-size: contain;
+  margin: 9px 17px 9px 0;
+}
+.post .post__change-view .post__btn-grid {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: url("../../images/icon/icon-post-album-on.png");
+  background-size: contain;
+  margin: 9px 19px 9px 0;
+}
+.post .post__change-view .post__btn-list--off {
+  background: url("../../images/icon/icon-post-list-off.png");
+  background-size: contain;
+}
+.post .post__change-view .post__btn-grid--off {
+  background: url("../../images/icon/icon-post-album-off.png");
+  background-size: contain;
+}
+/* 게시글 리스트 */
+.post .post__list {
+  padding-bottom: 90px;
 }
 .post .post__list .post__item {
   position: relative;
-  margin: 16px 16px 30px 21px;
+  margin: 16px 16px 0 21px;
   text-align: right;
 }
 .post .post__list .post__item .post__img-user {
@@ -226,4 +317,22 @@
   font-size: 10px;
   line-height: 12px;
   color: #767676;
+}
+
+/* post grid */
+.post__list-grid {
+  margin: 16px 16px 0 16px;
+  padding-bottom: 90px;
+  display: grid;
+  grid-template-columns: 114px 114px 114px;
+  grid-auto-rows: 114px;
+  grid-gap: 8px;
+}
+.post__list-grid .post__item-grid {
+  overflow: hidden;
+}
+.post__list-grid .post__item-grid .post__link-grid .post__img-grid {
+  width: 114px;
+  height: 114px;
+  object-fit: cover;
 }
