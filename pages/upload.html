@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>document</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/upload.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/upload/upload.css">
 </head>
 <body>
-    <h1 class="hidden">upload post</h1>
-    <main class="main-upload">
-        <header class="header">
-            <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
-            <button class="btn-upload">업로드</button>
-        </header>
-        
-        <section class="sec-upload">
-            <img src="../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
-            <div class="upload-wrap">
-                <textarea placeholder="게시글 입력하기..." class="upload-textarea">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</textarea>
-                <!-- 사진 한 개일 때 -->
-                <!-- <div class="upload-imgwrap">
-                    <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
-                    <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
-                </div> -->
+  <h1 class="hidden">upload post</h1>
+  <header class="header">
+    <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
+    <button class="btn-upload">업로드</button>
+  </header>
+  <main class="sec-upload">
+    <img src="../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
+    <div class="upload-wrap">
+      <textarea placeholder="게시글 입력하기..." class="upload-textarea">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</textarea>
+      <!-- 사진 한 개일 때 -->
+      <div class="upload-imgs">
+        <div class="upload-imgwrap">
+          <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
+          <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
+        </div>
+      </div>
 
-                <!-- 사진 두개 이상일 때 -->
-                <div class="upload-imgs">
-                    <div class="upload-imgwrap">
-                        <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
-                        <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
-                    </div>
-                    <div class="upload-imgwrap">
-                        <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
-                        <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
-                    </div>
-                    <div class="upload-imgwrap">
-                        <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
-                        <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
-                    </div>
-                </div>
-            </div>
-            <img src="../images/icon/icon-upload-file.png" alt="upload file" class="img-uploadfile">
-        </section>
-    </main>
-
+      <!-- 사진 두개 이상일 때 클래스 upload-img-many 추가-->
+      <!-- <div class="upload-imgs">
+        <div class="upload-imgwrap">
+          <img src="../images/image/postimg.png" alt="some trees" class="upload-img upload-img-many">
+          <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
+        </div>
+        <div class="upload-imgwrap">
+          <img src="../images/image/postimg.png" alt="some trees" class="upload-img upload-img-many">
+          <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
+        </div>
+        <div class="upload-imgwrap">
+          <img src="../images/image/postimg.png" alt="some trees" class="upload-img upload-img-many">
+          <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
+        </div>
+      </div> -->
+    </div>
+    <img src="../images/icon/icon-upload-file.png" alt="upload file" class="img-uploadfile">
+  </main>
 </body>
 </html>

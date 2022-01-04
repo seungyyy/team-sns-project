@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>document</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/chatRoom.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/chatRoom/chatRoom.css">
 </head>
 <body>
-    <h1 class="hidden">감귤마켓 chat room</h1>
-    <main class="main-chatroom">
-        <header class="header">
-            <div class="header-beforenamewrap">
-                <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
-                <p class="header-username">애월읍 위니브 감귤농장</p>
-            </div>
-            <img src="../images/icon/icon-more-vertical.png" alt="more menu" class="img-more">
-        </header>
-        
-        <!-- column-reverse(채팅이 아래에서 위로 올라가기 때문에 이렇게 설정) 새로 입력하는 채팅을 앞에 추가. -->
-        <section class="sec-chatroom">
-            <div class="chatroom-mychat">
-                <img src="../images/image/chat-dog.png" alt="smiling dog" class="mychat-img">
-                <p class="mychat-time chatroom-time">12:51</p>
-            </div>
-            <div class="chatroom-mychat">
-                <p class="mychat-txt">네 말씀하세요</p>
-                <p class="mychat-time chatroom-time">12:50</p>
-            </div>
-            <div class="chatroom-chatwrap">
-                <img src="../images/icon/icon-profile.png" alt="user profile image" class="chatroom-userimg">
-                <div class="chatroom-txttime">
-                    <p class="txttime-chattxt">
-                        안녕하세요. 청귤 사고싶어요요요요요
-                    </p>
-                    <p class="txttime-time chatroom-time">12:41</p>
-                </div>
-            </div>
-            <div class="chatroom-chatwrap">
-                <img src="../images/icon/icon-profile.png" alt="user profile image" class="chatroom-userimg">
-                <div class="chatroom-txttime">
-                    <p class="txttime-chattxt">
-                        옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.
-                    </p>
-                    <p class="txttime-time chatroom-time">12:39</p>
-                </div>
-            </div>
-        </section>
-        <section class="sec-writechat">
-            <div class="writechat-wrap">
-                <img src="../images/icon/icon-gray-button.png" alt="add image" class="writechat-addimg">
-                <input type="text" placeholder="댓글 입력하기" class="writechat-inp">
-            </div>
-            <p class="writechat-sendtxt">전송</p>
-        </section>
-        <section class="sec-modal">
-            <div class="modal-bar"></div>
-            <p class="modal-txt">채팅방 나가기</p>
-        </section>
+  <h1 class="hidden">감귤마켓 chat room</h1>
+  <header class="header">
+    <div class="header-beforenamewrap">
+      <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
+      <p class="header-username">애월읍 위니브 감귤농장</p>
+    </div>
+    <img src="../images/icon/icon-more-vertical.png" alt="more menu" class="img-more">
+  </header>
+
+      <!-- column-reverse(채팅이 아래에서 위로 올라가기 때문에 이렇게 설정) 새로 입력하는 채팅을 앞에 추가. -->
+    <main class="sec-chatroom">
+      <div class="chatroom-mychat">
+        <img src="../images/image/chat-dog.png" alt="smiling dog" class="mychat-img">
+        <p class="chatroom-time">12:51</p>
+      </div>
+      <div class="chatroom-mychat">
+        <p class="mychat-txt">네 말씀하세요</p>
+        <p class="chatroom-time">12:50</p>
+      </div>
+      <div class="chatroom-chatwrap">
+        <img src="../images/icon/icon-profile.png" alt="user profile image" class="chatroom-userimg">
+        <div class="chatroom-txttime">
+          <p class="txttime-chattxt">
+              안녕하세요. 청귤 사고싶어요요요요요
+          </p>
+          <p class="chatroom-time">12:41</p>
+        </div>
+      </div>
+      <div class="chatroom-chatwrap">
+        <img src="../images/icon/icon-profile.png" alt="user profile image" class="chatroom-userimg">
+        <div class="chatroom-txttime">
+          <p class="txttime-chattxt">
+            옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.
+          </p>
+          <p class="chatroom-time">12:39</p>
+        </div>
+      </div>
     </main>
 
+  <section class="sec-writechat">
+    <div class="writechat-wrap">
+      <img src="../images/icon/icon-gray-button.png" alt="add image" class="writechat-addimg">
+      <input type="text" placeholder="댓글 입력하기" class="writechat-inp">
+    </div>
+    <p class="writechat-sendtxt">전송</p>
+  </section>
+  <section class="sec-modal">
+    <div class="modal-bar"></div>
+    <p class="modal-txt">채팅방 나가기</p>
+  </section>
 </body>
 </html>
