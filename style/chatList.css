@@ -83,42 +83,36 @@
 
 .nav {
   width: 390px;
-  background-color: white;
-  margin: 0 auto;
-  border-top: 0.5px solid #DBDBDB;
-  padding: 15px 0 8px;
+  height: 60px;
+  position: fixed;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-195px);
+  background-color: white;
+  border-top: 0.5px solid #DBDBDB;
 }
-
 .nav-list {
   display: flex;
   justify-content: space-between;
-  padding: 0 39px;
+  align-items: center;
+  padding: 14px 39px 6px;
+  margin: 0;
 }
-
 .nav-list .menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .nav-list .menu img {
   width: 20px;
 }
-
 .nav-list .menu p {
-  margin-top: 6px;
+  margin: 6px 0 0 0 ;
   font-size: 10px;
   font-weight: 400;
   color: #767676;
 }
-
-
-
-
-
-
 .nav-chat .nav-chat-txt {
     color: #24732F;
 }
