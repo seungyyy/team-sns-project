@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/joinEmail/joinEmail.css">
+  <title>청귤마켓 이메일로 회원가입</title>
+</head>
+
+<body>
+  <!-- 이메일 가입 -->
+  <main class="main-join-email">
+    <h2 class="join-email-tit">이메일로 회원가입</h2>
+    <form action="">
+      <fieldset class="join-email-field">
+        <label for="joinEmail" class="label">이메일</label>
+        <input type="email" name="useremail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="joinEmail"
+          class="email-inp inp">
+        <label for="pw" class="label">비밀번호</label>
+        <input type="password" name="userpw" id="pw" class="pw-inp inp">
+        <button type="submit" class="btn-L off">다음</button>
+      </fieldset>
+    </form>
+  </main>
+</body>
+</html>
