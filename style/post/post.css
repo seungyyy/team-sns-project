@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body { 
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  width: 390px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+/* 상단 */
+.header {
+  height: 48px;
+  border-bottom: 0.5px solid #dbdbdb;
+  background-color: #fff;
+  display: flex; 
+  justify-content: space-between;
+  position: fixed;
+  width: 390px;
+  z-index: 10;
+}
+.header .img-before,.header .img-more {
+  height: 22px;
+  width: 22px;
+  margin: 13px 20px 13px 16px;
+}
+.header .img-more {
+  margin: 12px;
+}
+/* post text with image */
+.sec-post {
+  padding-top: 48px;
+}
+.sec-post-page {
+  width: 390px;
+  position: relative;
+  padding: 20px 16px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.post-wrap .post-user {
+  display: flex;
+  align-items: center;
+}
+.post-wrap .post-user .img-more {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 16px;
+  top: 24px;
+}
+.post-wrap .post-user .post-userimg {
+  width: 42px;
+  height: 42px;
+}
+.post-wrap .post-user .post-user-txt {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+.post-user .post-user-txt .post-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+.post-user .post-user-txt .post-userId {
+  font-size: 12px;
+  color: #767676;
+}
+.post-wrap .post-txtimgwrap .post-txt {
+  font-family: inherit;
+  width: 304px;
+  margin: 16px 0 16px 54px ;
+  font-size: 14px;
+}
+.post-wrap .post-txtimgwrap .post-img {
+  width: 304px;
+  height: 228px;
+  margin-left: 54px;
+}
+.post-wrap .post-icon {
+  margin: 14px 0 18px 54px;
+} 
+.post-wrap .post-icon .icon-box {
+  display:flex;
+  align-items: center;
+}
+.post-wrap .post-icon .icon-txt {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #767676;
+}
+.post-wrap .post-icon .icon-box .like-icon {
+  width: 18px;
+}
+.post-wrap .post-icon .icon-box .chat-icon {
+  width: 18px;
+  margin-left: 18px;
+}
+.post-wrap .post-data {
+  font-size: 10px;
+  margin-left: 54px;
+  color: #767676;
+}
+
+/* 댓글부분 */
+.post-comment {
+  padding: 20px 0 61px 0;
+}
+.post-comment .comment-wrap {
+  padding: 0 16px 16px 16px;
+}
+.post-comment .comment-wrap .comment-userwrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.comment-wrap .comment-userwrap .comment-user {
+  display: flex;
+  align-items: center;
+}
+.comment-userwrap .comment-user .comment-userimg {
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+}
+.comment-userwrap .comment-user .comment-username {
+  font-size: 14px;
+  margin-right: 6px;
+  font-weight: 500;
+}
+.comment-userwrap .comment-user .comment-usertime {
+  font-size: 10px;
+  color: #767676;
+}
+.comment-wrap .comment-userwrap .comment-imgmore {
+  width: 20px;
+  height: 20px;
+}
+.post-comment .comment-wrap .comment-txt {
+  font-size: 14px;
+  color: #333333;
+  line-height: 21px;
+  margin-left: 48px;
+}
+
+
+/* 하단 댓글 입력부분 */
+.sec-writechat {
+  width: 390px;
+  display: flex;
+  justify-content: space-between;
+  height: 61px;
+  box-sizing: border-box;
+  border-top: 0.5px solid #dbdbdb;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+}
+.sec-writechat .writechat-wrap {
+  display: flex;
+  align-items: center;
+}
+.sec-writechat .writechat-wrap .writechat-addimg {
+  width: 36px;
+  height: 36px;
+  margin: 13px 18px 12px 16px;
+  cursor: pointer;
+}
+.sec-writechat .writechat-wrap .writechat-inp {
+  border: none;
+  width: 240px;
+  height: 40px;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: inherit;
+}
+.sec-writechat .writechat-sendtxt {
+  cursor: pointer;
+  margin: 23px 16px 20px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #c4c4c4;
+}
+
+/* modal */
+.sec-modal {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+  width: 390px;
+  height: 90px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.sec-modal .modal-bar {
+  width: 50px;
+  height: 4px;
+  margin: 16px auto;
+  background-color: #dbdbdb;
+  border-radius: 5px;
+}
+.sec-modal .modal-txt {
+  font-size: 14px;
+  margin: 14px 0 14px 26px;
+  cursor: pointer;
+}
+.sec-modal.modal-delete {
+  display: none;
+}
+.sec-modal.modal-report {
+  display: none;
+}
