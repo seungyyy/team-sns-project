@@ -8,13 +8,6 @@
   border-top: 0.5px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
 }
-.cont--not {
-  height: 530px;
-  border-bottom: none;
-}
-.cont--hide {
-  display: none;
-}
 
 .main-profile {
   text-align: center;
