@@ -5,15 +5,15 @@
 body { 
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   width: 390px;
-  background-color: white;
+  background-color: #fff;
   margin: 0 auto;
 }
 
 /* 상단 */
 .header {
   height: 48px;
-  border-bottom: 0.5px solid #DBDBDB;
-  background-color: white;
+  border-bottom: 0.5px solid #dbdbdb;
+  background-color: #fff;
   display: flex; 
   justify-content: space-between;
   position: fixed;
@@ -72,14 +72,14 @@ body {
 }
 .chatlist-userwrap .chatlist-usertxtwrap .chatlist-txtwrap .chatlist-date {
   font-size: 10px;
-  color: #DBDBDB;
+  color: #dbdbdb;
 }
 
 /* 하단 메뉴 */
 .nav {
   width: 390px;
-  background-color: white;
-  border-top: 0.5px solid #DBDBDB;
+  background-color: #fff;
+  border-top: 0.5px solid #dbdbdb;
   padding: 15px 0 8px;
   bottom: 0;
   position: fixed;
@@ -105,5 +105,5 @@ body {
   color: #767676;
 }
 .nav .nav-list .nav-chat .nav-chat-txt {
-  color: #24732F;
+  color: #24732f;
 }

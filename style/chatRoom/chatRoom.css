@@ -1,7 +1,7 @@
 body { 
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   width: 390px;
-  background-color: white;
+  background-color: #fff;
   margin: 0 auto;
 }
 
@@ -9,8 +9,8 @@ body {
 .header {
   height: 48px;
   box-sizing: border-box;
-  border-bottom: 0.5px solid #DBDBDB;
-  background-color: white;
+  border-bottom: 0.5px solid #dbdbdb;
+  background-color: #fff;
   display: flex; 
   justify-content: space-between;
   position: fixed;
@@ -37,7 +37,7 @@ body {
 
 /* 채팅방 부분. */
 .sec-chatroom {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: column-reverse;
   height: 100vh;
@@ -68,8 +68,8 @@ body {
   font-size: 14px;
   padding: 12px;
   max-width: 242px;
-  color: white;
-  background-color: #24732F;
+  color: #fff;
+  background-color: #24732f;
   margin: 0 16px 0 6px;    
   border-radius: 10px;
   border-top-right-radius: 0px;
@@ -90,8 +90,8 @@ body {
 .sec-chatroom .chatroom-chatwrap .chatroom-txttime .txttime-chattxt {
   font-size: 14px;
   max-width: 242px;
-  background-color: #FFFFFF;
-  border: 1px solid #C4C4C4;
+  background-color: #fff;
+  border: 1px solid #c4c4c4;
   box-sizing: border-box;
   margin: 0 6px 0 12px;
   border-radius: 10px;
@@ -107,8 +107,8 @@ body {
   justify-content: space-between;
   height: 61px;
   box-sizing: border-box;
-  border-top: 0.5px solid #DBDBDB;
-  background-color: white;
+  border-top: 0.5px solid #dbdbdb;
+  background-color: #fff;
   position: fixed;
   bottom: 0px;
 }
@@ -140,7 +140,7 @@ body {
 
 /* modal */
 .sec-modal {
-  background-color: white;
+  background-color: #fff;
   position: fixed;
   bottom: 0px;
   width: 390px;
@@ -153,7 +153,7 @@ body {
   width: 50px;
   height: 4px;
   margin: 16px auto;
-  background-color: #DBDBDB;
+  background-color: #dbdbdb;
   border-radius: 5px;
 }
 .sec-modal .modal-txt {

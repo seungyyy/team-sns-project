@@ -1,7 +1,7 @@
 body { 
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   width: 390px;
-  background-color: white;
+  background-color: #fff;
   margin: 0 auto;
 }
 
@@ -9,8 +9,8 @@ body {
 .header {
   height: 48px;
   box-sizing: border-box;
-  border-bottom: 0.5px solid #DBDBDB;
-  background-color: white;
+  border-bottom: 0.5px solid #dbdbdb;
+  background-color: #fff;
   display: flex; 
   justify-content: space-between;
   position: fixed;
@@ -26,7 +26,7 @@ body {
 /* textarea안에 글자가 있으면 활성화되면서 백그라운드 색상 바뀌게 */
 .header .btn-upload {
   background-color: #24732f ;
-  color: white;
+  color: #fff;
   width: 90px;
   height: 32px;
   border: none;
@@ -61,7 +61,7 @@ body {
   margin-bottom: 12px;
 }
 .sec-upload .upload-wrap .upload-textarea::placeholder {
-  color: #C4C4C4;
+  color: #c4c4c4;
 }
 
 /* 사진 한 개 일 때 */
