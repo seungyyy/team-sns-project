@@ -1,0 +1,86 @@
+.header {
+  width: 390px;
+  background-color: white;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  margin: 0 auto;
+  padding: 13px 16px;
+  border-bottom: 0.5px solid #dbdbdb;
+}
+.header .img-search {
+  width: 24px;
+  height: 24px;  
+}
+.header .header-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+} 
+
+.main-home {
+  width: 390px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-home .home-img {
+  display: block;
+  height: 89px;
+  width: 74px;
+  margin: 0 auto;
+}
+.main-home .home-tit {
+  margin: 25px 0 20px;
+  font-size: 14px;
+  color: #767676;
+  text-align: center;
+}
+.main-home .btn-M {
+  height: 44px;
+  padding: 0 33px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #24732f;
+  color: #fff;
+  border: none;
+  border-radius: 30px;  
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+.nav {
+  width: 390px;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-195px);
+  background-color: white;
+  border-top: 0.5px solid #dbdbdb;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 39px 6px;
+  margin: 0;
+}
+.nav-list .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav-list .menu img {
+  width: 20px;
+}
+.nav-list .menu p {
+  margin: 6px 0 0 0 ;
+  font-size: 10px;
+  font-weight: 400;
+  color: #767676;
+}

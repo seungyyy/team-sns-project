@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box; 
+}
+
+.main-profile-set {
+  width: 390px;
+  margin: 0 auto;
+  padding: 30px 34px 0;
+}
+.main-profile-set .profile-set-tit {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+.main-profile-set .profile-set-txt {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+  color: #767676;
+}
+.main-profile-set .profile-set-field {
+  margin-top: 40px;
+}
+.main-profile-set .profile-set-field .avatar-label {
+  position: relative;
+}
+.main-profile-set .profile-set-field .avatar-label .profile-set-img {
+  display: block;
+  width: 110px;
+  margin: 0 auto;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+.main-profile-set .profile-set-field .avatar-label::after {
+  content: '';
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 75px;
+  left: 180px;
+  background: url('../../images/icon/icon-upload-file.png') no-repeat;
+  background-size: 36px;
+}
+.main-profile-set .profile-set-field .file-inp {
+  display: none;
+}
+.main-profile-set .profile-set-field .label,
+.main-profile-set .profile-set-field .inp {
+  display: block;
+}
+.main-profile-set .profile-set-field .label {
+  font-size: 12px;
+  color: #767676;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.main-profile-set .profile-set-field .inp {
+  width: 100%;
+  padding-bottom: 9px;
+  margin-bottom: 16px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #dbdbdb;
+  font-size: 14px;
+  color: #000;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+.main-profile-set .profile-set-field .email-inp {
+  margin-bottom: 16px;
+}
+.main-profile-set .profile-set-field .inp:focus {
+  border-bottom: 1px solid #24732f;
+}
+.main-profile-set .profile-set-field .inp::placeholder {
+  color: #dbdbdb;
+}
+.main-profile-set .profile-set-field .btn-L {
+  padding: 13px 107.5px;
+  margin: 14px 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #24732f;
+  color: #fff;
+  border: none;
+  border-radius: 44px;
+  letter-spacing: -1px; 
+  cursor: pointer;
+}
+.main-profile-set .profile-set-field .btn-L--off {
+  background-color: #8ac392;
+}
+.main-profile-set .profile-set-field .link-singup {
+  text-align: center;
+}
+.main-profile-set .profile-set-field .link-singup a {
+  font-size: 12px;
+  color: #767676;
+}
+.main-profile-set .profile-set-field .alert {
+  font-size: 12px;
+  color: #eb5757;
+}
