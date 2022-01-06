@@ -15,23 +15,15 @@
       <header class="header">
         <h1 class="hidden">청귤마켓 profile</h1>
 
-        <ul class="header__bar-list">
-          <li class="header__bar-item">
-            <a href="#" class="header__bar-link-before">
-              <img
-                src="../images/icon/icon-arrow-left.png"
-                alt="뒤로가기"
-                class="header__bar-img-before"
-              />
+        <ul class="header-list">
+          <li class="header-item">
+            <a href="#" class="header-link">
+              <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
             </a>
           </li>
-          <li class="header__bar-item">
-            <button type="button" class="header__bar-btn">
-              <img
-                src="../images/icon/icon-more-vertical.png"
-                alt="더보기"
-                class="header__bar-btn-img"
-              />
+          <li class="header-item">
+            <button type="button" class="header-btn">
+              <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
             </button>
           </li>
         </ul>
@@ -39,259 +31,243 @@
 
       <main class="main-profile">
         <!-- 유저프로필 -->
-        <section class="profile-user">
+        <section class="cont-user">
           <h2 class="hidden">user profile</h2>
-          <article class="profile-user__cont-follow">
+
+          <article class="user-cont-follow">
             <h3 class="hidden">follow</h3>
-            <div class="profile-user__follow">
-              <p><strong>2950</strong></p>
+            <div class="user-followers">
+              <strong>2950</strong>
               <p>followers</p>
             </div>
             <img
               src="../images/icon/icon-profile.png"
               alt="프로필 사진"
-              class="profile-user__img"
+              class="user-img"
             />
-            <div class="profile-user__follow">
-              <p><strong class="profile-user_following">128</strong></p>
+            <div class="user-followings">
+              <p><strong>128</strong></p>
               <p>followings</p>
             </div>
           </article>
-          <p class="profile-user__tit">
+
+          <p class="user-tit">
             <strong>애월읍 위니브 감귤농장</strong>
           </p>
-          <p class="profile-user__name">@weniv_Mandarin</p>
-          <p class="profile-user__desc">
-            애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장
-          </p>
+          <p class="user-name">@weniv_Mandarin</p>
+          <p class="user-desc">애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</p>
           <!--현재 다른 유저 프로필로 내 프로필일때 cont--hide 붙이기 -->
-          <section class="profile-user__cont-other">
+          <section class="user-cont-other">
             <h4 class="hidden">다른 유저 프로필</h4>
-            <div class="profile-user__cont-btn">
-              <a href="#" class="profile-user__btn"
+            <div class="user-cont-btnOther">
+              <a href="#" class="user-btn-chat"
                 ><img
                   src="../images/icon/s-icon-message-circle.png"
                   alt="채팅하기"
-                  class="profile-user__btn-img"
               /></a>
               <!-- 해당 유저 팔로우 시 cont--hide -->
-              <button type="button" class="profile-user__btn-follow">
+              <button type="button" class="user-btn-follow cont--hide">
                 팔로우
               </button>
               <!-- 해당 유저 언팔로우 시 cont--hide -->
-              <button
-                type="button"
-                class="profile-user__btn-unfollow cont--hide"
-              >
-                언팔로우
-              </button>
-              <button type="button" class="profile-user__btn">
-                <img
-                  src="../images/icon/icon-share.png"
-                  alt="공유하기"
-                  class="profile-user__btn-img"
-                />
+              <button type="button" class="user-btn-unfollow">언팔로우</button>
+              <button type="button" class="user-btn-share">
+                <img src="../images/icon/icon-share.png" alt="공유하기" />
               </button>
             </div>
           </section>
           <!--현재 내 프로필로 다른 유저 프로필일때 cont--hide 붙이기 -->
-          <section class="profile-user__cont-me cont--hide">
-            <div class="profile-user__cont-btnmy">
-              <a href="#" class="profile-user__fix-me"> 프로필 수정 </a>
-              <a href="#" class="porfile-user__upload-product"> 상품 등록 </a>
+          <section class="user-cont-me cont--hide">
+            <div class="user-cont-btnMy">
+              <a href="#" class="user-fix"> 프로필 수정 </a>
+              <a href="#" class="user-upload-product"> 상품 등록 </a>
             </div>
           </section>
         </section>
+
         <!-- 게시물과 판매상품이 없을 시 hr에 cont--not을 붙인다. -->
         <hr class="hr" />
         <!-- product section에 cont--hide class를 붙일 시 사라짐 -->
-        <section class="product cont--hide">
-          <h2 class="product__tit">판매 중인 상품</h2>
-          <ul class="product__list">
-            <li class="product__item">
-              <a href="#" class="product__link">
+        <section class="product">
+          <h2 class="product-tit">판매 중인 상품</h2>
+          <ul class="product-list">
+            <li class="product-item">
+              <a href="#" class="product-link">
                 <img
                   src="../images/image/tangerine.jpg"
                   alt="청귤 이미지"
-                  class="product__img"
+                  class="product-img"
                 />
-                <p class="product__desc">애월읍 노지 청귤</p>
-                <p class="product__price">35, 000원</p>
+                <p class="product-desc">애월읍 노지 청귤</p>
+                <p class="product-price">35, 000원</p>
               </a>
             </li>
-            <li class="product__item">
-              <a href="#" class="product__link">
+            <li class="product-item">
+              <a href="#" class="product-link">
                 <img
                   src="../images/image/tangerine.jpg"
                   alt="청귤 이미지"
-                  class="product__img"
+                  class="product-img"
                 />
-                <p class="product__desc">애월읍 노지 청귤</p>
-                <p class="product__price">35, 000원</p>
+                <p class="product-desc">애월읍 노지 청귤</p>
+                <p class="product-price">35, 000원</p>
               </a>
             </li>
-            <li class="product__item">
-              <a href="#" class="product__link">
+            <li class="product-item">
+              <a href="#" class="product-link">
                 <img
                   src="../images/image/tangerine.jpg"
                   alt="청귤 이미지"
-                  class="product__img"
+                  class="product-img"
                 />
-                <p class="product__desc">애월읍 노지 청귤</p>
-                <p class="product__price">35, 000원</p>
+                <p class="product-desc">애월읍 노지 청귤</p>
+                <p class="product-price">35, 000원</p>
               </a>
             </li>
           </ul>
           <hr class="hr" />
         </section>
+
         <!-- 게시글 없을 시 cont--hide css 부착  -->
         <section class="post">
           <h2 class="hidden">게시글</h2>
-          <div class="post__change-view">
+          <div class="post-change">
             <!-- 버튼에 css속성으로 배경 이미지를 변경하는 것 -->
+            <button class="post-btn-list" type="button"></button>
             <button
-              class="post__btn-list post__btn-list--off"
-              type="button"
-            ></button>
-            <button
-              class="post__btn-grid post__btn-grid--off"
+              class="post-btn-grid post-btn-grid--off"
               type="button"
             ></button>
           </div>
 
           <!-- ul의 클래스로 cont--hide을 더해줄 시 숨겨짐 -->
-          <ul class="post__list">
+          <ul class="post-list">
             <h3 class="hidden">게시글 - 리스트 형식</h3>
-            <li class="post__item">
+            <li class="post-item">
               <img
                 src="../images/icon/icon-profile.png"
                 alt="user image"
-                class="post__img-user"
+                class="post-img-user"
               />
-              <div class="post__cont-txt">
-                <p class="post__tit">
+              <div class="post-cont-txt">
+                <p class="post-tit">
                   <strong>애월읍 위니브 감귤농장</strong>
                 </p>
-                <p class="post__name">@ weniv_Mandarin</p>
-                <p class="post__desc">
+                <p class="post-name">@ weniv_Mandarin</p>
+                <p class="post-desc">
                   사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대
                   등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을
                   의미한다.
                 </p>
               </div>
               <img
-                src="../images//image/postimg.png"
+                src="../images/image/postimg.png"
                 alt="게시글 이미지"
-                class="post__img"
+                class="post-img"
               />
               <img
                 src="../images/icon/s-icon-more-vertical.png"
                 alt="더보기"
-                class="post__btn-setting"
+                class="post-btn-setting"
               />
-              <div class="post__cont-icon">
-                <button type="button" class="post__btn-icon">
-                  <img
-                    src="../images/icon/icon-heart.png"
-                    alt="좋아요"
-                    class="post__img-icon"
-                  />
+              <div class="post-cont-icon">
+                <button type="button" class="post-btn-icon">
+                  <img src="../images/icon/icon-heart.png" alt="좋아요" />
                 </button>
-                <span class="post__txt-icon">58</span>
-                <button type="button" class="post__btn-icon">
+                <span class="post-txt-icon">58</span>
+                <button type="button" class="post-btn-icon">
                   <img
                     src="../images/icon/s-icon-message-circle.png"
                     alt="채팅하기"
-                    class="post__img-icon"
                   />
                 </button>
-                <span class="post__txt-icon">12</span>
+                <span class="post-txt-icon">12</span>
               </div>
-              <p class="post__date">2020년 10월 21일</p>
+              <p class="post-date">2020년 10월 21일</p>
             </li>
           </ul>
           <!-- div 의 클래스로 cont--hide을 더해줄 시 숨겨짐 -->
-          <div class="post__grid cont--hide">
-            <ul class="post__list-grid">
+          <div class="post-grid cont--hide">
+            <ul class="post-list-grid">
               <h3 class="hidden">게시글 - 격자형식</h3>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img2.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img3.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img2.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img3.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img2.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
-              <li class="post__item-grid">
-                <a href="#" class="post__link-grid">
+              <li class="post-item-grid">
+                <a href="#" class="post-link-grid">
                   <img
                     src="../images/image/post_grid_img3.jpg"
                     alt="게시글 이미지"
-                    class="post__img-grid"
+                    class="post-img-grid"
                   />
                 </a>
               </li>
@@ -300,51 +276,75 @@
         </section>
       </main>
       <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a
+              href="./homeFeed/feedhome.html"
+              class="nav-link nav-link-home nav--on"
+            >
               <img
                 src="../images/icon/icon-home-fill.png"
                 alt="홈"
-                class="nav__img-home"
+                class="nav-img nav-img-home--on"
               />
-              <p class="nav__txt-home nav__txt--on">홈</p>
+              <img
+                src="../images/icon/icon-home.png"
+                alt="홈"
+                class="nav-img nav-img-home--off cont--hide"
+              />
+              <p class="nav-txt">홈</p>
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-link-chat">
+              <img
+                src="../images/icon/icon-message-circle-fill.png"
+                alt="채팅"
+                class="nav-img nav-img-chat--on cont--hide"
+              />
               <img
                 src="../images/icon/xl-icon-message-circle.png"
                 alt="채팅"
-                class="nav__img-home"
+                class="nav-img nav-img-chat--off"
               />
-              <p class="nav__txt-home">채팅</p>
+              <p class="nav-txt">채팅</p>
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-link-post">
+              <img
+                src="../images/icon/icon-edit-fill.png"
+                alt="게시물 작성"
+                class="nav-img nav-img-post--on cont--hide"
+              />
               <img
                 src="../images/icon/icon-edit.png"
                 alt="게시물 작성"
-                class="nav__img-home"
+                class="nav-img nav-img-post--off"
               />
-              <p class="nav__txt-home">게시물 작성</p>
+              <p class="nav-txt">게시물 작성</p>
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-link-profile">
+              <img
+                src="../images/icon/icon-user-fill.png"
+                alt="프로필"
+                class="nav-img nav-img-profile--on cont--hide"
+              />
               <img
                 src="../images/icon/icon-user.png"
                 alt="프로필"
-                class="nav__img-home"
+                class="nav-img nav-img-profile--off"
               />
-              <p class="nav__txt-home">프로필</p>
+              <p class="nav-txt">프로필</p>
             </a>
           </li>
         </ul>
       </nav>
     </div>
 
-    <script src="../js/profile.js"></script>
+    <script src="../js/navChange.js"></script>
+    <script src="../js/listGridChange.js"></script>
   </body>
 </html>

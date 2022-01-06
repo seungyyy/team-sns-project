@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 
-body { 
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+body {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
   width: 100%;
   background-color: #fff;
   margin: 0 auto;
@@ -14,13 +14,14 @@ body {
   height: 48px;
   border-bottom: 0.5px solid #dbdbdb;
   background-color: #fff;
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   position: fixed;
   width: 100%;
   z-index: 10;
 }
-.header .img-before,.header .img-more {
+.header .img-before,
+.header .img-more {
   height: 22px;
   width: 22px;
   margin: 13px 20px 13px 16px;
@@ -71,7 +72,7 @@ body {
 .post-wrap .post-txtimgwrap .post-txt {
   font-family: inherit;
   width: calc(100% - 54px);
-  margin: 16px 16px 16px 54px ;
+  margin: 16px 16px 16px 54px;
   font-size: 14px;
 }
 .post-wrap .post-txtimgwrap .post-img {
@@ -80,9 +81,9 @@ body {
 }
 .post-wrap .post-icon {
   margin: 14px 0 18px 54px;
-} 
+}
 .post-wrap .post-icon .icon-box {
-  display:flex;
+  display: flex;
   align-items: center;
 }
 .post-wrap .post-icon .icon-txt {
@@ -144,7 +145,6 @@ body {
   line-height: 21px;
   margin-left: 48px;
 }
-
 
 /* 하단 댓글 입력부분 */
 .sec-writechat {

@@ -13,29 +13,22 @@
   <body>
     <div class="app">
       <header class="header">
-        <h1 class="hidden">청귤마켓 profile</h1>
-
-        <ul class="header__bar-list">
-          <li class="header__bar-item">
-            <a href="#" class="header__bar-link-before">
-              <img
-                src="../images/icon/icon-arrow-left.png"
-                alt="뒤로가기"
-                class="header__bar-img-before"
-              />
-            </a>
-          </li>
-          <li class="header__bar-item">
-            <button type="button" class="header__bar-btn">
-              <img
-                src="../images/icon/icon-more-vertical.png"
-                alt="더보기"
-                class="header__bar-btn-img"
-              />
-            </button>
-          </li>
-        </ul>
-      </header>
+        <header class="header">
+          <h1 class="hidden">청귤마켓 profile</h1>
+  
+          <ul class="header-list">
+            <li class="header-item">
+              <a href="#" class="header-link">
+                <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
+              </a>
+            </li>
+            <li class="header-item">
+              <button type="button" class="header-btn">
+                <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
+              </button>
+            </li>
+          </ul>
+        </header>
 
       <main class="main-profile">
         <!--팔로우 리스트 -->
@@ -94,49 +87,75 @@
       </main>
 
       <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a
+              href="./homeFeed/feedhome.html"
+              class="nav-link nav-link-home nav--on"
+            >
               <img
                 src="../images/icon/icon-home-fill.png"
                 alt="홈"
-                class="nav__img-home"
+                class="nav-img nav-img-home--on"
               />
-              <p class="nav__txt-home nav__txt--on">홈</p>
+              <img
+                src="../images/icon/icon-home.png"
+                alt="홈"
+                class="nav-img nav-img-home--off cont--hide"
+              />
+              <p class="nav-txt">홈</p>
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-link-chat">
+              <img
+                src="../images/icon/icon-message-circle-fill.png"
+                alt="채팅"
+                class="nav-img nav-img-chat--on cont--hide"
+              />
               <img
                 src="../images/icon/xl-icon-message-circle.png"
                 alt="채팅"
-                class="nav__img-home"
+                class="nav-img nav-img-chat--off"
               />
-              <p class="nav__txt-home">채팅</p>
+              <p class="nav-txt">채팅</p>
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-link-post">
+              <img
+                src="../images/icon/icon-edit-fill.png"
+                alt="게시물 작성"
+                class="nav-img nav-img-post--on cont--hide"
+              />
               <img
                 src="../images/icon/icon-edit.png"
                 alt="게시물 작성"
-                class="nav__img-home"
+                class="nav-img nav-img-post--off"
               />
-              <p class="nav__txt-home">게시물 작성</p>
+              <p class="nav-txt">게시물 작성</p>
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-link-profile">
+              <img
+                src="../images/icon/icon-user-fill.png"
+                alt="프로필"
+                class="nav-img nav-img-profile--on cont--hide"
+              />
               <img
                 src="../images/icon/icon-user.png"
                 alt="프로필"
-                class="nav__img-home"
+                class="nav-img nav-img-profile--off"
               />
-              <p class="nav__txt-home">프로필</p>
+              <p class="nav-txt">프로필</p>
             </a>
           </li>
         </ul>
       </nav>
+    </div>
+
+    <script src="../js/navChange.js"></script>
     </div>
   </body>
 </html>

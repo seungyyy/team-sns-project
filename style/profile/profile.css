@@ -12,80 +12,61 @@
 .main-profile {
   text-align: center;
 }
-.main-profile .profile-user .profile-user__cont-follow {
+.cont-user .user-cont-follow {
   /* 원래 윗 마진 30px */
   margin: 78px 55px 16px;
   display: flex;
   justify-content: space-between;
 }
 /* 팔로워 */
-.main-profile .profile-user .profile-user__cont-follow .profile-user__follow {
+.cont-user .user-cont-follow .user-followers,
+.cont-user .user-cont-follow .user-followings {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.main-profile .profile-user .profile-user__cont-follow .profile-user__follow p {
   font-size: 10px;
   font-weight: 400;
   color: #767676;
 }
-.main-profile
-  .profile-user
-  .profile-user__cont-follow
-  .profile-user__follow
-  p
-  strong {
+.cont-user .user-cont-follow .user-followers strong,
+.cont-user .user-cont-follow .user-followings strong {
   display: inline-block;
   margin-bottom: 6px;
   font-size: 18px;
   font-weight: 700;
+}
+.cont-user .user-cont-follow .user-followers strong {
   color: #000;
 }
-.main-profile
-  .profile-user
-  .profile-user__cont-follow
-  .profile-user__follow
-  p
-  .profile-user_following {
-  color: #767676;
-}
+
 /* 유저 이미지 */
-.main-profile .profile-user .profile-user__cont-follow .profile-user__img {
+.cont-user .user-cont-follow img {
   width: 110px;
 }
-.main-profile .profile-user .profile-user__tit {
+.cont-user .user-tit {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 6px;
 }
-.main-profile .profile-user .profile-user__name {
+.cont-user .user-name {
   font-size: 12px;
   color: #767676;
 }
-.main-profile .profile-user .profile-user__desc {
+.cont-user .user-desc {
   margin: 16px 0 24px;
   font-size: 14px;
   color: #767676;
 }
 /* 팔로워 버튼 모음 */
-.main-profile .profile-user .profile-user__desc {
-  margin: 16px 0 24px;
-  font-size: 14px;
-  color: #767676;
-}
-.main-profile .profile-user .profile-user__cont-other .profile-user__cont-btn {
+.cont-user .user-cont-other .user-cont-btnOther {
   width: 208px;
   margin: 0 auto 26px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main-profile
-  .profile-user
-  .profile-user__cont-other
-  .profile-user__cont-btn
-  .profile-user__btn {
+.cont-user .user-cont-other .user-cont-btnOther .user-btn-chat {
   width: 34px;
   height: 34px;
   position: relative;
@@ -94,11 +75,16 @@
   border-radius: 30px;
   box-sizing: border-box;
 }
-.main-profile
-  .profile-user
-  .profile-user__cont-other
-  .profile-user__cont-btn
-  .profile-user__btn-img {
+.cont-user .user-cont-other .user-cont-btnOther .user-btn-share {
+  width: 34px;
+  height: 34px;
+  position: relative;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+.cont-user .user-cont-other .user-cont-btnOther .user-btn-chat img {
   width: 20px;
   position: absolute;
   top: 50%;
@@ -106,11 +92,7 @@
   transform: translateY(-50%) translateX(-50%);
 }
 /* 다른 유저 프로필 - 언팔로우시 보이는 버튼 */
-.main-profile
-  .profile-user
-  .profile-user__cont-other
-  .profile-user__cont-btn
-  .profile-user__btn-follow {
+.cont-user .user-cont-other .user-cont-btnOther .user-btn-follow {
   padding: 8px 40px;
   margin: 0 10px;
   border: none;
@@ -122,11 +104,7 @@
   line-height: 18px;
 }
 /* 다른 유저 프로필 - 팔로우시 보이는 버튼 */
-.main-profile
-  .profile-user
-  .profile-user__cont-other
-  .profile-user__cont-btn
-  .profile-user__btn-unfollow {
+.cont-user .user-cont-other .user-cont-btnOther .user-btn-unfollow {
   padding: 8px 34px;
   margin: 0 10px;
   border: 1px solid #dbdbdb;
@@ -136,19 +114,22 @@
   font-size: 14px;
   font-weight: 500;
 }
+.cont-user .user-cont-other .user-cont-btnOther .user-btn-share img {
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
 /* 내 프로필 */
-.main-profile .profile-user .profile-user__cont-me .profile-user__cont-btnmy {
+.cont-user .user-cont-me .user-cont-btnMy {
   width: 232px;
   margin: 0 auto 26px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main-profile
-  .profile-user
-  .profile-user__cont-me
-  .profile-user__cont-btnmy
-  .profile-user__fix-me {
+.cont-user .user-cont-me .user-cont-btnMy .user-fix {
   padding: 8px 26px;
   border: 1px solid #dbdbdb;
   border-radius: 30px;
@@ -157,11 +138,7 @@
   font-size: 14px;
   font-weight: 500;
 }
-.main-profile
-  .profile-user
-  .profile-user__cont-me
-  .profile-user__cont-btnmy
-  .porfile-user__upload-product {
+.cont-user .user-cont-me .user-cont-btnMy .user-upload-product {
   padding: 8px 22px;
   border: 1px solid #dbdbdb;
   border-radius: 30px;
@@ -172,21 +149,21 @@
 }
 
 /* product */
-.product .product__tit {
+.product .product-tit {
   margin: 20px 21px 16px;
   text-align: left;
   font-size: 16px;
   font-weight: 700;
 }
-.product__list {
+.product-list {
   margin: 0 0 21px 20px;
   display: flex;
   overflow: hidden;
 }
-.product .product__list .product__item {
+.product .product-list .product-item {
   margin-right: 10px;
 }
-.product .product__list .product__item .product__img {
+.product .product-list .product-item .product-link .product-img {
   width: 140px;
   height: 90px;
   object-fit: cover;
@@ -194,13 +171,13 @@
   box-sizing: border-box;
   border-radius: 8px;
 }
-.product .product__list .product__item .product__desc {
+.product .product-list .product-item .product-link .product-desc {
   text-align: left;
   margin: 6px 0 4px;
   font-size: 14px;
   line-height: 18px;
 }
-.product .product__list .product__item .product__price {
+.product .product-list .product-item .product-link .product-price {
   text-align: left;
   font-weight: 700;
   font-size: 12px;
@@ -209,11 +186,11 @@
 }
 
 /* post list */
-.post .post__change-view {
+.post .post-change {
   text-align: right;
   border-bottom: 0.5px solid #dbdbdb;
 }
-.post .post__change-view .post__btn-list {
+.post .post-change .post-btn-list {
   width: 26px;
   height: 26px;
   border: none;
@@ -221,7 +198,7 @@
   background-size: contain;
   margin: 9px 17px 9px 0;
 }
-.post .post__change-view .post__btn-grid {
+.post .post-change .post-btn-grid {
   width: 26px;
   height: 26px;
   border: none;
@@ -229,82 +206,82 @@
   background-size: contain;
   margin: 9px 19px 9px 0;
 }
-.post .post__change-view .post__btn-list--off {
+.post .post-change .post-btn-list--off {
   background: url("../../images/icon/icon-post-list-off.png");
   background-size: contain;
 }
-.post .post__change-view .post__btn-grid--off {
+.post .post-change .post-btn-grid--off {
   background: url("../../images/icon/icon-post-album-off.png");
   background-size: contain;
 }
 /* 게시글 리스트 */
-.post .post__list {
+.post .post-list {
   padding-bottom: 90px;
 }
-.post .post__list .post__item {
+.post .post-list .post-item {
   position: relative;
   margin: 16px 16px 0 21px;
   text-align: right;
 }
-.post .post__list .post__item .post__img-user {
+.post .post-list .post-item .post-img-user {
   width: 42px;
   height: 42px;
   position: absolute;
   top: 0;
   left: 0;
 }
-.post .post__list .post__item .post__cont-txt {
+.post .post-list .post-item .post-cont-txt {
   margin-left: 54px;
   text-align: left;
 }
-.post .post__list .post__item .post__cont-txt .post__tit strong {
+.post .post-list .post-item .post-cont-txt .post-tit strong {
   font-size: 14px;
   font-weight: 500;
 }
-.post .post__list .post__item .post__cont-txt .post__name {
+.post .post-list .post-item .post-cont-txt .post-name {
   margin: 2px 0 16px;
   font-size: 12px;
   color: #767676;
 }
-.post .post__list .post__item .post__cont-txt .post__desc {
+.post .post-list .post-item .post-cont-txt .post-desc {
   width: 304px;
   box-sizing: border-box;
   line-height: 17px;
   font-size: 14px;
 }
-.post .post__list .post__item .post__img {
+.post .post-list .post-item .post-img {
   width: 304px;
   margin: 16px 0;
   border-radius: 10px;
 }
-.post .post__list .post__item .post__btn-setting {
+.post .post-list .post-item .post-btn-setting {
   width: 18px;
   height: 18px;
   position: absolute;
   top: 4px;
   right: 0;
 }
-.post .post__list .post__item .post__cont-icon {
+.post .post-list .post-item .post-cont-icon {
   margin-left: 54px;
   display: flex;
   align-items: center;
 }
-.post .post__list .post__item .post__cont-icon .post__btn-icon {
+.post .post-list .post-item .post-cont-icon .post-btn-icon {
   background: none;
   border: none;
 }
-.post .post__list .post__item .post__cont-icon .post__btn-icon .post__img-icon {
+.post .post-list .post-item .post-cont-icon .post-btn-icon img {
   width: 20px;
   height: 20px;
   margin-right: 6px;
 }
-.post .post__list .post__item .post__cont-icon .post__txt-icon {
+.post .post-list .post-item .post-cont-icon .post-txt-icon {
   margin-right: 16px;
   font-size: 12px;
   line-height: 12px;
   color: #767676;
 }
-.post .post__list .post__item .post__date {
+.post .post-list .post-item .post-date {
   margin: 16px 0 2px 54px;
   text-align: left;
   font-size: 10px;
@@ -313,7 +290,7 @@
 }
 
 /* post grid */
-.post__list-grid {
+.post-list-grid {
   margin: 16px 16px 0 16px;
   padding-bottom: 90px;
   display: grid;
@@ -321,10 +298,10 @@
   grid-auto-rows: 114px;
   grid-gap: 8px;
 }
-.post__list-grid .post__item-grid {
+.post-list-grid .post-item-grid {
   overflow: hidden;
 }
-.post__list-grid .post__item-grid .post__link-grid .post__img-grid {
+.post-list-grid .post-item-grid .post-link-grid .post-img-grid {
   width: 114px;
   height: 114px;
   object-fit: cover;
