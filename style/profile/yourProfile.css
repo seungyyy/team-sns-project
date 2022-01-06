@@ -6,7 +6,6 @@
 }
 
 .cont-followers .list-followers {
-  width: 358px;
   /* 마진으로 주면 마진 겹침현상 발생 */
   padding: 24px 16px 0 16px;
   display: flex;
