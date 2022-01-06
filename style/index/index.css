@@ -1,24 +1,24 @@
-.splash-main {
+
+.main-splash {
   position: fixed;
-  width: 390px;
+  width: 100%;
   height: 100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   top: 0;
   left: 50%;
-  transform: translateX(-195px);
+  transform: translateX(-50%);
   align-items:center;
   background-color: white;
-  border: 0.5px solid #DBDBDB;;
 }
 
-.splash-main .splash-logo {
+.main-splash .splash-logo {
   width: 98px;
   height: 118px;
 }
 
-.splash-main .splash-tit {
+.main-splash .splash-tit {
   margin-top: 18px;
   width: 130px;
   height: 33px;

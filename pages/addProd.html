@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>청귤마켓 - sns</title>
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/addProd/addProd.css">
+</head>
+<body>
+  <!-- header -->
+  <header class="header">
+    <img src="../../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
+    <button class="btn-MS--off btn-MS">저장</button>
+  </header>
+
+  <!-- main add prod -->
+  <main role="main" class="main-add-prod">
+    <h2 class="hidden">상품 등록하기</h2>
+    <p class="add-prod-tit">이미지 등록</p>
+    <form action="">
+      <fieldset class="profile-set-field">
+        <label for="prodfile" class="prodfile-label">
+          <div class="profile-set-img"></div>
+        </label>
+        <input type="file" id="prodfile" name="prodfile" accept=".jpg, .jpeg, .png" class="file-inp">
+        <label for="prodname" class="label">상품명</label>
+        <input type="text" name="prodname" id="prodname" placeholder="2~10자 이내여야 합니다." class="prodname-inp inp">
+        <label for="price" class="label">가격</label>
+        <input type="text" name="price" id="price" placeholder="숫자만 입력 가능합니다." class="price-inp inp">
+        <label for="prodlink" class="label">판매링크</label>
+        <input type="text" name="prodlink" id="prodlink" placeholder="URL을 입력해 주세요."
+          class="introduce-inp inp">
+      </fieldset>
+    </form>
+  </main>
+</body>
+</html>
