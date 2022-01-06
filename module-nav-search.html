@@ -11,14 +11,15 @@
     }
     /* nav style */
     .nav {
-      width: 390px;
+      width: 100%;
       height: 60px;
       position: fixed;
       bottom: 0;
       left: 50%;
-      transform: translateX(-195px);
+      transform: translateX(-50%);
       background-color: white;
       border-top: 0.5px solid #dbdbdb;
+      z-index: 10;
     }
     .nav-list {
       display: flex;
@@ -45,7 +46,7 @@
 
     /* search */
     /* search -basic */
-    /* .header {
+    .header {
       width: 390px;
       background-color: white;
       display: flex; 
@@ -61,10 +62,10 @@
     .header .img-more {
       width: 24px;
       height: 24px;
-    } */
+    }
 
     /* search - 계정검색  */
-  /* .header {
+  .header {
     width: 390px;
     background-color: white;
     display: flex; 
@@ -98,10 +99,10 @@
   .search-sec {
     padding-top: 48px;
     height: 712px;
-  } */
+  }
 
    /* search -main */
-   /* .header {
+   .header {
       width: 390px;
       background-color: white;
       display: flex; 
@@ -119,11 +120,11 @@
       font-weight: 500;
       font-size: 18px;
       line-height: 22px;
-    } */
+    }
 
 
     /* search - chat */
-    /* .header {
+    .header {
       width: 390px;
       background-color: white;
       height: 48px;
@@ -151,16 +152,16 @@
       content: '';
       display: block;
       clear: both;
-    } */
+    }
 
   /*  search - upload - nav */
   .header {
-      width: 390px;
+      width: 100%;
       height:48px;
       position: fixed;
       top: 0;
       left: 50%;
-      transform: translateX(-195px);
+      transform: translateX(-50%);
       display: flex; 
       justify-content: space-between;
       align-items: center;
@@ -186,40 +187,219 @@
   </style>
 </head>
 <body>
+  <a href="#searchBasic">search - basic</a> <a href="#searchUser">search 계정검색</a> 
+  <a href="#searchMain">search main</a> <a href="#searchChat">search chat</a> <a href="#searchUpload">search upload</a>
+  <a href="#nav">nav</a>
   <!-- search 시작 -->
   <!-- search - basic -->
-  <!-- <header class="header">
+  <h2 id="searchBasic">search - basic</h2>
+
+  <header class="header">
     <img src="./images/icon/icon-arrow-left.png" alt="go before" class="img-before">
     <img src="./images/icon/icon-more-vertical.png" alt="더보기" class="img-more">
-  </header> -->
+  </header>
 
+  <br>
+  /* search -basic */
+  <p>
+    .header {
+    width: 390px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    padding: 16px 13px;
+    margin: 0 auto;
+    }
+    .header .img-before {
+    width: 22px;
+    height: 22px;
+    }
+    .header .img-more {
+    width: 24px;
+    height: 24px;
+    }
+  </p>
+
+  <hr>
+  
   <!-- search - 계정 검색 -->
-  <!-- <header class="header">
+  <h2 id="searchUser">search 계정검색</h2>
+
+  <header class="header">
     <img src="./images/icon/icon-arrow-left.png" alt="go before" class="img-before">
     <form action=""><input type="text" name="" placeholder="계정 검색" class="inp-search"></form>
-  </header> -->
+  </header>
+ 
+  <br>
+  /* search - 계정검색 */
+  <p>
+    .header {
+    width: 390px;
+    background-color: white;
+    display: flex;
+    height: 48px;
+    margin: 0 auto;
+    }
+    .img-before {
+    width: 22px;
+    height: 22px;
+    margin: 13px 20px 13px 16px;
+    }
+    .inp-search {
+    border: none;
+    width: 316px;
+    height: 32px;
+    background-color: #F2F2F2;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    margin-top: 8px;
+    border-radius: 32px;
+    padding: 7px 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+    }
+    .inp-search::placeholder {
+    color: #c4c4c4;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    }
+    .search-sec {
+    padding-top: 48px;
+    height: 712px;
+    }
+  </p>
 
-   <!-- search -main  -->
-  <!-- <header class="header">
+
+  <hr>
+
+  <!-- search -main  -->
+  <h2 id="searchMain">search main</h2>
+
+  <header class="header">
     <h2 class="header-title">청귤마켓 피드</h2>
     <img src="./images/icon/icon-search.png" alt="더보기" class="img-search">
-  </header> -->
+  </header>
+
+  <br>
+  /* search -main */
+  <p>
+    .header {
+    width: 390px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    margin: 0 auto;
+    padding: 13px 16px;
+    }
+    .header .img-search {
+    width: 24px;
+    height: 24px;
+    }
+    .header .header-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    }
+  </p>
+
+  <hr>
 
 <!-- search - chat-nav -->
-  <!-- <header class="header">
+  <h2 id="searchChat">search chat</h2>
+
+  <header class="header">
     <img src="./images/icon/icon-arrow-left.png" alt="go before" class="img-before">
     <h2 class="header-title">애월읍 위니브 청귤농장</h2>
     <img src="./images/icon/icon-more-vertical.png" alt="더보기" class="img-more">
-  </header> -->
+  </header>
+  
+  <br>
+  /* search - chat */
+  <p>
+    .header {
+    width: 390px;
+    background-color: white;
+    height: 48px;
+    margin: 0 auto;
+    padding: 13px 16px;
+    }
+    .header .header-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 0 0 15px;
+    float: left;
+    }
+    .header .img-before {
+    width: 22px;
+    height: 22px;
+    float: left;
+    }
+    .header .img-more {
+    width: 24px;
+    height: 24px;
+    float: right;
+    }
+    .header::after {
+    content: '';
+    display: block;
+    clear: both;
+    }
+  </p>
+
+  <hr>
+
 
   <!--search - upload - nav  -->
+  <h2 id="searchUpload">search upload</h2>
+
   <header class="header">
     <img src="./images/icon/icon-arrow-left.png" alt="go before" class="img-before">
     <button class="btn-MS--off">저장</button>
     </header>
+
+  <br>
+  /* search - upload - nav */
+  <p>
+    .header {
+    width: 390px;
+    height:48px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-195px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    align-items: center;
+    margin: 0 auto;
+    }
+    .header .img-before {
+    width: 22px;
+    height: 22px;
+    }
+    .header .btn-MS--off {
+    padding: 7px 32px;
+    font-size: 14px;
+    background-color: #8ac392;
+    color: #fff;
+    line-height: 17px;
+    border: none;
+    border-radius: 32px;
+    }
+  </p>
+
+  <hr>
 <!-- search 끝  -->
 
   <!-- nav 시작-->
+  <h2 id="nav">nav</h2>
+
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-home menu">
@@ -240,6 +420,46 @@
       </li>
     </ul>
   </nav>
+
+    <br>
+    /* search - upload - nav */
+    <p>
+      /* nav style */
+    .nav {
+      width: 100%;
+      height: 60px;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      border-top: 0.5px solid #dbdbdb;
+      z-index: 10;
+    }
+    .nav-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 39px 6px;
+      margin: 0;
+    }
+    .nav-list .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-list .menu img {
+      width: 20px;
+    }
+    .nav-list .menu p {
+      margin: 6px 0 0 0 ;
+      font-size: 10px;
+      font-weight: 400;
+      color: #767676;
+    }
+    </p>
+
   <!-- nav 끝 -->
 </body>
 </html>

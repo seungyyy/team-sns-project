@@ -10,7 +10,7 @@
       box-sizing: border-box;
     }
 
-    /* post - home
+    /* post - home */
   .sec-upload {
     width: 358px;
     position: relative;
@@ -45,13 +45,14 @@
     color: #767676;
   }
   .upload-wrap .upload-textarea {
-    border: none;
     width: 304px;
-    /* 자동높이조절js 필요 */
-      /* height: 58px;
-    font-size: 14px;
+    /* 자동높이조절js 필요  */
+    height: 58px;
     margin: 16px 0 16px 54px ;
+    resize: none;
+    font-size: 14px;
     overflow: hidden;
+    border: none;
   }
   .upload-textarea::placeholder {
       color: #c4c4c4;
@@ -80,7 +81,7 @@
     font-size: 10px;
     margin-left: 54px;
     color: #767676;
-  } */ 
+  } 
 
 
 
@@ -178,13 +179,13 @@
     color: #24732f;
     margin-top: -2px;
   }
-
   </style>
 </head>
 <body>
-  <!-- post 시작 -->
-  <!-- post - home  -->
-  <!-- <div class="sec-upload">
+  <a href="#postHome">post home</a> <a href="#postOnlyText">post only text </a> <a href="#product">product</a>
+<h2 id="post-home">postHome</h2> 
+
+  <div class="sec-upload">
     <div class="upload-wrap">
       <div class="upload-user">
         <img src="./images/icon/icon-profile.png" alt="user image" class="upload-userimg">
@@ -207,10 +208,86 @@
       </div>
       <p class="upload-data">2020년 10월 21일</p>
     </div>
-  </div> -->
+  </div>
 
+  <br>
+  스타일 post
+  <p>
+    .sec-upload {
+    width: 358px;
+    position: relative;
+    }
+    .upload-wrap .upload-user {
+    display: flex;
+    align-items: center;
+    }
+    .upload-wrap .upload-user .img-more {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 4px;
+    }
+    .upload-wrap .upload-user .upload-userimg {
+    width: 42px;
+    height: 42px;
+    }
+    .upload-wrap .upload-user .upload-user-txt {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    }
+    .upload-user .upload-user-txt .upload-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    }
+    .upload-user .upload-user-txt .upload-userId {
+    font-size: 12px;
+    color: #767676;
+    }
+    .upload-wrap .upload-textarea {
+    border: none;
+    width: 304px;
+    /* 자동높이조절js 필요 */
+    height: 58px;
+    font-size: 14px;
+    margin: 16px 0 16px 54px ;
+    overflow: hidden;
+    }
+    .upload-textarea::placeholder {
+    color: #c4c4c4;
+    }
+    .upload-wrap .upload-img {
+    width: 304px;
+    height: 228px;
+    margin-left: 54px;
+    }
+    .upload-wrap .upload-icon {
+    margin: 14px 0 18px 54px;
+    }
+    .upload-wrap .upload-icon .icon-box {
+    display:flex;
+    align-items: center;
+    }
+    .upload-wrap .upload-icon .icon-txt {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #767676;
+    }
+    .upload-wrap .upload-icon .icon-box .chat-icon {
+    margin-left: 18px;
+    }
+    .upload-wrap .upload-data {
+    font-size: 10px;
+    margin-left: 54px;
+    color: #767676;
+    }
+  </p>
+  <hr>
 
-  <!-- post - onlytext -->
+ <h2 id="postOnlyText">post - onlytext</h2>
+
   <div class="sec-upload">
     <div class="upload-wrap">
       <div class="upload-user">
@@ -234,15 +311,115 @@
       <p class="upload-data">2020년 10월 21일</p>
     </div>
   </div>
-  <!-- post 끝 -->
 
-  <!-- product 시작 -->
+  <br>
+  스타일 post - onlytext
+  <p>
+    .sec-upload {
+    width: 358px;
+    position: relative;
+    }
+    .upload-wrap .upload-user {
+    display: flex;
+    align-items: center;
+    }
+    .upload-wrap .upload-user .img-more {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 4px;
+    }
+    .upload-wrap .upload-user .upload-userimg {
+    width: 42px;
+    height: 42px;
+    }
+    .upload-wrap .upload-user .upload-user-txt {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    }
+    .upload-user .upload-user-txt .upload-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    }
+    .upload-user .upload-user-txt .upload-userId {
+    font-size: 12px;
+    color: #767676;
+    }
+    .upload-wrap .upload-textarea {
+    width: 304px;
+    /* 자동높이조절js 필요 */
+    height: 58px;
+    margin: 16px 0 16px 54px ;
+    resize: none;
+    font-size: 14px;
+    border: none;
+    overflow: hidden;
+    }
+    .upload-textarea::placeholder {
+    color: #c4c4c4;
+    }
+    .upload-wrap .upload-icon {
+    margin: 14px 0 18px 54px;
+    }
+    .upload-wrap .upload-icon .icon-box {
+    display:flex;
+    align-items: center;
+    }
+    .upload-wrap .upload-icon .icon-txt {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #767676;
+    }
+    .upload-wrap .upload-icon .icon-box .chat-icon {
+    margin-left: 18px;
+    }
+    .upload-wrap .upload-data {
+    font-size: 10px;
+    margin-left: 54px;
+    color: #767676;
+    }
+  </p>
+  <!-- post 끝 -->
+  <hr>
+    <h2 id="product">product</h2>
+
   <div class="product">
     <img src="./images/image/tangerine.jpg" alt="청귤 이미지" class="product-img">
     <p class="product-tit">애월읍 노지 청귤</p>
     <span class="product-price">35, 000원</span>
   </div>
 
+  <br>
+  스타일 product
+  <p>
+    .product {
+    width: 140px;
+    }
+    .product .product-img {
+    width: 140px;
+    height: 90px;
+    object-fit: cover;
+    border: 0.5px solid #dbdbdb;
+    border-radius: 8px;
+    }
+    .product .product-tit {
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 4px 0;
+    }
+    .product .product-price {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: #24732f;
+    margin-top: -2px;
+    }
+  </p>
   <!-- product 끝 -->
 
 </body>

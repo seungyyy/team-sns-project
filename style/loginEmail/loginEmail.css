@@ -3,7 +3,7 @@
 }
 
 .main-login-email {
-  width: 390px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px 34px 0;
 }
@@ -42,7 +42,8 @@
   border-bottom: 1px solid #24732f;
 }
 .main-login-email .email-field .btn-L {
-  padding: 12.5px 141px;
+  height: 44px;
+  width: 100%;
   margin: 30px 0 20px;
   font-size: 14px;
   font-weight: 500;
@@ -62,4 +63,8 @@
 .main-login-email .email-field .link-singup a {
   font-size: 12px;
   color: #767676;
+}
+.main-login-email .email-field .alert {
+  font-size: 12px;
+  color: #eb5757;
 }
