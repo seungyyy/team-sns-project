@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+/* header */
+.header {
+  width: 100%;
+  height:48px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  padding: 0 16px;
+  transform: translateX(-50%);
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 0.5px solid #dbdbdb;
+  z-index: 10;
+}
+.header .img-search {
+  width: 24px;
+  height: 24px;
+}
+.header .header-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  padding-right: 16px;
+} 
+
+/* main home feed */
+.main-home {
+  width: 100%;
+  margin: 54px 0 auto;
+}
+.main-home .sec-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 354px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+.main-home .upload-wrap {
+  margin-top: 20px;
+}
+.main-home .upload-wrap .upload-user {
+  display: flex;
+  align-items: center;
+}
+.main-home .upload-wrap .upload-user .img-more {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 4px;
+}
+.main-home .upload-wrap .upload-user .upload-userimg {
+  max-width: 42px;
+  max-height: 42px;
+}
+.main-home .upload-wrap .upload-user .upload-user-txt {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+.main-home .upload-user .upload-user-txt .upload-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+.main-home .upload-user .upload-user-txt .upload-userId {
+  font-size: 12px;
+  color: #767676;
+}
+.main-home .upload-wrap .upload-textarea {
+  border: none;
+  width: 304px;
+    /* 자동높이조절js 필요  */
+  height: 58px;
+  font-size: 14px;
+  margin: 16px 0 16px 54px ;
+  overflow: hidden;
+  resize: none;
+}
+.main-home .upload-textarea::placeholder {
+    color: #c4c4c4;
+}
+.main-home .upload-wrap .upload-img {
+  width: 304px;
+  height: 228px;
+  margin-left: 54px;  
+}
+.main-home .upload-wrap .upload-icon {
+  margin: 14px 0 18px 54px;
+} 
+.main-home .upload-wrap .upload-icon .icon-box {
+  display:flex;
+  align-items: center;
+}
+.main-home .upload-wrap .upload-icon .icon-box img {
+  width: 16px;
+  height: 15px;
+}
+.main-home .upload-wrap .upload-icon .icon-txt {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #767676;
+}
+.main-home .upload-wrap .upload-icon .icon-box .chat-icon {
+  margin-left: 18px;
+}
+.main-home .upload-wrap .upload-data {
+  font-size: 10px;
+  margin-left: 54px;
+  color: #767676;
+} 
+
+/* nav  */
+.nav {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-top: 0.5px solid #dbdbdb;
+  z-index: 10;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 39px 6px;
+  margin: 0;
+}
+.nav-list .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav-list .menu img {
+  width: 20px;
+}
+.nav-list .menu p {
+  margin: 6px 0 0 0 ;
+  font-size: 10px;
+  font-weight: 400;
+  color: #767676;
+}

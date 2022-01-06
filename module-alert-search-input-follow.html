@@ -154,7 +154,12 @@
 
 </style>
 <body>
+  <a href="#userSearch">user-search</a> <a href="#userFollow">user-follow</a> <a href="#textActivInput">text-activ-input</a>
+  <a href="#deleteAlert">delete-alert</a>
+
   <!-- user - search 시작 -->
+  <h2 id="userSearch">user-search</h2>
+  
   <div class="user-search">
     <img src="./images/icon/icon-profile.png" alt="user image" class="user-search-img">
     <div class="user-search-txt">
@@ -164,7 +169,53 @@
   </div>
   <!-- user - search 끝 -->
   <br>
+  /* user - search */
+  <p>
+      .user-search {
+      display: flex;
+      align-items: center;
+      }
+      
+      .user-search .img-more {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      right: 4px;
+      }
+      
+      .user-search .user-search-img {
+      width: 42px;
+      height: 42px;
+      }
+      
+      .user-search .user-search-txt {
+      display: flex;
+      flex-direction: column;
+      margin-left: 12px;
+      }
+      
+      .user-search .user-search-txt .search-tit {
+      margin: 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      }
+      
+      .user-search .user-search-txt .search-tit > span {
+      color: #24732f;
+      }
+      
+      .user-search .user-search-txt .user-searchId {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #767676;
+      }
+  </p>
+
+  <hr>
   <!-- user-follow 시작 -->
+  <h2 id="userFollow">user-follow</h2>
+  
   <div class="user-search">
     <img src="./images/icon/icon-profile.png" alt="user image" class="user-search-img">
     <div class="user-search-txt">
@@ -174,8 +225,50 @@
   </div>
   <!-- user-follow 끝 -->
   <br>
+  /* user-follow */
+  <p>
+    .user-search {
+    display: flex;
+    align-items: center;
+    }
+    
+    .user-search .img-more {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 4px;
+    }
+    
+    .user-search .user-search-img {
+    width: 42px;
+    height: 42px;
+    }
+    
+    .user-search .user-search-txt {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    }
+    
+    .user-search .user-search-txt .search-tit {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    }
+    
+    .user-search .user-search-txt .user-searchId {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #767676;
+    }
+  </p>
+
+  <hr>
   
   <!-- text- activ -input 시작-->
+  <h2 id="textActivInput">text-activ-input</h2>
+
   <div class="text-activ-input">
     <label for="email" class="input-label">이메일</label>
     <input type="email" id="email" name="Email" class="input-email-active">
@@ -183,7 +276,37 @@
   <!-- text- activ -input 끝-->
 
   <br>
+  /* text active input */
+  <p>
+    .text-activ-input {
+    display: flex;
+    flex-direction:column;
+    }
+    .text-activ-input .input-label {
+    font-size: 12px;
+    color: #767676;
+    }
+    
+    .text-activ-input .input-email-active {
+    width: 322px;
+    margin-top: 8px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #24732f;
+    font-size: 14px;
+    }
+    
+    .text-activ-input .input-email-active:focus {
+    outline: none;
+    }
+  </p>
+
+  <hr>
+
   <!-- delete - alert 시작 -->
+  <h2 id="deleteAlert">delete-alert</h2>
+
   <div class="delete-box">
     <p class="delete-txt">상품을 삭제할까요?</p>
     <div class="delete-btn">
@@ -192,5 +315,49 @@
     </div>
   </div>
   <!-- delete - alert 끝 -->
+
+  <br>
+  /* delete-alert */
+  <p>
+    .delete-box {
+    display: flex;
+    flex-direction: column;
+    width: 252px;
+    height: 110px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    /* 크기 확인용 보더 */
+    border: 0.5px solid #dbdbdb;
+    }
+    
+    .delete-box .delete-txt {
+    padding: 22px 0;
+    margin: 0;
+    border-bottom: 0.5px solid #dbdbdb;
+    }
+    
+    .delete-box .delete-btn {
+    display: flex;
+    }
+    
+    .delete-box .delete-btn .btn-cancel,
+    .delete-box .delete-btn .btn-delete {
+    padding: 14px 48px;
+    border: none;
+    background-color: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    font-weight: 500;
+    }
+    
+    .delete-box .delete-btn .btn-delete {
+    color: #24732f;
+    border-left: 0.5px solid #dbdbdb;
+    }
+  </p>
 </body>
 </html>

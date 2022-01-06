@@ -2,8 +2,10 @@
   box-sizing: border-box; 
 }
 
+
+/* main join email */
 .main-join-email {
-  width: 390px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px 34px 0;
 }
@@ -42,7 +44,8 @@
   border-bottom: 1px solid #24732f;
 }
 .main-join-email .join-email-field .btn-L {
-  padding: 12.5px 141px;
+  height: 44px;
+  width: 100%;
   margin: 30px 0 20px;
   font-size: 14px;
   font-weight: 500;
