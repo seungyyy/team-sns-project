@@ -4,7 +4,7 @@
 
 body { 
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-  width: 390px;
+  width: 100%;
   background-color: #fff;
   margin: 0 auto;
 }
@@ -17,7 +17,7 @@ body {
   display: flex; 
   justify-content: space-between;
   position: fixed;
-  width: 390px;
+  width: 100%;
   z-index: 10;
 }
 .header .img-before,.header .img-more {
@@ -38,14 +38,22 @@ body {
   padding-top: 14px;
 }
 .sec-chatlist .list-chatlist .chatlist-userwrap {
-  margin: 10px 16px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.chatlist-user {
   display: flex;
   position: relative;
+  margin: 10px 0 10px 16px;
 }
 .sec-chatlist .list-chatlist .chatlist-userwrap .img-newmessage {
   position: absolute;
   width: 12px;
   height: 12px;
+}
+.img-newmessage-off {
+  display: none;
 }
 .sec-chatlist .list-chatlist .chatlist-userwrap .chatlist-userimg {
   width: 42px;
@@ -59,25 +67,21 @@ body {
   font-size: 14px;
   margin-bottom: 6px;
 }
-.chatlist-userwrap .chatlist-usertxtwrap .chatlist-txtwrap {
-  display: flex;
-  align-items: baseline;
-}
-.chatlist-userwrap .chatlist-usertxtwrap .chatlist-txtwrap .chatlist-chat {
+.chatlist-userwrap .chatlist-usertxtwrap .chatlist-chat {
   width: 238px;
-  margin-right: 13px;
   font-size: 12px;
   color: #767676;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
-.chatlist-userwrap .chatlist-usertxtwrap .chatlist-txtwrap .chatlist-date {
+.chatlist-userwrap .chatlist-date {
   font-size: 10px;
   color: #dbdbdb;
+  padding-right: 16px;
 }
 
 /* 하단 메뉴 */
 .nav {
-  width: 390px;
+  width: 100%;
   background-color: #fff;
   border-top: 0.5px solid #dbdbdb;
   padding: 15px 0 8px;

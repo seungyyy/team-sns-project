@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/profileModification/profileModification.css">
+</head>
+<body>
+  <header class="header">
+    <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
+    <button class="btn-MS--off">저장</button>
+    </header>
+    <main class="main-profile-mod">
+      <form action="">
+        <fieldset class="profile-mod-field">
+          <label for="avatar" class="avatar-label">
+            <img src="../images/icon/icon-profile.png" alt="기본프로필이미지" class="profile-mod-img">
+            <img src="../images/icon/icon-upload-file.png" alt="프로필 이미지 바꾸기" class="profile-mod-imgchange">
+          </label>
+          <input type="file" id="avatar" name="avatar" accept=".jpg, .jpeg, .png" class="file-inp">
+          <label for="username" class="label">사용자 이름</label>
+          <input type="text" name="useremail" id="username" placeholder="2~10자 이내여야 합니다."
+            class="username-inp inp">
+          <label for="userid" class="label">계정 ID</label>
+          <input type="text" name="userpw" id="userid" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." class="userid-inp inp">
+          <label for="introduce" class="label">소개</label>
+          <input type="text" name="userintroduce" id="introduce" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" 
+          class="introduce-inp inp">
+        </fieldset>
+      </form>
+    </main>
+</body>
+</html>

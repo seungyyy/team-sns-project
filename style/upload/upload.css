@@ -102,3 +102,6 @@ body {
   right: 16px;
   cursor: pointer;
 }
+.file-inp {
+  display: none;
+}

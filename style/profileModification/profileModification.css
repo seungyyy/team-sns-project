@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box; 
+}
+
+/* 상단 헤더 부분 */
+.header {
+  width: 100%;
+  height:48px;
+  position: fixed;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: .5px solid #dbdbdb;
+}
+.header .img-before {
+  width: 22px;
+  height: 22px;
+  margin: 13px 0 13px 16px;
+}
+.header .btn-MS--off {
+  padding: 7px 32px;
+  font-size: 14px;
+  background-color: #8ac392;
+  color: #fff;
+  line-height: 17px;
+  border: none;
+  border-radius: 32px;
+  font-family: inherit;
+  margin: 8px 16px;
+}
+
+
+
+
+.main-profile-mod {
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 34px 0;
+}
+.main-profile-mod .profile-mod-field {
+  margin-top: 30px;
+}
+.main-profile-mod .profile-mod-field .avatar-label {
+  position: relative;
+}
+.main-profile-mod .profile-mod-field .avatar-label .profile-mod-img {
+  display: block;
+  width: 110px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.main-profile-mod .profile-mod-field .avatar-label .profile-mod-imgchange {
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: 0 auto;
+  transform: translate(37px, -37px);
+}
+.main-profile-mod .profile-mod-field .file-inp {
+  display: none;
+}
+.main-profile-mod .profile-mod-field .label,
+.main-profile-mod .profile-mod-field .inp {
+  display: block;
+}
+.main-profile-mod .profile-mod-field .label {
+  font-size: 12px;
+  color: #767676;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.main-profile-mod .profile-mod-field .inp {
+  width: 100%;
+  padding-bottom: 9px;
+  margin-bottom: 16px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #dbdbdb;
+  font-size: 14px;
+  color: #000;
+  font-family: inherit;
+}
+.main-profile-mod .profile-mod-field .email-inp {
+  margin-bottom: 16px;
+}
+.main-profile-mod .profile-mod-field .inp:focus {
+  border-bottom: 1px solid #24732f;
+}
+.main-profile-mod .profile-mod-field .inp::placeholder {
+  color: #dbdbdb;
+}
