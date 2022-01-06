@@ -3,7 +3,7 @@
 }
 
 .main-profile-set {
-  width: 390px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px 34px 0;
 }
@@ -21,37 +21,28 @@
 .main-profile-set .profile-set-field {
   margin-top: 40px;
 }
-.main-profile-set .profile-set-field .avatar-label {
-  position: relative;
-}
 .main-profile-set .profile-set-field .avatar-label .profile-set-img {
-  display: block;
   width: 110px;
+  position: relative;
   margin: 0 auto;
   object-fit: cover;
   margin-bottom: 30px;
 }
-.main-profile-set .profile-set-field .avatar-label::after {
-  content: '';
+.main-profile-set .profile-set-field .avatar-label .profile-set-img::after {
   position: absolute;
+  content: '';
   width: 36px;
   height: 36px;
-  top: 75px;
-  left: 180px;
+  right: 1%;
+  bottom: 1%;
   background: url('../../images/icon/icon-upload-file.png') no-repeat;
-  background-size: 36px;
+  background-size: 36px 36px;
 }
 .main-profile-set .profile-set-field .file-inp {
   display: none;
 }
-.main-profile-set .profile-set-field .label,
-.main-profile-set .profile-set-field .inp {
-  display: block;
-}
 .main-profile-set .profile-set-field .label {
   font-size: 12px;
-  color: #767676;
-  font-weight: 500;
   margin-bottom: 6px;
 }
 .main-profile-set .profile-set-field .inp {
@@ -76,7 +67,8 @@
   color: #dbdbdb;
 }
 .main-profile-set .profile-set-field .btn-L {
-  padding: 13px 107.5px;
+  width: 100%;
+  height: 44px;
   margin: 14px 0 20px;
   font-size: 14px;
   font-weight: 500;
