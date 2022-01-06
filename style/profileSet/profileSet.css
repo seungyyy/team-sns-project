@@ -78,6 +78,7 @@
   border-radius: 44px;
   letter-spacing: -1px; 
   cursor: pointer;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';;
 }
 .main-profile-set .profile-set-field .btn-L--off {
   background-color: #8ac392;
