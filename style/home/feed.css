@@ -33,6 +33,9 @@
 .main-home {
   width: 100%;
   margin: 54px 0 auto;
+  height: 100vh;
+  margin-bottom: 60px;
+  padding: 0 16px;
 }
 .main-home .sec-upload {
   display: flex;
@@ -40,11 +43,10 @@
   align-items: center;
   width: 354px;
   margin: 0 auto;
-  padding: 0 16px;
   position: relative;
 }
 .main-home .upload-wrap {
-  margin-top: 20px;
+  margin-top: 54px;
 }
 .main-home .upload-wrap .upload-user {
   display: flex;
