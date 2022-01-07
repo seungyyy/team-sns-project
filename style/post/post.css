@@ -25,6 +25,7 @@ body {
   height: 22px;
   width: 22px;
   margin: 13px 20px 13px 16px;
+  cursor: pointer;
 }
 .header .img-more {
   margin: 12px;
@@ -49,6 +50,7 @@ body {
   position: absolute;
   right: 16px;
   top: 24px;
+  cursor: pointer;
 }
 .post-wrap .post-user .post-userimg {
   width: 42px;
@@ -138,6 +140,7 @@ body {
 .comment-wrap .comment-userwrap .comment-imgmore {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 .post-comment .comment-wrap .comment-txt {
   font-size: 14px;
@@ -177,11 +180,17 @@ body {
   font-family: inherit;
 }
 .sec-writechat .writechat-sendtxt {
-  cursor: pointer;
+  border: none;
+  background-color: transparent;
   margin: 23px 16px 20px 0;
   font-size: 14px;
   font-weight: 500;
   color: #c4c4c4;
+  font-family: inherit;
+  cursor: pointer;
+}
+.file-inp {
+  display: none;
 }
 
 /* modal */
@@ -193,6 +202,7 @@ body {
   height: 90px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  animation: slide 0.4s; 
 }
 .sec-modal .modal-bar {
   width: 50px;
@@ -206,9 +216,21 @@ body {
   margin: 14px 0 14px 26px;
   cursor: pointer;
 }
-.sec-modal.modal-delete {
+.sec-modal.modal-delete, .sec-modal.modal-report {
   display: none;
 }
-.sec-modal.modal-report {
+.modal-delete-container, .modal-report-container {
+  background: rgba(0,0,0,.2);
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+@keyframes slide {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
 }
