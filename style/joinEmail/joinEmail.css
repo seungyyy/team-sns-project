@@ -29,6 +29,7 @@
 }
 .main-join-email .join-email-field .inp {
   width: 100%;
+  padding-bottom: 8px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -36,6 +37,9 @@
   font-size: 14px;
   color: #000;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+.main-join-email .join-email-field .inp::placeholder {
+  color: #dbdbdb;
 }
 .main-join-email .join-email-field .email-inp {
   margin-bottom: 16px;
@@ -56,7 +60,7 @@
   letter-spacing: -1px;
   cursor: pointer;
 }
-.main-join-email .join-email-field .btn-L.off {
+.main-join-email .join-email-field .btn-L--off {
   background-color: #8ac392;
 }
 .main-join-email .join-email-field .link-singup {
@@ -67,6 +71,7 @@
   color: #767676;
 }
 .main-join-email .join-email-field .alert {
+  margin: 6px 0 16px;
   font-size: 12px;
   color: #eb5757;
 }

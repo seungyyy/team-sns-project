@@ -1,13 +1,16 @@
-const emailField = document.querySelector(".email-field");
-const btn = document.getElementById("login-btn");
-const email = emailField.querySelector("#email");
-const pw = emailField.querySelector("#pw");
-
 // 이메일, 비밀번호 입력 값이 있다면 버튼 활성화 / 입력 값이 없다면 비활성화
 function keyupDisabled() {
+  const emailField = document.querySelector('.email-field');
+  const email = emailField.querySelector('#email');
+  const pw = emailField.querySelector('#pw');
+  const btn = document.getElementById('login-btn');
+    
   if (email.value && pw.value) {
     btn.classList.remove("btn-L--off");
     btn.disabled = false;
+  } else if (!email.value && !pw.value) { 
+    emailField.querySelector("pwAlert").textContent = '';
+    btn.disabled = true;
   } else {
     btn.disabled = true;
   }
@@ -16,6 +19,11 @@ function keyupDisabled() {
 // 버튼 클릭시 서버에 유저가 있다면 로컬스토리지에 저장 후 홈 피드 화면으로 이동
 // 유저가 아니라면 경고 텍스트가 나옵니다
 async function login() {
+  const emailField = document.querySelector('.email-field');
+  const email = emailField.querySelector('#email');
+  const pw = emailField.querySelector('#pw');
+  const btn = document.getElementById('login-btn');
+
   const res = await fetch("http://146.56.183.55:5050/user/login", {
     method: "POST",
     headers: {
@@ -48,5 +56,5 @@ async function login() {
   }
 }
 
-emailField.addEventListener("keyup", keyupDisabled);
-btn.addEventListener("click", login);
+document.querySelector('.email-field').addEventListener('keyup', keyupDisabled);
+document.getElementById('login-btn').addEventListener('click', login);
