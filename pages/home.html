@@ -18,83 +18,18 @@
   </header>
 
   <!-- 메인 홈 팔로우 유저가 있을 경우 팔로우 유저의 게시물 보여주는 화면 -->
-  <main role="main" class="main-feed-have">
-    <ul class="sec-upload">
-      <li class="upload-wrap">
-        <div class="upload-user">
-          <img src="../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
-          <div class="upload-user-txt">
-            <p class="upload-title">애월읍 위니브 청귤농장</p>
-            <span class="upload-userId">@ weniv_Mandarin</span>
-          </div>
-          <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
-        </div>
-        <textarea placeholder="게시글 입력하기..."
-          class="upload-textarea">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</textarea>
-        <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
-        <div class="upload-icon">
-          <div class="icon-box">
-            <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘">
-            <span class="icon-txt">58</span>
-            <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
-            <span class="icon-txt">12</span>
-          </div>
-        </div>
-        <p class="upload-data">2020년 10월 21일</p>
-      </div>
-      </li>
-      <li class="upload-wrap">
-        <div class="upload-user">
-          <img src="../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
-          <div class="upload-user-txt">
-            <p class="upload-title">애월읍 위니브 청귤농장</p>
-            <span class="upload-userId">@ weniv_Mandarin</span>
-          </div>
-          <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
-        </div>
-        <textarea placeholder="게시글 입력하기..."
-        class="upload-textarea">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</textarea>
-        <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
-        <div class="upload-icon">
-          <div class="icon-box">
-            <img src="../images/icon/icon-heart-fill.png" alt="좋아요 아이콘">
-            <span class="icon-txt">58</span>
-            <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
-            <span class="icon-txt">12</span>
-          </div>
-        </div>
-        <p class="upload-data">2020년 10월 21일</p>
-        </div>
-      </li>
-      <li class="upload-wrap">
-        <div class="upload-user">
-          <img src="../../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
-          <div class="upload-user-txt">
-            <p class="upload-title">애월읍 위니브 청귤농장</p>
-            <span class="upload-userId">@ weniv_Mandarin</span>
-          </div>
-          <img src="../../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
-        </div>
-        <textarea placeholder="게시글 입력하기..."
-          class="upload-textarea">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</textarea>
-        <div class="upload-icon">
-          <div class="icon-box">
-            <img src="../../images/icon/icon-heart.png" alt="좋아요 아이콘">
-            <span class="icon-txt">58</span>
-            <img src="../../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
-            <span class="icon-txt">12</span>
-          </div>
-        </div>
-        <p class="upload-data">2020년 10월 21일</p>
-      </li>
-    </ul>
-  </main>
+  <main role="main" class="main-home ">
+    <section class="main-feed-have">
+      <h2 class="hidden">팔로우한 피드가 있습니다.</h2>
+      <ul class="sec-upload"></ul>
+    </section>
 
-  <!-- main none home 팔로우 유저가 없을 경우 -->
-  <main role="main" class="main-none-home cont--hide">
-    <img src="../../images/icon/logo-icon/symbol-logo-gray.png" alt="로고 이미지" class="home-img">
-    <p class="home-tit">유저를 검색해 팔로우 해보세요!</p>
-    <button class="btn-M">검색하기</button>
+      <section class="main-none-home">
+        <h2 class="hidden">팔로우한 피드가 없습니다.</h2>
+        <img src="../../images/icon/logo-icon/symbol-logo-gray.png" alt="로고 이미지" class="home-img">
+        <p class="home-tit">유저를 검색해 팔로우 해보세요!</p>
+        <button class="btn-M">검색하기</button>
+    </section>
   </main>
 
   <!-- 메뉴  -->
@@ -238,7 +173,7 @@
         </li>
       </ul>
     </nav> -->
-    <script src="../../js/navChange.js"></script>
-    <script src="../../js/isHaveFeed.js"></script>
+    <script src="../js/navChange.js"></script>
+    <script src="../js/isHaveFeed.js"></script>
   </body>
 </html>
