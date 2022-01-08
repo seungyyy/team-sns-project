@@ -29,16 +29,12 @@
   padding-right: 16px;
 }
 
-.main-feed-have {
-  margin: 54px 0 auto;
-  margin-bottom: 60px;
-  padding: 0 16px;
-}
-/* main none home */
+/* main 공통 */
 .main-home {
   width: 100%;
-  height: 100vh;
 }
+
+/* main none home  */
 .main-feed-none {
   margin: 0 auto;
   display: flex;
@@ -70,44 +66,43 @@
   font-family: "Spoqa Han Sans Neo", "sans-serif";
 }
 
-/* main home feed */
+/* main home feed have */
 .main-feed-have {
-  margin: 54px 0 auto;
-  margin-bottom: 60px;
+  margin: 68px 0 90px;
   padding: 0 16px;
 }
 .main-feed-have .sec-upload {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 354px;
-  margin: 0 auto;
+  justify-content: flex-start;
+}
+.main-feed-have .sec-upload li {
   position: relative;
+  margin-bottom: 20px;
 }
-.main-feed-have .upload-wrap {
-  margin-top: 54px;
-}
-.main-feed-have .upload-wrap .upload-user {
+.main-feed-have .sec-upload li .upload-user {
   display: flex;
   align-items: center;
 }
-.main-feed-have .upload-wrap .upload-user .img-more {
+.main-feed-have .sec-upload li .upload-user .img-more {
   width: 18px;
   height: 18px;
   position: absolute;
-  right: 4px;
+  top: 4px;
+  right: 0;
 }
-.main-feed-have .upload-wrap .upload-user .upload-userimg {
+.main-feed-have .sec-upload li .upload-user .upload-userimg {
   max-width: 42px;
   max-height: 42px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.main-feed-have .upload-wrap .upload-user .upload-user-txt {
-  display: flex;
-  flex-direction: column;
-  margin-left: 12px;
+.main-feed-have .sec-upload li .upload-user .upload-user-txt {
+  margin: 4px 0 16px 54px;
 }
 .main-feed-have .upload-user .upload-user-txt .upload-title {
-  margin: 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -116,80 +111,40 @@
   font-size: 12px;
   color: #767676;
 }
-.main-feed-have .upload-wrap .upload-textarea {
-  border: none;
+.main-feed-have .sec-upload li .upload-desc {
   width: 304px;
-  /* 자동높이조절js 필요  */
-  height: 58px;
+  margin-left: 54px;
   font-size: 14px;
-  margin: 16px 0 16px 54px;
-  overflow: hidden;
-  resize: none;
 }
-.main-feed-have .upload-textarea::placeholder {
-  color: #c4c4c4;
-}
-.main-feed-have .upload-wrap .upload-img {
+.main-feed-have .sec-upload li .upload-imgBox {
   width: 304px;
   height: 228px;
-  margin-left: 54px;
+  margin: 16px 0 14.5px 54px;
+  overflow: hidden;
 }
-.main-feed-have .upload-wrap .upload-icon {
+.main-feed-have .sec-upload li .upload-imgBox .upload-img {
+  width: 100%;
+}
+.main-feed-have .sec-upload li .upload-icon {
   margin: 14px 0 18px 54px;
-}
-.main-feed-have .upload-wrap .upload-icon .icon-box {
+  padding-left: 1.8px;
   display: flex;
   align-items: center;
 }
-.main-feed-have .upload-wrap .upload-icon .icon-box img {
+.main-feed-have .sec-upload li .upload-icon img {
   width: 16px;
   height: 15px;
+  margin-right: 8px;
 }
-.main-feed-have .upload-wrap .upload-icon .icon-txt {
-  margin-left: 8px;
+.main-feed-have .sec-upload li .upload-icon .icon-txt {
+  margin-right: 18px;
   font-size: 12px;
   color: #767676;
 }
-.main-feed-have .upload-wrap .upload-icon .icon-box .chat-icon {
-  margin-left: 18px;
-}
-.main-feed-have .upload-wrap .upload-data {
+.main-feed-have .sec-upload li .upload-data {
   font-size: 10px;
   margin-left: 54px;
   color: #767676;
-}
-
-/* main none home  */
-.main-none-home {
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-}
-.main-none-home .home-img {
-  display: block;
-  height: 89px;
-  width: 74px;
-  margin: 0 auto;
-}
-.main-none-home .home-tit {
-  margin: 25px 0 20px;
-  font-size: 14px;
-  color: #767676;
-  text-align: center;
-}
-.main-none-home .btn-M {
-  height: 44px;
-  padding: 0 33px;
-  font-size: 14px;
-  line-height: 18px;
-  background-color: #24732f;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
 }
 
 /* 화면에서 안보이기 */
