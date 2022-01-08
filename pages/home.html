@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../style/reset.css">
-  <link rel="stylesheet" href="../../style/home/feed.css">
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/home/feed.css">
+  <link rel="stylesheet" href="../style/module/nav.css">
   <title>청귤마켓</title>
 </head>
 
@@ -14,29 +15,29 @@
   <!-- 상단바 -->
   <header class="header">
     <h2 class="header-title">청귤마켓 피드</h2>
-    <img src="../../images/icon/icon-search.png" alt="더보기" class="img-search">
+    <img src="../images/icon/icon-search.png" alt="더보기" class="img-search">
   </header>
 
-  <!-- 메인 홈 -->
+  <!-- 메인 홈 팔로우 유저가 있을 경우 팔로우 유저의 게시물 보여주는 화면 -->
   <main role="main" class="main-home">
     <ul class="sec-upload">
       <li class="upload-wrap">
         <div class="upload-user">
-          <img src="../../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
+          <img src="../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
           <div class="upload-user-txt">
             <p class="upload-title">애월읍 위니브 청귤농장</p>
             <span class="upload-userId">@ weniv_Mandarin</span>
           </div>
-          <img src="../../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
+          <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
         </div>
         <textarea placeholder="게시글 입력하기..."
           class="upload-textarea">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</textarea>
-        <img src="../../images/image/postimg.png" alt="some trees" class="upload-img">
+        <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
         <div class="upload-icon">
           <div class="icon-box">
-            <img src="../../images/icon/icon-heart.png" alt="좋아요 아이콘">
+            <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘">
             <span class="icon-txt">58</span>
-            <img src="../../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+            <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
             <span class="icon-txt">12</span>
           </div>
         </div>
@@ -45,21 +46,21 @@
       </li>
       <li class="upload-wrap">
         <div class="upload-user">
-          <img src="../../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
+          <img src="../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
           <div class="upload-user-txt">
             <p class="upload-title">애월읍 위니브 청귤농장</p>
             <span class="upload-userId">@ weniv_Mandarin</span>
           </div>
-          <img src="../../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
+          <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
         </div>
         <textarea placeholder="게시글 입력하기..."
         class="upload-textarea">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</textarea>
-        <img src="../../images/image/postimg.png" alt="some trees" class="upload-img">
+        <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
         <div class="upload-icon">
           <div class="icon-box">
-            <img src="../../images/icon/icon-heart-fill.png" alt="좋아요 아이콘">
+            <img src="../images/icon/icon-heart-fill.png" alt="좋아요 아이콘">
             <span class="icon-txt">58</span>
-            <img src="../../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+            <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
             <span class="icon-txt">12</span>
           </div>
         </div>
@@ -90,27 +91,48 @@
     </ul>
   </main>
 
+  <!-- main none home 팔로우 유저가 없을 경우 -->
+  <main role="main" class="main-none-home cont--hide">
+    <img src="../../images/icon/logo-icon/symbol-logo-gray.png" alt="로고 이미지" class="home-img">
+    <p class="home-tit">유저를 검색해 팔로우 해보세요!</p>
+    <button class="btn-M">검색하기</button>
+  </main>
+
   <!-- 메뉴  -->
   <nav class="nav">
     <ul class="nav-list">
-      <li class="nav-home menu">
-        <img src="../../images/icon/icon-home-fill.png" alt="홈" class="nav-home-img">
-        <p class="nav-home-txt">홈</p>
+      <li class="nav-item">
+        <a href="#" class="nav-link nav-link-home nav--on">
+          <img src="../images/icon/icon-home-fill.png" alt="홈" class="nav-img nav-img-home--on" />
+          <img src="../images/icon/icon-home.png" alt="홈" class="nav-img nav-img-home--off cont--hide" />
+          <p class="nav-txt">홈</p>
+        </a>
       </li>
-      <li class="nav-chat menu">
-        <img src="../../images/icon/xl-icon-message-circle.png" alt="채팅" class="nav-chat-img">
-        <p class="nav-chat-txt">채팅</p>
+      <li class="nav-item">
+        <a href="chatList.html" class="nav-link nav-link-chat">
+          <img src="../images/icon/icon-message-circle-fill.png" alt="채팅" class="nav-img nav-img-chat--on cont--hide" />
+          <img src="../images/icon/xl-icon-message-circle.png" alt="채팅" class="nav-img nav-img-chat--off" />
+          <p class="nav-txt">채팅</p>
+        </a>
       </li>
-      <li class="nav-edit menu">
-        <img src="../../images/icon/icon-edit.png" alt="게시물" class="nav-edit-img">
-        <p class="nav-edit-txt">게시물작성</p>
+      <li class="nav-item">
+        <a href="upload.html " class="nav-link nav-link-post">
+          <img src="../images/icon/icon-edit-fill.png" alt="게시물 작성" class="nav-img nav-img-post--on cont--hide" />
+          <img src="../images/icon/icon-edit.png" alt="게시물 작성" class="nav-img nav-img-post--off" />
+          <p class="nav-txt">게시물 작성</p>
+        </a>
       </li>
-      <li class="nav-user menu">
-        <img src="../../images/icon/icon-user.png" alt="프로필" class="nav-user-img">
-        <p class="nav-user-txt">프로필</p>
+      <li class="nav-item">
+        <a href="profile.html " class="nav-link nav-link-profile">
+          <img src="../images/icon/icon-user-fill.png" alt="프로필" class="nav-img nav-img-profile--on cont--hide" />
+          <img src="../images/icon/icon-user.png" alt="프로필" class="nav-img nav-img-profile--off" />
+          <p class="nav-txt">프로필</p>
+        </a>
       </li>
     </ul>
   </nav>
+
+  <script src="../js/navChange.js"></script>
 </body>
 
 </html>

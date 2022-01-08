@@ -73,3 +73,7 @@ textarea {
   resize: none;
   padding: 0;
 }
+
+button {
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}

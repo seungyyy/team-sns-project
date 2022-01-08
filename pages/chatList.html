@@ -7,6 +7,7 @@
   <title>document</title>
   <link rel="stylesheet" href="../style/reset.css">
   <link rel="stylesheet" href="../style/chatList/chatList.css">
+  <link rel="stylesheet" href="../style/module/nav.css">
 </head>
 <body>
   <h1 class="hidden">감귤마켓 chat list</h1>
@@ -53,25 +54,41 @@
       </ul>
     </section>
   </main>
+
+<!-- 메뉴  -->
   <nav class="nav">
     <ul class="nav-list">
-      <li class="nav-home menu">
-        <img src="../images/icon/icon-home.png" alt="홈" class="nav-home-img">
-        <p class="nav-home-txt">홈</p>
+      <li class="nav-item">
+        <a href="home.html" class="nav-link nav-link-home nav--on">
+          <img src="../images/icon/icon-home-fill.png" alt="홈" class="nav-img nav-img-home--on cont--hide" />
+          <img src="../images/icon/icon-home.png" alt="홈" class="nav-img nav-img-home--off" />
+          <p class="nav-txt">홈</p>
+        </a>
       </li>
-      <li class="nav-chat menu">
-        <img src="../images/icon/icon-message-circle-fill.png" alt="채팅" class="nav-chat-img">
-        <p class="nav-chat-txt">채팅</p>
+      <li class="nav-item">
+        <a href="chatList.html" class="nav-link nav-link-chat">
+          <img src="../images/icon/icon-message-circle-fill.png" alt="채팅" class="nav-img nav-img-chat--on" />
+          <img src="../images/icon/xl-icon-message-circle.png" alt="채팅" class="nav-img nav-img-chat--off cont--hide" />
+          <p class="nav-txt">채팅</p>
+        </a>
       </li>
-      <li class="nav-edit menu">
-        <img src="../images/icon/icon-edit.png" alt="게시물" class="nav-edit-img">
-        <p class="nav-edit-txt">게시물작성</p>
+      <li class="nav-item">
+        <a href="upload.html " class="nav-link nav-link-post">
+          <img src="../images/icon/icon-edit-fill.png" alt="게시물 작성" class="nav-img nav-img-post--on cont--hide" />
+          <img src="../images/icon/icon-edit.png" alt="게시물 작성" class="nav-img nav-img-post--off" />
+          <p class="nav-txt">게시물 작성</p>
+        </a>
       </li>
-      <li class="nav-user menu">
-        <img src="../images/icon/icon-user.png" alt="프로필" class="nav-user-img">
-        <p class="nav-user-txt">프로필</p>
+      <li class="nav-item">
+        <a href="profile.html " class="nav-link nav-link-profile">
+          <img src="../images/icon/icon-user-fill.png" alt="프로필" class="nav-img nav-img-profile--on cont--hide" />
+          <img src="../images/icon/icon-user.png" alt="프로필" class="nav-img nav-img-profile--off" />
+          <p class="nav-txt">프로필</p>
+        </a>
       </li>
     </ul>
   </nav>
+  
+  <script src="../js/navChange.js"></script>
 </body>
 </html>
