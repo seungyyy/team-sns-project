@@ -14,5 +14,12 @@
     <img src="./images/icon/logo-icon/logo.png" alt="청귤마켓 로고" class="splash-logo">
     <img src="./images/image/title.png" alt="청귤마켓 로고" class="splash-tit">
   </main>
+  <script>
+    if (localStorage.getItem('token')) {
+      location.href = './pages/home.html';
+    } else {
+      location.href = './pages/login.html'
+    };
+  </script>
 </body>
 </html>

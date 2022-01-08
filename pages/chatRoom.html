@@ -8,18 +8,26 @@
   <link rel="stylesheet" href="../style/reset.css">
   <link rel="stylesheet" href="../style/chatRoom/chatRoom.css">
 </head>
-<body>
   <h1 class="hidden">감귤마켓 chat room</h1>
   <header class="header">
     <div class="header-beforenamewrap">
       <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
-      <p class="header-username">애월읍 위니브 감귤농장</p>
+      <p class="header-username">애월읍 위니브 청귤농장</p>
     </div>
     <img src="../images/icon/icon-more-vertical.png" alt="more menu" class="img-more">
   </header>
 
       <!-- column-reverse(채팅이 아래에서 위로 올라가기 때문에 이렇게 설정) 새로 입력하는 채팅을 앞에 추가. -->
     <main class="sec-chatroom">
+      <div class="chatroom-chatwrap">
+        <img src="../images/icon/icon-profile.png" alt="user profile image" class="chatroom-userimg">
+        <div class="chatroom-txttime">
+          <p class="txttime-chattxt">
+            이번에 정정 언제하맨마씸?
+          </p>
+          <p class="chatroom-time">12:59</p>
+        </div>
+      </div>
       <div class="chatroom-mychat">
         <img src="../images/image/chat-dog.png" alt="smiling dog" class="mychat-img">
         <p class="chatroom-time">12:51</p>
@@ -56,9 +64,12 @@
     </div>
     <p class="writechat-sendtxt">전송</p>
   </section>
-  <section class="sec-modal">
-    <div class="modal-bar"></div>
-    <p class="modal-txt">채팅방 나가기</p>
-  </section>
+  <div class="modal-out-container">
+    <section class="sec-modal">
+      <div class="modal-bar"></div>
+      <p class="modal-txt">채팅방 나가기</p>
+    </section>
+  </div>
+  <script src="../js/chatRoom.js"></script>
 </body>
 </html>

@@ -57,13 +57,15 @@ commentInp.addEventListener('keyup', () => {
 let comment = document.querySelector('.post-comment').innerHTML
 
 sendBtn.addEventListener('click', () => {
+  let userName = localStorage.getItem('username');
+  let userImg = localStorage.getItem('image');
   comment = `\n
   <div class="comment-wrap">\n        
     <div class="comment-userwrap">\n          
       <div class="comment-user">\n            
-        <img src="../images/image/user4.png" alt="" class="comment-userimg">\n            
-        <p class="comment-username">감귤러버</p>\n            
-        <p class="comment-usertime">· 15분 전</p>\n          
+        <img src=${userImg} alt="" class="comment-userimg">\n            
+        <p class="comment-username">${userName}</p>\n            
+        <p class="comment-usertime">· 방금전</p>\n          
       </div>\n          
       <img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore">\n        
     </div>\n        
@@ -71,5 +73,7 @@ sendBtn.addEventListener('click', () => {
   </div>\n      ` + comment;
   document.querySelector('.post-comment').innerHTML = comment;
   commentInp.value = '';
+  sendBtn.style.color = '#c4c4c4';
+  sendBtn.disabled = true; 
 });
 

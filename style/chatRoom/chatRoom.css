@@ -150,11 +150,11 @@ body {
   position: fixed;
   bottom: 0px;
   width: 100%;
-  /* width: 390px; */
   height: 90px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: none;
+  animation: slide 0.4s; 
 }
 .sec-modal .modal-bar {
   width: 50px;
@@ -167,4 +167,18 @@ body {
   font-size: 14px;
   margin: 14px 0 14px 26px;
   cursor: pointer;
+}
+.modal-out-container {
+  background: rgba(0,0,0,.2);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes slide {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
 }
