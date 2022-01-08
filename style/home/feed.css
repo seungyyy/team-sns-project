@@ -5,13 +5,13 @@
 /* header */
 .header {
   width: 100%;
-  height:48px;
+  height: 48px;
   position: fixed;
   top: 0;
   left: 50%;
   padding: 0 16px;
   transform: translateX(-50%);
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
@@ -27,17 +27,56 @@
   font-size: 18px;
   line-height: 22px;
   padding-right: 16px;
-} 
+}
 
-/* main home feed */
-.main-home {
-  width: 100%;
+.main-feed-have {
   margin: 54px 0 auto;
-  height: 100vh;
   margin-bottom: 60px;
   padding: 0 16px;
 }
-.main-home .sec-upload {
+/* main none home */
+.main-home {
+  width: 100%;
+  height: 100vh;
+}
+.main-feed-none {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-feed-none .home-img {
+  display: block;
+  height: 89px;
+  width: 74px;
+  margin: 0 auto;
+}
+.main-feed-none .home-tit {
+  margin: 25px 0 20px;
+  font-size: 14px;
+  color: #767676;
+  text-align: center;
+}
+.main-feed-none .btn-M {
+  height: 44px;
+  padding: 0 33px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #24732f;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+/* main home feed */
+.main-feed-have {
+  margin: 54px 0 auto;
+  margin-bottom: 60px;
+  padding: 0 16px;
+}
+.main-feed-have .sec-upload {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,80 +84,80 @@
   margin: 0 auto;
   position: relative;
 }
-.main-home .upload-wrap {
+.main-feed-have .upload-wrap {
   margin-top: 54px;
 }
-.main-home .upload-wrap .upload-user {
+.main-feed-have .upload-wrap .upload-user {
   display: flex;
   align-items: center;
 }
-.main-home .upload-wrap .upload-user .img-more {
+.main-feed-have .upload-wrap .upload-user .img-more {
   width: 18px;
   height: 18px;
   position: absolute;
   right: 4px;
 }
-.main-home .upload-wrap .upload-user .upload-userimg {
+.main-feed-have .upload-wrap .upload-user .upload-userimg {
   max-width: 42px;
   max-height: 42px;
 }
-.main-home .upload-wrap .upload-user .upload-user-txt {
+.main-feed-have .upload-wrap .upload-user .upload-user-txt {
   display: flex;
   flex-direction: column;
   margin-left: 12px;
 }
-.main-home .upload-user .upload-user-txt .upload-title {
+.main-feed-have .upload-user .upload-user-txt .upload-title {
   margin: 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
 }
-.main-home .upload-user .upload-user-txt .upload-userId {
+.main-feed-have .upload-user .upload-user-txt .upload-userId {
   font-size: 12px;
   color: #767676;
 }
-.main-home .upload-wrap .upload-textarea {
+.main-feed-have .upload-wrap .upload-textarea {
   border: none;
   width: 304px;
-    /* 자동높이조절js 필요  */
+  /* 자동높이조절js 필요  */
   height: 58px;
   font-size: 14px;
-  margin: 16px 0 16px 54px ;
+  margin: 16px 0 16px 54px;
   overflow: hidden;
   resize: none;
 }
-.main-home .upload-textarea::placeholder {
-    color: #c4c4c4;
+.main-feed-have .upload-textarea::placeholder {
+  color: #c4c4c4;
 }
-.main-home .upload-wrap .upload-img {
+.main-feed-have .upload-wrap .upload-img {
   width: 304px;
   height: 228px;
-  margin-left: 54px;  
+  margin-left: 54px;
 }
-.main-home .upload-wrap .upload-icon {
+.main-feed-have .upload-wrap .upload-icon {
   margin: 14px 0 18px 54px;
-} 
-.main-home .upload-wrap .upload-icon .icon-box {
-  display:flex;
+}
+.main-feed-have .upload-wrap .upload-icon .icon-box {
+  display: flex;
   align-items: center;
 }
-.main-home .upload-wrap .upload-icon .icon-box img {
+.main-feed-have .upload-wrap .upload-icon .icon-box img {
   width: 16px;
   height: 15px;
 }
-.main-home .upload-wrap .upload-icon .icon-txt {
+.main-feed-have .upload-wrap .upload-icon .icon-txt {
   margin-left: 8px;
   font-size: 12px;
   color: #767676;
 }
-.main-home .upload-wrap .upload-icon .icon-box .chat-icon {
+.main-feed-have .upload-wrap .upload-icon .icon-box .chat-icon {
   margin-left: 18px;
 }
-.main-home .upload-wrap .upload-data {
+.main-feed-have .upload-wrap .upload-data {
   font-size: 10px;
   margin-left: 54px;
   color: #767676;
-} 
+}
 
 /* main none home  */
 .main-none-home {
@@ -150,7 +189,7 @@
   background-color: #24732f;
   color: #fff;
   border: none;
-  border-radius: 30px;  
+  border-radius: 30px;
 }
 
 /* 화면에서 안보이기 */

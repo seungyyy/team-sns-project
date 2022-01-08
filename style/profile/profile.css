@@ -306,3 +306,79 @@
   height: 114px;
   object-fit: cover;
 }
+
+/* modal */
+.modal-outside {
+  position: absolute;
+  background-color: #0000007e;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+}
+.modal-logout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 138px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+.modal-logout .modal-bar {
+  width: 50px;
+  height: 4px;
+  margin: 16px auto;
+  background-color: #dbdbdb;
+}
+.modal-logout .modal-list .modal-item {
+  text-align: left;
+  padding: 14px 26px 14px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.modal-logout .modal-list .modal-item button {
+  border: none;
+  background: none;
+}
+.modal-logoutTest {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  bottom: 0;
+  width: 252px;
+  height: 110px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.modal-logoutTest .modal-gide {
+  margin: 22px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.modal-logoutTest .modal-gide-list {
+  display: flex;
+  align-items: center;
+  border-top: 0.5px solid #dbdbdb;
+  height: 46px;
+}
+.modal-logoutTest .modal-gide-list .modal-gide-item {
+  flex-basis: 50%;
+  height: 100%;
+}
+.modal-logoutTest .modal-gide-list .modal-gide-item:first-child {
+  border-right: 0.5px solid #dbdbdb;
+}
+.modal-logoutTest .modal-gide-list .modal-gide-item button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+}
+.modal-logoutTest .modal-gide-list .modal-gide-item .modal-btn-logout {
+  color: #f26e22;
+}
