@@ -80,7 +80,6 @@
 .main-feed-have .sec-upload li {
   position: relative;
   margin-bottom: 20px;
-  outline: 1px solid;
 }
 .main-feed-have .sec-upload li .upload-user {
   display: flex;
