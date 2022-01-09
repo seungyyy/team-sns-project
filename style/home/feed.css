@@ -35,26 +35,24 @@
 }
 
 /* main none home  */
-.main-feed-none {
-  margin: 0 auto;
+.main-none-home {
   display: flex;
+  height: 100vh;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
-.main-feed-none .home-img {
+.main-none-home .home-img {
   display: block;
   height: 89px;
   width: 74px;
-  margin: 0 auto;
 }
-.main-feed-none .home-tit {
+.main-none-home .home-tit {
   margin: 25px 0 20px;
   font-size: 14px;
   color: #767676;
-  text-align: center;
 }
-.main-feed-none .btn-M {
+.main-none-home .btn-M {
   height: 44px;
   padding: 0 33px;
   font-size: 14px;
@@ -63,21 +61,17 @@
   color: #fff;
   border: none;
   border-radius: 30px;
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
 }
 
 /* main home feed have */
-.main-feed-have {
-  margin: 68px 0 90px;
+.main-home .main-feed-have {
   padding: 0 16px;
 }
 .main-feed-have .sec-upload {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  margin: 68px 0 90px;
 }
 .main-feed-have .sec-upload li {
+  width: 100%;
   position: relative;
   margin-bottom: 20px;
 }
@@ -112,13 +106,11 @@
   color: #767676;
 }
 .main-feed-have .sec-upload li .upload-desc {
-  width: 304px;
   margin-left: 54px;
   font-size: 14px;
 }
 .main-feed-have .sec-upload li .upload-imgBox {
-  width: 304px;
-  height: 228px;
+  width: 100%;
   margin: 16px 0 14.5px 54px;
   overflow: hidden;
 }
@@ -127,7 +119,6 @@
 }
 .main-feed-have .sec-upload li .upload-icon {
   margin: 14px 0 18px 54px;
-  padding-left: 1.8px;
   display: flex;
   align-items: center;
 }
