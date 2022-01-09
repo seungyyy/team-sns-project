@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/reset.css">
     <link rel="stylesheet" href="../style/profileSet/profileSet.css">
-  <title>청귤마켓 프로필 설정</title>
+  <title>청귤마켓</title>
 </head>
 <body>
   <!-- 프로필 설정 -->
@@ -15,12 +15,12 @@
     <p class="profile-set-txt">나중에 언제든지 변경할 수 있습니다.</p>
     <form action="">
       <fieldset class="profile-set-field">
-        <label for="avatar" class="avatar-label">
+        <label for="avatar" class="avatar-label" >
           <div class="profile-set-img">
-            <img src="../images/icon/icon-profile.png" alt="기본프로필이미지">
+            <img src="../images/icon/icon-profile.png" alt="기본프로필이미지" class="profile-img">
           </div>
         </label>
-        <input type="file" id="avatar" name="avatar" accept=".jpg, .jpeg, .png" class="file-inp">
+        <input type="file" id="avatar" name="avatar" accept="image/*" class="file-inp" onchange="setThumbnail(event);" multiple>
         <label for="username" class="label">사용자 이름</label>
         <input type="text" name="useremail" id="username" placeholder="2~10자 이내여야 합니다."
           class="username-inp inp">
@@ -33,5 +33,7 @@
       </fieldset>
     </form>
   </main>
+
+  <script src="../js/profileSet/profileSet.js"></script>
 </body> 
 </html>
