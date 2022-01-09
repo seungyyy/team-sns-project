@@ -14,16 +14,16 @@
   <!-- 이메일 가입 -->
   <main role="main" class="main-join-email">
     <h2 class="join-email-tit">이메일로 회원가입</h2>
-    <form method="post">
+    <form id="joinForm" method="post">
       <fieldset class="join-email-field">
         <label for="joinEmail" class="label">이메일</label>
         <input type="text" name="useremail" placeholder="이메일 주소를 입력해 주세요." id="join-email"
           class="email-inp inp">
-        <p id="email-alert" class="alert"></p>
+        <p id="email-alert" class="alert-email"></p>
         <label for="pw" class="label">비밀번호</label>
         <input type="password" name="userpw" placeholder="비밀번호를 설정해 주세요." id="join-pw" class="pw-inp inp">
         <p id="pw-alert" class="alert"></p>
-        <button type="submit" id="join-btn" class="btn-L btn-L--off">다음</button>
+        <button type="button" form="joinForm" id="join-btn" class="btn-L btn-L--off">다음</button>
       </fieldset>
     </form>
   </main>
