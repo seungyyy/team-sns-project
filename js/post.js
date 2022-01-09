@@ -1,10 +1,10 @@
 const deletePost = document.querySelector('.post-wrap .post-user .img-more');
 const modalDelete = document.querySelector('#modal-delete');
-const reportComment = document.querySelectorAll('.comment-imgmore');
-const modalReport = document.querySelector('#modal-report');
-
+let reportComment = document.querySelectorAll('.comment-imgmore');
 const modalDelCont = document.querySelector('.modal-delete-container');
-const modalRepCont = document.querySelector('.modal-report-container')
+const modalReport = document.querySelector('#modal-report');
+const modalRepCont = document.querySelector('.modal-report-container');
+
 
 deletePost.addEventListener('click', () => {
   modalDelete.classList.remove('modal-delete');
@@ -19,7 +19,8 @@ deletePost.addEventListener('click', () => {
   };
 });
 
-Array.from(reportComment).forEach(function(val) {
+function report() {
+  Array.from(reportComment).forEach(function(val) {
   val.addEventListener('click', () => {
     modalReport.classList.remove('modal-report');
     modalRepCont.style.display = 'block';
@@ -33,10 +34,19 @@ Array.from(reportComment).forEach(function(val) {
     };
   });
 });
+}
+report();
+
 
 //하단 댓글 입력 창 - 입력되면, 버튼 활성화
 const sendBtn = document.querySelector('.writechat-sendtxt');
 const commentInp = document.querySelector('.writechat-inp');
+//enter를 눌렀을 때도 실행
+function enterkey() {
+  if (window.event.keyCode == 13) {
+      sendComment();
+  }
+}
 
 commentInp.addEventListener('keyup', () => {
     switch (!(commentInp.value)) {
@@ -47,6 +57,8 @@ commentInp.addEventListener('keyup', () => {
         case false:
         sendBtn.style.color = '#24732f';
         sendBtn.disabled = false; 
+        sendBtn.style.cursor = 'pointer';
+        enterkey();
         break;
     };
 });
@@ -56,7 +68,7 @@ commentInp.addEventListener('keyup', () => {
 //댓글을 추가하면, commentReport가 안됨....(왜..?)
 let comment = document.querySelector('.post-comment').innerHTML
 
-sendBtn.addEventListener('click', () => {
+function sendComment() {
   let userName = localStorage.getItem('username');
   let userImg = localStorage.getItem('image');
   comment = `\n
@@ -67,7 +79,7 @@ sendBtn.addEventListener('click', () => {
         <p class="comment-username">${userName}</p>\n            
         <p class="comment-usertime">· 방금전</p>\n          
       </div>\n          
-      <img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore">\n        
+      <button><img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore"></button>\n        
     </div>\n        
     <p class="comment-txt">${commentInp.value}</p>\n      
   </div>\n      ` + comment;
@@ -75,5 +87,12 @@ sendBtn.addEventListener('click', () => {
   commentInp.value = '';
   sendBtn.style.color = '#c4c4c4';
   sendBtn.disabled = true; 
-});
+  sendBtn.style.cursor = 'default';
 
+}
+
+sendBtn.addEventListener('click', () => {
+  sendComment(); 
+  reportComment = document.querySelectorAll('.comment-imgmore');
+  report();
+});

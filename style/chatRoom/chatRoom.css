@@ -104,16 +104,17 @@ body {
 
 /* 하단 채팅 입력부분 */
 .sec-writechat {
-  /* width: 390px; */
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   height: 61px;
   box-sizing: border-box;
   border-top: 0.5px solid #dbdbdb;
   background-color: #fff;
   position: fixed;
   bottom: 0px;
+}
+.sec-writechat form {
+  display: flex;
+  justify-content: space-between;
 }
 .sec-writechat .writechat-wrap {
   display: flex;
@@ -137,7 +138,8 @@ body {
   font-family: inherit;
 }
 .sec-writechat .writechat-sendtxt {
-  cursor: pointer;
+  border: none;
+  background-color: transparent;
   margin: 23px 16px 20px 0;
   font-size: 14px;
   font-weight: 500;
