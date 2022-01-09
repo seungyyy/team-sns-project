@@ -106,11 +106,13 @@
   color: #767676;
 }
 .main-feed-have .sec-upload li .upload-desc {
+  width: 304px;
   margin-left: 54px;
   font-size: 14px;
 }
 .main-feed-have .sec-upload li .upload-imgBox {
-  width: 100%;
+  width: 304px;
+  height: 228px;
   margin: 16px 0 14.5px 54px;
   overflow: hidden;
 }
