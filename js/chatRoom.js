@@ -1,6 +1,12 @@
 const sendBtn = document.querySelector('.writechat-sendtxt');
 const commentInp = document.querySelector('.writechat-inp');
 
+//채팅목록 클릭하면, 채팅방 상단 이름이 그거에 맞게 바뀜.
+let userName = document.querySelector('.header-username');
+userName.innerText = localStorage.getItem('chatUserName');
+localStorage.removeItem('chatUserName');
+
+
 commentInp.addEventListener('keyup', () => {
     switch (!(commentInp.value)) {
         case true: 
@@ -37,3 +43,5 @@ if (!(modalOut.style.display == 'none')) {
     : false;
   });
 };
+
+
