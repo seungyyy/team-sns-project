@@ -9,6 +9,10 @@ body {
   margin: 0 auto;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
 /* 상단 */
 .header {
   height: 48px;
@@ -25,7 +29,6 @@ body {
   height: 22px;
   width: 22px;
   margin: 13px 20px 13px 16px;
-  cursor: pointer;
 }
 .header .img-more {
   margin: 12px;
