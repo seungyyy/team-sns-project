@@ -186,8 +186,6 @@ body {
   font-size: 14px;
   font-weight: 500;
   color: #c4c4c4;
-  font-family: inherit;
-  cursor: pointer;
 }
 .file-inp {
   display: none;

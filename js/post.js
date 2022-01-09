@@ -34,9 +34,17 @@ Array.from(reportComment).forEach(function(val) {
   });
 });
 
+
+
 //하단 댓글 입력 창 - 입력되면, 버튼 활성화
 const sendBtn = document.querySelector('.writechat-sendtxt');
 const commentInp = document.querySelector('.writechat-inp');
+//enter를 눌렀을 때도 실행
+function enterkey() {
+  if (window.event.keyCode == 13) {
+      sendComment();
+  }
+}
 
 commentInp.addEventListener('keyup', () => {
     switch (!(commentInp.value)) {
@@ -47,6 +55,8 @@ commentInp.addEventListener('keyup', () => {
         case false:
         sendBtn.style.color = '#24732f';
         sendBtn.disabled = false; 
+        sendBtn.style.cursor = 'pointer';
+        enterkey();
         break;
     };
 });
@@ -56,7 +66,7 @@ commentInp.addEventListener('keyup', () => {
 //댓글을 추가하면, commentReport가 안됨....(왜..?)
 let comment = document.querySelector('.post-comment').innerHTML
 
-sendBtn.addEventListener('click', () => {
+function sendComment() {
   let userName = localStorage.getItem('username');
   let userImg = localStorage.getItem('image');
   comment = `\n
@@ -75,5 +85,7 @@ sendBtn.addEventListener('click', () => {
   commentInp.value = '';
   sendBtn.style.color = '#c4c4c4';
   sendBtn.disabled = true; 
-});
+  sendBtn.style.cursor = 'default';
+}
 
+sendBtn.addEventListener('click', sendComment);
