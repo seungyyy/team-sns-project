@@ -14,6 +14,7 @@
     <div class="app">
       <header class="header">
         <h1 class="hidden">청귤마켓 profile</h1>
+
         <ul class="header-list">
           <li class="header-item">
             <a href="#" class="header-link">
@@ -36,7 +37,7 @@
           <article class="user-cont-follow">
             <h3 class="hidden">follow</h3>
             <div class="user-followers">
-              <strong class="user-num-followers"></strong>
+              <strong>2950</strong>
               <p>followers</p>
             </div>
             <img
@@ -45,7 +46,7 @@
               class="user-img"
             />
             <div class="user-followings">
-              <p><strong class="user-num-followings"></strong></p>
+              <p><strong>128</strong></p>
               <p>followings</p>
             </div>
           </article>
@@ -55,7 +56,28 @@
           </p>
           <p class="user-name">@weniv_Mandarin</p>
           <p class="user-desc">애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</p>
-          <section class="user-cont-me">
+          <!--현재 다른 유저 프로필로 내 프로필일때 cont--hide 붙이기 -->
+          <section class="user-cont-other">
+            <h4 class="hidden">다른 유저 프로필</h4>
+            <div class="user-cont-btnOther">
+              <a href="#" class="user-btn-chat"
+                ><img
+                  src="../images/icon/s-icon-message-circle.png"
+                  alt="채팅하기"
+              /></a>
+              <!-- 해당 유저 팔로우 시 cont--hide -->
+              <button type="button" class="user-btn-follow cont--hide">
+                팔로우
+              </button>
+              <!-- 해당 유저 언팔로우 시 cont--hide -->
+              <button type="button" class="user-btn-unfollow">언팔로우</button>
+              <button type="button" class="user-btn-share">
+                <img src="../images/icon/icon-share.png" alt="공유하기" />
+              </button>
+            </div>
+          </section>
+          <!--현재 내 프로필로 다른 유저 프로필일때 cont--hide 붙이기 -->
+          <section class="user-cont-me cont--hide">
             <div class="user-cont-btnMy">
               <a href="#" class="user-fix"> 프로필 수정 </a>
               <a href="#" class="user-upload-product"> 상품 등록 </a>
@@ -346,7 +368,5 @@
     <script src="../js/modal.js"></script>
     <script src="../js/navChange.js"></script>
     <script src="../js/listGridChange.js"></script>
-    <script src="../js/profileFollow.js"></script>
-    <!-- <script src="../js/profileProductjs"></script> -->
   </body>
 </html>
