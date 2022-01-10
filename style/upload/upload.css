@@ -17,6 +17,7 @@
   margin: 0 auto;
   background-color: #fff;
   border: 0.5px solid #dbdbdb;
+  z-index: 10;
 }
 .header .img-before {
   width: 22px;
@@ -41,6 +42,7 @@
 .sec-upload {
   position: relative;
   display: flex;
+  justify-content: space-between;
   margin-top: 64px;
 }
 .sec-upload .upload-userimg {
@@ -49,16 +51,16 @@
   margin: 0 13px 0 16px;
 }
 .sec-upload .upload-wrap {
-  margin-top: 32px;
+  margin: 12px 16px 0 0;
+  width: 100vw;
 }
 .sec-upload .upload-wrap .upload-textarea {
   border: none;
-  width: 304px;
-  /* 자동높이조절js 필요 */
-  height: 58px;
+  width: calc(100vw - 86px);
   font-size: 14px;
   font-family: inherit;
   margin-bottom: 12px;
+  overflow-y: hidden;
 }
 .sec-upload .upload-wrap .upload-textarea::placeholder {
   color: #c4c4c4;
@@ -69,8 +71,8 @@
   position: relative;
 }
 .upload-imgs .upload-imgwrap .upload-img {
-  width: 304px;
-  height: 228px;
+  min-width: 304px;
+  min-height: 228px;
 }
 .upload-imgs .upload-imgwrap .upload-removeimg {
   position: absolute;
@@ -83,15 +85,15 @@
 .sec-upload .upload-imgs {
   display: flex;
   column-gap: 8px;
-  width: 304px;
+  width: 100%;
   overflow-x: scroll;
 }
 .upload-wrap .upload-imgs::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
 }
 .upload-imgs .upload-imgwrap .upload-img.upload-img-many {
-  width: 168px;
-  height: 126px;
+  min-width: 168px;
+  min-height: 126px;
 }
 
 .sec-upload .img-uploadfile {
