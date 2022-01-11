@@ -12,6 +12,8 @@ async function profileMe() {
   const json = await res.json();
   const profile = json.profile;
   console.log(profile);
+  //localstorage postuploder 정보 삭제
+  localStorage.removeItem("postuploder");
   let profileMe = document.querySelector(".cont-user");
   let followers = profileMe.querySelector(".user-num-followers");
   let followings = profileMe.querySelector(".user-num-followings");
@@ -19,8 +21,10 @@ async function profileMe() {
   let titMe = profileMe.querySelector(".user-tit strong");
   let nameMe = profileMe.querySelector(".user-name");
   let descMe = profileMe.querySelector(".user-desc");
+  //팔로워 팔로윙 숫자 기입
   followers.innerHTML = profile.followerCount;
   followings.innerHTML = profile.followingCount;
+  //불러온 정보를 이미지에 대입
   imgMe.setAttribute("src", profile.image);
   //이미지 주소가 오류일 때 나오는 코드
   imgMe.setAttribute(
@@ -29,6 +33,6 @@ async function profileMe() {
   );
   titMe.innerHTML = profile.username;
   nameMe.innerHTML = "@ " + profile.accountname;
-  descMe.innerHTML = profile.intro;
+  descMe.innerHTML = profile.intro ? profile.intro : "설명이 없습니다.";
 }
 profileMe();

@@ -82,7 +82,6 @@ async function profilePostMe() {
       postList.prepend(addListItem);
       if (post.image) {
         postGrid.prepend(addGridItem);
-        ß;
       }
     });
   }
