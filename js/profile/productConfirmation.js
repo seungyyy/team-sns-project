@@ -12,6 +12,7 @@ async function productConfirmation() {
   const json = await res.json();
   const product = json;
   console.log(product);
+  let userName = document.querySelector(".user-name");
   let productCont = document.querySelector(".product");
   product.data;
   if (!product.data) {

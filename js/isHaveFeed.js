@@ -27,14 +27,16 @@ async function getFeed() {
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
       addItem.innerHTML = `
-    <div class="upload-user">
-    <img src="${post.author.image}" alt="user image" class="upload-userimg">
-    <div class="upload-user-txt">
-      <p class="upload-title">${post.author.username}</p>
-      <span class="upload-userId">@ ${post.author.accountname}</span>
-    </div>
-    <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
+    <div href="../pages/profile.html" class="upload-user">
+    <a href="../pages/otherProfile.html" class="upload-user-link">
+      <img src="${post.author.image}" alt="user image" class="upload-userimg">
+      <div class="upload-user-txt">
+        <p class="upload-title">${post.author.username}</p>
+        <span class="upload-userId">@ ${post.author.accountname}</span>
+      </div>
+    </a>
   </div>
+  <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
   <p class="upload-desc">${post.content}</p>
   <div class="upload-imgBox"><img src="${post.image}" alt="some trees" class="upload-img"></div>
   <div class="upload-icon">
@@ -47,6 +49,11 @@ async function getFeed() {
 </div>
     `;
       feedList.prepend(addItem);
+      document
+        .querySelector(".upload-user-link")
+        .addEventListener("click", () => {
+          localStorage.setItem("postuploder", post.author.accountname);
+        });
     });
   }
 }
