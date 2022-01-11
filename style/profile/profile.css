@@ -216,6 +216,7 @@
 }
 /* 게시글 리스트 */
 .post .post-list {
+  min-height: 300px;
   padding-bottom: 90px;
 }
 .post .post-list .post-item {
@@ -249,10 +250,15 @@
   line-height: 17px;
   font-size: 14px;
 }
-.post .post-list .post-item .post-img {
+.post .post-list .post-item .post-cont-img {
   width: 304px;
-  margin: 16px 0;
+  height: 228px;
+  overflow: hidden;
+  margin: 16px 0 16px 54px;
   border-radius: 10px;
+}
+.post .post-list .post-item .post-img {
+  height: 100%;
 }
 .post .post-list .post-item .post-btn-setting {
   width: 18px;

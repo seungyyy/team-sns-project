@@ -23,11 +23,10 @@ async function getFeed() {
       mainHomeNone.classList.add("cont--hide");
     }
     posts.forEach((post, i) => {
-      let addList = document.createElement("li");
+      let addItem = document.createElement("li");
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
-      console.log(day);
-      addList.innerHTML = `
+      addItem.innerHTML = `
     <div class="upload-user">
     <img src="${post.author.image}" alt="user image" class="upload-userimg">
     <div class="upload-user-txt">
@@ -47,7 +46,7 @@ async function getFeed() {
   <p class="upload-data">${yearMonth[0]}년 ${yearMonth[1]}월 ${day}일</p>
 </div>
     `;
-      feedList.prepend(addList);
+      feedList.prepend(addItem);
     });
   }
 }
