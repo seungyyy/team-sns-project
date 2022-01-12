@@ -1,6 +1,6 @@
 async function productConfirmation() {
   const res = await fetch(
-    "http://146.56.183.55:5050/product/" + localStorage.getItem("accountname"),
+    "http://146.56.183.55:5050/product/" + localStorage.getItem("postuploder"),
     {
       method: "GET",
       headers: {
@@ -14,6 +14,7 @@ async function productConfirmation() {
   console.log(products);
 
   let productCont = document.querySelector(".product");
+  let productList = productCont.querySelector(".product-list")
   if (!products.data) {
     if (!productCont.classList.contains("cont--hide")) {
       productCont.classList.add("cont--hide");
@@ -50,6 +51,7 @@ async function productConfirmation() {
       `
       productList.prepend(addListItem);
     })
+    
   }
 }
 productConfirmation();
