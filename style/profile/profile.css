@@ -257,6 +257,10 @@
   margin: 16px 0 16px 54px;
   border-radius: 10px;
 }
+.post .post-list .post-item .post-cont-space {
+  margin: 16px 0 16px 54px;
+  border-radius: 10px;
+}
 .post .post-list .post-item .post-img {
   height: 100%;
 }

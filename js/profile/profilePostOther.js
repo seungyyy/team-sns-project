@@ -1,7 +1,7 @@
 async function profilePostMe() {
   const res = await fetch(
     "http://146.56.183.55:5050/post/" +
-    localStorage.getItem("accountname")+
+    localStorage.getItem("postuploder")+
       "/userpost",
     {
       method: "GET",
@@ -13,7 +13,7 @@ async function profilePostMe() {
   );
   const json = await res.json();
   const posts = json.post;
-  console.log(posts);
+  console.log("게시글",posts);
   if (posts.length) {
     let postList = document.querySelector(".post-list");
     let postGrid = document.querySelector(".post-list-grid");
@@ -29,11 +29,11 @@ async function profilePostMe() {
       }else{
         postImg = post.image.split(",")[0];
         }
-        let listImg =  postImg ? `
-        <div class="post-cont-img">
-          <img src="${post.image.split(",")[0]}" alt="게시글 이미지" class="post-img"/>
-        </div>
-        `: "<div class='post-cont-space'></div>";
+      let listImg =  postImg ? `
+      <div class="post-cont-img">
+        <img src="${post.image.split(",")[0]}" alt="게시글 이미지" class="post-img"/>
+      </div>
+      `: "<div class='post-cont-space'></div>";
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
