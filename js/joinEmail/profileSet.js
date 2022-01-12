@@ -1,10 +1,12 @@
 const profileField = document.querySelector('.profile-set-field');
 const user = {};
+const url = "http://146.56.183.55:5050";
 
 // 회원가입 정보들 서버로 전송하기 
 async function join() {
   imgUpload();
-  const url = "http://146.56.183.55:5050"
+  user.email = document.querySelector('#join-email').value;
+  user.pw = document.querySelector('#join-pw').value;
   try {
     const response = await fetch(url + '/user', {
       method: 'POST',
@@ -23,9 +25,9 @@ async function join() {
       }),
     });
     const json = await response.json();
-    console.log(json);
+    location.href = '../../pages/search.html';
   } catch (error) {
-    console.log(error);
+    location.href = '../../pages/errPage.html';
   }
 }
 
@@ -36,7 +38,6 @@ async function imgUpload() {
   const formData = new FormData();
   formData.append("image", file);
 
-  const url = "http://146.56.183.55:5050"
   try {
     const response = await fetch(url + "/image/uploadfiles", {
       method: "POST",
@@ -87,7 +88,7 @@ async function accountNameCheck() {
 
 
   if (regAccountName.test(accountName) === true ) {
-    const res = await fetch('http://146.56.183.55:5050/user', {
+    const res = await fetch(url + "/user", {
       method: 'GET',
     });
     const json = await res.json();
@@ -130,19 +131,8 @@ function setThumbnail(e) {
     img.setAttribute('src', e.target.result);
   };
   reader.readAsDataURL(e.target.files[0]);
-  console.log(e.target.files[0].name);
 }
 
-// 회원가입에서 가져온 이메일 비밀번호 변수에 저장 후 로컬스토리지에서 삭제
-function localData() {
-  user.email = localStorage.getItem('email');
-  user.pw = localStorage.getItem('password');
-  localStorage.removeItem('email');
-  localStorage.removeItem('password');
-  //console.log(email, pw);
-}
-
-localData();
 document.getElementById('user-name').addEventListener('keyup', userNameCheck);
 document.getElementById('userid').addEventListener('keyup', accountNameCheck);
 document.getElementById('introduce').addEventListener('keyup', userIntroduceCheck);
