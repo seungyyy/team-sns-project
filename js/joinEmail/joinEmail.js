@@ -5,16 +5,14 @@ const joinPw = joinEmailField.querySelector('#join-pw');
 const emailAlert = joinEmailField.querySelector('#email-alert');
 
 
-function joinUser () {
-  localStorage.setItem('email', joinEmail.value);
-  localStorage.setItem('password', joinPw.value);
-  location.href = './profileSet.html';
-  submit();
+function nextProfile() {
+  document.querySelector('.main-join-email').style.display = 'none';
+  document.querySelector('.main-profile-set').classList.remove('cont--hide');
 }
 
 // 이메일, 비밀번호 입력 값이 있다면 버튼 활성화 / 입력 값이 없다면 비활성화
 function keyupDisabled() {
-    if (joinEmail.value && joinPw.value) {
+    if (joinEmail.value && joinPw.value.length >= 6 && joinPw.value) {
       joinBtn.disabled = false;
       joinBtn.classList.remove('btn-L--off');
     } else {
@@ -63,5 +61,5 @@ async function checkEmail() {
 joinEmail.addEventListener('blur', checkEmail);
 joinPw.addEventListener('keyup', checkPw);
 joinEmailField.addEventListener('keyup', keyupDisabled);
-joinBtn.addEventListener('click', joinUser);
+joinBtn.addEventListener('click', nextProfile);
 
