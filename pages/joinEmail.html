@@ -40,7 +40,7 @@
             <img src="../images/icon/icon-profile.png" alt="기본프로필이미지" class="profile-img">
           </div>
         </label>
-        <input type="file" id="avatar" name="avatar" accept="image/*" class="file-inp" onchange="setThumbnail(event);">
+        <input type="file" id="avatar" name="avatar" accept="image/*" class="file-inp">
         <label for="username" class="label">사용자 이름</label>
         <input type="text" name="useremail" id="user-name" placeholder="2~10자 이내여야 합니다." class="username-inp inp">
         <p id="username-alert" class="alert"></p>
@@ -56,7 +56,8 @@
     </form>
   </main>
 
-  <script src="../js/joinEmail/joinEmail.js"></script>
-  <script src="../js/joinEmail/profileSet.js"></script>
+  <script src="../js/joinProfileSet/joinEmail.js"></script>
+  <script src="../js/joinProfileSet/checkJoin.js"></script>
+  <script src="../js/joinProfileSet/profileSet.js"></script>
 </body>
 </html>

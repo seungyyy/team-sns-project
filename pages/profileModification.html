@@ -9,28 +9,35 @@
     <link rel="stylesheet" href="../style/profileModification/profileModification.css">
 </head>
 <body>
+  <!-- header -->
   <header class="header">
     <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
     <button class="btn-MS--off">저장</button>
     </header>
+
+    <!-- profile 수정 -->
     <main class="main-profile-mod">
-      <form action="">
+      <form action="post">
         <fieldset class="profile-mod-field">
           <label for="avatar" class="avatar-label">
-            <img src="../images/icon/icon-profile.png" alt="기본프로필이미지" class="profile-mod-img">
-            <img src="../images/icon/icon-upload-file.png" alt="프로필 이미지 바꾸기" class="profile-mod-imgchange">
+            <div>
+              <img src="../images/icon/icon-profile.png" alt="기본프로필이미지" class="profile-img">
+            </div>
           </label>
-          <input type="file" id="avatar" name="avatar" accept=".jpg, .jpeg, .png" class="file-inp">
+          <input type="file" id="avatar" name="avatar" accept="image/*" class="file-inp" onchange="setThumbnail(event);">
           <label for="username" class="label">사용자 이름</label>
-          <input type="text" name="useremail" id="username" placeholder="2~10자 이내여야 합니다."
-            class="username-inp inp">
+          <input type="text" name="useremail" id="user-name" placeholder="2~10자 이내여야 합니다." class="username-inp inp">
+          <p id="username-alert" class="alert"></p>
           <label for="userid" class="label">계정 ID</label>
-          <input type="text" name="userpw" id="userid" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." class="userid-inp inp">
+          <input type="text" name="userpw" id="user-id" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." class="userid-inp inp">
+          <p id="userid-alert" class="alert"></p>
           <label for="introduce" class="label">소개</label>
-          <input type="text" name="userintroduce" id="introduce" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" 
-          class="introduce-inp inp">
+          <input type="text" name="userintroduce" id="introduce" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" class="introduce-inp inp">
+          <p id="introduce-alert" class="alert"></p>
         </fieldset>
       </form>
     </main>
+
+    <script src="../js/joinProfileSet/showProfileMod.js"></script>
 </body>
 </html>
