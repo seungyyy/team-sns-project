@@ -43,33 +43,37 @@
   margin-top: 30px;
 }
 .main-profile-mod .profile-mod-field .avatar-label {
-  position: relative;
-}
-.main-profile-mod .profile-mod-field .avatar-label .profile-mod-img {
-  display: block;
   width: 110px;
+  height: 110px;
+  display: block;
+  position: relative;
   margin: 0 auto;
-  object-fit: cover;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
-
-.main-profile-mod .profile-mod-field .avatar-label .profile-mod-imgchange {
+.main-profile-mod .profile-mod-field .avatar-label::after {
+  position: absolute;
+  content: '';
   width: 36px;
   height: 36px;
-  display: block;
-  margin: 0 auto;
-  transform: translate(37px, -37px);
+  right: 1%;
+  bottom: 1%;
+  background: url('../../images/icon/icon-upload-file.png') no-repeat;
+  background-size: 36px 36px;
+}
+.main-profile-mod .profile-mod-field .avatar-label img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .main-profile-mod .profile-mod-field .file-inp {
-  display: none;
-}
-.main-profile-mod .profile-mod-field .label,
-.main-profile-mod .profile-mod-field .inp {
-  display: block;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
 }
 .main-profile-mod .profile-mod-field .label {
   font-size: 12px;
-  color: #767676;
-  font-weight: 500;
   margin-bottom: 6px;
 }
 .main-profile-mod .profile-mod-field .inp {
@@ -82,7 +86,7 @@
   border-bottom: 1px solid #dbdbdb;
   font-size: 14px;
   color: #000;
-  font-family: inherit;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 .main-profile-mod .profile-mod-field .email-inp {
   margin-bottom: 16px;
@@ -92,4 +96,9 @@
 }
 .main-profile-mod .profile-mod-field .inp::placeholder {
   color: #dbdbdb;
+}
+.main-profile-mod .profile-mod-field .alert {
+  margin-top: -10px;
+  font-size: 12px;
+  color: #eb5757;
 }

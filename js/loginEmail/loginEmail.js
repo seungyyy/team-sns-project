@@ -32,7 +32,6 @@ async function login() {
   })
   const json = await res.json();
   const user = json.user;
-  console.log(user);
   if (user) {
     for (const key in user) {
       if (Object.hasOwnProperty.call(user, key)) {
