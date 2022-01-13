@@ -283,11 +283,12 @@
   display: flex;
   align-items: center;
 }
-.post .post-list .post-item .post-cont-icon .post-btn-icon {
+.post .post-list .post-item .post-cont-icon .post-btn-heart {
   background: none;
   border: none;
 }
-.post .post-list .post-item .post-cont-icon .post-btn-icon img {
+.post .post-list .post-item .post-cont-icon .post-btn-heart img,
+.post .post-list .post-item .post-cont-icon .post-link-comment img {
   width: 20px;
   height: 20px;
   margin-right: 6px;
