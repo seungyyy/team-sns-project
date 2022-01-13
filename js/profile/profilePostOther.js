@@ -35,7 +35,6 @@ async function profilePostMe() {
         <img src="${post.image.split(",")[0]}" alt="게시글 이미지" class="post-img"/>
       </div>
       `: "<div class='post-cont-space'></div>";
-
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
@@ -58,11 +57,13 @@ async function profilePostMe() {
         </p>
       </div>
         ${listImg}
-      <img
-        src="../images/icon/s-icon-more-vertical.png"
-        alt="더보기"
-        class="post-btn-setting"
-      />
+        <button type="button" class="post-btn-more">
+        <img
+          src="../images/icon/s-icon-more-vertical.png"
+          alt="더보기"
+          class="post-btn-setting"
+        />
+        </button>
       <div class="post-cont-icon">
         <button type="button" class="post-btn-icon">
           <img src="../images/icon/icon-heart.png" alt="좋아요" />
@@ -93,6 +94,7 @@ async function profilePostMe() {
       if (postImg) {
         postGrid.prepend(addGridItem);
       }
+      modalDeclaration(post.id);
     });
   }
 }
