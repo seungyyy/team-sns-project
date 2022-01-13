@@ -43,10 +43,10 @@
   font-size: 12px;
   color: #767676;
 }
-.main-add-prod .profile-set-field {
+.main-add-prod .prod-set-field {
   margin-top: 18px;
 }
-.main-add-prod .profile-set-field .prodfile-label .profile-set-img {
+.main-add-prod .prod-set-field .prodfile-label .prod-set-img {
   width: 100%;
   height: 204px;
   position: relative;
@@ -55,8 +55,9 @@
   background: #f2f2f2;
   border: 0.5px solid #dbdbdb;
   border-radius: 10px;
+  cursor: pointer;
 }
-.main-add-prod .profile-set-field .prodfile-label .profile-set-img::after {
+.main-add-prod .prod-set-field .prodfile-label .prod-set-img::after {
   position: absolute;
   content: '';
   width: 36px;
@@ -66,15 +67,15 @@
   background: url('../../images/icon/icon-upload.png') no-repeat;
   background-size: 36px 36px;
 }
-.main-add-prod .profile-set-field .file-inp {
+.main-add-prod .prod-set-field .file-inp {
   display: none;
 }
-.main-add-prod .profile-set-field .label {
+.main-add-prod .prod-set-field .label {
   font-size: 12px;
   margin-bottom: 6px;
   color: #767676;
 }
-.main-add-prod .profile-set-field .inp {
+.main-add-prod .prod-set-field .inp {
   width: 100%;
   padding-bottom: 9px;
   margin-bottom: 16px;
@@ -86,16 +87,17 @@
   color: #000;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
-.main-add-prod .profile-set-field .email-inp {
+.main-add-prod .prod-set-field .email-inp {
   margin-bottom: 16px;
 }
-.main-add-prod .profile-set-field .inp:focus {
+.main-add-prod .prod-set-field .inp:focus {
   border-bottom: 1px solid #24732f;
 }
-.main-add-prod .profile-set-field .inp::placeholder {
+.main-add-prod .prod-set-field .inp::placeholder {
   color: #dbdbdb;
 }
-.main-add-prod .profile-set-field .alert {
+.main-add-prod .prod-set-field .alert {
+  margin-top: -10px;
   font-size: 12px;
   color: #eb5757;
 }
