@@ -22,10 +22,19 @@ async function getFeed() {
     if (!mainHomeNone.classList.contains("nav--on")) {
       mainHomeNone.classList.add("cont--hide");
     }
-    posts.forEach((post, i) => {
+
+    posts.forEach((post) => {
+      //게시물 이미지로 들어온 소스를 구분한다.
+      let listImg =  post.image ? `
+      <div class="upload-imgBox">
+        <img src="${post.image.split(",")[0]}" alt="게시글 이미지" class="upload-img"/>
+      </div>
+      `: "<div class='post-cont-space'></div>";
+      //날짜 수정
       let addItem = document.createElement("li");
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
+
       addItem.innerHTML = `
     <div href="../pages/profile.html" class="upload-user">
     <a href="../pages/otherProfile.html" class="upload-user-link">
@@ -38,7 +47,7 @@ async function getFeed() {
   </div>
   <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
   <p class="upload-desc">${post.content}</p>
-  <div class="upload-imgBox"><img src="${post.image}" alt="some trees" class="upload-img"></div>
+  ${listImg}
   <div class="upload-icon">
     <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘">
     <span class="icon-txt">${post.heartCount}</span>

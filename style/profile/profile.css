@@ -17,14 +17,14 @@
   margin: 78px 55px 16px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 /* 팔로워 */
 .cont-user .user-cont-follow .user-followers,
 .cont-user .user-cont-follow .user-followings {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: block;
+  text-align: center;
   font-size: 10px;
   font-weight: 400;
   color: #767676;

@@ -116,6 +116,11 @@
   margin: 16px 0 14.5px 54px;
   overflow: hidden;
 }
+.main-feed-have .sec-upload li .post-cont-space {
+  margin: 16px 0 16px 54px;
+  border-radius: 10px;
+}
+
 .main-feed-have .sec-upload li .upload-imgBox .upload-img {
   width: 100%;
 }
