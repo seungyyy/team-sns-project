@@ -4,7 +4,7 @@ const joinEmail = joinEmailField.querySelector('#join-email');
 const joinPw = joinEmailField.querySelector('#join-pw');
 const emailAlert = joinEmailField.querySelector('#email-alert');
 
-
+// 버튼 클릭시 프로필 설정으로 화면 보여주기
 function nextProfile() {
   document.querySelector('.main-join-email').style.display = 'none';
   document.querySelector('.main-profile-set').classList.remove('cont--hide');

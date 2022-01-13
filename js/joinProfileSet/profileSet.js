@@ -1,5 +1,6 @@
-let imgUrl = document.querySelector('.profile-img').src;
+let imgUrl = document.querySelector('.profile-img');
 
+// 회원가입시 토큰 없어서 유저 이메일,비밀번호로 로그인해서 토큰 발급받기
 async function login(email, pw) { 
   const res = await fetch(url +"/user/login", {
     method: 'POST',
@@ -36,8 +37,8 @@ async function join() {
   const accountId = document.querySelector('#userid').value;
   const introduce = document.querySelector('#introduce').value;
 
-  if (imgUrl === 'http://127.0.0.1:5500/images/icon/icon-profile.png') {
-    imgUrl = 'http://146.56.183.55:5050/Ellipse.png';
+  if (imgUrl.src === 'http://127.0.0.1:5500/images/icon/icon-profile.png') {
+    imgUrl.src = 'http://146.56.183.55:5050/Ellipse.png';
   } 
 
   try {
@@ -53,7 +54,7 @@ async function join() {
             "username": userName,
             "accountname": accountId,
             "intro": introduce,
-            "image": imgUrl
+            "image": imgUrl.src
           },
         }),
       });
@@ -74,7 +75,7 @@ async function setThumbnail(e) {
   const file = e.target.files;
   const result = await imgUpload(file);
   
-  imgUrl = `${url}/${result}`;
+  imgUrl.src = `${url}/${result}`;
   
 }
 

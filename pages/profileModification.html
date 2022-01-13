@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>청귤마켓</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/profileModification/profileModification.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>청귤마켓</title>
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/profileModification/profileModification.css">
 </head>
 <body>
   <!-- header -->
   <header class="header">
-    <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
-    <button class="btn-MS--off">저장</button>
+    <a href="./profile.html">
+      <img src="../images/icon/icon-arrow-left.png" alt="프로필 화면으로 뒤로가기" class="img-before">
+    </a>
+    <button id="save-btn" class="btn-MS btn-MS--off">저장</button>
     </header>
 
     <!-- profile 수정 -->
@@ -28,7 +30,7 @@
           <label for="username" class="label">사용자 이름</label>
           <input type="text" name="useremail" id="user-name" placeholder="2~10자 이내여야 합니다." class="username-inp inp">
           <p id="username-alert" class="alert"></p>
-          <label for="userid" class="label">계정 ID</label>
+          <label for="user-id" class="label">계정 ID</label>
           <input type="text" name="userpw" id="user-id" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." class="userid-inp inp">
           <p id="userid-alert" class="alert"></p>
           <label for="introduce" class="label">소개</label>
@@ -39,5 +41,7 @@
     </main>
 
     <script src="../js/joinProfileSet/showProfileMod.js"></script>
+    <script src="../js/joinProfileSet/checkprofileMod.js"></script>
+    <script src="../js/joinProfileSet/saveProfileMod.js"></script>
 </body>
 </html>

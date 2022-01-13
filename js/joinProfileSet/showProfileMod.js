@@ -1,5 +1,6 @@
 const url = 'http://146.56.183.55:5050';
 
+// 유저 프로필 화면에 보여주기
 function showUerInfo(img, username, account, intro) {
   document.getElementById('user-name').value = username;
   document.getElementById('user-id').value = account;
@@ -7,6 +8,7 @@ function showUerInfo(img, username, account, intro) {
   document.querySelector('.profile-img').src = img;
 };
 
+// 서버에 있는 유저 정보 가져오기 
 async function getUserInfo() {
   const token = localStorage.getItem("token");
   const accountName = localStorage.getItem("accountname");
