@@ -22,7 +22,6 @@ async function getFeed() {
     if (!mainHomeNone.classList.contains("nav--on")) {
       mainHomeNone.classList.add("cont--hide");
     }
-
     posts.forEach((post) => {
       //게시물 이미지로 들어온 소스를 구분한다.
       let listImg =  post.image ? `
@@ -34,11 +33,14 @@ async function getFeed() {
       let addItem = document.createElement("li");
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
-
+      //하트 여부
+      let heartImg = !post.hearted ? 
+      "../images/icon/icon-heart.png" :
+      "../images/icon/icon-heart-fill.png" ;
       addItem.innerHTML = `
     <div href="../pages/profile.html" class="upload-user">
     <a href="../pages/otherProfile.html" class="upload-user-link">
-      <img src="${post.author.image}" alt="user image" class="upload-userimg">
+      <img src="${post.author.image}" alt="user image" class="upload-userimg" onerror='this.src="http://146.56.183.55:5050/Ellipse.png"'>
       <div class="upload-user-txt">
         <p class="upload-title">${post.author.username}</p>
         <span class="upload-userId">@ ${post.author.accountname}</span>
@@ -49,21 +51,39 @@ async function getFeed() {
   <p class="upload-desc">${post.content}</p>
   ${listImg}
   <div class="upload-icon">
-    <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘">
-    <span class="icon-txt">${post.heartCount}</span>
-    <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
-    <span class="icon-txt">${post.commentCount}</span>
+    <button type="button" class="upload-btn-heart">
+      <img src=${heartImg} alt="좋아요 아이콘">
+      <span class="icon-txt">${post.heartCount}</span>
+    </button>
+    <a href="../pages/post.html" class="upload-btn-comment"><img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+      <span class="icon-txt">${post.commentCount}</span>
+    </a>
   </div>
   <p class="upload-data">${yearMonth[0]}년 ${yearMonth[1]}월 ${day}일</p>
 </div>
     `;
-      feedList.prepend(addItem);
-      document
-        .querySelector(".upload-user-link")
-        .addEventListener("click", () => {
-          localStorage.setItem("postuploder", post.author.accountname);
-        });
+    feedList.prepend(addItem);
+    //하트 
+    document
+    .querySelector(".upload-btn-heart")
+    .addEventListener("click", () => {
+      if(!post.hearted){
+        heartPlus(post.id)
+      }else{
+        heartCancel(post.id)
+      }
     });
+     
+      //유저 클릭시 해당 유저 프로필로 이동하면서 해당 유저의 accountname를 기억한다.
+      document
+      .querySelector(".upload-user-link")
+      .addEventListener("click", () => {
+        localStorage.setItem("postuploder", post.author.accountname);
+      });
+
+    });
+      
+     
   }
 }
 getFeed();

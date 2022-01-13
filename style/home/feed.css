@@ -89,6 +89,7 @@
 .main-feed-have .sec-upload li .upload-user .upload-userimg {
   max-width: 42px;
   max-height: 42px;
+  border-radius: 50%;
   position: absolute;
   top: 0;
   left: 0;
@@ -126,6 +127,13 @@
 }
 .main-feed-have .sec-upload li .upload-icon {
   margin: 14px 0 18px 54px;
+  display: flex;
+  align-items: center;
+}
+.main-feed-have .sec-upload li .upload-icon button,
+.main-feed-have .sec-upload li .upload-icon a{
+  background: none;
+  border: none;
   display: flex;
   align-items: center;
 }

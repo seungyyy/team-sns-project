@@ -38,7 +38,10 @@ async function profilePostMe() {
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
-
+      //하트 여부
+      let heartImg = !post.hearted ? 
+      "../images/icon/icon-heart.png" :
+      "../images/icon/icon-heart-fill.png" ;
       //li 안에 반복되는 코드를 삽입한다.
       addListItem.innerHTML = `
         <img
@@ -66,15 +69,15 @@ async function profilePostMe() {
         </button>
       <div class="post-cont-icon">
         <button type="button" class="post-btn-icon">
-          <img src="../images/icon/icon-heart.png" alt="좋아요" />
+          <img src=${heartImg} alt="좋아요" />
+          <span class="post-txt-icon">  ${post.heartCount}</span>
         </button>
-        <span class="post-txt-icon">  ${post.heartCount}</span>
-        <button type="button" class="post-btn-icon">
+        <a href="../../pages/post.html" class="post-btn-icon">
           <img
             src="../images/icon/s-icon-message-circle.png"
             alt="채팅하기"
           />
-        </button>
+        </a>
         <span class="post-txt-icon">${post.commentCount}</span>
       </div>
       <p class="post-date">${yearMonth[0]}년 ${yearMonth[1]}월 ${day}일</p>
@@ -94,6 +97,15 @@ async function profilePostMe() {
       if (postImg) {
         postGrid.prepend(addGridItem);
       }
+      document
+      .querySelector(".post-btn-icon")
+      .addEventListener("click", () => {
+        if(!post.hearted){
+          heartPlus(post.id)
+        }else{
+          heartCancel(post.id)
+        }
+      });
       modalDeclaration(post.id);
     });
   }

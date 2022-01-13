@@ -39,7 +39,7 @@ async function productConfirmation() {
       price = price.reverse().join("");
       //추후에 상품 주소 추가
       addListItem.innerHTML = `
-      <button type="button" class="product-btn">
+      <a href=${product.link} class="product-btn">
         <img
           src="${product.itemImage}"
           alt="${product.itemName}"
