@@ -4,6 +4,16 @@ const joinEmail = joinEmailField.querySelector('#join-email');
 const joinPw = joinEmailField.querySelector('#join-pw');
 const emailAlert = joinEmailField.querySelector('#email-alert');
 
+
+// 입력값이 없다면 버튼 비활성화 
+function clickDisabled() {
+  if (!joinEmail.value && !joinPw.value) {
+    joinBtn.disabled = false;
+  } else {
+    nextProfile();
+  }
+}
+
 // 버튼 클릭시 프로필 설정으로 화면 보여주기
 function nextProfile() {
   document.querySelector('.main-join-email').style.display = 'none';
@@ -16,6 +26,7 @@ function keyupDisabled() {
       joinBtn.disabled = false;
       joinBtn.classList.remove('btn-L--off');
     } else {
+      joinBtn.classList.add('btn-L--off');
       joinBtn.disabled = true;
     }
 }
@@ -61,5 +72,5 @@ async function checkEmail() {
 joinEmail.addEventListener('blur', checkEmail);
 joinPw.addEventListener('keyup', checkPw);
 joinEmailField.addEventListener('keyup', keyupDisabled);
-joinBtn.addEventListener('click', nextProfile);
+joinBtn.addEventListener('click', clickDisabled);
 

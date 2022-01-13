@@ -8,12 +8,26 @@ const alertTxt = document.querySelector('#alert-txt');
 function keyupDisabled() {
   if (email.value && pw.value) {
     alertTxt.textContent = '';
-    btn.disabled = false;
     btn.classList.remove('btn-L--off');
+    btn.disabled = false;
+  } else if (pw.value && !email.value) {
+    btn.disabled = true;
+  } else if (email.value && pw.value) {
+    btn.disabled = true;
   } else {
     btn.disabled = true;
   }
 }
+
+// 이메일 비밀번호 입력값이 없는 경우도 버튼 비활성화
+async function clickDisabled() { 
+  if (!email.value && !pw.value) {
+    btn.disabled = false;
+  } else { 
+    await login();
+  }
+}
+
 
 // 버튼 클릭시 서버에 유저가 있다면 로컬스토리지에 저장 후 홈 피드 화면으로 이동
 // 유저가 아니라면 경고 텍스트가 나옵니다
@@ -48,5 +62,5 @@ async function login() {
   }
 }
 
-emailField.addEventListener('keyup', keyupDisabled);
-btn.addEventListener('click', login);
+document.querySelector('.email-field').addEventListener('keyup', keyupDisabled);
+document.querySelector('#login-btn').addEventListener('click', clickDisabled);
