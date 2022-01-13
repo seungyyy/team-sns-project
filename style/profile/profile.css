@@ -43,6 +43,8 @@
 /* 유저 이미지 */
 .cont-user .user-cont-follow img {
   width: 110px;
+  height: 110px;
+  border-radius: 50%;
 }
 .cont-user .user-tit {
   font-size: 16px;
@@ -163,21 +165,25 @@
 .product .product-list .product-item {
   margin-right: 10px;
 }
-.product .product-list .product-item .product-link .product-img {
+.product .product-list .product-item .product-btn{
+  border: none;
+  background: none;
+}
+.product .product-list .product-item .product-btn .product-img {
   width: 140px;
   height: 90px;
-  object-fit: cover;
+  object-fit: contain;
   border: 0.5px solid #dbdbdb;
   box-sizing: border-box;
   border-radius: 8px;
 }
-.product .product-list .product-item .product-link .product-desc {
+.product .product-list .product-item .product-btn .product-desc {
   text-align: left;
   margin: 6px 0 4px;
   font-size: 14px;
   line-height: 18px;
 }
-.product .product-list .product-item .product-link .product-price {
+.product .product-list .product-item .product-btn .product-price {
   text-align: left;
   font-weight: 700;
   font-size: 12px;
@@ -228,6 +234,7 @@
   width: 42px;
   height: 42px;
   position: absolute;
+  border-radius: 50%;
   top: 0;
   left: 0;
 }
@@ -317,8 +324,8 @@
   object-fit: cover;
 }
 
-/* modal */
-.modal-outside {
+/* modal - logout */
+.modal-logout-outside {
   position: absolute;
   top: 0;
   left: 0;
@@ -326,7 +333,7 @@
   bottom: 0;
   z-index: 30;
 }
-.modal-outside .dimm {
+.modal-logout-outside .dimm {
   position: absolute;
   top: 0;
   left: 0;
@@ -335,7 +342,7 @@
   z-index: 0;
   background-color: #0000007e;
 }
-.modal-logout {
+.modal-logout-outside .modal-logout {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -344,23 +351,23 @@
   background-color: #fff;
   border-radius: 10px 10px 0 0;
 }
-.modal-logout .modal-bar {
+.modal-logout-outside .modal-logout .modal-bar {
   width: 50px;
   height: 4px;
   margin: 16px auto;
   background-color: #dbdbdb;
 }
-.modal-logout .modal-list .modal-item {
+.modal-logout-outside .modal-logout .modal-list .modal-item {
   text-align: left;
   padding: 14px 26px 14px;
   font-size: 14px;
   font-weight: 400;
 }
-.modal-logout .modal-list .modal-item button {
+.modal-logout-outside .modal-logout .modal-list .modal-item button {
   border: none;
   background: none;
 }
-.modal-logoutTest {
+.modal-logout-outside .modal-logoutTest {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -373,30 +380,196 @@
   border-radius: 10px;
   overflow: hidden;
 }
-.modal-logoutTest .modal-gide {
+.modal-logout-outside .modal-logoutTest .modal-gide {
   margin: 22px 0;
   font-size: 16px;
   font-weight: 500;
 }
-.modal-logoutTest .modal-gide-list {
+.modal-logout-outside .modal-logoutTest .modal-gide-list {
   display: flex;
   align-items: center;
   border-top: 0.5px solid #dbdbdb;
   height: 46px;
 }
-.modal-logoutTest .modal-gide-list .modal-gide-item {
+.modal-logout-outside .modal-logoutTest .modal-gide-list .modal-gide-item {
   flex-basis: 50%;
   height: 100%;
 }
-.modal-logoutTest .modal-gide-list .modal-gide-item:first-child {
+.modal-logout-outside .modal-logoutTest .modal-gide-list .modal-gide-item:first-child {
   border-right: 0.5px solid #dbdbdb;
 }
-.modal-logoutTest .modal-gide-list .modal-gide-item button {
+.modal-logout-outside .modal-logoutTest .modal-gide-list .modal-gide-item button {
   width: 100%;
   height: 100%;
   border: none;
   background: none;
 }
-.modal-logoutTest .modal-gide-list .modal-gide-item .modal-btn-logout {
+.modal-logout-outside .modal-logoutTest .modal-gide-list .modal-gide-item .modal-btn-logout {
   color: #f26e22;
 }
+/* modal - post */
+.modal-post-outside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+}
+.modal-post-outside .dimm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: #0000007e;
+}
+.modal-post-outside .modal-post {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+.modal-post-outside .modal-post .modal-bar {
+  width: 50px;
+  height: 4px;
+  margin: 16px auto;
+  background-color: #dbdbdb;
+}
+.modal-post-outside .modal-post .modal-list .modal-item {
+  text-align: left;
+  padding: 14px 26px 14px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.modal-post-outside .modal-post .modal-list .modal-item button {
+  border: none;
+  background: none;
+}
+.modal-post-outside .modal-postTest {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  bottom: 0;
+  width: 252px;
+  height: 110px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.modal-post-outside .modal-postTest .modal-gide {
+  margin: 22px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.modal-post-outside .modal-postTest .modal-gide-list {
+  display: flex;
+  align-items: center;
+  border-top: 0.5px solid #dbdbdb;
+  height: 46px;
+}
+.modal-post-outside .modal-postTest .modal-gide-list .modal-gide-item {
+  flex-basis: 50%;
+  height: 100%;
+}
+.modal-post-outside .modal-postTest .modal-gide-list .modal-gide-item:first-child {
+  border-right: 0.5px solid #dbdbdb;
+}
+.modal-post-outside .modal-postTest .modal-gide-list .modal-gide-item button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+}
+.modal-post-outside .modal-postTest .modal-gide-list .modal-gide-item .modal-btn-delete {
+  color: #f26e22;
+}
+
+/* modal - product */
+.modal-product-outside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+}
+.modal-product-outside .dimm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: #0000007e;
+}
+.modal-product-outside .modal-product {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+.modal-product-outside .modal-product .modal-bar {
+  width: 50px;
+  height: 4px;
+  margin: 16px auto;
+  background-color: #dbdbdb;
+}
+.modal-product-outside .modal-product .modal-list .modal-item {
+  text-align: left;
+  padding: 14px 26px 14px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.modal-product-outside .modal-product .modal-list .modal-item button {
+  border: none;
+  background: none;
+}
+.modal-product-outside .modal-productTest {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  bottom: 0;
+  width: 252px;
+  height: 110px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.modal-product-outside .modal-productTest .modal-gide {
+  margin: 22px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.modal-product-outside .modal-productTest .modal-gide-list {
+  display: flex;
+  align-items: center;
+  border-top: 0.5px solid #dbdbdb;
+  height: 46px;
+}
+.modal-product-outside .modal-productTest .modal-gide-list .modal-gide-item {
+  flex-basis: 50%;
+  height: 100%;
+}
+.modal-product-outside .modal-productTest .modal-gide-list .modal-gide-item:first-child {
+  border-right: 0.5px solid #dbdbdb;
+}
+.modal-product-outside .modal-productTest .modal-gide-list .modal-gide-item button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+}
+.modal-product-outside .modal-productTest .modal-gide-list .modal-gide-item .modal-btn-delete {
+  color: #f26e22;
+}
+

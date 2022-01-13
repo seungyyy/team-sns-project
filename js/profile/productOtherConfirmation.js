@@ -39,7 +39,7 @@ async function productConfirmation() {
       price = price.reverse().join("");
       //추후에 상품 주소 추가
       addListItem.innerHTML = `
-      <a href="#" class="product-link">
+      <a href=${product.link} class="product-btn">
         <img
           src="${product.itemImage}"
           alt="${product.itemName}"
@@ -47,7 +47,7 @@ async function productConfirmation() {
         />
         <p class="product-desc">${product.itemName}</p>
         <p class="product-price">${price}원</p>
-      </a>
+      </button>
       `
       productList.prepend(addListItem);
     })

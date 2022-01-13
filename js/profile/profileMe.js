@@ -11,10 +11,7 @@ async function profileMe() {
   );
   const json = await res.json();
   const profile = json.profile;
-  console.log(profile);
-  //localstorage postuploder 정보 삭제
-  // localStorage.removeItem("postuploder");
-  //localstorage postuploder에 내정보 추가
+  console.log("내프로필 정보", profile);
   localStorage.setItem("postuploder", localStorage.getItem("accountname"));
   let profileMe = document.querySelector(".cont-user");
   let followers = profileMe.querySelector(".user-num-followers");

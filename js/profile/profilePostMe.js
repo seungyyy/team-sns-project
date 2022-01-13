@@ -37,6 +37,10 @@ async function profilePostMe() {
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
+       //하트 여부
+       let heartImg = !post.hearted ? 
+       "../images/icon/icon-heart.png" :
+       "../images/icon/icon-heart-fill.png" ;
       addListItem.innerHTML = `
         <img
         src="${post.author.image}"
@@ -54,22 +58,24 @@ async function profilePostMe() {
         </p>
       </div>
         ${listImg}
+      <button type="button" class="post-btn-more">
       <img
         src="../images/icon/s-icon-more-vertical.png"
         alt="더보기"
         class="post-btn-setting"
       />
+      </button>
       <div class="post-cont-icon">
         <button type="button" class="post-btn-icon">
-          <img src="../images/icon/icon-heart.png" alt="좋아요" />
+          <img src=${heartImg} alt="좋아요" />
+          <span class="post-txt-icon">  ${post.heartCount}</span>
         </button>
-        <span class="post-txt-icon">  ${post.heartCount}</span>
-        <button type="button" class="post-btn-icon">
+        <a href="../../pages/post.html" class="post-btn-icon">
           <img
             src="../images/icon/s-icon-message-circle.png"
             alt="채팅하기"
           />
-        </button>
+        </a>
         <span class="post-txt-icon">${post.commentCount}</span>
       </div>
       <p class="post-date">${yearMonth[0]}년 ${yearMonth[1]}월 ${day}일</p>
@@ -89,7 +95,18 @@ async function profilePostMe() {
       if (postImg) {
         postGrid.prepend(addGridItem);
       }
+      document
+      .querySelector(".post-btn-icon")
+      .addEventListener("click", () => {
+        if(!post.hearted){
+          heartPlus(post.id)
+        }else{
+          heartCancel(post.id)
+        }
+      });
+      modalPost(post.id);
     });
   }
 }
 profilePostMe();
+

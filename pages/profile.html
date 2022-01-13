@@ -1,111 +1,107 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>청귤마켓</title>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="../style/reset.css" />
-    <link rel="stylesheet" href="../style/profile/profile.css" />
-    <link rel="stylesheet" href="../style/profile/profile-header.css" />
-    <link rel="stylesheet" href="../style/module/nav.css" />
-  </head>
-  <body>
-    <div class="app">
-      <header class="header">
-        <h1 class="hidden">청귤마켓 profile</h1>
-        <ul class="header-list">
-          <li class="header-item">
-            <a href="./home.html" class="header-link">
-              <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
-            </a>
-          </li>
-          <li class="header-item">
-            <button type="button" class="header-btn">
-              <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
-            </button>
-          </li>
-        </ul>
-      </header>
 
-      <main class="main-profile">
-        <!-- 유저프로필 -->
-        <section class="cont-user">
-          <h2 class="hidden">user profile</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>청귤마켓</title>
+  <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="../style/reset.css" />
+  <link rel="stylesheet" href="../style/profile/profile.css" />
+  <link rel="stylesheet" href="../style/profile/profile-header.css" />
+  <link rel="stylesheet" href="../style/module/nav.css" />
+</head>
 
-          <article class="user-cont-follow">
-            <h3 class="hidden">follow</h3>
-            <a href="./followers.html" class="user-followers">
-              <strong class="user-num-followers"></strong>
-              <p>followers</p>
-            </a>
-            <img
-              src="../images/icon/icon-profile.png"
-              alt="프로필 사진"
-              class="user-img"
-            />
-            <a href="./followings.html" class="user-followings">
-              <p><strong class="user-num-followings"></strong></p>
-              <p>followings</p>
-            </a>
-          </article>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="hidden">청귤마켓 profile</h1>
+      <ul class="header-list">
+        <li class="header-item">
+          <a href="./home.html" class="header-link">
+            <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
+          </a>
+        </li>
+        <li class="header-item">
+          <button type="button" class="header-btn">
+            <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
+          </button>
+        </li>
+      </ul>
+    </header>
 
-          <p class="user-tit">
-            <strong></strong>
-          </p>
-          <p class="user-name"></p>
-          <p class="user-desc"></p>
-          <section class="user-cont-me">
-            <div class="user-cont-btnMy">
-              <a href="./profileModification.html" class="user-fix"> 프로필 수정 </a>
-              <a href="./addProd.html" class="user-upload-product">
-                상품 등록
-              </a>
-            </div>
-          </section>
+    <main class="main-profile">
+      <!-- 유저프로필 -->
+      <section class="cont-user">
+        <h2 class="hidden">user profile</h2>
+
+        <article class="user-cont-follow">
+          <h3 class="hidden">follow</h3>
+          <a href="./followers.html" class="user-followers">
+            <strong class="user-num-followers"></strong>
+            <p>followers</p>
+          </a>
+          <img src="../images/icon/icon-profile.png" alt="프로필 사진" class="user-img" />
+          <a href="./followings.html" class="user-followings">
+            <p><strong class="user-num-followings"></strong></p>
+            <p>followings</p>
+          </a>
+        </article>
+
+        <p class="user-tit">
+          <strong></strong>
+        </p>
+        <p class="user-name"></p>
+        <p class="user-desc"></p>
+        <section class="user-cont-me">
+          <div class="user-cont-btnMy">
+            <a href="./profileModification.html" class="user-fix"> 프로필 수정 </a>
+            <a href="./addProd.html" class="user-upload-product">
+              상품 등록
+            </a>
+          </div>
         </section>
+      </section>
 
-        <!-- 게시물과 판매상품이 없을 시 hr에 cont--not을 붙인다. -->
+      <!-- 게시물과 판매상품이 없을 시 hr에 cont--not을 붙인다. -->
+      <hr class="hr" />
+      <!-- product section에 cont--hide class를 붙일 시 사라짐 -->
+      <section class="product">
+        <h2 class="product-tit">판매 중인 상품</h2>
+        <ul class="product-list"> </ul>
         <hr class="hr" />
-        <!-- product section에 cont--hide class를 붙일 시 사라짐 -->
-        <section class="product">
-          <h2 class="product-tit">판매 중인 상품</h2>
-          <ul class="product-list"> </ul>
-          <hr class="hr" />
-        </section>
+      </section>
 
-        <!-- 게시글 없을 시 cont--hide css 부착  -->
-        <section class="post">
-          <h2 class="hidden">게시글</h2>
-          <div class="post-change">
-            <!-- 버튼에 css속성으로 배경 이미지를 변경하는 것 -->
-            <button class="post-btn-list" type="button"></button>
-            <button
-              class="post-btn-grid post-btn-grid--off"
-              type="button"
-            ></button>
-          </div>
+      <!-- 게시글 없을 시 cont--hide css 부착  -->
+      <section class="post">
+        <h2 class="hidden">게시글</h2>
+        <div class="post-change">
+          <!-- 버튼에 css속성으로 배경 이미지를 변경하는 것 -->
+          <button class="post-btn-list" type="button"></button>
+          <button class="post-btn-grid post-btn-grid--off" type="button"></button>
+        </div>
 
-          <!-- ul의 클래스로 cont--hide을 더해줄 시 숨겨짐 -->
-          <ul class="post-list">
-            <h3 class="hidden">게시글 - 리스트 형식</h3>
+        <!-- ul의 클래스로 cont--hide을 더해줄 시 숨겨짐 -->
+        <ul class="post-list">
+          <h3 class="hidden">게시글 - 리스트 형식</h3>
+        </ul>
+        <!-- div 의 클래스로 cont--hide을 더해줄 시 숨겨짐 -->
+        <div class="post-grid cont--hide">
+          <ul class="post-list-grid">
+            <h3 class="hidden">게시글 - 격자형식</h3>
           </ul>
-          <!-- div 의 클래스로 cont--hide을 더해줄 시 숨겨짐 -->
-          <div class="post-grid cont--hide">
-            <ul class="post-list-grid">
-              <h3 class="hidden">게시글 - 격자형식</h3>
-            </ul>
-          </div>
-        </section>
-      </main>
-      <section class="modal-outside cont--hide">
+        </div>
+      </section>
+    </main>
+
+    <section class="modal-logout-outside cont--hide">
         <h2 class="hidden">로그아웃 창</h2>
         <div class="dimm"></div>
         <article class="modal-logout">
@@ -128,78 +124,104 @@
             </li>
           </ul>
         </article>
-      </section>
+    </section>
 
-      <nav class="nav">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="./home.html" class="nav-link nav-link-home">
-              <img
-                src="../images/icon/icon-home-fill.png"
-                alt="홈"
-                class="nav-img nav-img-home--on cont--hide"
-              />
-              <img
-                src="../images/icon/icon-home.png"
-                alt="홈"
-                class="nav-img nav-img-home--off"
-              />
-              <p class="nav-txt">홈</p>
-            </a>
+    <section class="modal-post-outside cont--hide">
+      <h2 class="hidden">게시글 조치 화면</h2>
+      <div class="dimm"></div>
+      <article class="modal-post">
+        <h3 class="hidden">삭제 및 수정</h3>
+        <div class="modal-bar"></div>
+        <ul class="modal-list">
+          <li class="modal-item"><button type="button" class="modal-delete">삭제</button></li>
+          <li class="modal-item"><a href="#" type="button" class="modal-fix">수정</a></li>
+        </ul>
+      </article>
+      <article class="modal-postTest cont--hide">
+        <h3 class="hidden">삭제 재확인</h3>
+        <p class="modal-gide">삭제 하시겠어요?</p>
+        <ul class="modal-gide-list">
+          <li class="modal-gide-item">
+            <button type="button" class="modal-gide-cancel">취소</button>
           </li>
-          <li class="nav-item">
-            <a href="./chatList.html" class="nav-link nav-link-chat">
-              <img
-                src="../images/icon/icon-message-circle-fill.png"
-                alt="채팅"
-                class="nav-img nav-img-chat--on cont--hide"
-              />
-              <img
-                src="../images/icon/xl-icon-message-circle.png"
-                alt="채팅"
-                class="nav-img nav-img-chat--off"
-              />
-              <p class="nav-txt">채팅</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="./upload.html" class="nav-link nav-link-post">
-              <img
-                src="../images/icon/icon-edit-fill.png"
-                alt="게시물 작성"
-                class="nav-img nav-img-post--on cont--hide"
-              />
-              <img
-                src="../images/icon/icon-edit.png"
-                alt="게시물 작성"
-                class="nav-img nav-img-post--off"
-              />
-              <p class="nav-txt">게시물 작성</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="./profile.html" class="nav-link nav-link-profile nav--on">
-              <img
-                src="../images/icon/icon-user-fill.png"
-                alt="프로필"
-                class="nav-img nav-img-profile--on"
-              />
-              <img
-                src="../images/icon/icon-user.png"
-                alt="프로필"
-                class="nav-img nav-img-profile--off cont--hide"
-              />
-              <p class="nav-txt">프로필</p>
-            </a>
+          <li class="modal-gide-item">
+            <button type="button" class="modal-btn-delete">삭제</button>
           </li>
         </ul>
-      </nav>
-    </div>
-    <script src="../js/modal.js"></script>
-    <script src="../js/navChange.js"></script>
-    <script src="../js/listGridChange.js"></script>
-    <script src="../js/profile/profileMe.js"></script>
-    <script src="../js/profile/productConfirmation.js"></script>
-    <script src="../js/profile/profilePostMe.js"></script>
-  </body>
+      </article>
+    </section>
+
+    <section class="modal-product-outside cont--hide">
+      <h2 class="hidden">게시글 조치 화면</h2>
+      <div class="dimm"></div>
+      <article class="modal-product">
+        <h3 class="hidden">삭제 및 수정</h3>
+        <div class="modal-bar"></div>
+        <ul class="modal-list">
+          <li class="modal-item"><button type="button" class="modal-delete">삭제</button></li>
+          <li class="modal-item"><a href="#" type="button" class="modal-fix">수정</a></li>
+          <li class="modal-item"><a href="#" type="button" class="modal-web">판매 웹사이트로 이동</a></li>
+        </ul>
+      </article>
+      <article class="modal-productTest cont--hide">
+        <h3 class="hidden">삭제 재확인</h3>
+        <p class="modal-gide">삭제 하시겠어요?</p>
+        <ul class="modal-gide-list">
+          <li class="modal-gide-item">
+            <button type="button" class="modal-gide-cancel">취소</button>
+          </li>
+          <li class="modal-gide-item">
+            <button type="button" class="modal-btn-delete">삭제</button>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="./home.html" class="nav-link nav-link-home">
+            <img src="../images/icon/icon-home-fill.png" alt="홈" class="nav-img nav-img-home--on cont--hide" />
+            <img src="../images/icon/icon-home.png" alt="홈" class="nav-img nav-img-home--off" />
+            <p class="nav-txt">홈</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./chatList.html" class="nav-link nav-link-chat">
+            <img src="../images/icon/icon-message-circle-fill.png" alt="채팅"
+              class="nav-img nav-img-chat--on cont--hide" />
+            <img src="../images/icon/xl-icon-message-circle.png" alt="채팅" class="nav-img nav-img-chat--off" />
+            <p class="nav-txt">채팅</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./upload.html" class="nav-link nav-link-post">
+            <img src="../images/icon/icon-edit-fill.png" alt="게시물 작성" class="nav-img nav-img-post--on cont--hide" />
+            <img src="../images/icon/icon-edit.png" alt="게시물 작성" class="nav-img nav-img-post--off" />
+            <p class="nav-txt">게시물 작성</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./profile.html" class="nav-link nav-link-profile nav--on">
+            <img src="../images/icon/icon-user-fill.png" alt="프로필" class="nav-img nav-img-profile--on" />
+            <img src="../images/icon/icon-user.png" alt="프로필" class="nav-img nav-img-profile--off cont--hide" />
+            <p class="nav-txt">프로필</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <script src="../js/navChange.js"></script>
+  <script src="../js/listGridChange.js"></script>
+  <script src="../js/heart.js"></script>
+  <script src="../js/profile/profileMe.js"></script>
+  <script src="../js/profile/productConfirmation.js"></script>
+  <script src="../js/modal/modalLogout.js"></script>
+  <script src="../js/modal/modalPost.js"></script>
+  <script src="../js/modal/modalProduct.js"></script>
+  <script src="../js/profile/deletePostProduct.js"></script>
+  <script src="../js/profile/profilePostMe.js"></script>
+</body>
 </html>

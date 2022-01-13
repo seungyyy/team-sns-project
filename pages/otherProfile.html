@@ -119,10 +119,9 @@
         </section>
       </main>
 
-      <section class="modal-outside cont--hide">
+      <section class="modal-logout-outside cont--hide">
         <h2 class="hidden">로그아웃 창</h2>
         <div class="dimm"></div>
-
         <article class="modal-logout">
           <h3 class="hidden">설정 및 개인정보와 로그아웃</h3>
           <div class="modal-bar"></div>
@@ -131,7 +130,6 @@
             <li class="modal-item"><button type="button">로그아웃</button></li>
           </ul>
         </article>
-
         <article class="modal-logoutTest cont--hide">
           <h3 class="hidden">로그아웃 재확인</h3>
           <p class="modal-gide">로그아웃 하시겠어요?</p>
@@ -144,7 +142,32 @@
             </li>
           </ul>
         </article>
-      </section>
+    </section>
+
+    <section class="modal-post-outside cont--hide">
+      <h2 class="hidden">게시글 신고 화면</h2>
+      <div class="dimm"></div>
+      <article class="modal-post">
+        <h3 class="hidden">신고하기</h3>
+        <div class="modal-bar"></div>
+        <ul class="modal-list">
+          <li class="modal-item"><button type="button" class="modal-delete">신고</button></li>
+        </ul>
+      </article>
+      <article class="modal-postTest cont--hide">
+        <h3 class="hidden">신고 재확인</h3>
+        <p class="modal-gide">게시글을 신고 하시겠어요?</p>
+        <ul class="modal-gide-list">
+          <li class="modal-gide-item">
+            <button type="button" class="modal-gide-cancel">취소</button>
+          </li>
+          <li class="modal-gide-item">
+            <button type="button" class="modal-btn-delete">신고</button>
+          </li>
+        </ul>
+      </article>
+    </section>
+
 
       <nav class="nav">
         <ul class="nav-list">
@@ -211,12 +234,20 @@
         </ul>
       </nav>
     </div>
-    <script src="../js/modal.js"></script>
+    <!-- 모달 관련 -->
+    <script src="../js/modal/modalLogout.js"></script>
+    <script src="../js/modal/modalDeclaration.js"></script>
+
+    <!-- nav, list <-> grid -->
     <script src="../js/navChange.js"></script>
     <script src="../js/listGridChange.js"></script>
+    <script src="../js/profile/onFollow.js"></script>
+    <script src="../js/profile/offFollow.js"></script>
+    <script src="../js/heart.js"></script>
     <script src="../js/profile/profileOther.js"></script>
     <script src="../js/profile/profileOtherIsFollow.js"></script>
     <script src="../js/profile/productOtherConfirmation.js"></script> 
     <script src="../js/profile/profilePostOther.js"></script>
+    <script src="../js/profile/deletePostProduct.js"></script>
   </body>
 </html>

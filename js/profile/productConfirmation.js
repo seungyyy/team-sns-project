@@ -14,6 +14,7 @@ async function productConfirmation() {
   console.log(products);
 
   let productCont = document.querySelector(".product");
+  let productList = productCont.querySelector(".product-list");
   if (!products.data) {
     if (!productCont.classList.contains("cont--hide")) {
       productCont.classList.add("cont--hide");
@@ -38,7 +39,7 @@ async function productConfirmation() {
       price = price.reverse().join("");
       //추후에 상품 주소 추가
       addListItem.innerHTML = `
-      <a href="#" class="product-link">
+      <button type="button" class="product-btn">
         <img
           src="${product.itemImage}"
           alt="${product.itemName}"
@@ -46,9 +47,11 @@ async function productConfirmation() {
         />
         <p class="product-desc">${product.itemName}</p>
         <p class="product-price">${price}원</p>
-      </a>
+      </button>
       `
       productList.prepend(addListItem);
+      
+      modalProduct(product.id);
     })
   }
 }

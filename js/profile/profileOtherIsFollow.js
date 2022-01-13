@@ -1,6 +1,5 @@
 async function profileOtherIsFollow() {
   const res = await fetch(
-    //타유저의 프로필일 시 해당 account name이 들어감
     "http://146.56.183.55:5050/profile/" +
       localStorage.getItem("accountname") +
       "/following",
@@ -14,6 +13,7 @@ async function profileOtherIsFollow() {
   );
   const json = await res.json();
   const followers = json;
+  console.log(followers)
   let btnFollow = document.querySelector(".user-btn-follow");
   let btnUnFollow = document.querySelector(".user-btn-unfollow");
   let isfollower = false;
@@ -22,11 +22,20 @@ async function profileOtherIsFollow() {
       isfollower = true;
       btnFollow.classList.add("cont--hide");
       btnUnFollow.classList.remove("cont--hide");
-    }
+      btnUnFollow.addEventListener("click", ()=>{
+        isfollower = false
+        console.log("zz")
+        offFollow(localStorage.getItem("postuploder"));
+      });
+    };
   });
   if (!isfollower) {
     btnFollow.classList.remove("cont--hide");
     btnUnFollow.classList.add("cont--hide");
-  }
+    btnFollow.addEventListener("click", ()=>{
+      isfollower = true;
+      onFollow(localStorage.getItem("postuploder"));
+    });
+  };
 }
 profileOtherIsFollow();
