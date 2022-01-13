@@ -1,15 +1,14 @@
 const prodField = document.querySelector('.prod-set-field');
-const url = 'http://146.56.183.55:5050';
 
 // 상품링크 체크
 function linkCheck() {
-  const prodLink = prodField.querySelector('#prod-link').value;
+  const prodLink = prodField.querySelector('#prod-link');
   const prodLinkAlert = prodField.querySelector('#link-alert');
   const regLink = /(http[s]?|ftp):\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}/g;
   prodLinkAlert.classList.add('alert');
-  if (prodLink === '') {
+  if (prodLink.value === '') {
     prodLinkAlert.textContent = '*URL을 입력해주세요.';
-  } else if (regLink.test(prodLink) === false) {
+  } else if (regLink.test(prodLink.value) === false) {
     prodLinkAlert.textContent = '*URL 양식이 맞지 않습니다.';
   } else {
     prodLinkAlert.textContent = '';
