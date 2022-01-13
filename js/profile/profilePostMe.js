@@ -54,11 +54,13 @@ async function profilePostMe() {
         </p>
       </div>
         ${listImg}
+      <button type="button" class="post-btn-more">
       <img
         src="../images/icon/s-icon-more-vertical.png"
         alt="더보기"
         class="post-btn-setting"
       />
+      </button>
       <div class="post-cont-icon">
         <button type="button" class="post-btn-icon">
           <img src="../images/icon/icon-heart.png" alt="좋아요" />
@@ -89,7 +91,9 @@ async function profilePostMe() {
       if (postImg) {
         postGrid.prepend(addGridItem);
       }
+      modalPost(post.id);
     });
   }
 }
 profilePostMe();
+

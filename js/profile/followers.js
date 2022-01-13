@@ -11,7 +11,7 @@ async function followers() {
     );
     const json = await res.json();
     const followers = json;
-    console.log(followers);
+    console.log("followers",followers);
     let listFollowers = document.querySelector(".list-followers");
     followers.forEach((following)=>{
         let addList = document.createElement("li");
@@ -28,12 +28,17 @@ async function followers() {
         let followBtn = isFollow ? 
         '<button type="button" class="btn-followers btn-followers--off">취소</button>' :
         '<button type="button" class="btn-followers btn-followers--on">팔로우</button>'
+        //다른 유저 팔로워 중에 나인 경우
+        if(following.accountname == localStorage.getItem("accountname") ){
+            followBtn = ""
+        }
+
         addList.innerHTML = `
             <img
             src="${following.image}"
             alt="팔로워 이미지"
             class="img-followers"
-            onerror='this.src="../../images/icon/icon-profile.png"'
+            onerror='this.src="http://146.56.183.55:5050/Ellipse.png"'
             />
             <p class="tit-followers">
                 <strong>${following.username}</strong>

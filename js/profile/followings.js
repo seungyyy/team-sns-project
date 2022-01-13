@@ -18,22 +18,43 @@ async function followings() {
         addList.classList.add("item-followers");
         //팔로윙한 유저의 intro가 없을 시
         let intro = following.intro ? following.intro : "소개글이 없습니다.";
+        //다른 유저의 팔로윙목록을 내 기준으로 버튼 활성화
+        let isFollow = false;
+        following.follower.forEach((userFollowData)=>{
+            if(userFollowData==localStorage.getItem("_id")){
+                isFollow = true;
+            }
+        })
+        let followBtn = isFollow ? 
+        '<button type="button" class="btn-followers btn-followers--off">취소</button>' :
+        '<button type="button" class="btn-followers btn-followers--on">팔로우</button>'
+        //다른 유저 팔로워 중에 나인 경우
+        if(following.accountname == localStorage.getItem("accountname") ){
+            followBtn = ""
+        }
+
         addList.innerHTML = `
             <img
             src="${following.image}"
             alt="팔로워 이미지"
             class="img-followers"
-            onerror="../../images/icon/icon-profile.png"
+            onerror='this.src="http://146.56.183.55:5050/Ellipse.png"'
             />
             <p class="tit-followers">
                 <strong>${following.username}</strong>
             </p>
             <p class="desc-followers">${intro}</p>
-            <button type="button" class="btn-followers btn-followers--off">취소</button>
+            ${followBtn}
         `;
         listFollowers.prepend(addList);
-        document.querySelector(".btn-followers").addEventListener("click",()=>{
-            offFollow(following.accountname);
+        let btnFollow =  document.querySelector(".btn-followers");
+        btnFollow.addEventListener("click",()=>{
+            if(btnFollow.classList.contains("btn-followers--on")){
+                onFollow(following.accountname);
+            }else{
+                offFollow(following.accountname);
+            }
+       
         })
     });
 }

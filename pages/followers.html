@@ -18,7 +18,7 @@
   
           <ul class="header-list">
             <li class="header-item">
-              <a href="#" class="header-link">
+              <a href="./home.html" class="header-link">
                 <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
               </a>
             </li>
@@ -37,6 +37,31 @@
           <ul class="list-followers"></ul>
         </section>
       </main>
+
+      <section class="modal-outside cont--hide">
+        <h2 class="hidden">로그아웃 창</h2>
+        <div class="dimm"></div>
+        <article class="modal-logout">
+          <h3 class="hidden">설정 및 개인정보와 로그아웃</h3>
+          <div class="modal-bar"></div>
+          <ul class="modal-list">
+            <li class="modal-item">설정 및 개인정보</li>
+            <li class="modal-item"><button type="button">로그아웃</button></li>
+          </ul>
+        </article>
+        <article class="modal-logoutTest cont--hide">
+          <h3 class="hidden">로그아웃 재확인</h3>
+          <p class="modal-gide">로그아웃 하시겠어요?</p>
+          <ul class="modal-gide-list">
+            <li class="modal-gide-item">
+              <button type="button" class="modal-gide-cancel">취소</button>
+            </li>
+            <li class="modal-gide-item">
+              <button type="button" class="modal-btn-logout">로그아웃</button>
+            </li>
+          </ul>
+        </article>
+      </section>
 
       <nav class="nav">
         <ul class="nav-list">
@@ -105,6 +130,7 @@
     </div>
 
     <script src="../js/navChange.js"></script>
+    <script src="../js/modalLogout.js"></script>
     <script src="../js/profile/onFollow.js"></script>
     <script src="../js/profile/offFollow.js"></script>
     <script src="../js/profile/followers.js"></script>
