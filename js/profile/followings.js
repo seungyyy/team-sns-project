@@ -1,6 +1,6 @@
 async function followings() {
     const res = await fetch(
-      "http://146.56.183.55:5050/profile/" + localStorage.getItem("accountname")+"/following",
+      "http://146.56.183.55:5050/profile/" + localStorage.getItem("postuploder")+"/following",
       {
         method: "GET",
         headers: {
