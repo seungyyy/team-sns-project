@@ -1,6 +1,6 @@
 async function followers() {
     const res = await fetch(
-      "http://146.56.183.55:5050/profile/" + localStorage.getItem("accountname")+"/follower",
+      "http://146.56.183.55:5050/profile/" + localStorage.getItem("postuploder")+"/follower",
       {
         method: "GET",
         headers: {
@@ -33,7 +33,7 @@ async function followers() {
             src="${following.image}"
             alt="팔로워 이미지"
             class="img-followers"
-            onerror="../../images/icon/icon-profile.png"
+            onerror='this.src="../../images/icon/icon-profile.png"'
             />
             <p class="tit-followers">
                 <strong>${following.username}</strong>
