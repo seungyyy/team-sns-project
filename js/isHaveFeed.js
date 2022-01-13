@@ -73,15 +73,19 @@ async function getFeed() {
         heartCancel(post.id)
       }
     });
-     
-      //유저 클릭시 해당 유저 프로필로 이동하면서 해당 유저의 accountname를 기억한다.
-      document
-      .querySelector(".upload-user-link")
-      .addEventListener("click", () => {
-        localStorage.setItem("postuploder", post.author.accountname);
-      });
-
+    //댓글 클릭시 게시글의 아이디를 전달한다.
+    document
+    .querySelector(".upload-btn-comment")
+    .addEventListener("click", () => {
+      localStorage.setItem("postId", post.id);
     });
+    //유저 클릭시 해당 유저 프로필로 이동하면서 해당 유저의 accountname를 기억한다.
+    document
+    .querySelector(".upload-user-link")
+    .addEventListener("click", () => {
+      localStorage.setItem("postuploder", post.author.accountname);
+    });
+  });
       
      
   }

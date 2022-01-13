@@ -13,7 +13,7 @@ async function profilePostMe() {
   );
   const json = await res.json();
   const posts = json.post;
-  console.log(posts);
+  console.log("게시글 정보", posts);
   if (posts.length) {
     let postList = document.querySelector(".post-list");
     let postGrid = document.querySelector(".post-list-grid");
@@ -66,11 +66,11 @@ async function profilePostMe() {
       />
       </button>
       <div class="post-cont-icon">
-        <button type="button" class="post-btn-icon">
+        <button type="button" class="post-btn-heart">
           <img src=${heartImg} alt="좋아요" />
           <span class="post-txt-icon">  ${post.heartCount}</span>
         </button>
-        <a href="../../pages/post.html" class="post-btn-icon">
+        <a href="../../pages/post.html" class="post-link-comment">
           <img
             src="../images/icon/s-icon-message-circle.png"
             alt="채팅하기"
@@ -95,8 +95,9 @@ async function profilePostMe() {
       if (postImg) {
         postGrid.prepend(addGridItem);
       }
+      //하트
       document
-      .querySelector(".post-btn-icon")
+      .querySelector(".post-btn-heart")
       .addEventListener("click", () => {
         if(!post.hearted){
           heartPlus(post.id)
@@ -104,6 +105,13 @@ async function profilePostMe() {
           heartCancel(post.id)
         }
       });
+      //댓글 클릭시 게시글의 아이디를 전달한다.
+      document
+        .querySelector(".post-link-comment")
+        .addEventListener("click", () => {
+          localStorage.setItem("postId", post.id);
+        });
+      //글 모달
       modalPost(post.id);
     });
   }
