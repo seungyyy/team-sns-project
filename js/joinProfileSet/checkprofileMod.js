@@ -1,7 +1,6 @@
-const profileField = document.querySelector('.profile-set-field');
-const url = 'http://146.56.183.55:5050';
+const profileField = document.querySelector('.profile-mod-field');
 
-// 소개 글이 없는지 체크 
+// 소개 글이 없는지 체크
 function userIntroduceCheck() {
   const userIntroduce = profileField.querySelector('#introduce').value;
   const userIntroduceAlert = profileField.querySelector('#introduce-alert');
@@ -19,9 +18,8 @@ async function accountNameCheck() {
   const accountNameAlert = profileField.querySelector('#userid-alert');
   const regAccountName = /[A-Za-z0-9\_\.]$/;
 
-
-  if (regAccountName.test(accountName) === true ) {
-    const res = await fetch(url + "/user", {
+  if (regAccountName.test(accountName) === true) {
+    const res = await fetch(url + '/user', {
       method: 'GET',
     });
     const json = await res.json();
@@ -57,5 +55,5 @@ function userNameCheck() {
 }
 
 document.getElementById('user-name').addEventListener('keyup', userNameCheck);
-document.getElementById('userid').addEventListener('keyup', accountNameCheck);
+document.getElementById('user-id').addEventListener('keyup', accountNameCheck);
 document.getElementById('introduce').addEventListener('keyup', userIntroduceCheck);
