@@ -21,7 +21,7 @@
     <a href="./profile.html">
       <img src="../../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
     </a>
-    <button type="button" class="btn-MS--off btn-MS">저장</button>
+    <button type="button" id="btn" class="btn-MS--off btn-MS">저장</button>
   </header>
 
   <!-- main add prod -->
@@ -31,9 +31,10 @@
     <form method="post">
       <fieldset class="prod-set-field">
         <label for="prodfile" class="prodfile-label">
-          <div class="prod-set-img"></div>
+          <div class="prod-set-img">
+          </div>
         </label>
-        <input type="file" id="prodfile" name="prodfile" accept=".jpg, .jpeg, .png" class="file-inp">
+        <input type="file" id="prodfile" name="prodfile" accept="image/*" class="file-inp">
         <label for="prod-name" class="label">상품명</label>
         <input type="text" name="prodname" id="prod-name" placeholder="2~10자 이내여야 합니다." class="prodname-inp inp">
         <p id="prod-alert"></p>
