@@ -22,6 +22,7 @@ async function profilePostMe() {
       let addGridItem = document.createElement("li");
       addListItem.classList.add("post-item");
       addGridItem.classList.add("post-item-grid");
+
       //게시물 이미지로 들어온 소스를 구분한다.
       let postImg; 
       if(post.image==""){
@@ -34,9 +35,12 @@ async function profilePostMe() {
         <img src="${post.image.split(",")[0]}" alt="게시글 이미지" class="post-img"/>
       </div>
       `: "<div class='post-cont-space'></div>";
+
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
+
+      //li 안에 반복되는 코드를 삽입한다.
       addListItem.innerHTML = `
         <img
         src="${post.author.image}"

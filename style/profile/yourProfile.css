@@ -45,23 +45,16 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 12px;
-  background-color: #24732f;
-  color: #fff;
-  border: none;
   line-height: 15px;
   border-radius: 26px;
 }
 .btn-followers--off {
-  width: 56px;
-  height: 28px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 12px;
   background-color: #fff;
   color: #767676;
   border: 1px solid #dbdbdb;
-  line-height: 15px;
-  border-radius: 26px;
+}
+.btn-followers--on{
+  background-color: #24732f;
+  color: #fff;
+  border: none;
 }
