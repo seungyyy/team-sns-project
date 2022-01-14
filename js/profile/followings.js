@@ -11,11 +11,9 @@ async function followings() {
     );
     const json = await res.json();
     const followings = json;
-    console.log(followings);
+    console.log("followings", followings);
     let listFollowers = document.querySelector(".list-followers");
     followings.forEach((following)=>{
-        let addList = document.createElement("li");
-        addList.classList.add("item-followers");
         //팔로윙한 유저의 intro가 없을 시
         let intro = following.intro ? following.intro : "소개글이 없습니다.";
         //다른 유저의 팔로윙목록을 내 기준으로 버튼 활성화
@@ -27,12 +25,13 @@ async function followings() {
         })
         let followBtn = isFollow ? 
         '<button type="button" class="btn-followers btn-followers--off">취소</button>' :
-        '<button type="button" class="btn-followers btn-followers--on">팔로우</button>'
+        '<button type="button" class="btn-followers btn-followers--on">팔로우</button>' ;
         //다른 유저 팔로워 중에 나인 경우
         if(following.accountname == localStorage.getItem("accountname") ){
-            followBtn = ""
+            followBtn = '<button type="button" class="btn-followers btn-followers--off cont--hide">취소</button>';
         }
-
+        let addList = document.createElement("li");
+        addList.classList.add("item-followers");
         addList.innerHTML = `
             <img
             src="${following.image}"

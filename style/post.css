@@ -1,38 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
-  width: 100%;
-  background-color: #fff;
-  margin: 0 auto;
-}
-
-button {
-  border: none;
-  background-color: transparent;
-}
-/* 상단 */
-.header {
-  height: 48px;
-  border-bottom: 0.5px solid #dbdbdb;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-}
-.header .img-before,
-.header .img-more {
-  height: 22px;
-  width: 22px;
-  margin: 13px 20px 13px 16px;
-}
-.header .img-more {
-  margin: 12px;
-}
 /* post text with image */
 .sec-post {
   padding-top: 48px;
@@ -42,6 +7,7 @@ button {
   position: relative;
   padding: 20px 16px;
   border-bottom: 1px solid #dbdbdb;
+  box-sizing: border-box;
 }
 .post-wrap .post-user {
   display: flex;
@@ -63,6 +29,7 @@ button {
   display: flex;
   flex-direction: column;
   margin-left: 12px;
+
 }
 .post-user .post-user-txt .post-title {
   margin: 0;

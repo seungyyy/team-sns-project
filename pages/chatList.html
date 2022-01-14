@@ -12,16 +12,39 @@
   <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="../style/reset.css">
-  <link rel="stylesheet" href="../style/chatList/chatList.css">
-  <link rel="stylesheet" href="../style/module/nav.css">
+  <link rel="stylesheet" href="../style/common.css">
 </head>
 <body>
-  <h1 class="hidden">청귤마켓 chat list</h1>
   <header class="header">
-    <img src="../images/icon/icon-arrow-left.png" alt="go before" class="img-before">
-    <img src="../images/icon/icon-more-vertical.png" alt="more menu" class="img-more">
+    <h1 class="hidden">청귤마켓</h1>
+    <ul class="header-list">
+      <li class='header-item header-feed cont--hide'>
+        <strong>청귤마켓 피드</strong>
+      </li>
+      <li class="header-item header-back">
+        <a href="./home.html">
+          <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
+        </a>
+      </li>
+      <li class="header-item header-search cont--hide">
+        <a href="./search/search.html">
+          <img src="../images/icon/icon-search.png" alt="검색 버튼">
+        </a>
+      </li>
+      <li class="header-item header-inp cont--hide">
+          <input type="text" name="" placeholder="계정 검색">
+      </li>
+      <li class="header-item header-more">
+        <button type="button" class="btn--bgNone">
+          <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
+        </button>
+      </li>
+      <li class="header-item header-upload cont--hide">
+          <button type="button" class="btn-MS--off">업로드</button>
+      </li>
+    </ul>
   </header>
+  
   <main class="main-chatlist">
     <section class="sec-chatlist">
       <ul class="list-chatlist">
@@ -62,6 +85,33 @@
     </section>
   </main>
 
+  
+  <section class="modal-logout-outside cont--hide">
+    <h2 class="hidden">로그아웃 창</h2>
+    <div class="dimm"></div>
+    <article class="modal-logout">
+      <h3 class="hidden">설정 및 개인정보와 로그아웃</h3>
+      <div class="modal-bar"></div>
+      <ul class="modal-list">
+        <li class="modal-item">설정 및 개인정보</li>
+        <li class="modal-item"><button type="button">로그아웃</button></li>
+      </ul>
+    </article>
+    <article class="modal-logoutTest cont--hide">
+      <h3 class="hidden">로그아웃 재확인</h3>
+      <p class="modal-gide">로그아웃 하시겠어요?</p>
+      <ul class="modal-gide-list">
+        <li class="modal-gide-item">
+          <button type="button" class="modal-gide-cancel">취소</button>
+        </li>
+        <li class="modal-gide-item">
+          <button type="button" class="modal-btn-logout">로그아웃</button>
+        </li>
+      </ul>
+    </article>
+</section>
+
+
 <!-- 메뉴  -->
   <nav class="nav">
     <ul class="nav-list">
@@ -98,5 +148,6 @@
   
   <script src="../js/navChange.js"></script>
   <script src="../js/chatList.js"></script>
+  <script src="../js/modal/modalLogout.js"></script>
 </body>
 </html>

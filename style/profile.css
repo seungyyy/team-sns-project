@@ -266,12 +266,15 @@
 .main-profile .post .post-list .post-item .post-img {
   height: 100%;
 }
-.main-profile .post .post-list .post-item .post-btn-setting {
+.main-profile .post .post-list .post-item .post-btn-more {
   width: 18px;
   height: 18px;
   position: absolute;
   top: 4px;
   right: 0;
+}
+.main-profile .post .post-list .post-item .post-btn-more .post-btn-setting {
+  width: 100%;
 }
 .main-profile .post .post-list .post-item .post-cont-icon {
   margin-left: 54px;

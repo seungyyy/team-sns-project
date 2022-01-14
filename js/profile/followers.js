@@ -14,8 +14,6 @@ async function followers() {
     console.log("followers",followers);
     let listFollowers = document.querySelector(".list-followers");
     followers.forEach((following)=>{
-        let addList = document.createElement("li");
-        addList.classList.add("item-followers");
         //팔로워한 유저의 intro가 없을 시
         let intro = following.intro ? following.intro : "소개글이 없습니다.";
         //나를 팔로워한 유저를 내가 팔로우하고 있는지 확인
@@ -32,7 +30,8 @@ async function followers() {
         if(following.accountname == localStorage.getItem("accountname") ){
             followBtn = ""
         }
-
+        let addList = document.createElement("li");
+        addList.classList.add("item-followers");
         addList.innerHTML = `
             <img
             src="${following.image}"

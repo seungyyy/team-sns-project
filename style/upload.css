@@ -1,61 +1,22 @@
-* {
-  box-sizing: border-box;
-}
-
-/* 헤더 */
-.header { 
-  width: 100%;
-  height:48px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 16px 13px;
-  display: flex; 
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 0.5px solid #dbdbdb;
-  z-index: 10;
-}
-.header .img-before {
-  width: 22px;
-  height: 22px;
-}
-.header .btn-MS--off {
-  padding: 7px 32px;
-  font-size: 14px;
-  background-color: #8ac392;
-  color: #fff;
-  line-height: 17px;
-  border: none;
-  border-radius: 32px;
-  font-weight: 500;
-}  
-/* textarea안에 글자가 있으면 활성화되면서 백그라운드 색상 바뀌게 */
-.header .btn-MS--on {
-  background-color: #24732f ;
-}
 
 /* 게시글 부분 */
-.sec-upload {
+.main-upload{
   position: relative;
   display: flex;
   justify-content: space-between;
   margin-top: 64px;
 }
-.sec-upload .upload-userimg {
+.main-upload .upload-userimg {
   width: 42px;
   height: 42px;
   border-radius: 50%;
   margin: 0 13px 0 16px;
 }
-.sec-upload .upload-wrap {
+.main-upload .upload-wrap {
   margin: 12px 16px 0 0;
   width: calc(100vw - 71px);
 }
-.sec-upload .upload-wrap .upload-textarea {
+.main-upload .upload-wrap .upload-textarea {
   border: none;
   width: calc(100vw - 86px);
   font-size: 14px;
@@ -63,12 +24,12 @@
   margin-bottom: 12px;
   overflow-y: hidden;
 }
-.sec-upload .upload-wrap .upload-textarea::placeholder {
+.main-upload .upload-wrap .upload-textarea::placeholder {
   color: #c4c4c4;
 }
 
 /* 사진 한 개 일 때 */
-.sec-upload .upload-imgs .upload-imgwrap {
+.main-upload .upload-imgs .upload-imgwrap {
   position: relative;
 }
 .upload-imgs .upload-imgwrap .upload-img {
@@ -83,7 +44,7 @@
   cursor: pointer;
 }
 /* 사진 두 개 이상 일 때 */
-.sec-upload .upload-imgs {
+.main-upload .upload-imgs {
   display: flex;
   column-gap: 8px;
   width: 100%;
@@ -97,7 +58,7 @@
   min-height: 126px;
 }
 
-.sec-upload .img-uploadfile {
+.main-upload .img-uploadfile {
   position: fixed;
   width: 50px;
   height: 50px;
