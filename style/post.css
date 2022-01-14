@@ -48,7 +48,10 @@
   font-size: 14px;
 }
 .post-wrap .post-txtimgwrap .post-img {
-  width: calc(100% - 54px);
+  width: 304px;
+  height: 228px;
+  object-fit: center/cover;
+  border-radius: 10px;
   margin-left: 54px;
 }
 .post-wrap .post-icon {
@@ -75,6 +78,37 @@
   margin-left: 54px;
   color: #767676;
 }
+/* 이미지 여러개 일 때-0114 추가 */
+.post-imgmanywrap {
+  width: 304px;
+  height: 228px;
+  margin-left: 54px;
+  overflow-x: hidden;
+  position: relative;
+}
+.post-txtimgwrap .post-img-many {
+  display: flex;
+  width: 304px;
+  height: 228px;
+}
+.post-txtimgwrap .post-img-many .post-img {
+  margin-left: 0;
+}
+.post-imgmovebtn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+  display: flex;
+  gap: 6px;
+}
+.post-imgmovebtn button {
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+}
 
 /* 댓글부분 */
 .post-comment {
@@ -97,6 +131,7 @@
   width: 36px;
   height: 36px;
   margin-right: 12px;
+  border-radius: 50%;
 }
 .comment-userwrap .comment-user .comment-username {
   font-size: 14px;
