@@ -48,46 +48,44 @@
 /* main search */
 .main-search {
   width: 100%;
-  margin: 64px auto 60px;
   height: 100vh;
-  padding: 0 16px;
+  padding: 64px 16px 0;
 }
-
+.main-search .user-ul {
+  padding-bottom: 80px;
+}
 .user-ul .user-search {
-  display: flex;
-  align-items: center;
   margin-bottom: 16px;
 }
-
+.user-ul .user-search a {
+  display: flex;
+  width: 100%;
+}
 .user-ul .user-search .img-more {
   width: 18px;
   height: 18px;
   position: absolute;
   right: 4px;
 }
-
 .user-ul .user-search .user-search-img {
   width: 42px;
   height: 42px;
 }
-
 .user-ul .user-search .user-search-txt {
   display: flex;
   flex-direction: column;
   margin-left: 12px;
 }
-
 .user-ul .user-search .user-search-txt .search-tit {
   margin: 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
 }
-
 .user-ul .user-search .user-search-txt .search-tit > span {
   color: #24732f;
+  margin-left:-2px;
 }
-
 .user-ul .user-search .user-search-txt .user-searchId {
   margin-top: 6px;
   font-size: 12px;
@@ -114,7 +112,7 @@
   padding: 14px 39px 6px;
   margin: 0;
 }
-.nav-list .menu {
+.nav-list .menu a {
   display: flex;
   flex-direction: column;
   justify-content: center;
