@@ -33,12 +33,13 @@
   font-size: 14px;
   color: #000;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  box-sizing: border-box;
 }
 .main-join-email .join-email-field .inp::placeholder {
   color: #dbdbdb;
 }
 .main-join-email .join-email-field .email-inp {
-  margin-bottom: 16px;
+  margin-bottom: 26px;
 }
 .main-join-email .join-email-field .inp:focus {
   border-bottom: 1px solid #24732f;

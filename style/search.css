@@ -7,13 +7,15 @@
 }
 .main-search .user-ul {
   padding-bottom: 80px;
+  box-sizing: border-box;
 }
 .user-ul .user-search {
   margin-bottom: 16px;
 }
-.user-ul .user-search a {
+.user-ul .user-search .link {
   display: flex;
   width: 100%;
+  cursor: pointer;
 }
 .user-ul .user-search .img-more {
   width: 18px;
@@ -24,6 +26,7 @@
 .user-ul .user-search .user-search-img {
   width: 42px;
   height: 42px;
+  border-radius: 50%;
 }
 .user-ul .user-search .user-search-txt {
   display: flex;

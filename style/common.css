@@ -4,6 +4,9 @@
 @import url(./nav.css);
 @import url(./modal.css);
 
+/* spalah 화면 */
+@import url(./index.css);
+
 /* home 화면 */
 @import url(./homeFeed.css);
 
