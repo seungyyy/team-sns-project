@@ -9,7 +9,7 @@ function modalLogout(){
   let guidelogoutBtn = contGideLogoutModal.querySelector(".modal-btn-logout");
   let guideCancelBtn = contGideLogoutModal.querySelector(".modal-gide-cancel");
   //헤더 버튼
-  let headerMenu = document.querySelector(".header-btn");
+  let headerMenu = document.querySelector(".header-more button");
   
   // 헤더 버튼 클릭시 모달창 표시
   headerMenu.addEventListener("click", () => {

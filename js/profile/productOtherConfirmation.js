@@ -23,8 +23,10 @@ async function productConfirmation() {
     productCont.classList.remove("cont--hide");
     productArr = products["product"]
     productArr.forEach((product)=>{
-      let addListItem = document.createElement("li");
-      addListItem.classList.add("product-item");
+       //게시물 이미지로 들어온 소스를 구분한다.
+       let postImg = product.itemImage.indexOf("http://146.56.183.55:5050/")>-1 ?
+          product.itemImage : 
+          "http://146.56.183.55:5050/" + product.itemImage;
       //금액 자릿수 수정
       let price = [];
       (product.price+"").split("").reverse().forEach((data, i)=>{
@@ -37,14 +39,17 @@ async function productConfirmation() {
         price.pop();
       }
       price = price.reverse().join("");
-      //추후에 상품 주소 추가
+      let addListItem = document.createElement("li");
+      addListItem.classList.add("product-item");
       addListItem.innerHTML = `
       <a href=${product.link} class="product-btn">
-        <img
-          src="${product.itemImage}"
-          alt="${product.itemName}"
-          class="product-img"
-        />
+        <div class="product-cont-img">
+          <img
+            src="${postImg}"
+            alt="${product.itemName}"
+            class="product-img"
+          />
+        </div>
         <p class="product-desc">${product.itemName}</p>
         <p class="product-price">${price}원</p>
       </button>

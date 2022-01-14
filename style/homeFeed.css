@@ -1,74 +1,13 @@
-* {
-  box-sizing: border-box;
+.main-home{
+  height: 100%;
 }
 
-/* header */
-.header {
-  width: 100%;
-  height: 48px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  padding: 0 16px;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  border: 0.5px solid #dbdbdb;
-  z-index: 10;
-}
-.header .img-search {
-  width: 24px;
-  height: 24px;
-}
-.header .header-title {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  padding-right: 16px;
-}
-
-/* main 공통 */
-.main-home {
-  width: 100%;
-}
-
-/* main none home  */
-.main-none-home {
-  display: flex;
-  height: 100vh;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-}
-.main-none-home .home-img {
-  display: block;
-  height: 89px;
-  width: 74px;
-}
-.main-none-home .home-tit {
-  margin: 25px 0 20px;
-  font-size: 14px;
-  color: #767676;
-}
-.main-none-home .btn-M {
-  height: 44px;
-  padding: 0 33px;
-  font-size: 14px;
-  line-height: 18px;
-  background-color: #24732f;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-}
-
-/* main home feed have */
+/* main feed have*/
 .main-home .main-feed-have {
   padding: 0 16px;
 }
 .main-feed-have .sec-upload {
-  margin: 68px 0 90px;
+  padding: 68px 0 90px;
 }
 .main-feed-have .sec-upload li {
   width: 100%;
@@ -117,6 +56,11 @@
   margin: 16px 0 14.5px 54px;
   overflow: hidden;
 }
+.main-feed-have .sec-upload li .upload-imgBox img {
+  width: 304px;
+  height: 228px;
+  object-fit: center/cover ;
+}
 .main-feed-have .sec-upload li .post-cont-space {
   margin: 16px 0 16px 54px;
   border-radius: 10px;
@@ -153,7 +97,30 @@
   color: #767676;
 }
 
-/* 화면에서 안보이기 */
-.cont--hide {
-  display: none;
+/* main feed-have  */
+.main-home .main-feed-none .cont-flex {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-home .main-feed-none .cont-flex .home-img {
+  height: 89px;
+  width: 74px;
+}
+.main-home .main-feed-none .cont-flex .home-tit {
+  margin: 25px 0 20px;
+  font-size: 14px;
+  color: #767676;
+}
+.main-home .main-feed-none .cont-flex .home-btn{
+  height: 44px;
+  padding: 0 33px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #24732f;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
 }
