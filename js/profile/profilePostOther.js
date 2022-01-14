@@ -23,17 +23,19 @@ async function profilePostMe() {
       addGridItem.classList.add("post-item-grid");
 
       //게시물 이미지로 들어온 소스를 구분한다.
-      let postImg;
-      if (post.image == "") {
-        postImg = ``;
-      } else {
-        postImg = post.image.split(",")[0];
+      let postImg; 
+      if(post.image==""){
+        postImg=``;
+      }else{
+        postImg = post.image.split(",")[0].indexOf("http://146.56.183.55:5050/")>-1 ?
+         post.image.split(",")[0] : 
+         "http://146.56.183.55:5050/" + post.image.split(",")[0];
       }
-      let listImg = postImg ? `
+      let listImg =  postImg ? `
       <div class="post-cont-img">
-        <img src="${post.image.split(",")[0]}" alt="게시글 이미지" class="post-img"/>
+        <img src=${postImg} alt="게시글 이미지" class="post-img"/>
       </div>
-      ` : "<div class='post-cont-space'></div>";
+      `: "<div class='post-cont-space'></div>";
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];

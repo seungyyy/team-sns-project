@@ -23,8 +23,7 @@ async function profileOtherIsFollow() {
       btnFollow.classList.add("cont--hide");
       btnUnFollow.classList.remove("cont--hide");
       btnUnFollow.addEventListener("click", ()=>{
-        isfollower = false
-        console.log("zz")
+        isfollower = false;
         offFollow(localStorage.getItem("postuploder"));
       });
     };

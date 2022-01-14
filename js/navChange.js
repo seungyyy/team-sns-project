@@ -1,10 +1,11 @@
+//nav 배열을 반환 - 전역 변수 방지
 function navSelector(){
   let navLinkHome = document.querySelector(".nav .nav-link-home");
   let navLinkChat = document.querySelector(".nav .nav-link-chat");
   let navLinkPost = document.querySelector(".nav .nav-link-post");
   let navLinkProfile = document.querySelector(".nav .nav-link-profile");
   let navLinkArr = [navLinkHome, navLinkChat, navLinkPost, navLinkProfile];
-  return navLinkArr 
+  return navLinkArr; 
 }
 
 //다른 클래스의 cont--hide를 초기상태로 돌리는 함수
@@ -18,6 +19,7 @@ function otherNavImgChange(num) {
     }
   });
 }
+
 //nav의 한 링크를 클릭시 해당 클래스의 cont--hide클래스를 바꿔다는 함수
 function navLinkClassChange() {
   let navLinkArr = navSelector()

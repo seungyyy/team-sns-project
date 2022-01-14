@@ -11,20 +11,19 @@ async function productConfirmation() {
   );
   const json = await res.json();
   const products = json;
-  console.log(products);
+  console.log("상품리스트",products);
 
   let productCont = document.querySelector(".product");
   let productList = productCont.querySelector(".product-list");
+  //상품이 있는지 없는지 확인
   if (!products.data) {
     if (!productCont.classList.contains("cont--hide")) {
       productCont.classList.add("cont--hide");
     }
   } else {
     productCont.classList.remove("cont--hide");
-    productArr = products["product"]
+    productArr = products["product"];
     productArr.forEach((product)=>{
-      let addListItem = document.createElement("li");
-      addListItem.classList.add("product-item");
       //금액 자릿수 수정
       let price = [];
       (product.price+"").split("").reverse().forEach((data, i)=>{
@@ -37,14 +36,18 @@ async function productConfirmation() {
         price.pop();
       }
       price = price.reverse().join("");
-      //추후에 상품 주소 추가
+      //li에 내용 삽입
+      let addListItem = document.createElement("li");
+      addListItem.classList.add("product-item");
       addListItem.innerHTML = `
       <button type="button" class="product-btn">
-        <img
-          src="${product.itemImage}"
-          alt="${product.itemName}"
-          class="product-img"
-        />
+        <div class="product-cont-img">
+          <img
+            src="${product.itemImage}"
+            alt="${product.itemName}"
+            class="product-img"
+          />
+        </div>
         <p class="product-desc">${product.itemName}</p>
         <p class="product-price">${price}원</p>
       </button>

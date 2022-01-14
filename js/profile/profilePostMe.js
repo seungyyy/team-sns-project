@@ -14,26 +14,25 @@ async function profilePostMe() {
   const json = await res.json();
   const posts = json.post;
   console.log("게시글 정보", posts);
+  // 게시글이 없는지 있는지 판단
   if (posts.length) {
     let postList = document.querySelector(".post-list");
     let postGrid = document.querySelector(".post-list-grid");
     posts.forEach((post) => {
-      let addListItem = document.createElement("li");
-      let addGridItem = document.createElement("li");
-      addListItem.classList.add("post-item");
-      addGridItem.classList.add("post-item-grid");
       //게시물 이미지로 들어온 소스를 구분한다.
       let postImg; 
       if(post.image==""){
         postImg=``;
       }else{
-        postImg = post.image.split(",")[0];
-        }
-        let listImg =  postImg ? `
-        <div class="post-cont-img">
-          <img src="${post.image.split(",")[0]}" alt="게시글 이미지" class="post-img"/>
-        </div>
-        `: "<div class='post-cont-space'></div>";
+        postImg =post.image.split(",")[0].indexOf("http://146.56.183.55:5050/")>-1 ?
+         post.image.split(",")[0] : 
+         "http://146.56.183.55:5050/" + post.image.split(",")[0];
+      }
+      let listImg =  postImg ? `
+      <div class="post-cont-img">
+        <img src=${postImg} alt="게시글 이미지" class="post-img"/>
+      </div>
+      `: "<div class='post-cont-space'></div>";
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
@@ -41,6 +40,10 @@ async function profilePostMe() {
        let heartImg = !post.hearted ? 
        "../images/icon/icon-heart.png" :
        "../images/icon/icon-heart-fill.png" ;
+      let addListItem = document.createElement("li");
+      let addGridItem = document.createElement("li");
+      addListItem.classList.add("post-item");
+      addGridItem.classList.add("post-item-grid");
       addListItem.innerHTML = `
         <img
         src="${post.author.image}"
@@ -90,7 +93,6 @@ async function profilePostMe() {
           />
         </a>
     `;
-
       postList.prepend(addListItem);
       if (postImg) {
         postGrid.prepend(addGridItem);
