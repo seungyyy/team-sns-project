@@ -10,13 +10,14 @@ function modalProduct(id) {
     let contGidePostModal = document.querySelector(".modal-productTest");
     let guideDeleteBtn = contGidePostModal.querySelector(".modal-btn-delete");
     let guideCancelBtn = contGidePostModal.querySelector(".modal-gide-cancel");
-    let more = document.querySelector(".product-btn");
-    // more 버튼 클릭시 모달창 표시
-    more.addEventListener("click", () => {
-        contModal.classList.remove("cont--hide");
-        }
-    );
+    // let more = document.querySelector(".product-btn");
+    // // more 버튼 클릭시 모달창 표시
+    // more.addEventListener("click", () => {
+    //     contModal.classList.remove("cont--hide");
+    //     }
+    // );
     // 모달창 외 부분 클릭시 모달창 해제
+    console.log(id)
     dimm.addEventListener("click", () => {
         contModal.classList.add("cont--hide");
         contGidePostModal.classList.add("cont--hide");

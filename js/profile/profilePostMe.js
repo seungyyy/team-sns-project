@@ -114,7 +114,13 @@ async function profilePostMe() {
           localStorage.setItem("postId", post.id);
         });
       //글 모달
-      modalPost(post.id);
+      let contModal = document.querySelector(".modal-post-outside");
+      document
+      .querySelector(".post-btn-more")
+      .addEventListener("click", ()=>{
+        contModal.classList.remove("cont--hide");
+        modalPost(post.id);
+      })
     });
   }
 }

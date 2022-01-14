@@ -53,8 +53,14 @@ async function productConfirmation() {
       </button>
       `
       productList.prepend(addListItem);
-      
-      modalProduct(product.id);
+
+      let contModal = document.querySelector(".modal-product-outside");
+      document
+      .querySelector(".product-btn")
+      .addEventListener("click", ()=>{
+        contModal.classList.remove("cont--hide");
+        modalProduct(product.id);
+      })
     })
   }
 }

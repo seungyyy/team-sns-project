@@ -1,4 +1,5 @@
 async function deletePost(id) {
+  console.log("zz", id);
   const res = await fetch(
     `http://146.56.183.55:5050/post/${id}`, {
       method: "DELETE",

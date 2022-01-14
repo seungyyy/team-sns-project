@@ -10,10 +10,10 @@ function modalPost(id) {
     let guideDeleteBtn = contGidePostModal.querySelector(".modal-btn-delete");
     let guideCancelBtn = contGidePostModal.querySelector(".modal-gide-cancel");
     let more = document.querySelector(".post-btn-more");
-    // more 버튼 클릭시 모달창 표시
-    more.addEventListener("click", () => {
-        contModal.classList.remove("cont--hide");
-    });
+    // // more 버튼 클릭시 모달창 표시
+    // more.addEventListener("click", () => {
+    //     contModal.classList.remove("cont--hide");
+    // });
     // 모달창 외 부분 클릭시 모달창 해제
     dimm.addEventListener("click", () => {
         contModal.classList.add("cont--hide");
@@ -22,6 +22,7 @@ function modalPost(id) {
     });
     //삭제 버튼 클릭시 삭제 재확인 모달창 표시
     deleteBtn.addEventListener("click", () => {
+        console.log(id)
         contGidePostModal.classList.remove("cont--hide");
         contPostModal.classList.add("cont--hide");
     });
