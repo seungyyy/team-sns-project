@@ -7,9 +7,6 @@ function enterkey() {
   }
 }
 
-
-
-
 async function disabledBtn() {
   const childCount = document.querySelector('.upload-imgs').childElementCount;
   if((childCount>=1)||(inpTxT.value)) {
@@ -21,7 +18,7 @@ async function disabledBtn() {
     sendBtn.disabled = true;
     }
 }
-
+disabledBtn()
 inpTxT.addEventListener('keyup', () => {
   inpTxT.style.height = "1px";
   inpTxT.style.height = (20 + inpTxT.scrollHeight)+"px";
@@ -68,13 +65,8 @@ async function createPost() {
     const imageUrls = [];
     const imgurl = document.querySelectorAll('.upload-img')
 
-    // const imageUrls = []
     const files = uploadImages.files
     if (files.length<=3) {
-        // for (let index = 0; index < files.length; index++) {
-        //     const imgurl = await imageUpload(files,index)
-        //     imageUrls.push(url+ '/' +imgurl)
-        // }
       for(let i = 0; i <imgurl.length;i++){
         imageUrls.push(imgurl[i].currentSrc);
       }
@@ -98,10 +90,12 @@ async function createPost() {
     }else{
         alert("이미지는 3개까지만 업로드 가능합니다.")
     }
+
 }
 
   //이미지 미리보기
 async function setThumbnail(e) {
+  const childCount = document.querySelector('.upload-imgs').childElementCount;
   const url = "http://146.56.183.55:5050"
   const files = e.target.files;
   const imageUrls = [];
@@ -110,25 +104,24 @@ async function setThumbnail(e) {
     imageUrls.push(url+ '/' +imgurl)
   }
   const imgCont = document.querySelector('.upload-imgs');
+
+if (childCount + imageUrls.length <= 3){
   for (let i = 0; i < imageUrls.length; i++) {
     const imgUrls = imageUrls[i]
     imgwrap = `<div class="upload-imgwrap">  <img src="${imgUrls}" alt="some trees" class="upload-img">    <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">  </div>` + imgCont.innerHTML
     imgCont.innerHTML = imgwrap;
   }
+} else {
+  alert("이미지는 3개까지만 업로드 가능합니다.")
+}
   if(imageUrls.length>= 1) {
     disabledBtn();
   }
   return imageUrls
 }
 
-uploadImages.addEventListener('change', ()=> {
-  const childCount = document.querySelector('.upload-imgs').childElementCount;
-  if((childCount + imageUrls.length)>3 ) {
-    alert("이미지는 3개까지만 업로드 가능합니다.");
-} else {
-  setThumbnail}});
-//여기까지 이미지 여러개 업로드하기.
-sendBtn.addEventListener('click', createPost)
+uploadImages.addEventListener('change', setThumbnail);
+sendBtn.addEventListener('click', createPost);
 
 //이미지 삭제
 window.addEventListener('click', e => { e.target.className === 'upload-removeimg' ? e.target.parentNode.remove() : false })
