@@ -64,7 +64,9 @@ async function getFeed() {
           </div>
         </a>
       </div>
-      <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
+      <button type="button" class="post-btn-more btn--bgNone">
+        <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
+      </button>
       <p class="upload-desc">${post.content}</p>
       ${listImg}
       <div class="upload-icon">
@@ -104,7 +106,9 @@ async function getFeed() {
     .addEventListener("click", () => {
       localStorage.setItem("postuploder", post.author.accountname);
     });
+    modalDeclaration(post.id);
   });
   };
+
 };
 getFeed();

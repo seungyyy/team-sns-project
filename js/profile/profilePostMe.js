@@ -61,7 +61,7 @@ async function profilePostMe() {
         </p>
       </div>
         ${listImg}
-      <button type="button" class="post-btn-more">
+      <button type="button" class="post-btn-more btn--bgNone">
       <img
         src="../images/icon/s-icon-more-vertical.png"
         alt="더보기"

@@ -1,33 +1,28 @@
-* {
-  box-sizing: border-box; 
-}
-
-
-/* main join email */
-.main-join-email {
+.main-login-email {
   width: 100%;
   margin: 0 auto;
   padding: 30px 34px 0;
+  box-sizing: border-box;
 }
-.main-join-email .join-email-tit {
+.main-login-email .login-email-tit {
   font-size: 24px;
   font-weight: 500;
   text-align: center;
 }
-.main-join-email .join-email-field {
+.main-login-email .email-field {
   margin-top: 40px;
 }
-.main-join-email .join-email-field .label,
-.main-join-email .join-email-field .inp {
+.main-login-email .email-field .label,
+.main-login-email .email-field .inp {
   display: block;
 }
-.main-join-email .join-email-field .label {
+.main-login-email .email-field .label {
   font-size: 12px;
   color: #767676;
   font-weight: 500;
   margin-bottom: 17px;
 }
-.main-join-email .join-email-field .inp {
+.main-login-email .email-field .inp {
   width: 100%;
   padding-bottom: 8px;
   border-top: none;
@@ -38,16 +33,13 @@
   color: #000;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
-.main-join-email .join-email-field .inp::placeholder {
-  color: #dbdbdb;
-}
-.main-join-email .join-email-field .email-inp {
+.main-login-email .email-field .email-inp {
   margin-bottom: 16px;
 }
-.main-join-email .join-email-field .inp:focus {
+.main-login-email .email-field .inp:focus {
   border-bottom: 1px solid #24732f;
 }
-.main-join-email .join-email-field .btn-L {
+.main-login-email .email-field .btn-L {
   height: 44px;
   width: 100%;
   margin: 30px 0 20px;
@@ -60,23 +52,18 @@
   letter-spacing: -1px;
   cursor: pointer;
 }
-.main-join-email .join-email-field .btn-L--off {
+.main-login-email .email-field .btn-L--off {
   background-color: #8ac392;
 }
-.main-join-email .join-email-field .link-singup {
+.main-login-email .email-field .link-singup {
   text-align: center;
 }
-.main-join-email .join-email-field .link-singup a {
+.main-login-email .email-field .link-singup a {
   font-size: 12px;
   color: #767676;
 }
-.main-join-email .join-email-field .alert {
+.main-login-email .email-field .alert {
   margin: 6px 0 16px;
-  font-size: 12px;
-  color: #eb5757;
-}
-.main-join-email .join-email-field .alert-email {
-  margin: -10px 0 16px;
   font-size: 12px;
   color: #eb5757;
 }

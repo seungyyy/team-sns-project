@@ -1,38 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-
-body { 
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-  width: 100%;
-  background-color: #fff;
-  margin: 0 auto;
-}
-
-/* 상단 */
-.header {
-  height: 48px;
-  border-bottom: 0.5px solid #dbdbdb;
-  background-color: #fff;
-  display: flex; 
-  justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-}
-.header .img-before,.header .img-more {
-  height: 22px;
-  width: 22px;
-  margin: 13px 20px 13px 16px;
-}
-.header .img-more {
-  margin: 12px;
-}
-
-/* 채팅리스트 */
 .main-chatlist .sec-chatlist {
   padding-top: 48px;
   height: 712px;
+  box-sizing: border-box;
 }
 .main-chatlist .sec-chatlist .list-chatlist {
   padding-top: 14px;
@@ -77,9 +46,4 @@ body {
   font-size: 10px;
   color: #dbdbdb;
   padding-right: 16px;
-}
-
-/* 화면에 안보이기 */
-.cont--hide {
-  display: none;
 }

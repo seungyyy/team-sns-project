@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url(./reset.css);
 @import url(./header.css);
-@import url(./module/nav.css);
+@import url(./nav.css);
 @import url(./modal.css);
 
 /* home 화면 */
@@ -9,3 +9,36 @@
 
 /* 프로필 화면 */
 @import url(./profile.css);
+/* 프로필 수정 */
+@import url(./profileModification.css);
+
+/* 팔로우 화면 */
+@import url(./follow.css);
+
+/*상품 등록 화면*/
+@import url(./addProd.css);
+
+/* 채팅 리스트 */
+@import url(./chatList.css);
+/* 채팅 룸 화면 */
+@import url(./chatRoom.css);
+
+/* 404에러페이지 */
+@import url(./errPage.css);
+
+/* join Email 페이지 */
+@import url(./joinEmail.css);
+@import url(./profileSet.css);
+/* login 페이지 */
+@import url(./login.css);
+/* login Email 페이지 */
+@import url(./loginEmail.css);
+
+/* post 페이지 */
+@import url(./post.css);
+
+/* search 페이지 */
+@import url(./search.css);
+
+/* upload 페이지 */
+@import url(./upload.css);
