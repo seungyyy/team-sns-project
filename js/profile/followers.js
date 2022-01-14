@@ -33,6 +33,7 @@ async function followers() {
         let addList = document.createElement("li");
         addList.classList.add("item-followers");
         addList.innerHTML = `
+        <a href="../../pages/otherProfile.html" class="link-follow">
             <img
             src="${following.image}"
             alt="팔로워 이미지"
@@ -43,9 +44,12 @@ async function followers() {
                 <strong>${following.username}</strong>
             </p>
             <p class="desc-followers">${intro}</p>
-            ${followBtn}
+        </a>
+        ${followBtn}
         `;
         listFollowers.prepend(addList);
+        
+        //팔로우
         let btnFollow =  document.querySelector(".btn-followers");
         btnFollow.addEventListener("click",()=>{
             if(btnFollow.classList.contains("btn-followers--on")){
@@ -53,8 +57,13 @@ async function followers() {
             }else{
                 offFollow(following.accountname);
             }
-       
         })
+        //링크 클릭시 해당 링크의 profile로 이동, accountname정보를 가지고감
+        let linkProfile =  document.querySelector(".link-follow");
+        linkProfile.addEventListener("click",()=>{
+            localStorage.setItem("postuploder", following.accountname);
+        })
+        
     });
 }
   followers();
