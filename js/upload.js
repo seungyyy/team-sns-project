@@ -16,6 +16,7 @@ async function disabledBtn() {
     } else {
     sendBtn.style.backgroundColor = '#8ac392';
     sendBtn.disabled = true;
+    sendBtn.style.cursor = 'default';
     }
 }
 disabledBtn()
@@ -124,5 +125,5 @@ uploadImages.addEventListener('change', setThumbnail);
 sendBtn.addEventListener('click', createPost);
 
 //이미지 삭제
-window.addEventListener('click', e => { e.target.className === 'upload-removeimg' ? e.target.parentNode.remove() : false })
+window.addEventListener('click', e => { e.target.className === 'upload-removeimg' ? (e.target.parentNode.remove(), disabledBtn()) : false })
 
