@@ -14,6 +14,7 @@
 .main-login .wrapper img {
   width: 107px;
   padding: 184px 0 188px;
+  box-sizing: border-box;
 }
 .main-login .cont-sns-login {
   flex: 1;

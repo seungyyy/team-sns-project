@@ -56,16 +56,19 @@ async function checkEmail() {
         const email = data.email;
         arr.push(email);
         let emailCheck = arr.find((check) => check === joinEmail.value);
+        const emailAlert = document.querySelector('#email-alert');
         if (emailCheck === joinEmail.value) {
-          document.querySelector('#email-alert').textContent = '*이미 가입된 이메일 주소입니다.';
+          emailAlert.style.marginTop = '-20px';
+          emailAlert.textContent = '*이미 가입된 이메일 주소입니다.';
           break;
         } else {
-          document.querySelector('#email-alert').textContent = '';
+          emailAlert.textContent = '';
         }
       }
     }
   } else {
     emailAlert.textContent = '*이메일 형식이 올바르지 않습니다.';
+    emailAlert.style.marginTop = '-20px';
   }
 }
 

@@ -63,6 +63,7 @@
   font-size: 14px;
   color: #000;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  box-sizing: border-box;
 }
 .main-profile-set .profile-set-field .email-inp {
   margin-bottom: 16px;
