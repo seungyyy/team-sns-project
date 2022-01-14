@@ -44,7 +44,7 @@ const commentInp = document.querySelector('.writechat-inp');
 //enter를 눌렀을 때도 실행
 function enterkey() {
   if (window.event.keyCode == 13) {
-      sendComment();
+    uploadComment();
   }
 }
 
@@ -65,34 +65,220 @@ commentInp.addEventListener('keyup', () => {
 
 //전송버튼 누르면 api 안에 있는 유저 정보 가져오고, 인풋 내용이 댓글창에 추가
 //시간도 변경 가능하도록 추가
-//댓글을 추가하면, commentReport가 안됨....(왜..?)
 let comment = document.querySelector('.post-comment').innerHTML
 
-function sendComment() {
-  let userName = localStorage.getItem('username');
-  let userImg = localStorage.getItem('image');
-  comment = `\n
-  <div class="comment-wrap">\n        
-    <div class="comment-userwrap">\n          
-      <div class="comment-user">\n            
-        <img src=${userImg} alt="" class="comment-userimg">\n            
-        <p class="comment-username">${userName}</p>\n            
-        <p class="comment-usertime">· 방금전</p>\n          
-      </div>\n          
-      <button><img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore"></button>\n        
-    </div>\n        
-    <p class="comment-txt">${commentInp.value}</p>\n      
-  </div>\n      ` + comment;
-  document.querySelector('.post-comment').innerHTML = comment;
-  commentInp.value = '';
-  sendBtn.style.color = '#c4c4c4';
-  sendBtn.disabled = true; 
-  sendBtn.style.cursor = 'default';
-
-}
-
 sendBtn.addEventListener('click', () => {
-  sendComment(); 
-  reportComment = document.querySelectorAll('.comment-imgmore');
-  report();
+  uploadComment(); 
 });
+
+
+
+
+//말풍선 버튼을 누르면 게시글 상세로 이동
+async function getPost() {
+  const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-type": "application/json",
+    },
+  })
+  const json = await res.json();
+  const posts = json.post;
+  const pageDetail = document.querySelector('.sec-post-page');
+  const commentDetail = document.querySelector('.post-comment');
+  const imgLength = posts.image.split(',').length
+  if((imgLength === 1)&&(posts.image)) {
+    let imgPost = `      <div class="post-wrap">
+    <div class="post-user">
+      <img src="../images/icon/icon-profile.png" alt="user image" class="post-userimg">
+      <div class="post-user-txt">
+        <p class="post-title">${posts.author.username}</p>
+        <span class="post-userId">@ ${posts.author.accountname}</span>
+      </div>
+      <button><img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more"></button>
+    </div>
+    <div class="post-txtimgwrap">
+      <p class="post-txt">${posts.content}</p>
+      <img src="${posts.image}" alt="some trees" class="post-img">
+    </div>
+    <div class="post-icon">
+      <div class="icon-box">
+        <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+        <span class="icon-txt">${posts.heartCount}</span>
+        <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+        <span class="icon-txt">${posts.commentCount}</span>
+      </div>
+    </div>
+    <p class="post-data">${posts.createdAt.slice(0,4)}년 ${posts.createdAt.slice(5,7)}월 ${posts.createdAt.slice(8,10)}일</p>
+  </div>`
+  pageDetail.innerHTML = imgPost;
+  } else if ((imgLength === 2)&&(posts.image)) {
+    let imgPost = `      <div class="post-wrap">
+    <div class="post-user">
+      <img src="../images/icon/icon-profile.png" alt="user image" class="post-userimg">
+      <div class="post-user-txt">
+        <p class="post-title">${posts.author.username}</p>
+        <span class="post-userId">@ ${posts.author.accountname}</span>
+      </div>
+      <button><img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more"></button>
+    </div>
+    <div class="post-txtimgwrap">
+      <p class="post-txt">${posts.content}</p>
+      <div class="post-imgmanywrap">
+        <ul class="post-img-many">
+          <li><img src="${posts.image.split(',')[0]}" alt="some trees" class="post-img"></li>
+          <li><img src="${posts.image.split(',')[1]}" alt="some trees" class="post-img"></li>
+        </ul>
+        <ul class="post-imgmovebtn">
+          <li><button type="button"></button></li>
+          <li><button type="button"></button></li>
+        </ul> 
+      </div>
+    </div>
+    <div class="post-icon">
+      <div class="icon-box">
+        <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+        <span class="icon-txt">${posts.heartCount}</span>
+        <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+        <span class="icon-txt">${posts.commentCount}</span>
+      </div>
+    </div>
+    <p class="post-data">${posts.createdAt.slice(0,4)}년 ${posts.createdAt.slice(5,7)}월 ${posts.createdAt.slice(8,10)}일</p>
+  </div>`
+  pageDetail.innerHTML = imgPost;
+  } else if ((imgLength === 3)&&(posts.image)) {
+    let imgPost = `      <div class="post-wrap">
+    <div class="post-user">
+      <img src="../images/icon/icon-profile.png" alt="user image" class="post-userimg">
+      <div class="post-user-txt">
+        <p class="post-title">${posts.author.username}</p>
+        <span class="post-userId">@ ${posts.author.accountname}</span>
+      </div>
+      <button><img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more"></button>
+    </div>
+    <div class="post-txtimgwrap">
+      <p class="post-txt">${posts.content}</p>
+      <div class="post-imgmanywrap">
+        <ul class="post-img-many">
+          <li><img src="${posts.image.split(',')[0]}" alt="some trees" class="post-img"></li>
+          <li><img src="${posts.image.split(',')[1]}" alt="some trees" class="post-img"></li>
+          <li><img src="${posts.image.split(',')[2]}" alt="some trees" class="post-img"></li>
+        </ul>
+        <ul class="post-imgmovebtn">
+          <li><button type="button"></button></li>
+          <li><button type="button"></button></li>
+          <li><button type="button"></button></li>
+        </ul> 
+      </div>
+    </div>
+    <div class="post-icon">
+      <div class="icon-box">
+        <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+        <span class="icon-txt">${posts.heartCount}</span>
+        <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+        <span class="icon-txt">${posts.commentCount}</span>
+      </div>
+    </div>
+    <p class="post-data">${posts.createdAt.slice(0,4)}년 ${posts.createdAt.slice(5,7)}월 ${posts.createdAt.slice(8,10)}일</p>
+  </div>`
+  pageDetail.innerHTML = imgPost;
+  } else {
+    let imgPost = `      <div class="post-wrap">
+    <div class="post-user">
+      <img src="../images/icon/icon-profile.png" alt="user image" class="post-userimg">
+      <div class="post-user-txt">
+        <p class="post-title">${posts.author.username}</p>
+        <span class="post-userId">@ ${posts.author.accountname}</span>
+      </div>
+      <button><img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more"></button>
+    </div>
+    <div class="post-txtimgwrap">
+      <p class="post-txt">${posts.content}</p>
+    </div>
+    <div class="post-icon">
+      <div class="icon-box">
+        <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+        <span class="icon-txt">${posts.heartCount}</span>
+        <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+        <span class="icon-txt">${posts.commentCount}</span>
+      </div>
+    </div>
+    <p class="post-data">${posts.createdAt.slice(0,4)}년 ${posts.createdAt.slice(5,7)}월 ${posts.createdAt.slice(8,10)}일</p>
+  </div>`
+  pageDetail.innerHTML = imgPost;
+  }
+  
+  }
+
+
+getPost();
+
+
+//댓글 보여주기
+async function getComment() {
+  const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}/comments`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-type": "application/json",
+    },
+  })
+  const json = await res.json();
+  const comments = json.comments;
+  const commentDetail = document.querySelector('.post-comment');
+  if(comments.length === 0) {
+      while(commentDetail.hasChildNodes()) { commentDetail.removeChild(commentDetail.firstChild)}
+    } else {
+      while(commentDetail.hasChildNodes()) { commentDetail.removeChild(commentDetail.firstChild)}
+        for(let i = 0; i < comments.length; i++){
+          let imgsrc = comments[i].author.image
+          if((comments[i].author.image).includes('url')){
+            imgsrc = comments[i].author.image.split('"')[1]
+          }
+          comment = `
+          <div class="comment-wrap">
+          <div class="comment-userwrap">
+            <div class="comment-user">
+              <img src=${imgsrc} alt="" class="comment-userimg">
+              <p class="comment-username">${comments[i].author.username}</p>
+              <p class="comment-usertime">· 5분 전</p>
+            </div>
+            <button class="btn--bgNone"><img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore"></button>
+          </div>
+          <p class="comment-txt">${comments[i].content}</p>
+        </div>`
+          commentDetail.innerHTML = comment + commentDetail.innerHTML
+        }
+}}
+
+// 입력하기
+async function uploadComment() {
+  const url = "http://146.56.183.55:5050"
+  const token = localStorage.getItem("token")
+  const postId = localStorage.getItem("postId")
+  const commentUp = commentInp.value
+
+    const res = await fetch(url+`/post/${postId}/comments`,{
+        method:"POST",
+        headers:{
+                    "Authorization" : `Bearer ${token}`,
+                    "Content-type" : "application/json"
+        },
+        body:JSON.stringify({
+            "comment": {
+                    "content": commentUp,
+            }
+        })
+    })
+    getComment()
+    getPost()
+    reportComment = document.querySelectorAll('.comment-imgmore');
+    commentInp.value = '';
+    sendBtn.style.color = '#c4c4c4';
+    sendBtn.disabled = true; 
+    sendBtn.style.cursor = 'default';
+    report();
+  }
+
+getComment()
