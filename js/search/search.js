@@ -13,21 +13,15 @@ async function showFindUser(json) {
   
   const basicImg = `${url}/Ellipse.png`;
   const userInfo = [];
-  
   json.forEach((data) => {
     let imgURL = data.image.match(/http:\/\/146.56.183.55:5050\/^[0-9]*./) === null ? basicImg : data.image;
-    let strongTxt = data.username.split('').filter((item) => item === searchInp.value).map((txt) => txt ).join('');
-    let userNameTxt = data.username.split('').filter((item) => item !== searchInp.value).map(txt => txt).join('');
-    console.log(searchInp.value);
+    let txt = data.username.replace(searchInp.value, `<span>${searchInp.value}</span>`);
     userInfo.push(`
       <li class="user-search">
-        <a href="../../pages/otherProfile.html/${data.accountname}">
+        <a href="../../pages/otherProfile.html/?${data.username}">
         <img src="${imgURL}" alt="${data.username}님의 이미지" class="user-search-img">
         <div class="user-search-txt">
-          <p class="search-tit">${userNameTxt}
-            <span>${strongTxt.length >= 2 ? strongTxt[0] : strongTxt}</span >
-            ${strongTxt.length >= 2 ? strongTxt.slice(1) : ''}
-          </p >
+          <p class="search-tit">${txt}</p >
           <span class="user-searchId">@ ${data.accountname}</span>
         </div>
         </a>
