@@ -1,19 +1,18 @@
 /* post text with image */
-.sec-post {
+.main-post {
   padding-top: 48px;
 }
-.sec-post-page {
+.main-post .main-post-page {
   width: 100%;
   position: relative;
   padding: 20px 16px;
   border-bottom: 1px solid #dbdbdb;
-  box-sizing: border-box;
 }
-.post-wrap .post-user {
+.main-post .post-wrap .post-user {
   display: flex;
   align-items: center;
 }
-.post-wrap .post-user .img-more {
+.main-post .post-wrap .post-user .img-more {
   width: 18px;
   height: 18px;
   position: absolute;
@@ -21,80 +20,80 @@
   top: 24px;
   cursor: pointer;
 }
-.post-wrap .post-user .post-userimg {
+.main-post .post-wrap .post-user .post-userimg {
   width: 42px;
   height: 42px;
 }
-.post-wrap .post-user .post-user-txt {
+.main-post .post-wrap .post-user .post-user-txt {
   display: flex;
   flex-direction: column;
   margin-left: 12px;
 
 }
-.post-user .post-user-txt .post-title {
+.main-post .post-user .post-user-txt .post-title {
   margin: 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
 }
-.post-user .post-user-txt .post-userId {
+.main-post .post-user .post-user-txt .post-userId {
   font-size: 12px;
   color: #767676;
 }
-.post-wrap .post-txtimgwrap .post-txt {
+.main-post .post-wrap .post-txtimgwrap .post-txt {
   font-family: inherit;
   width: calc(100% - 54px);
   margin: 16px 16px 16px 54px;
   font-size: 14px;
 }
-.post-wrap .post-txtimgwrap .post-img {
+.main-post .post-wrap .post-txtimgwrap .post-img {
   width: 304px;
   height: 228px;
-  object-fit: center/cover;
+  object-fit: cover;
   border-radius: 10px;
   margin-left: 54px;
 }
-.post-wrap .post-icon {
+.main-post .post-wrap .post-icon {
   margin: 14px 0 18px 54px;
 }
-.post-wrap .post-icon .icon-box {
+.main-post .post-wrap .post-icon .icon-box {
   display: flex;
   align-items: center;
 }
-.post-wrap .post-icon .icon-txt {
+.main-post .post-wrap .post-icon .icon-txt {
   margin-left: 8px;
   font-size: 12px;
   color: #767676;
 }
-.post-wrap .post-icon .icon-box .like-icon {
+.main-post .post-wrap .post-icon .icon-box .like-icon {
   width: 18px;
 }
-.post-wrap .post-icon .icon-box .chat-icon {
+.main-post .post-wrap .post-icon .icon-box .chat-icon {
   width: 18px;
   margin-left: 18px;
 }
-.post-wrap .post-data {
+.main-post .post-wrap .post-data {
   font-size: 10px;
   margin-left: 54px;
   color: #767676;
 }
 /* 이미지 여러개 일 때-0114 추가 */
-.post-imgmanywrap {
+.main-post .post-imgmanywrap {
   width: 304px;
   height: 228px;
   margin-left: 54px;
   overflow-x: hidden;
   position: relative;
 }
-.post-txtimgwrap .post-img-many {
+.main-post .post-txtimgwrap .post-img-many {
   display: flex;
   width: 304px;
   height: 228px;
 }
-.post-txtimgwrap .post-img-many .post-img {
+.main-post .post-txtimgwrap .post-img-many .post-img {
   margin-left: 0;
 }
-.post-imgmovebtn {
+.main-post .post-imgmovebtn {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -102,7 +101,7 @@
   display: flex;
   gap: 6px;
 }
-.post-imgmovebtn button {
+.main-post .post-imgmovebtn button {
   width: 6px;
   height: 6px;
   background-color: #fff;
@@ -160,7 +159,6 @@
   display: flex;
   justify-content: space-between;
   height: 61px;
-  box-sizing: border-box;
   border-top: 0.5px solid #dbdbdb;
   background-color: #fff;
   position: fixed;

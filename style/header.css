@@ -7,7 +7,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    border: 0.5px solid #dbdbdb;
+    border-bottom: 0.5px solid #dbdbdb;
     background: #fff;
     z-index: 10;
     box-sizing: border-box;
