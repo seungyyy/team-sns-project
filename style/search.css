@@ -1,11 +1,18 @@
 /* main search */
 .main-search {
+  position: fixed;
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100vh;
   padding: 64px 16px 0;
+  overflow-y: scroll;
   box-sizing: border-box;
 }
 .main-search .user-ul {
+  width: 100%;
+  max-width: 340px;
+  min-width: 220px;
   padding-bottom: 80px;
   box-sizing: border-box;
 }
