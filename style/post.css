@@ -23,6 +23,7 @@
 .main-post .post-wrap .post-user .post-userimg {
   width: 42px;
   height: 42px;
+  border-radius: 50%;
 }
 .main-post .post-wrap .post-user .post-user-txt {
   display: flex;
