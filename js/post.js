@@ -85,7 +85,7 @@ async function getPost() {
   })
   const json = await res.json();
   const posts = json.post;
-  const pageDetail = document.querySelector('.sec-post-page');
+  const pageDetail = document.querySelector('.main-post-page');
   const commentDetail = document.querySelector('.post-comment');
   const imgLength = posts.image.split(',').length
   if((imgLength === 1)&&(posts.image)) {

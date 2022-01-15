@@ -1,22 +1,7 @@
-body { 
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-  /* width: 390px; */
-  width: 100%;
-  background-color: #fff;
-  margin: 0 auto;
-}
-
 /* header부분 */
 .header {
-  height: 48px;
-  box-sizing: border-box;
-  border-bottom: 0.5px solid #dbdbdb;
-  background-color: #fff;
   display: flex; 
   justify-content: space-between;
-  position: fixed;
-    /* width: 390px; */
-  width: 100%;
 }
 .header .header-beforenamewrap {
   display: flex;
@@ -27,46 +12,46 @@ body {
   cursor: pointer;
 }
 .header .header-beforenamewrap .img-before {
-  margin: 13px 0 13px 16px;
+  margin: 13px 0 13px 0;
 }
 .header .header-beforenamewrap .header-username {
   font-size: 14px;
   margin: 15.5px 10px 14px;
 }
 .header .img-more {
-  margin: 12px;
+  margin: 12px 0 ;
 }
 
 /* 채팅방 부분. */
-.sec-chatroom {
+.main-chatroom {
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column-reverse;
   height: 100vh;
   overflow-y: scroll;
 }
-.sec-chatroom>div:first-child {
+.main-chatroom>div:first-child {
   margin-bottom: 71px;
 }
-.sec-chatroom>div:last-child {
+.main-chatroom>div:last-child {
   padding-top: 58px;
 }
-.sec-chatroom .chatroom-mychat {
+.main-chatroom .chatroom-mychat {
   display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   padding-bottom: 10px;
 }
-.sec-chatroom .chatroom-mychat .mychat-img {
+.main-chatroom .chatroom-mychat .mychat-img {
   width: 240px;
   height: 240px;
   margin: 0 16px 0 6px;    
 }
-.chatroom-time {
+.main-chatroom .chatroom-time {
   font-size: 10px;
   color: #767676;
 }
-.sec-chatroom .chatroom-mychat .mychat-txt {
+.main-chatroom .chatroom-mychat .mychat-txt {
   font-size: 14px;
   padding: 12px;
   max-width: 242px;
@@ -76,25 +61,24 @@ body {
   border-radius: 10px;
   border-top-right-radius: 0px;
 }
-.sec-chatroom .chatroom-chatwrap {
+.main-chatroom .chatroom-chatwrap {
   display: flex;
 }
-.sec-chatroom .chatroom-chatwrap .chatroom-userimg {
+.main-chatroom .chatroom-chatwrap .chatroom-userimg {
   width: 42px;
   height: 42px;
   margin-left: 16px;
 }
-.sec-chatroom .chatroom-chatwrap .chatroom-txttime {
+.main-chatroom .chatroom-chatwrap .chatroom-txttime {
   display: flex;
   align-items: flex-end;
   margin-bottom: 9px;
 }
-.sec-chatroom .chatroom-chatwrap .chatroom-txttime .txttime-chattxt {
+.main-chatroom .chatroom-chatwrap .chatroom-txttime .txttime-chattxt {
   font-size: 14px;
   max-width: 242px;
   background-color: #fff;
   border: 1px solid #c4c4c4;
-  box-sizing: border-box;
   margin: 0 6px 0 12px;
   border-radius: 10px;
   border-top-left-radius: 0px;
@@ -106,7 +90,6 @@ body {
 .sec-writechat {
   width: 100%;
   height: 61px;
-  box-sizing: border-box;
   border-top: 0.5px solid #dbdbdb;
   background-color: #fff;
   position: fixed;

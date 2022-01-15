@@ -1,4 +1,4 @@
-const sendBtn = document.querySelector('.header-more');
+const sendBtn = document.querySelector('.writechat-sendtxt');
 const commentInp = document.querySelector('.writechat-inp');
 
 //채팅목록 클릭하면, 채팅방 상단 이름이 그거에 맞게 바뀜.
@@ -27,7 +27,7 @@ commentInp.addEventListener('keyup', () => {
     };
 });
 
-let comment = document.querySelector('.sec-chatroom').innerHTML
+let comment = document.querySelector('.main-chatroom').innerHTML
 
 function sendComment() {
   let hours = new Date().getHours();
@@ -37,7 +37,7 @@ function sendComment() {
     <p class="mychat-txt">${commentInp.value}</p>\n          
     <p class="chatroom-time">${hours}:${minutes}</p>\n     
   </div>\n      ` + comment;
-  document.querySelector('.sec-chatroom').innerHTML = comment;
+  document.querySelector('.main-chatroom').innerHTML = comment;
   commentInp.value = '';
   sendBtn.style.color = '#c4c4c4';
   sendBtn.disabled = true; 
@@ -70,4 +70,8 @@ if (!(modalOut.style.display == 'none')) {
   });
 };
 
+const goBefore = document.querySelector('.img-before');
+goBefore.addEventListener('click', ()=> {
+  location.href = "../pages/chatList.html"
+})
 
