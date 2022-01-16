@@ -26,25 +26,7 @@ async function getFeed() {
     }
     //게시물이 있을 경우 배열에서 게시물을 하나씩 꺼냄
     posts.forEach((post) => {
-      //게시물 이미지로 들어온 소스를 구분한다. 이미지가 있으면 첫 이미지를 보여주고 이미지가 없으면 공백을 둔다.
-      let listImg
-      if(post.image){
-        if(post.image.split(",")[0].indexOf("http://146.56.183.55:5050/")>-1){
-          listImg = `
-          <div class="upload-imgBox">
-            <img src="${post.image.split(",")[0]}" alt="게시글 이미지" class="upload-img"/>
-          </div>
-          `
-        }else{
-          listImg = `
-          <div class="upload-imgBox">
-            <img src="${"http://146.56.183.55:5050/" + post.image.split(",")[0]}" alt="게시글 이미지" class="upload-img"/>
-          </div>
-          `
-        }
-      }else{
-        listImg = "<div class='post-cont-space'></div>";
-      }
+      let postImg = imgProcess(post.image); 
       //날짜 수정
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
@@ -68,7 +50,7 @@ async function getFeed() {
         <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
       </button>
       <p class="upload-desc">${post.content}</p>
-      ${listImg}
+      <div class="space"></div>
       <div class="upload-icon">
         <button type="button" class="upload-btn-heart">
             <img src=${heartImg} alt="좋아요 아이콘">
@@ -84,6 +66,11 @@ async function getFeed() {
     `;
     //sec-upload ul에 li를 자식요소로 삽입한다.
     feedList.prepend(addItem);
+     //이미지슬라이드와 연결
+     document.querySelector(".space").prepend(postImg);
+     let dots = document.querySelectorAll(".dot-list span");
+     let imgSlide = document.querySelector(".imgSlide");
+     dotClick(dots, imgSlide);
     //하트 
     document
     .querySelector(".upload-btn-heart")

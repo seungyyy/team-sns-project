@@ -259,8 +259,16 @@
   margin: 16px 0 16px 54px;
   border-radius: 10px;
 }
-.main-profile .post .post-list .post-item .post-cont-space {
+.main-profile .post .post-list .post-item .space {
   margin: 16px 0 16px 54px;
+  border-radius: 10px;
+}
+.main-profile .post .post-list .post-item .post-cont-space .post-cont-imgs{
+  position: relative;
+  width: 304px;
+  height: 228px;
+  overflow: hidden;
+  margin: 0;
   border-radius: 10px;
 }
 .main-profile .post .post-list .post-item .post-img {

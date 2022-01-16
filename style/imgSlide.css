@@ -1,0 +1,57 @@
+.cont-imgSlide{
+    position: relative;
+    width: 304px;
+    height: 228px;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 10px;
+    margin: 16px 0 16px 54px;
+}
+.cont-imgSlide .imgSlide{
+    width: 912px;
+    height: 228px;
+    display: flex;
+}
+.cont-imgSlide .imgSlide.twoImg{
+    width: 608px;
+}
+.cont-imgSlide .imgSlide img{
+    display: block;
+    height: 228px;
+    width: 304px;
+    object-fit: contain;
+}
+.cont-imgSlide .dot-list{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.imgOne{
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 304px;
+    height: 228px;
+}
+.cont-imgSlide .dot-list span{
+    display:inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(133, 133, 133);
+    margin: 0 3px;
+}
+.dot-list span.point{
+    background-color: red;
+}
+.dot-one{
+    transform: translateX(0);
+}
+.dot-two{
+    transform: translateX(-304px);
+}
+.dot-three{
+    transform: translateX(-608px);
+}

@@ -21,21 +21,8 @@ async function profilePostMe() {
       let addGridItem = document.createElement("li");
       addListItem.classList.add("post-item");
       addGridItem.classList.add("post-item-grid");
-
       //게시물 이미지로 들어온 소스를 구분한다.
-      let postImg; 
-      if(post.image==""){
-        postImg=``;
-      }else{
-        postImg = post.image.split(",")[0].indexOf("http://146.56.183.55:5050/")>-1 ?
-         post.image.split(",")[0] : 
-         "http://146.56.183.55:5050/" + post.image.split(",")[0];
-      }
-      let listImg =  postImg ? `
-      <div class="post-cont-img">
-        <img src=${postImg} alt="게시글 이미지" class="post-img"/>
-      </div>
-      `: "<div class='post-cont-space'></div>";
+      let postImg = imgProcess(post.image); 
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
@@ -60,7 +47,8 @@ async function profilePostMe() {
         ${post.content}
         </p>
       </div>
-        ${listImg}
+      <div class="space"></div>
+        
         <button type="button" class="post-btn-more btn--bgNone">
         <img
           src="../images/icon/s-icon-more-vertical.png"
@@ -93,12 +81,17 @@ async function profilePostMe() {
           />
         </a>
     `;
-
+    
       postList.prepend(addListItem);
       if (postImg) {
         postGrid.prepend(addGridItem);
       }
-      //하트
+      //이미지슬라이드와 연결
+      document.querySelector(".space").prepend(postImg);
+      let dots = document.querySelectorAll(".dot-list span");
+      let imgSlide = document.querySelector(".imgSlide");
+      dotClick(dots, imgSlide);
+      //하트  
       document
         .querySelector(".post-btn-heart")
         .addEventListener("click", () => {
