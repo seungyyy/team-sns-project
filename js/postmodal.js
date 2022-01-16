@@ -68,8 +68,6 @@ async function commentModal() {
   const json = await res.json();
   const comments = json.comments;
 
-
-console.log(comments.length);
 for(let i = 0; i<comments.length; i++){
   if(comments[i].author._id === localStorage.getItem('_id')){
     parent.children[comments.length-1 - i].children[0].children[1].children[0].classList.add('comment-del')
@@ -79,7 +77,6 @@ for(let i = 0; i<comments.length; i++){
 }
 
 parent.addEventListener('click', (e) => {
-  console.log(e.target.className.includes('comment-imgmore'))
   if(e.target.className.includes('comment-imgmore')){
     if(e.target.className.includes('comment-del')){
       delModalCont.style.display = 'block';
