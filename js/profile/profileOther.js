@@ -20,12 +20,21 @@ async function profileOther() {
   let desc = profileOther.querySelector(".user-desc");
   followers.innerHTML = profile.followerCount;
   followings.innerHTML = profile.followingCount;
-  imgUser.setAttribute("src", profile.image);
+  // imgUser.setAttribute("src", profile.image);
+  const basicImg = 'http://146.56.183.55:5050/Ellipse.png';
+  let imgURL = profile.image.match(/http:\/\/146.56.183.55:5050\/[0-9]/) === null ? basicImg : profile.image;
+  console.log("이미지 주소 : ", imgURL)
+  imgUser.setAttribute("src", imgURL);
   //이미지 주소가 오류일 때 나오는 코드
   imgUser.setAttribute(
     "onerror",
-    `this.src="../../images/icon/icon-profile.png"`
+    `this.src="${basicImg}"`
   );
+  //이미지 주소가 오류일 때 나오는 코드
+  // imgUser.setAttribute(
+  //   "onerror",
+  //   `this.src="../../images/icon/icon-profile.png"`
+  // );
   tit.innerHTML = profile.username;
   name.innerHTML = "@ " + profile.accountname;
   desc.innerHTML = profile.intro ? profile.intro : "설명이 없습니다.";
