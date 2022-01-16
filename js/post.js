@@ -1,41 +1,3 @@
-// const deletePost = document.querySelector('.img-more');
-// const modalDelete = document.querySelector('#modal-delete');
-// let reportComment = document.querySelectorAll('.comment-imgmore');
-// const modalDelCont = document.querySelector('.modal-delete-container');
-// const modalReport = document.querySelector('#modal-report');
-// const modalRepCont = document.querySelector('.modal-report-container');
-
-// deletePost.addEventListener('click', () => {
-//   modalDelete.classList.remove('modal-delete');
-//   modalDelCont.style.display = 'block';
-//   if (!(modalDelete.classList.contains('modal-delete'))) { 
-//     window.addEventListener('click', (e) => {
-//       e.target === modalDelCont ? 
-//       (modalDelete.classList.add('modal-delete'),
-//       modalDelCont.style.display = 'none')
-//       : false;
-//     });
-//   };
-// });
-
-// function report() {
-//   Array.from(reportComment).forEach(function(val) {
-//   val.addEventListener('click', () => {
-//     modalReport.classList.remove('modal-report');
-//     modalRepCont.style.display = 'block';
-//     if (!(modalReport.classList.contains('modal-report'))) { 
-//       window.addEventListener('click', (e) => {
-//         e.target === modalRepCont ? 
-//         (modalReport.classList.add('modal-report'),
-//         modalRepCont.style.display = 'none')
-//         : false;
-//       });
-//     };
-//   });
-// });
-// }
-// report();
-
 //하단 댓글 입력 창 - 입력되면, 버튼 활성화
 const sendBtn = document.querySelector('.writechat-sendtxt');
 const commentInp = document.querySelector('.writechat-inp');
@@ -298,12 +260,10 @@ async function uploadComment() {
     })
     getComment()
     getPost()
-    // reportComment = document.querySelectorAll('.comment-imgmore');
     commentInp.value = '';
     sendBtn.style.color = '#c4c4c4';
     sendBtn.disabled = true; 
     sendBtn.style.cursor = 'default';
-    // report();
   }
 
 getComment();
