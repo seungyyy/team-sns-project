@@ -35,6 +35,11 @@
     width: 304px;
     height: 228px;
 }
+.imgOne img{
+    height: 228px;
+    width: 304px;
+    object-fit: contain;
+}
 .cont-imgSlide .dot-list span{
     display:inline-block;
     width: 10px;
