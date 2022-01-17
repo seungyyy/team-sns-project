@@ -61,7 +61,9 @@ async function getPost() {
   const imgSplit = posts.image.split(',')
   const imgLength = posts.image.split(',').length
   let imgSrc 
-  let postImg
+  
+  let postImg = imgProcess(posts.image);
+  let postImgs
   if(posts.image) {
     if(imgSplit[0].indexOf("http://146.56.183.55:5050/")>-1){
       if((posts.image).includes('url')) {
@@ -89,31 +91,14 @@ async function getPost() {
     }
 
     if(imgLength === 1) {
-      postImg = `<img src=${imgSrc} alt="게시글 이미지" class="post-img"></img>`
+      postImgs = `<img src=${imgSrc} alt="게시글 이미지" class="post-img"></img>`
     } else if(imgLength === 2) {
-      postImg = `<div class="post-imgmanywrap">
-      <ul class="post-img-many imgBox dot-one">
-        <li><img src=${imgSrc[0]} alt="게시글 이미지" class="post-img"></li>
-        <li><img src=${imgSrc[1]} alt="게시글 이미지" class="post-img"></li>
-      </ul>
-      <div class="list">
-      <span class="point"></span>
-      <span></span>
-  </div>
-    </div>`
+      postImgs = `
+      <div class="space"></div>`
     } else if(imgLength ===3) {
-      postImg =   `<div class="post-imgmanywrap">
-        <ul class="post-img-many imgBox dot-one">
-          <li><img src=${imgSrc[0]} alt="게시글 이미지" class="post-img"></li>
-          <li><img src=${imgSrc[1]} alt="게시글 이미지" class="post-img"></li>
-          <li><img src=${imgSrc[2]} alt="게시글 이미지" class="post-img"></li>
-        </ul>
-        <div class="list">
-            <span class="point"></span>
-            <span></span>
-            <span></span>
-        </div>
-        </div>`
+      postImgs =   `
+        <div class="space"></div>
+        `
     }
 
     let imgPost = `      <div class="post-wrap">
@@ -127,7 +112,7 @@ async function getPost() {
       </div>
       <div class="post-txtimgwrap">
         <p class="post-txt">${posts.content}</p>
-        ${postImg}
+        ${postImgs}
       </div>
       <div class="post-icon">
         <div class="icon-box">
@@ -141,6 +126,8 @@ async function getPost() {
     </div>`
 
     pageDetail.innerHTML = imgPost;
+
+
 
   } else {
     let imgPost = `      <div class="post-wrap">
@@ -167,29 +154,11 @@ async function getPost() {
   </div>`
   pageDetail.innerHTML = imgPost;
   }
-        //포스트 이미지 점
-        let dots = document.querySelectorAll(".list span");
-        let imgBox = document.querySelector(".imgBox");
-        dots.forEach((dot, index) => {
-            dot.addEventListener("click", ()=>{
-                for (const dotRest of dots) {
-                    imgBox.classList.remove("dot-one","dot-two","dot-three");
-                    dotRest.classList.remove("point");
-                }
-                if(index == 0){
-                imgBox.classList.add("dot-one");
-                dot.classList.add("point");
-                }else if(index == 1){
-                    imgBox.classList.add("dot-two");
-                    dot.classList.add("point")
-                }else{
-                    imgBox.classList.add("dot-three")
-                    dot.classList.add("point")
-                }
-            })
-        });
+        document.querySelector(".space").prepend(postImg);
+        let dots = document.querySelectorAll(".dot-list span");
+        let imgSlide = document.querySelector(".imgSlide");
+        dotClick(dots, imgSlide);
 }
-
 getPost();
 
 //댓글 보여주기

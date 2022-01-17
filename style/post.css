@@ -78,37 +78,6 @@
   margin-left: 54px;
   color: #767676;
 }
-/* 이미지 여러개 일 때-0114 추가 */
-.main-post .post-imgmanywrap {
-  width: 304px;
-  height: 228px;
-  margin-left: 54px;
-  overflow-x: hidden;
-  position: relative;
-}
-.main-post .post-txtimgwrap .post-img-many {
-  display: flex;
-  width: 304px;
-  height: 228px;
-}
-.main-post .post-txtimgwrap .post-img-many .post-img {
-  margin-left: 0;
-}
-/* .main-post .post-imgmovebtn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 16px;
-  display: flex;
-  gap: 6px;
-} */
-/* .main-post .post-imgmovebtn button {
-  width: 6px;
-  height: 6px;
-  background-color: #fff;
-  border-radius: 50%;
-  border: none;
-} */
 
 /* 댓글부분 */
 .post-comment {
