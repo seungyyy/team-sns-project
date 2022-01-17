@@ -285,7 +285,7 @@
   width: 100%;
 }
 .main-profile .post .post-list .post-item .post-cont-icon {
-  margin-left: 54px;
+  margin: 14px 0 18px 54px;
   display: flex;
   align-items: center;
 }
