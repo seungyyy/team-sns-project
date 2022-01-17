@@ -1,41 +1,3 @@
-const deletePost = document.querySelector('.post-wrap .post-user .img-more');
-const modalDelete = document.querySelector('#modal-delete');
-let reportComment = document.querySelectorAll('.comment-imgmore');
-const modalDelCont = document.querySelector('.modal-delete-container');
-const modalReport = document.querySelector('#modal-report');
-const modalRepCont = document.querySelector('.modal-report-container');
-
-deletePost.addEventListener('click', () => {
-  modalDelete.classList.remove('modal-delete');
-  modalDelCont.style.display = 'block';
-  if (!(modalDelete.classList.contains('modal-delete'))) { 
-    window.addEventListener('click', (e) => {
-      e.target === modalDelCont ? 
-      (modalDelete.classList.add('modal-delete'),
-      modalDelCont.style.display = 'none')
-      : false;
-    });
-  };
-});
-
-function report() {
-  Array.from(reportComment).forEach(function(val) {
-  val.addEventListener('click', () => {
-    modalReport.classList.remove('modal-report');
-    modalRepCont.style.display = 'block';
-    if (!(modalReport.classList.contains('modal-report'))) { 
-      window.addEventListener('click', (e) => {
-        e.target === modalRepCont ? 
-        (modalReport.classList.add('modal-report'),
-        modalRepCont.style.display = 'none')
-        : false;
-      });
-    };
-  });
-});
-}
-report();
-
 //하단 댓글 입력 창 - 입력되면, 버튼 활성화
 const sendBtn = document.querySelector('.writechat-sendtxt');
 const commentInp = document.querySelector('.writechat-inp');
@@ -130,27 +92,27 @@ async function getPost() {
       postImg = `<img src=${imgSrc} alt="게시글 이미지" class="post-img"></img>`
     } else if(imgLength === 2) {
       postImg = `<div class="post-imgmanywrap">
-      <ul class="post-img-many">
+      <ul class="post-img-many imgBox dot-one">
         <li><img src=${imgSrc[0]} alt="게시글 이미지" class="post-img"></li>
         <li><img src=${imgSrc[1]} alt="게시글 이미지" class="post-img"></li>
       </ul>
-      <ul class="post-imgmovebtn">
-        <li><button type="button"></button></li>
-        <li><button type="button"></button></li>
-      </ul> 
+      <div class="list">
+      <span class="point"></span>
+      <span></span>
+  </div>
     </div>`
     } else if(imgLength ===3) {
       postImg =   `<div class="post-imgmanywrap">
-        <ul class="post-img-many">
+        <ul class="post-img-many imgBox dot-one">
           <li><img src=${imgSrc[0]} alt="게시글 이미지" class="post-img"></li>
           <li><img src=${imgSrc[1]} alt="게시글 이미지" class="post-img"></li>
           <li><img src=${imgSrc[2]} alt="게시글 이미지" class="post-img"></li>
         </ul>
-        <ul class="post-imgmovebtn">
-          <li><button type="button"></button></li>
-          <li><button type="button"></button></li>
-          <li><button type="button"></button></li>
-        </ul> 
+        <div class="list">
+            <span class="point"></span>
+            <span></span>
+            <span></span>
+        </div>
         </div>`
     }
 
@@ -161,7 +123,7 @@ async function getPost() {
           <p class="post-title">${posts.author.username}</p>
           <span class="post-userId">@ ${posts.author.accountname}</span>
         </div>
-        <button><img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more"></button>
+        <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
       </div>
       <div class="post-txtimgwrap">
         <p class="post-txt">${posts.content}</p>
@@ -177,7 +139,7 @@ async function getPost() {
       </div>
       <p class="post-data">${posts.createdAt.slice(0,4)}년 ${posts.createdAt.slice(5,7)}월 ${posts.createdAt.slice(8,10)}일</p>
     </div>`
-    
+
     pageDetail.innerHTML = imgPost;
 
   } else {
@@ -188,7 +150,7 @@ async function getPost() {
         <p class="post-title">${posts.author.username}</p>
         <span class="post-userId">@ ${posts.author.accountname}</span>
       </div>
-      <button><img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more"></button>
+      <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
     </div>
     <div class="post-txtimgwrap">
       <p class="post-txt">${posts.content}</p>
@@ -205,6 +167,27 @@ async function getPost() {
   </div>`
   pageDetail.innerHTML = imgPost;
   }
+        //포스트 이미지 점
+        let dots = document.querySelectorAll(".list span");
+        let imgBox = document.querySelector(".imgBox");
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", ()=>{
+                for (const dotRest of dots) {
+                    imgBox.classList.remove("dot-one","dot-two","dot-three");
+                    dotRest.classList.remove("point");
+                }
+                if(index == 0){
+                imgBox.classList.add("dot-one");
+                dot.classList.add("point");
+                }else if(index == 1){
+                    imgBox.classList.add("dot-two");
+                    dot.classList.add("point")
+                }else{
+                    imgBox.classList.add("dot-three")
+                    dot.classList.add("point")
+                }
+            })
+        });
 }
 
 getPost();
@@ -298,12 +281,12 @@ async function uploadComment() {
     })
     getComment()
     getPost()
-    reportComment = document.querySelectorAll('.comment-imgmore');
     commentInp.value = '';
     sendBtn.style.color = '#c4c4c4';
     sendBtn.disabled = true; 
     sendBtn.style.cursor = 'default';
-    report();
-  }
 
-getComment()
+
+}
+
+getComment();

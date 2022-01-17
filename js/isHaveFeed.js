@@ -1,5 +1,5 @@
 async function getFeed() {
-  const res = await fetch('http://146.56.183.55:5050/post/feed?limit=15&skip=3', {
+  const res = await fetch('http://146.56.183.55:5050/post/feed', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -8,81 +8,25 @@ async function getFeed() {
   });
   const json = await res.json();
   const posts = json.posts;
-  console.log("홈피드 게시글", posts);
+  console.log('홈피드 게시글', posts);
 
-  let mainHomeHave = document.querySelector(".main-feed-have");
-  let mainHomeNone = document.querySelector(".main-feed-none");
-  let feedList = mainHomeHave.querySelector(".sec-upload");
+  let mainHomeHave = document.querySelector('.main-feed-have');
+  let mainHomeNone = document.querySelector('.main-feed-none');
+  let feedList = mainHomeHave.querySelector('.sec-upload');
   //피드가 있는지 없는지 판단 -> 다른 요소를 보여줌
   if (!posts.length) {
-    if (!mainHomeHave.classList.contains("cont--hide")) {
-      mainHomeHave.classList.add("cont--hide");
+    if (!mainHomeHave.classList.contains('cont--hide')) {
+      mainHomeHave.classList.add('cont--hide');
     }
-    mainHomeNone.classList.remove("cont--hide");
+    mainHomeNone.classList.remove('cont--hide');
   } else {
-    mainHomeHave.classList.remove("cont--hide");
-    if (!mainHomeNone.classList.contains("cont--hide")) {
-      mainHomeNone.classList.add("cont--hide");
+    mainHomeHave.classList.remove('cont--hide');
+    if (!mainHomeNone.classList.contains('cont--hide')) {
+      mainHomeNone.classList.add('cont--hide');
     }
     //게시물이 있을 경우 배열에서 게시물을 하나씩 꺼냄
     posts.forEach((post) => {
-      //게시물 이미지로 들어온 소스를 구분한다. 이미지가 있으면 첫 이미지를 보여주고 이미지가 없으면 공백을 둔다.
-      let listImg;
-      if (post.image) {
-        let imglink = post.image.split(',');
-        let imglength = post.image.split(',').length;
-        if (imglength === 1) {
-          listImg = `
-          <div class="img-carousel">
-            <ul class="img-container">
-              <li class="upload-imgBox">
-                <img src="${imglink[0]}" onerror="this.src='http://146.56.183.55:5050/${imglink[0]}';"  alt="${post.username}님의 게시글 이미지">
-              </li>
-            <div>
-          </div>
-          `;
-        } else if (imglength === 2) {
-          listImg = `
-          <div class="img-carousel">
-            <ul class="img-container">
-              <li class="upload-imgBox">
-                <img src="${imglink[0]}" onerror="this.src='http://146.56.183.55:5050/${imglink[0]}';" alt="${post.username}님의 게시글 이미지">
-              </li>
-              <li class="upload-imgBox">
-                <img src="${imglink[1]}" onerror="this.src='http://146.56.183.55:5050/${imglink[1]}' alt="${post.username}님의 게시글 이미지">
-              </li>
-            </ul>
-            <div class="img-btn">
-              <button type="button" class="one-btn current"></button>
-              <button type="button" class="two-btn"></button>
-            </div>
-          </div>
-          `;
-        } else if (imglength === 3) {
-          listImg = `
-          <div class="img-carousel">
-            <ul class="img-container">
-              <li class="upload-imgBox">
-                <img src="${imglink[0]}" onerror="this.src='http://146.56.183.55:5050/${imglink[0]}';" alt="${post.username}님의 게시글 이미지">
-              </li>
-              <li class="upload-imgBox">
-                <img src="${imglink[1]}" onerror="this.src='http://146.56.183.55:5050/${imglink[1]}';" alt="${post.username}님의 게시글 이미지">
-              </li>
-              <li class="upload-imgBox">
-                <img src="${imglink[2]}" onerror="this.src='http://146.56.183.55:5050/${imglink[2]}';" alt="${post.username}님의 게시글 이미지">
-              </li>
-            </ul>
-            <div class="img-btn">
-              <button type="button" class="one-btn current"></button>
-              <button type="button" class="two-btn"></button>
-              <button type="button" class="three-btn"></button>
-            </div>
-          </div>
-          `;
-        }
-      } else {
-        listImg = "<div class='post-cont-space'></div>";
-      }
+      let postImg = imgProcess(post.image);
       //날짜 수정
       let yearMonth = post.updatedAt.split('-');
       let day = yearMonth[2].split('T')[0];
@@ -106,7 +50,7 @@ async function getFeed() {
         <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
       </button>
       <p class="upload-desc">${post.content}</p>
-      ${listImg}
+      <div class="space"></div>
       <div class="upload-icon">
         <button type="button" class="upload-btn-heart">
             <img src=${heartImg} alt="좋아요 아이콘">
@@ -122,6 +66,11 @@ async function getFeed() {
     `;
       //sec-upload ul에 li를 자식요소로 삽입한다.
       feedList.prepend(addItem);
+      //이미지슬라이드와 연결
+      document.querySelector('.space').prepend(postImg);
+      let dots = document.querySelectorAll('.dot-list span');
+      let imgSlide = document.querySelector('.imgSlide');
+      dotClick(dots, imgSlide);
       //하트
       document.querySelector('.upload-btn-heart').addEventListener('click', () => {
         if (!post.hearted) {
@@ -139,35 +88,7 @@ async function getFeed() {
         localStorage.setItem('postuploder', post.author.accountname);
       });
       modalDeclaration(post.id);
-
-      const slidercontainers = document.querySelectorAll('.img-carousel');
-      //const imgCont = document.querySelectorAll('.img-container');
-      slidercontainers.forEach((slider) => {
-        slider.addEventListener('click', (e) => {
-          const imgContainer = slider.querySelector('.img-container');
-          let oneBtn = slider.querySelector('.one-btn');
-          let twoBtn = slider.querySelector('.two-btn');
-          let threeBtn = slider.querySelector('.three-btn');
-          if (e.target.classList.contains('one-btn')) {
-            imgContainer.style.transform = `translateX(0)`;
-            oneBtn.classList.add('current');
-            twoBtn.classList.remove('current');
-            threeBtn.classList.remove('current');
-          } else if (e.target.classList.contains('two-btn')) {
-            imgContainer.style.transform = `translateX(-304px)`;
-            oneBtn.classList.remove('current');
-            threeBtn.classList.remove('current');
-            twoBtn.classList.add('current');
-          } else if (e.target.classList.contains('three-btn')) {
-            imgContainer.style.transform = `translateX(-608px)`;
-            oneBtn.classList.remove('current');
-            twoBtn.classList.remove('current');
-            threeBtn.classList.add('current');
-          }
-        });
-      });
     });
-  };
-};
+  }
+}
 getFeed();
-

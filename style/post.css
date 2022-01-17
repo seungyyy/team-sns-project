@@ -94,21 +94,21 @@
 .main-post .post-txtimgwrap .post-img-many .post-img {
   margin-left: 0;
 }
-.main-post .post-imgmovebtn {
+/* .main-post .post-imgmovebtn {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 16px;
   display: flex;
   gap: 6px;
-}
-.main-post .post-imgmovebtn button {
+} */
+/* .main-post .post-imgmovebtn button {
   width: 6px;
   height: 6px;
   background-color: #fff;
   border-radius: 50%;
   border: none;
-}
+} */
 
 /* 댓글부분 */
 .post-comment {
@@ -234,4 +234,37 @@
 @keyframes slide {
   from {bottom: -300px; opacity: 0}
   to {bottom: 0; opacity: 1}
+}
+
+/* 이미지 2개이상 */
+.list{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.list span{
+  display:inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 3px;
+}
+.list span.point{
+  background-color: #24732f;
+}
+
+
+.dot-one{
+  transform: translateX(0);
+  transition: .4s;
+}
+.dot-two{
+  transform: translateX(-304px);
+  transition: .4s;
+}
+.dot-three{
+  transform: translateX(-608px);
+  transition: .4s;
 }
