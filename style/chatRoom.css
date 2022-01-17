@@ -1,27 +1,3 @@
-/* header부분 */
-.header {
-  display: flex; 
-  justify-content: space-between;
-}
-.header .header-beforenamewrap {
-  display: flex;
-}
-.header .header-beforenamewrap .img-before, .header .img-more {
-  height: 22px;
-  width: 22px;
-  cursor: pointer;
-}
-.header .header-beforenamewrap .img-before {
-  margin: 13px 0 13px 0;
-}
-.header .header-beforenamewrap .header-username {
-  font-size: 14px;
-  margin: 15.5px 10px 14px;
-}
-.header .img-more {
-  margin: 12px 0 ;
-}
-
 /* 채팅방 부분. */
 .main-chatroom {
   background-color: #f2f2f2;
