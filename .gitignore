@@ -18,6 +18,7 @@
 # Ignore all local history of files
 .history
 .ionide
+.DS_Store
 
 # Support for Project snippet scope
 !.vscode/*.code-snippets
@@ -29,5 +30,4 @@
 module-btn.html
 module-nav-search.html
 module-post-product.html
-module-alert-user-search.html
 module-alert-search-input-follow.html
