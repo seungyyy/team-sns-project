@@ -32,10 +32,11 @@ function imgProcess(post){
                 imgOne.innerHTML += `<img src=${normalImg} alt="게시글 이미지" />`
             }
             if(postArr.length>1){
-                if(index == 0){dotList.innerHTML += `<span class="point"></span>`}
-                else{
-                    dotList.innerHTML += `<span></span>`
-                }
+                // if(index == 0){dotList.innerHTML += `<span class="point"></span>`}
+                // else{
+                    dotList.innerHTML += `<span class="dot-${index+1}"></span>`
+                // }
+                dotList.querySelector(".dot-1").classList.add("point");
             };
       })
       imgPost = contImgSlide;
@@ -45,20 +46,22 @@ function imgProcess(post){
 
 function dotClick(dots, imgSlide){
         dots.forEach((dot, index) => {
-            dot.addEventListener("click", ()=>{
-                for (const dotReset of dots) {
-                    imgSlide.classList.remove("dot-one","dot-two","dot-three");
-                    dotReset.classList.remove("point");
+            dot.addEventListener("click", (e)=>{
+                for (const select of e.path[1].children) {
+                    select.classList.remove("point")
                 }
-                if(index == 0){
-                    imgSlide.classList.add("dot-one");
+                if(e.target.classList.contains("dot-1")){
+                    imgSlide.classList.remove("dot-two","dot-three");
+                    e.path[2].children[0].classList.add("dot-one");
                     dot.classList.add("point");
-                }else if(index == 1){
-                    imgSlide.classList.add("dot-two");
+                }else if(e.target.classList.contains( "dot-2")){
+                    imgSlide.classList.remove("dot-one","dot-three");
+                    e.path[2].children[0].classList.add("dot-two");
                     dot.classList.add("point")
-                }else{
-                    imgSlide.classList.add("dot-three")
-                    dot.classList.add("point")
+                }else if(e.target.classList.contains( "dot-3")){
+                    imgSlide.classList.remove("dot-one","dot-two");
+                    e.path[2].children[0].classList.add("dot-three");
+                    dot.classList.add("point");
                 }
             })
         });
