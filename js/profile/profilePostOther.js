@@ -23,6 +23,16 @@ async function profilePostMe() {
       addGridItem.classList.add("post-item-grid");
       //게시물 이미지로 들어온 소스를 구분한다.
       let postImg = imgProcess(post.image); 
+       //그리드 이미지
+       let gridImg 
+       if(post.image =="" || post.image==undefined){
+         gridImg="";
+       }else{
+       //이미지가 한개 이상 들어오는 경우, 여러개 들어오는 경우
+         gridImg = post.image.split(",")[0].indexOf("http://146.56.183.55:5050/")>-1 ?
+         post.image.split(",")[0] : 
+         "http://146.56.183.55:5050/" + post.image.split(",")[0]
+       }
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
@@ -73,9 +83,9 @@ async function profilePostMe() {
         `;
 
       addGridItem.innerHTML = `
-        <a href="#" class="post-link-grid">
+        <a href="../../pages/post.html" class="post-link-grid">
           <img
-            src="${postImg}"
+            src="${gridImg}"
             alt="게시글 이미지"
             class="post-img-grid"
           />
@@ -83,7 +93,7 @@ async function profilePostMe() {
     `;
     
       postList.prepend(addListItem);
-      if (postImg) {
+      if (gridImg) {
         postGrid.prepend(addGridItem);
       }
       //이미지슬라이드와 연결
@@ -107,6 +117,13 @@ async function profilePostMe() {
         .addEventListener("click", () => {
           localStorage.setItem("postId", post.id);
         });
+        if(gridImg){
+          document
+          .querySelector(".post-link-grid")
+          .addEventListener("click", ()=>{
+            localStorage.setItem("postId", post.id);
+          })
+        }
       //모달 신고창
       modalDeclaration(post.id);
     });

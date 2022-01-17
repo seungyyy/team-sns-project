@@ -14,13 +14,16 @@ async function productConfirmation() {
   console.log(products);
 
   let productCont = document.querySelector(".product");
-  let productList = productCont.querySelector(".product-list")
+  let productList = productCont.querySelector(".product-list");
+  let productHr = document.querySelector(".product-hr");
   if (!products.data) {
     if (!productCont.classList.contains("cont--hide")) {
       productCont.classList.add("cont--hide");
+      productHr.classList.add("cont--hide");
     }
   } else {
     productCont.classList.remove("cont--hide");
+    productHr.classList.remove("cont--hide");
     productArr = products["product"]
     productArr.forEach((product)=>{
        //게시물 이미지로 들어온 소스를 구분한다.
