@@ -1,0 +1,61 @@
+.main-follow {
+height: 100%;
+}
+.main-follow .cont-followers {
+  padding: 48px 0 60px;
+}
+.main-follow .cont-followers .list-followers {
+  padding: 24px 16px 0 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.main-follow .cont-followers .list-followers .item-followers {
+  height: 50px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.main-follow .cont-followers .list-followers .item-followers .link-follow {
+  display: inline-block;
+}
+.main-follow .cont-followers .list-followers .item-followers .link-follow .img-followers {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+}
+.main-follow .cont-followers .list-followers .item-followers .link-follow .tit-followers strong {
+  margin: 5px 0 6px 62px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+}
+.main-follow .cont-followers .list-followers .item-followers .link-follow .desc-followers {
+  margin: 0 0 0 62px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+}
+.main-follow .cont-followers .list-followers .item-followers .btn-followers {
+  width: 56px;
+  height: 28px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  line-height: 15px;
+  border-radius: 26px;
+}
+.btn-followers--off {
+  background-color: #fff;
+  color: #767676;
+  border: 1px solid #dbdbdb;
+}
+.btn-followers--on{
+  background-color: #24732f;
+  color: #fff;
+  border: none;
+}

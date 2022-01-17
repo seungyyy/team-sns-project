@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>청귤마켓</title>
+  <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="../style/common.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="hidden">청귤마켓</h1>
+    <ul class="header-list">
+      <li class='header-item header-feed cont--hide'>
+        <strong>청귤마켓 피드</strong>
+      </li>
+      <li class="header-item header-back">
+        <a href="./home.html">
+          <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
+        </a>
+      </li>
+      <li class="header-item header-search cont--hide">
+        <a href="./search/search.html">
+          <img src="../images/icon/icon-search.png" alt="검색 버튼">
+        </a>
+      </li>
+      <li class="header-item header-inp cont--hide">
+          <input type="text" name="" placeholder="계정 검색">
+      </li>
+      <li class="header-item header-more cont--hide">
+        <button type="button" class="btn--bgNone">
+          <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
+        </button>
+      </li>
+      <li class="header-item header-upload">
+          <button type="button" class="btn-MS--off">업로드</button>
+      </li>
+    </ul>
+  </header>
+
+  <!-- main add prod -->
+  <main role="main" class="main-add-prod">
+    <h2 class="hidden">상품 등록하기</h2>
+    <p class="add-prod-tit">이미지 등록</p>
+    <form method="post">
+      <fieldset class="prod-set-field">
+        <label for="prodfile" class="prodfile-label">
+          <div class="prod-set-img">
+          </div>
+        </label>
+        <input type="file" id="prodfile" name="prodfile" accept="image/*" class="file-inp">
+        <label for="prod-name" class="label">상품명</label>
+        <input type="text" name="prodname" id="prod-name" placeholder="2~10자 이내여야 합니다." class="prodname-inp inp">
+        <p id="prod-alert"></p>
+        <label for="price" class="label">가격</label>
+        <input type="text" name="price" id="price" placeholder="숫자만 입력 가능합니다." class="price-inp inp">
+        <p id="price-alert"></p>
+        <label for="prod-link" class="label">판매링크</label>
+        <input type="text" name="prodlink" id="prod-link" placeholder="URL을 입력해 주세요."
+        class="introduce-inp inp">
+        <p id="link-alert"></p>
+      </fieldset>
+    </form>
+  </main>
+
+  <script src="../js/addProd/valueCheck.js"></script>
+  <script src="../js/addProd/saveProd.js"></script>
+</body>
+</html>

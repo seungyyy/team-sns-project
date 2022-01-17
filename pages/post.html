@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청귤마켓</title>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../style/common.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="hidden">청귤마켓</h1>
+    <ul class="header-list">
+      <li class='header-item header-feed cont--hide'>
+        <strong>청귤마켓 피드</strong>
+      </li>
+      <li class="header-item header-back">
+        <a href="./home.html">
+          <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
+        </a>
+      </li>
+      <li class="header-item header-search cont--hide">
+        <a href="./search/search.html">
+          <img src="../images/icon/icon-search.png" alt="검색 버튼">
+        </a>
+      </li>
+      <li class="header-item header-inp cont--hide">
+          <input type="text" name="" placeholder="계정 검색">
+      </li>
+      <li class="header-item header-more">
+        <button type="button" class="btn--bgNone">
+          <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
+        </button>
+      </li>
+      <li class="header-item header-upload cont--hide">
+          <button type="button" class="btn-MS--off">업로드</button>
+      </li>
+    </ul>
+  </header>
+
+  <main class="main-post">
+    <!-- post - text with image-->
+    <section class="main-post-page">
+      <!-- 게시글 부분 -->
+      <div class="post-wrap">
+        <div class="post-user">
+          <img src="../images/icon/icon-profile.png" alt="user image" class="post-userimg">
+          <div class="post-user-txt">
+            <p class="post-title">애월읍 위니브 청귤농장</p>
+            <span class="post-userId">@ weniv_Mandarin</span>
+          </div>
+          <img src="../images/icon/s-icon-more-vertical.png" alt="더보기" class="img-more">
+        </div>
+        <div class="post-txtimgwrap">
+          <p class="post-txt">사용자 간의 자유로운 의사소통과 정보 공유, 그리고 인맥 확대 등을 통해 사회적 관계를 생성하고 강화해주는 온라인 플랫폼을 의미한다.</p>
+          <img src="../images/image/postimg.png" alt="some trees" class="post-img">
+        </div>
+        <div class="post-icon">
+          <div class="icon-box">
+            <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+            <span class="icon-txt">58</span>
+            <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
+            <span class="icon-txt">12</span>
+          </div>
+        </div>
+        <p class="post-data">2020년 10월 21일</p>
+      </div>
+    </section>
+    <!-- post 끝 -->
+    <!-- 댓글부분 -->
+    <section class="post-comment">
+      <div class="comment-wrap">
+        <div class="comment-userwrap">
+          <div class="comment-user">
+            <img src="../images/image/user3.png" alt="" class="comment-userimg">
+            <p class="comment-username">서귀포시 무슨 농장</p>
+            <p class="comment-usertime">· 5분 전</p>
+          </div>
+          <button class="btn--bgNone"><img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore"></button>
+        </div>
+        <p class="comment-txt">게시글 답글~~ !!최고최고</p>
+      </div>
+      <div class="comment-wrap">
+        <div class="comment-userwrap">
+          <div class="comment-user">
+            <img src="../images/image/user4.png" alt="" class="comment-userimg">
+            <p class="comment-username">감귤러버</p>
+            <p class="comment-usertime">· 15분 전</p>
+          </div>
+          <button class="btn--bgNone"><img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore"></button>
+        </div>
+        <p class="comment-txt">안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡뻘땡뻘...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 댓글 입력부분 -->
+  <section class="sec-writechat">
+    <div class="writechat-wrap">
+      <label for="addimage"><img src="../images/icon/icon-gray-button.png" alt="add image" class="writechat-addimg"></label>
+      <input type="file" id="addimage" name="addimage" accept=".jpg, .jpeg, .png" class="file-inp">
+      <input type="text" placeholder="댓글 입력하기" class="writechat-inp">
+    </div>
+    <button type="submit" class="writechat-sendtxt">전송</button>
+  </section>
+
+  <!-- 모달 -->
+  <!-- 헤더 옆에 점 세개를 누르면 modal-delete 클래스가 빠지면서 화면에 보임-->
+  <!-- 댓글 옆에 점 세개를 누르면 modal-report 클래스가 빠지면서 화면에 보임-->
+  <div class="modal-delete-container">
+      <section id="modal-delete" class="sec-modal modal-delete">
+        <div class="modal-bar"></div>
+        <p class="modal-txt">삭제하기</p>
+      </section>
+  </div>
+  <div class="modal-report-container">
+    <section id="modal-report" class="sec-modal modal-report">
+      <div class="modal-bar"></div>
+      <p class="modal-txt">신고하기</p>
+    </section>
+  </div>
+
+  <section class="modal-logout-outside cont--hide">
+    <h2 class="hidden">로그아웃 창</h2>
+    <div class="dimm"></div>
+    <article class="modal-logout">
+      <h3 class="hidden">설정 및 개인정보와 로그아웃</h3>
+      <div class="modal-bar"></div>
+      <ul class="modal-list">
+        <li class="modal-item">설정 및 개인정보</li>
+        <li class="modal-item"><button type="button">로그아웃</button></li>
+      </ul>
+    </article>
+    <article class="modal-logoutTest cont--hide">
+      <h3 class="hidden">로그아웃 재확인</h3>
+      <p class="modal-gide">로그아웃 하시겠어요?</p>
+      <ul class="modal-gide-list">
+        <li class="modal-gide-item">
+          <button type="button" class="modal-gide-cancel">취소</button>
+        </li>
+        <li class="modal-gide-item">
+          <button type="button" class="modal-btn-logout">로그아웃</button>
+        </li>
+      </ul>
+    </article>
+</section>
+
+  <script src="../js/post.js"></script>
+  <script src="../js/modal/modalLogout.js"></script>
+  <script src="../js/postmodal.js"></script>
+  <script src="../js/imgProcess.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* main search */
+.main-search {
+  position: fixed;
+  top: 49px;
+  width: 100vw;
+  height: calc(100vh - 48px);
+  padding: 16px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.user-ul .user-search:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+.user-ul .user-search .link {
+  display: flex;
+  cursor: pointer;
+}
+.user-ul .user-search .img-more {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 4px;
+}
+.user-ul .user-search .user-search-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+.user-ul .user-search .user-search-txt {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+.user-ul .user-search .user-search-txt .search-tit {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+.user-ul .user-search .user-search-txt .search-tit > span {
+  color: #24732f;
+  margin-left:-2px;
+}
+.user-ul .user-search .user-search-txt .user-searchId {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #767676;
+}

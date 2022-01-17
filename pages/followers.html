@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>청귤마켓</title>
+  <link rel="stylesheet" href="../style/common.css"/>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="hidden">청귤마켓</h1>
+    <ul class="header-list">
+      <li class='header-item header-feed cont--hide'>
+        <strong>청귤마켓 피드</strong>
+      </li>
+      <li class="header-item header-back">
+        <a href="./home.html">
+          <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
+        </a>
+      </li>
+      <li class="header-item header-search cont--hide">
+        <a href="./search/search.html">
+          <img src="../images/icon/icon-search.png" alt="검색 버튼">
+        </a>
+      </li>
+      <li class="header-item header-inp cont--hide">
+          <input type="text" name="" placeholder="계정 검색">
+      </li>
+      <li class="header-item header-more cont--hide">
+        <button type="button" class="btn--bgNone">
+          <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
+        </button>
+      </li>
+      <li class="header-item header-upload cont--hide">
+          <button type="button" class="btn-MS--off">업로드</button>
+      </li>
+    </ul>
+  </header>
+
+    <main class="main-follow">
+      <!--팔로우 리스트 -->
+      <section class="cont-followers">
+        <h2 class="hidden">팔로워 표시</h2>
+        <ul class="list-followers"></ul>
+      </section>
+    </main>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="./home.html" class="nav-link nav-link-home">
+            <img src="../images/icon/icon-home-fill.png" alt="홈" class="nav-img nav-img-home--on cont--hide" />
+            <img src="../images/icon/icon-home.png" alt="홈" class="nav-img nav-img-home--off" />
+            <p class="nav-txt">홈</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./chatList.html" class="nav-link nav-link-chat">
+            <img src="../images/icon/icon-message-circle-fill.png" alt="채팅"
+              class="nav-img nav-img-chat--on cont--hide" />
+            <img src="../images/icon/xl-icon-message-circle.png" alt="채팅" class="nav-img nav-img-chat--off" />
+            <p class="nav-txt">채팅</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./upload.html" class="nav-link nav-link-post">
+            <img src="../images/icon/icon-edit-fill.png" alt="게시물 작성" class="nav-img nav-img-post--on cont--hide" />
+            <img src="../images/icon/icon-edit.png" alt="게시물 작성" class="nav-img nav-img-post--off" />
+            <p class="nav-txt">게시물 작성</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./profile.html" class="nav-link nav-link-profile nav--on">
+            <img src="../images/icon/icon-user-fill.png" alt="프로필" class="nav-img nav-img-profile--on" />
+            <img src="../images/icon/icon-user.png" alt="프로필" class="nav-img nav-img-profile--off cont--hide" />
+            <p class="nav-txt">프로필</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script src="../js/navChange.js"></script>
+    <script src="../js/profile/onFollow.js"></script>
+    <script src="../js/profile/offFollow.js"></script>
+    <script src="../js/profile/followers.js"></script>
+    </div>
+</body>
+
+</html>
