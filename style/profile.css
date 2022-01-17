@@ -151,7 +151,7 @@
 .main-profile .product-list {
   margin: 0 0 21px 20px;
   display: flex;
-  overflow: hidden;
+  overflow-x: auto;
 }
 .main-profile .product .product-list .product-item {
   margin-right: 10px;

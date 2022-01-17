@@ -19,7 +19,7 @@
     display: block;
     height: 228px;
     width: 304px;
-    object-fit: contain;
+    object-fit: center/cover;
 }
 .cont-imgSlide .dot-list{
     position: absolute;
@@ -38,7 +38,7 @@
 .imgOne img{
     height: 228px;
     width: 304px;
-    object-fit: contain;
+    object-fit: center/cover;
 }
 .cont-imgSlide .dot-list span{
     display:inline-block;
