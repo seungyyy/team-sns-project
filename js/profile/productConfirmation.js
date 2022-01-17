@@ -15,13 +15,16 @@ async function productConfirmation() {
 
   let productCont = document.querySelector(".product");
   let productList = productCont.querySelector(".product-list");
+  let productHr = document.querySelector(".product-hr");
   //상품이 있는지 없는지 확인
   if (!products.data) {
     if (!productCont.classList.contains("cont--hide")) {
       productCont.classList.add("cont--hide");
+      productHr.classList.add("cont--hide");
     }
   } else {
     productCont.classList.remove("cont--hide");
+    productHr.classList.remove("cont--hide");
     productArr = products["product"];
     productArr.forEach((product)=>{
       //금액 자릿수 수정

@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box; 
-}
-
 /* 상단 헤더 부분 */
 .header .btn-MS {
   background-color: #24732f ;
@@ -16,6 +12,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 48px 34px 0;
+  box-sizing: border-box;
 }
 .main-profile-mod .profile-mod-field {
   margin-top: 30px;

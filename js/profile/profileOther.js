@@ -15,7 +15,7 @@ async function profileOther() {
   let followers = profileOther.querySelector(".user-num-followers");
   let followings = profileOther.querySelector(".user-num-followings");
   let imgUser = profileOther.querySelector(".user-img");
-  let tit = profileOther.querySelector(".user-tit strong");
+  let tit = profileOther.querySelector(".user-tit");
   let name = profileOther.querySelector(".user-name");
   let desc = profileOther.querySelector(".user-desc");
   followers.innerHTML = profile.followerCount;
@@ -30,11 +30,6 @@ async function profileOther() {
     "onerror",
     `this.src="${basicImg}"`
   );
-  //이미지 주소가 오류일 때 나오는 코드
-  // imgUser.setAttribute(
-  //   "onerror",
-  //   `this.src="../../images/icon/icon-profile.png"`
-  // );
   tit.innerHTML = profile.username;
   name.innerHTML = "@ " + profile.accountname;
   desc.innerHTML = profile.intro ? profile.intro : "설명이 없습니다.";
