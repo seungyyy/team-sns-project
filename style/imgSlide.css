@@ -49,7 +49,7 @@
     margin: 0 3px;
 }
 .dot-list span.point{
-    background-color: red;
+    background-color: green;
 }
 .dot-one{
     transform: translateX(0);
