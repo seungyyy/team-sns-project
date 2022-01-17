@@ -53,16 +53,50 @@
   margin-left: 54px;
   font-size: 14px;
 }
-.main-feed-have .sec-upload li .upload-imgBox {
+.main-feed-have .sec-upload li .img-carousel{
   width: 304px;
   height: 228px;
+  position: relative;
   margin: 16px 0 14.5px 54px;
   overflow: hidden;
 }
-.main-feed-have .sec-upload li .upload-imgBox img {
+.main-feed-have .sec-upload li .img-carousel .img-container {
+  width: 912px;
+  display: flex;
+  transition: transform 0.5s;
+}
+.main-feed-have .sec-upload li .img-carousel .img-container .upload-imgBox {
   width: 304px;
+}
+.main-feed-have .sec-upload li .img-carousel .img-container .upload-imgBox img {
+  border-radius: 10px;
+  border: 0.5px solid #dbdbdb;
   height: 228px;
-  object-fit: center/cover ;
+  object-fit: center/cover;
+}
+.main-feed-have .sec-upload li .img-carousel .img-btn {
+  position: absolute;
+  display: inline-block;
+  bottom: 10px;
+  left: 46%;
+}
+.main-feed-have .sec-upload li .img-carousel .img-btn .one-btn, 
+.main-feed-have .sec-upload li .img-carousel .img-btn .two-btn, 
+.main-feed-have .sec-upload li .img-carousel .img-btn .three-btn {
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  background-color: #fff;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.main-feed-have .sec-upload li .img-carousel .img-btn .one-btn.current, 
+.main-feed-have .sec-upload li .img-carousel .img-btn .two-btn.current,
+.main-feed-have .sec-upload li .img-carousel .img-btn .three-btn.current {
+  background-color: #24732f;
+}
+.main-feed-have .sec-upload li .img-carousel .img-btn .two-btn {
+  margin: 0 4px;
 }
 .main-feed-have .sec-upload li .post-cont-space {
   margin: 16px 0 16px 54px;
