@@ -3,14 +3,15 @@ const url = 'http://146.56.183.55:5050';
 
 // 소개 글이 없는지 체크 
 function userIntroduceCheck() {
-  const userIntroduce = profileField.querySelector('#introduce');
+  const userIntroduce = profileField.querySelector('#user-introduce');
   const userIntroduceAlert = profileField.querySelector('#introduce-alert');
 
   if (userIntroduce.value === '') {
     userIntroduceAlert.textContent = '*본인 소개와 상품에 대한 소개 글을 작성해주세요.';
-    userIntroduce.style.borderColor = '#eb5757';
+    userIntroduce.classList.add('alert-inp');
   } else {
     userIntroduceAlert.textContent = '';
+    userIntroduce.classList.remove('alert-inp');
   }
 }
 
@@ -35,14 +36,17 @@ async function accountNameCheck() {
         let accountCheck = arr.find((check) => check === accountName.value);
         if (accountCheck === accountName.value) {
           accountNameAlert.textContent = '*이미 사용 중인 ID입니다.';
+          accountName.classList.add('alert-inp');
           break;
         } else {
           accountNameAlert.textContent = '';
+          accountName.classList.remove('alert-inp');
         }
       }
     }
   } else {
     accountNameAlert.textContent = '*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.';
+    accountName.classList.add('alert-inp');
   }
 }
 
@@ -52,12 +56,13 @@ function userNameCheck() {
   const userNameAlert = profileField.querySelector('#username-alert');
   if (userName.value.length < 2 || userName.value.length > 11) {
     userNameAlert.textContent = '*2~10자 이내여야 합니다.';
-    userName.style.borderBottom = '#eb5757';
+    userName.classList.add("alert-inp");
   } else {
     userNameAlert.textContent = '';
+    userName.classList.remove("alert-inp");
   }
 }
 
 document.getElementById('user-name').addEventListener('keyup', userNameCheck);
 document.getElementById('user-id').addEventListener('keyup', accountNameCheck);
-document.getElementById('introduce').addEventListener('keyup', userIntroduceCheck);
+document.getElementById('user-introduce').addEventListener('keyup', userIntroduceCheck);

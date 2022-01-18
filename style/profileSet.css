@@ -37,7 +37,7 @@
   border-radius: 50%;
   object-fit: cover;
 }
-.main-profile-set .profile-set-field .file-inp {
+.main-profile-set .profile-set-field input[type="file"] {
   width: 1px;
   height: 1px;
   opacity: 0;
@@ -46,7 +46,7 @@
   font-size: 12px;
   margin-bottom: 0.71vh;
 }
-.main-profile-set .profile-set-field .inp {
+.main-profile-set .profile-set-field input {
   width: 100%;
   padding-bottom: 1.06vh;
   margin-bottom: 1.89vh;
@@ -59,13 +59,13 @@
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   box-sizing: border-box;
 }
-.main-profile-set .profile-set-field .email-inp {
+.main-profile-set .profile-set-field #user-name {
   margin-bottom: 1.89vh;
 }
-.main-profile-set .profile-set-field .inp:focus {
+.main-profile-set .profile-set-field input:focus {
   border-bottom: 1px solid #24732f;
 }
-.main-profile-set .profile-set-field .inp::placeholder {
+.main-profile-set .profile-set-field input::placeholder {
   color: #dbdbdb;
 }
 .main-profile-set .profile-set-field .btn-L {
@@ -99,4 +99,9 @@
 
 .main-profile-set.cont--hide {
   display: none;
+}
+#user-name.alert-inp,
+#user-id.alert-inp,
+#user-introduce.alert-inp {
+  border-bottom: 1px solid #eb5757;
 }
