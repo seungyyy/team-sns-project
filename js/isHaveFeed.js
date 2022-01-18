@@ -34,6 +34,7 @@ async function getFeed() {
       let heartImg = !post.hearted
         ? '../images/icon/icon-heart.png'
         : '../images/icon/icon-heart-fill.png';
+      
       //가상 li요소를 만들고 내용을 채워넣음
       let addItem = document.createElement('li');
       addItem.innerHTML = `
@@ -65,14 +66,16 @@ async function getFeed() {
       </div>
     `;
       //sec-upload ul에 li를 자식요소로 삽입한다.
-      feedList.prepend(addItem);
+      
+        feedList.prepend(addItem);
       //이미지슬라이드와 연결
       document.querySelector('.space').prepend(postImg);
       let dots = document.querySelectorAll('.dot-list span');
       let imgSlide = document.querySelector('.imgSlide');
       dotClick(dots, imgSlide);
       //하트
-      document.querySelector('.upload-btn-heart').addEventListener('click', () => {
+      document.querySelector('.upload-btn-heart').addEventListener('click', (e) => {
+        let child = document.querySelectorAll('.sec-upload li')
         if (!post.hearted) {
           heartPlus(post.id);
         } else {
@@ -90,5 +93,9 @@ async function getFeed() {
       modalDeclaration(post.id);
     });
   }
+  
+  
 }
 getFeed();
+
+

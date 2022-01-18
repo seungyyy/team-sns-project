@@ -3,7 +3,6 @@
   padding-top: 48px;
 }
 .main-post .main-post-page {
-  width: 100%;
   position: relative;
   padding: 20px 16px;
   border-bottom: 1px solid #dbdbdb;
@@ -11,19 +10,21 @@
 .main-post .post-wrap .post-user {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .main-post .post-wrap .post-user .img-more {
   width: 18px;
   height: 18px;
   position: absolute;
-  right: 16px;
-  top: 24px;
+  right: 0;
+  top: 5px;
   cursor: pointer;
 }
 .main-post .post-wrap .post-user .post-userimg {
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  border: 1px solid #c4c4c4;
 }
 .main-post .post-wrap .post-user .post-user-txt {
   display: flex;
@@ -48,8 +49,7 @@
   font-size: 14px;
 }
 .main-post .post-wrap .post-txtimgwrap .post-img {
-  width: 304px;
-  height: 228px;
+  width: 77.94vw;
   object-fit: cover;
   border-radius: 10px;
   margin-left: 54px;
@@ -62,7 +62,7 @@
   align-items: center;
 }
 .main-post .post-wrap .post-icon .icon-txt {
-  margin-left: 8px;
+  margin-left: 6px;
   font-size: 12px;
   color: #767676;
 }
@@ -71,7 +71,8 @@
 }
 .main-post .post-wrap .post-icon .icon-box .chat-icon {
   width: 18px;
-  margin-left: 18px;
+  margin-left: 0px;
+  margin: 0 0 2px 16px;
 }
 .main-post .post-wrap .post-data {
   font-size: 10px;
@@ -101,6 +102,9 @@
   height: 36px;
   margin-right: 12px;
   border-radius: 50%;
+  background-image: 100%;
+  border: 1px solid #c4c4c4; 
+  box-sizing: border-box;
 }
 .comment-userwrap .comment-user .comment-username {
   font-size: 14px;
@@ -137,6 +141,7 @@
 .sec-writechat .writechat-wrap {
   display: flex;
   align-items: center;
+  flex: 1;
 }
 .sec-writechat .writechat-wrap .writechat-addimg {
   width: 36px;
@@ -146,22 +151,23 @@
 }
 .sec-writechat .writechat-wrap .writechat-inp {
   border: none;
-  width: 240px;
-  height: 40px;
+  height: 30px;
   font-size: 14px;
   line-height: 21px;
   font-family: inherit;
+  flex: 1;
+}
+.sec-writechat .writechat-wrap .writechat-inp:focus {
+  outline: 2px solid #24732f;
 }
 .sec-writechat .writechat-sendtxt {
   border: none;
   background-color: transparent;
-  margin: 23px 16px 20px 0;
+  padding: 23px 16px 20px 16px;
+  box-sizing: border-box;
   font-size: 14px;
   font-weight: 500;
   color: #c4c4c4;
-}
-.file-inp {
-  display: none;
 }
 
 /* modal */
@@ -230,10 +236,21 @@
   transition: .4s;
 }
 .dot-two{
-  transform: translateX(-304px);
+  transform: translateX(-77.94vw);
   transition: .4s;
 }
 .dot-three{
-  transform: translateX(-608px);
+  transform: translateX(-155.98vw);
   transition: .4s;
+}
+
+/* 게시물 좋아요 */
+.like-btn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+}
+.like-btn img {
+  height: 18px;
 }

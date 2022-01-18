@@ -1,24 +1,24 @@
 .cont-imgSlide{
     position: relative;
-    width: 304px;
-    height: 228px;
+    width: 77.94vw;
+    /* height: 228px; */
     overflow: hidden;
     margin: 0;
     border-radius: 10px;
     margin: 16px 0 16px 54px;
 }
 .cont-imgSlide .imgSlide{
-    width: 912px;
-    height: 228px;
+    width: 233.84vw;
+    /* height: 228px; */
     display: flex;
 }
 .cont-imgSlide .imgSlide.twoImg{
-    width: 608px;
+    width: 155.98vw;
 }
 .cont-imgSlide .imgSlide img{
     display: block;
-    height: 228px;
-    width: 304px;
+    /* height: 228px; */
+    width: 77.94vw;
     object-fit: center/cover;
 }
 .cont-imgSlide .dot-list{
@@ -32,12 +32,12 @@
     top:0;
     left: 50%;
     transform: translateX(-50%);
-    width: 304px;
-    height: 228px;
+    width: 77.94vw;
+    /* height: 228px; */
 }
 .imgOne img{
-    height: 228px;
-    width: 304px;
+    /* height: 228px; */
+    width: 77.94vw;
     object-fit: center/cover;
 }
 .cont-imgSlide .dot-list span{
@@ -55,8 +55,8 @@
     transform: translateX(0);
 }
 .dot-two{
-    transform: translateX(-304px);
+    transform: translateX(-77.94vw);
 }
 .dot-three{
-    transform: translateX(-608px);
+    transform: translateX(-155.89vw);
 }

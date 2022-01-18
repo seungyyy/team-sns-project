@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="../style/common.css">
 </head>
 <body>
+  <h1 class="hidden">게시글 상세페이지</h1>
   <header class="header">
-    <h1 class="hidden">청귤마켓</h1>
     <ul class="header-list">
       <li class="header-item header-back">
         <a href="./home.html">
           <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
         </a>
       </li>
+      <li><p class="header-username">상세페이지</p></li>
       <li class="header-item header-more">
         <button type="button" class="btn--bgNone">
           <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
@@ -32,8 +33,10 @@
   </header>
 
   <main class="main-post">
+    <h1 class="hidden">게시글 상세보기</h1>
     <!-- post - text with image-->
     <section class="main-post-page">
+      <h2 class="hidden">게시글</h2>
       <!-- 게시글 부분 -->
       <div class="post-wrap">
         <div class="post-user">
@@ -50,7 +53,10 @@
         </div>
         <div class="post-icon">
           <div class="icon-box">
-            <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+            <button>
+              <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+            </button>
+            
             <span class="icon-txt">58</span>
             <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
             <span class="icon-txt">12</span>
@@ -62,6 +68,7 @@
     <!-- post 끝 -->
     <!-- 댓글부분 -->
     <section class="post-comment">
+      <h2 class="hidden">댓글</h2>
       <div class="comment-wrap">
         <div class="comment-userwrap">
           <div class="comment-user">

@@ -9,6 +9,7 @@ async function heartPlus(id) {
       },
     }
   );
+
   location.reload();
 };
 
