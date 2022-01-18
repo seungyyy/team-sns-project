@@ -12,17 +12,17 @@
 .main-join .join-email-field {
   margin-top: 4.73vh;
 }
-.main-join .join-email-field .label,
-.main-join .join-email-field .inp {
+.main-join .join-email-field label,
+.main-join .join-email-field input {
   display: block;
 }
-.main-join .join-email-field .label {
+.main-join .join-email-field label {
   font-size: 12px;
   color: #767676;
   font-weight: 500;
   margin-bottom: 2.01vh;
 }
-.main-join .join-email-field .inp {
+.main-join .join-email-field input {
   width: 100%;
   padding-bottom: 0.94vh;
   border-top: none;
@@ -34,7 +34,7 @@
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   box-sizing: border-box;
 }
-.main-join .join-email-field .inp::placeholder {
+.main-join .join-email-field input::placeholder {
   color: #dbdbdb;
 }
 .main-join .join-email-field .email-inp {

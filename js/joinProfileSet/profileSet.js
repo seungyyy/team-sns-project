@@ -1,6 +1,6 @@
 const userName = document.querySelector('#user-name');
 const accountId = document.querySelector('#user-id');
-const introduce = document.querySelector('#introduce');
+const introduce = document.querySelector('#user-introduce');
 const setBtn = document.getElementById('set-btn');
 let imgUrl = document.querySelector('.profile-img');
 
@@ -35,8 +35,8 @@ async function login(email, pw) {
 
 // 회원가입 정보들 서버로 전송하기
 async function join() {
-  const email = document.querySelector('#join-email').value;
-  const pw = document.querySelector('#join-pw').value;
+  const email = document.querySelector('.email-inp').value;
+  const pw = document.querySelector('.pw-inp').value;
 
   if (imgUrl.src === 'http://127.0.0.1:5500/images/icon/icon-profile.png') {
     imgUrl.src = 'http://146.56.183.55:5050/Ellipse.png';
@@ -115,4 +115,4 @@ function keyupDisabled() {
 
 document.querySelector('#avatar').addEventListener('change', setThumbnail);
 document.querySelector('.profile-set-field').addEventListener('keyup', keyupDisabled);
-setBtn.addEventListener('submit', clickDisabled);
+setBtn.addEventListener('click', clickDisabled);
