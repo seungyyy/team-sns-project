@@ -1,103 +1,86 @@
 .main-login {
-  display:flex;
-  width:100%; 
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0 auto;
+  height: 62.2vh;
+  position: relative;
+  text-align: center;
+  background-color: #24732f;
+  line-height:62.2vh;
+  z-index: -10;
+}
+.main-login img {
+  width: 107px;
+  vertical-align:middle;
+}
+.main-login::after, 
+.main-login::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 30px;
+  bottom: -20px;
   background-color: #24732f;
 }
-.main-login .wrapper { 
-  flex: 1;
+.main-login::after {
+  right: 0;
 }
-.main-login .wrapper img {
-  width: 107px;
-  padding: 184px 0 188px;
-  box-sizing: border-box;
+.main-login::before {
+  left: 0;
 }
-.main-login .cont-sns-login {
-  flex: 1;
-  width: 100%;
+.main-sns-login {
+  height: 37.8vh;
+  background: #fff;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background: #fff;
-  
 }
-.main-login .cont-sns-login .link-sns {
-  width: 100%;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 34px 20px;
+.main-sns-login .link-sns {
+  padding: 5.9vh 8.71vw 2.3vh;
   box-sizing: border-box;
 }
-.main-login .cont-sns-login .link-sns li {
+.main-sns-login .link-sns li {
   width: 100%;
 }
-.cont-sns-login .link-sns .link-sns-login {
+.main-sns-login .link-sns .link-sns-login {
   display: block;
   width: 100%;
-  height: 44px;
-  padding: 13px 0;
-  font-size: 14px;
+  height: 5.21vh;
+  padding: 1.54vh 0;
   border-radius: 44px;
   text-align: center;
   color: #767676;
   box-sizing: border-box;
+  font-size: 14px;
 }
-.cont-sns-login .link-sns .link-sns-login:nth-child(n+1) {
-  margin-bottom: 10px;
+.main-sns-login .link-sns .link-sns-login:nth-child(n+1) {
+  margin-bottom: 1.1vh;
 }
-.cont-sns-login .link-sns .icon-kakao {
-  position: relative;
+.main-sns-login .link-sns .icon-kakao {
   border: 1px solid #F2C94C;
+  background: url('../../images/icon/icon-kakao.png') no-repeat left 14px center;
+  background-size: 18px 18px;
+  background-position: 0 0 0 10px;
 }
-.cont-sns-login .link-sns .icon-kakao::before {
-  content: '';
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  left: 17px;
-  background: url('../../images/icon/icon-kakao.png') no-repeat;
-}
-.cont-sns-login .link-sns .icon-google {
-  position: relative;
+.main-sns-login .link-sns .icon-google {
   border: 1px solid #767676;
+  background: url('../../images/icon/icon-google.png') no-repeat left 14px center;
+  background-size: 18px 18px;
 }
-.cont-sns-login .link-sns .icon-google::before {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 14px;
-  background: url('../../images/icon/icon-google.png') no-repeat;
-}
-.cont-sns-login .link-sns .icon-facebook {
-  position: relative;
+.main-sns-login .link-sns .icon-facebook {
   border: 1px solid #2D9CDB;
+  background: url('../../images/icon/icon-facebook.png') no-repeat left 14px center;
+  background-size: 11px 20px;
 }
-.cont-sns-login .link-sns .icon-facebook::before {
-  content: '';
-  position: absolute;
-  width: 11px;
-  height: 20px;
-  left: 20px;
-  background: url('../../images/icon/icon-facebook.png') no-repeat;
-}
-.cont-sns-login .link-singup-box {
+.main-sns-login .link-singup-box {
   display: flex;
   justify-content: center;
 }
-.cont-sns-login .link-singup-box a {
+.main-sns-login .link-singup-box a {
   font-size: 12px;
   color: #767676;
 }
-.cont-sns-login .link-singup-box .link-singup {
+.main-sns-login .link-singup-box .link-singup {
   position: relative;
   margin-left: 25px;
 }
-.cont-sns-login .link-singup-box .link-singup::before {
+.main-sns-login .link-singup-box .link-singup::before {
   content: '';
   position: absolute;
   width: 1px;

@@ -1,31 +1,30 @@
 /* main join email */
-.main-join-email {
-  width: 100%;
+.main-join {
   margin: 0 auto;
-  padding: 30px 34px 0;
+  padding: 3.55vh 8.71vw 0;
   box-sizing: border-box;
 }
-.main-join-email .join-email-tit {
+.main-join .join-email-tit {
   font-size: 24px;
   font-weight: 500;
   text-align: center;
 }
-.main-join-email .join-email-field {
-  margin-top: 40px;
+.main-join .join-email-field {
+  margin-top: 4.73vh;
 }
-.main-join-email .join-email-field .label,
-.main-join-email .join-email-field .inp {
+.main-join .join-email-field .label,
+.main-join .join-email-field .inp {
   display: block;
 }
-.main-join-email .join-email-field .label {
+.main-join .join-email-field .label {
   font-size: 12px;
   color: #767676;
   font-weight: 500;
-  margin-bottom: 17px;
+  margin-bottom: 2.01vh;
 }
-.main-join-email .join-email-field .inp {
+.main-join .join-email-field .inp {
   width: 100%;
-  padding-bottom: 8px;
+  padding-bottom: 0.94vh;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -35,19 +34,23 @@
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   box-sizing: border-box;
 }
-.main-join-email .join-email-field .inp::placeholder {
+.main-join .join-email-field .inp::placeholder {
   color: #dbdbdb;
 }
-.main-join-email .join-email-field .email-inp {
-  margin-bottom: 26px;
+.main-join .join-email-field .email-inp {
+  margin-bottom: 3.08vh;
 }
-.main-join-email .join-email-field .inp:focus {
+.main-join .join-email-field .inp:focus {
   border-bottom: 1px solid #24732f;
 }
-.main-join-email .join-email-field .btn-L {
+.main-join .join-email-field .email-inp.alert-inp,
+.main-join .join-email-field .pw-inp.alert-inp  {
+  border-bottom: 1px solid #eb5757;
+}
+.main-join .join-email-field .btn-L {
   height: 44px;
   width: 100%;
-  margin: 30px 0 20px;
+  margin-top: 3.55vh;
   font-size: 14px;
   font-weight: 500;
   background-color: #24732f;
@@ -57,23 +60,23 @@
   letter-spacing: -1px;
   cursor: pointer;
 }
-.main-join-email .join-email-field .btn-L--off {
+.main-join .join-email-field .btn-L--off {
   background-color: #8ac392;
 }
-.main-join-email .join-email-field .link-singup {
+.main-join .join-email-field .link-singup {
   text-align: center;
 }
-.main-join-email .join-email-field .link-singup a {
+.main-join .join-email-field .link-singup a {
   font-size: 12px;
   color: #767676;
 }
-.main-join-email .join-email-field .alert {
-  margin: 6px 0 16px;
+.main-join .join-email-field .alert {
+  margin: 0.71vh 0 1.89vh;
   font-size: 12px;
   color: #eb5757;
 }
-.main-join-email .join-email-field .alert-email {
-  margin: -10px 0 16px;
+.main-join .join-email-field .alert-email {
+  margin: -1.18vh 0 1.89vh;
   font-size: 12px;
   color: #eb5757;
 }
