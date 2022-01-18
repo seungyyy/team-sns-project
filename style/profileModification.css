@@ -7,17 +7,9 @@
 }
 
 /* profile modification 프로필 수정 */
-.main-profile-mod {
-  margin: 0 auto;
-<<<<<<< Updated upstream
-  padding: 48px 34px 0;
-  box-sizing: border-box;
-}
 .main-profile-mod .profile-mod-field {
   margin-top: 30px;
-=======
   padding: 9.22vh 8.71vw 0;
->>>>>>> Stashed changes
 }
 .main-profile-mod .profile-mod-field .avatar-label {
   width: 110px;

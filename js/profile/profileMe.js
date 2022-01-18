@@ -24,10 +24,10 @@ async function profileMe() {
   followers.innerHTML = profile.followerCount;
   followings.innerHTML = profile.followingCount;
   //불러온 정보를 이미지에 대입
-    const basicImg = 'http://146.56.183.55:5050/Ellipse.png';
+  const basicImg = 'http://146.56.183.55:5050/Ellipse.png';
   let imgURL = profile.image.match(/http:\/\/146.56.183.55:5050\/[0-9]/) === null ? basicImg : profile.image;
   console.log("이미지 주소 : ", imgMe)
-  imgMe.setAttribute("src", imgMe);
+  imgMe.setAttribute('src', `${imgURL}`);
   //이미지 주소가 오류일 때 나오는 코드
   imgMe.setAttribute(
     "onerror",
