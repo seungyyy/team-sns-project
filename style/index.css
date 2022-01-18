@@ -18,8 +18,11 @@
 .main-splash .splash-logo {
   width: 98px;
   height: 118px;
-  margin-bottom: 18px;
+  margin-bottom: 2.13vh;
   object-fit: cover;
+}
+.main-splash .splash-title {
+  width: 128px;
 }
 @keyframes fadein {
     from {
