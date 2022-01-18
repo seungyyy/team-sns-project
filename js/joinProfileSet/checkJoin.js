@@ -3,11 +3,12 @@ const url = 'http://146.56.183.55:5050';
 
 // 소개 글이 없는지 체크 
 function userIntroduceCheck() {
-  const userIntroduce = profileField.querySelector('#introduce').value;
+  const userIntroduce = profileField.querySelector('#introduce');
   const userIntroduceAlert = profileField.querySelector('#introduce-alert');
 
-  if (userIntroduce === '') {
+  if (userIntroduce.value === '') {
     userIntroduceAlert.textContent = '*본인 소개와 상품에 대한 소개 글을 작성해주세요.';
+    userIntroduce.style.borderColor = '#eb5757';
   } else {
     userIntroduceAlert.textContent = '';
   }
@@ -15,12 +16,12 @@ function userIntroduceCheck() {
 
 // 계정 ID 중복 확인, 영문 숫자 밑줄 마침표만 사용 가능 체크
 async function accountNameCheck() {
-  const accountName = profileField.querySelector('#userid').value;
+  const accountName = profileField.querySelector('#user-id');
   const accountNameAlert = profileField.querySelector('#userid-alert');
   const regAccountName = /[A-Za-z0-9\_\.]$/;
 
 
-  if (regAccountName.test(accountName) === true ) {
+  if (regAccountName.test(accountName.value) === true ) {
     const res = await fetch(url + "/user", {
       method: 'GET',
     });
@@ -31,8 +32,8 @@ async function accountNameCheck() {
         const data = json[key];
         const account = data.accountname;
         arr.push(account);
-        let accountCheck = arr.find((check) => check === accountName);
-        if (accountCheck === accountName) {
+        let accountCheck = arr.find((check) => check === accountName.value);
+        if (accountCheck === accountName.value) {
           accountNameAlert.textContent = '*이미 사용 중인 ID입니다.';
           break;
         } else {
@@ -51,11 +52,12 @@ function userNameCheck() {
   const userNameAlert = profileField.querySelector('#username-alert');
   if (userName.value.length < 2 || userName.value.length > 11) {
     userNameAlert.textContent = '*2~10자 이내여야 합니다.';
+    userName.style.borderBottom = '#eb5757';
   } else {
     userNameAlert.textContent = '';
   }
 }
 
 document.getElementById('user-name').addEventListener('keyup', userNameCheck);
-document.getElementById('userid').addEventListener('keyup', accountNameCheck);
+document.getElementById('user-id').addEventListener('keyup', accountNameCheck);
 document.getElementById('introduce').addEventListener('keyup', userIntroduceCheck);

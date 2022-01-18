@@ -1,5 +1,5 @@
 const userName = document.querySelector('#user-name');
-const accountId = document.querySelector('#userid');
+const accountId = document.querySelector('#user-id');
 const introduce = document.querySelector('#introduce');
 const setBtn = document.getElementById('set-btn');
 let imgUrl = document.querySelector('.profile-img');
@@ -25,7 +25,7 @@ async function login(email, pw) {
       if (Object.hasOwnProperty.call(user, key)) {
         const data = user[key];
         localStorage.setItem(key, data);
-        location.href = '../../pages/search.html';
+        location.href = '../../pages/home.html';
       }
     }
   } else {
@@ -115,4 +115,4 @@ function keyupDisabled() {
 
 document.querySelector('#avatar').addEventListener('change', setThumbnail);
 document.querySelector('.profile-set-field').addEventListener('keyup', keyupDisabled);
-setBtn.addEventListener('click', clickDisabled);
+setBtn.addEventListener('submit', clickDisabled);
