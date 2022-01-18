@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin-top: 64px;
+  padding-top: 64px;
 }
 .main-upload .upload-userimg {
   width: 42px;
@@ -14,8 +14,8 @@
   border: 1px solid #c4c4c4;
 }
 .main-upload .upload-wrap {
-  margin: 12px 16px 0 0;
-  width: calc(100vw - 71px);
+  margin-top: 12px;
+  width: calc(100vw - 73px);
 }
 .main-upload .upload-wrap .upload-textarea {
   border: none;
@@ -34,30 +34,32 @@
   position: relative;
 }
 .upload-imgs .upload-imgwrap .upload-img {
-  min-width: 304px;
-  min-height: 228px;
+  width: calc(100vw - 90px);
+  margin-right: 10px;
+  border-radius: 10px;
+  border: .5px solid #c4c4c4;
 }
 .upload-imgs .upload-imgwrap .upload-removeimg {
   position: absolute;
   top: 6px;
-  right: 6px;
+  right: 16px;
   width: 22px;
   cursor: pointer;
 }
 /* 사진 두 개 이상 일 때 */
 .main-upload .upload-imgs {
   display: flex;
-  column-gap: 8px;
-  width: 100%;
+  column-gap: 10px;
+  /* width: 100%; */
   overflow-x: scroll;
 }
 .upload-wrap .upload-imgs::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
 }
-.upload-imgs .upload-imgwrap .upload-img.upload-img-many {
+/* .upload-imgs .upload-imgwrap .upload-img.upload-img-many {
   min-width: 168px;
   min-height: 126px;
-}
+} */
 
 .main-upload .img-uploadfile {
   position: fixed;
@@ -65,6 +67,7 @@
   height: 50px;
   bottom: 16px;
   right: 16px;
+  padding: 20px;
   cursor: pointer;
 }
 .file-inp {
