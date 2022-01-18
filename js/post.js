@@ -31,6 +31,8 @@ sendBtn.addEventListener('click', () => {
   uploadComment(); 
 });
 
+
+
 //말풍선 버튼을 누르면 게시글 상세로 이동
 async function getPost() {
   const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}`, {
@@ -43,7 +45,12 @@ async function getPost() {
   const json = await res.json();
   const posts = json.post;
   const pageDetail = document.querySelector('.main-post-page');
-  const postAuthorImg = posts.author.image
+  const postAuthorImg = posts.author.image;
+
+  let heartImg = !posts.hearted
+  ? '../images/icon/icon-heart.png'
+  : '../images/icon/icon-heart-fill.png';
+
   let authorImg
   if(postAuthorImg) {
     if(postAuthorImg.includes('http://146.56.183.55:5050/')){
@@ -101,6 +108,7 @@ async function getPost() {
         `
     }
 
+
     let imgPost = `      <div class="post-wrap">
       <div class="post-user">
         <img src=${authorImg} alt="user image" class="post-userimg">
@@ -116,7 +124,9 @@ async function getPost() {
       </div>
       <div class="post-icon">
         <div class="icon-box">
-          <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+          <button type="button" class="like-btn">
+            <img src=${heartImg} alt="좋아요 아이콘" class="like-icon">
+          </button>
           <span class="icon-txt">${posts.heartCount}</span>
           <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
           <span class="icon-txt">${posts.commentCount}</span>
@@ -127,8 +137,12 @@ async function getPost() {
 
     pageDetail.innerHTML = imgPost;
 
-
-
+    if(imgLength>=2){
+      document.querySelector(".space").prepend(postImg);
+      let dots = document.querySelectorAll(".dot-list span");
+      let imgSlide = document.querySelector(".imgSlide");
+      dotClick(dots, imgSlide);
+    }
   } else {
     let imgPost = `      <div class="post-wrap">
     <div class="post-user">
@@ -144,7 +158,9 @@ async function getPost() {
     </div>
     <div class="post-icon">
       <div class="icon-box">
-        <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+        <button type="button" class="like-btn">
+          <img src=${heartImg} alt="좋아요 아이콘" class="like-icon">
+          </button>
         <span class="icon-txt">${posts.heartCount}</span>
         <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
         <span class="icon-txt">${posts.commentCount}</span>
@@ -154,12 +170,48 @@ async function getPost() {
   </div>`
   pageDetail.innerHTML = imgPost;
   }
-        document.querySelector(".space").prepend(postImg);
-        let dots = document.querySelectorAll(".dot-list span");
-        let imgSlide = document.querySelector(".imgSlide");
-        dotClick(dots, imgSlide);
+
+    document.querySelector('.like-btn').addEventListener('click', () => {
+      if (!posts.hearted) {
+        heartPlus(posts.id);
+      } else {
+        heartCancel(posts.id);
+      }
+    });
+
 }
 getPost();
+
+//하트클릭
+async function heartPlus(id) {
+  const res = await fetch(
+    "http://146.56.183.55:5050/post/"+id+"/heart",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-type": "application/json",
+      },
+    }
+  );
+  getPost();
+};
+
+async function heartCancel(id) {
+  const res = await fetch(
+    "http://146.56.183.55:5050/post/"+id+"/unheart",
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-type": "application/json",
+      },
+    }
+  );    
+  
+  getPost();
+}
+
 
 //댓글 보여주기
 async function getComment() {
@@ -227,7 +279,8 @@ async function getComment() {
       </div>`
         commentDetail.innerHTML = comment + commentDetail.innerHTML
       }
-}}
+}
+}
 
 // 입력하기
 async function uploadComment() {
@@ -249,13 +302,15 @@ async function uploadComment() {
         })
     })
     getComment()
-    getPost()
     commentInp.value = '';
     sendBtn.style.color = '#c4c4c4';
     sendBtn.disabled = true; 
     sendBtn.style.cursor = 'default';
-
+    
 
 }
 
 getComment();
+
+
+//하트클릭
