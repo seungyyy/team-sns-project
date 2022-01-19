@@ -20,6 +20,7 @@
   margin-top: 18px;
 }
 .main-add-prod .prod-set-field .prodfile-label .prod-set-img {
+  display:block;
   width: 100%;
   height: 204px;
   position: relative;
