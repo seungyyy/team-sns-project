@@ -1,3 +1,10 @@
+/* 상단 헤더 부분 */
+.header .btn-MS {
+  background-color: #24732f ;
+}
+.header .btn-MS--off {
+  background-color: #8ac392;
+}
 
 .main-add-prod {
   width: 100%;
