@@ -1,5 +1,4 @@
-const inpTxT = document.querySelector('.upload-textarea');
-const sendBtn = document.querySelector('.btn-MS--off');
+const headerName = document.querySelector('.upload-heading');
 
 function enterkey() {
   if (window.event.keyCode == 13) {
@@ -7,57 +6,6 @@ function enterkey() {
   }
 }
 
-async function disabledBtn() {
-  const childCount = document.querySelector('.upload-imgs').childElementCount;
-  if((childCount>=1)||(inpTxT.value)) {
-    sendBtn.style.backgroundColor = '#24732f';
-    sendBtn.disabled = false;
-    sendBtn.style.cursor = 'pointer';
-    } else {
-    sendBtn.style.backgroundColor = '#8ac392';
-    sendBtn.disabled = true;
-    sendBtn.style.cursor = 'default';
-    }
-}
-disabledBtn()
-inpTxT.addEventListener('keyup', () => {
-  inpTxT.style.height = "1px";
-  inpTxT.style.height = (20 + inpTxT.scrollHeight)+"px";
-  disabledBtn();
-});
-
-
-
-//프로필 사진 (내 사진으로) 변경
-const userImage = document.querySelector('.upload-userimg');
-userImage.src = localStorage.image;
-
-const uploadImages = document.querySelector('.file-inp');
-
-async function imageUpload(files,index){
-  const formData = new FormData();
-  formData.append("image", files[index]);
-  const res = await fetch(`http://146.56.183.55:5050/image/uploadfile`, {
-      method: "POST",
-      body : formData
-  })
-  const data = await res.json()
-  const productImgName = data["filename"];
-  return productImgName
-}
-
-//여기부터
-async function imageUpload(files,index){
-    const formData = new FormData();
-    formData.append("image", files[index]);//formData.append("키이름","값")
-    const res = await fetch(`http://146.56.183.55:5050/image/uploadfile`, {
-        method: "POST",
-        body : formData
-    })
-    const data = await res.json()
-    const productImgName = data["filename"];
-    return productImgName
-}
 async function createPost() {
     const url = "http://146.56.183.55:5050"
     const token = localStorage.getItem("token")
@@ -84,46 +32,10 @@ async function createPost() {
               }
           })
       })
-      const json = await res.json()
-      console.log(json);
-      alert('게시물이 업로드 되었습니다.');
+      const json = await res.json();
+      alert('게시글이 업로드 되었습니다.');
       location.href = '../pages/home.html';
     }else{
         alert("이미지는 3개까지만 업로드 가능합니다.")
     }
-
 }
-
-  //이미지 미리보기
-async function setThumbnail(e) {
-  const childCount = document.querySelector('.upload-imgs').childElementCount;
-  const url = "http://146.56.183.55:5050"
-  const files = e.target.files;
-  const imageUrls = [];
-  for (let index = 0; index < files.length; index++) {
-    const imgurl = await imageUpload(files,index)
-    imageUrls.push(url+ '/' +imgurl)
-  }
-  const imgCont = document.querySelector('.upload-imgs');
-
-if (childCount + imageUrls.length <= 3){
-  for (let i = 0; i < imageUrls.length; i++) {
-    const imgUrls = imageUrls[i]
-    imgwrap = `<div class="upload-imgwrap">  <img src="${imgUrls}" alt="some trees" class="upload-img">    <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">  </div>` + imgCont.innerHTML
-    imgCont.innerHTML = imgwrap;
-  }
-} else {
-  alert("이미지는 3개까지만 업로드 가능합니다.")
-}
-  if(imageUrls.length>= 1) {
-    disabledBtn();
-  }
-  return imageUrls
-}
-
-uploadImages.addEventListener('change', setThumbnail);
-sendBtn.addEventListener('click', createPost);
-
-//이미지 삭제
-window.addEventListener('click', e => { e.target.className === 'upload-removeimg' ? (e.target.parentNode.remove(), disabledBtn()) : false })
-

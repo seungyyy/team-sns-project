@@ -16,7 +16,7 @@
 </head>
 <body>
   <header class="header">
-    <h1 class="hidden">청귤마켓</h1>
+    <h1 class="upload-heading">게시글 작성</h1>
     <ul class="header-list">
       <li class="header-item header-back">
         <a href="./home.html">
@@ -33,34 +33,17 @@
     <img src="../images/icon/icon-profile.png" alt="user image" class="upload-userimg">
     <div class="upload-wrap">
       <textarea placeholder="게시글 입력하기..." class="upload-textarea"></textarea>
-      <!-- 사진 한 개일 때 -->
+
       <div class="upload-imgs">
-        <!-- <div class="upload-imgwrap">
-          <img src="../images/image/postimg.png" alt="some trees" class="upload-img">
-          <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
-        </div> -->
       </div>
 
-      <!-- 사진 두개 이상일 때 클래스 upload-img-many 추가-->
-      <!-- <div class="upload-imgs">
-        <div class="upload-imgwrap">
-          <img src="../images/image/postimg.png" alt="some trees" class="upload-img upload-img-many">
-          <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
-        </div>
-        <div class="upload-imgwrap">
-          <img src="../images/image/postimg.png" alt="some trees" class="upload-img upload-img-many">
-          <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
-        </div>
-        <div class="upload-imgwrap">
-          <img src="../images/image/postimg.png" alt="some trees" class="upload-img upload-img-many">
-          <img src="../images/icon/icon-x.png" alt="remove image" class="upload-removeimg">
-        </div>
-      </div> -->
     </div>
     <label for="addimage"><img src="../images/icon/icon-upload-file.png" alt="upload file" class="img-uploadfile"></label>
     <input type="file" id="addimage" name="addimage" accept=".jpg, .jpeg, .png" multiple class="file-inp">
   </main>
 
+  <script src="../js/uploadBtn.js"></script>
   <script src="../js/upload.js"></script>
+  <script src="../js/uploadFix.js"></script>
 </body>
 </html>

@@ -41,4 +41,8 @@ function navLinkClassChange() {
     });
   });
 }
+
+document.querySelector('.nav .nav-link-post').addEventListener('click', ()=> {
+  localStorage.removeItem('postId');
+})
 navLinkClassChange();
