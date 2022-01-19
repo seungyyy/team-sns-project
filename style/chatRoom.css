@@ -74,7 +74,6 @@
   position: fixed;
   bottom: 0px;
   width: 100%;
-  height: 90px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: none;
@@ -89,7 +88,7 @@
 }
 .sec-modal .modal-txt {
   font-size: 14px;
-  margin: 14px 0 14px 26px;
+  box-sizing: border-box;
   cursor: pointer;
 }
 .modal-out-container {
@@ -100,6 +99,20 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.modal-txt button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  font-size: 14px;
+  padding: 14px 26px 14px 26px;
+}
+
+.modal-txt a {
+  display: block;
+  padding: 14px 26px 14px 26px;
 }
 
 @keyframes slide {

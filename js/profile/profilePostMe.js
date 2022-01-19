@@ -133,9 +133,9 @@ async function profilePostMe() {
       .addEventListener("click", ()=>{
         contModal.classList.remove("cont--hide");
         modalPost(post.id);
+        localStorage.setItem('postId', post.id);
       })
     });
   }
 }
 profilePostMe();
-

@@ -126,8 +126,8 @@ async function getPost() {
         <div class="icon-box">
           <button type="button" class="like-btn">
             <img src=${heartImg} alt="좋아요 아이콘" class="like-icon">
-          </button>
-          <span class="icon-txt">${posts.heartCount}</span>
+            </button>
+            <span class="icon-txt">${posts.heartCount}</span>
           <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
           <span class="icon-txt">${posts.commentCount}</span>
         </div>
@@ -162,6 +162,7 @@ async function getPost() {
           <img src=${heartImg} alt="좋아요 아이콘" class="like-icon">
           </button>
         <span class="icon-txt">${posts.heartCount}</span>
+        </button>
         <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
         <span class="icon-txt">${posts.commentCount}</span>
       </div>
@@ -311,6 +312,3 @@ async function uploadComment() {
 }
 
 getComment();
-
-
-//하트클릭
