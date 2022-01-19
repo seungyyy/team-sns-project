@@ -7,10 +7,13 @@ function linkCheck() {
   const regLink = /(http[s]?|ftp):\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}/g;
   prodLinkAlert.classList.add('alert');
   if (prodLink.value === '') {
+    prodLink.classList.add('alert-inp');
     prodLinkAlert.textContent = '*URL을 입력해주세요.';
   } else if (regLink.test(prodLink.value) === false) {
+    prodLink.classList.add('alert-inp');
     prodLinkAlert.textContent = '*URL 양식이 맞지 않습니다.';
   } else {
+    prodLink.classList.remove('alert-inp');
     prodLinkAlert.textContent = '';
   }
 }
@@ -24,8 +27,10 @@ function NumPriceCheck() {
   if (regNum.test(price.value) === false) {
     price.value = '';
     priceAlert.classList.add('alert');
+    price.classList.add('alert-inp');
     priceAlert.textContent = '*숫자만 입력 가능합니다';
   } else {
+    price.classList.remove('alert-inp');
     priceAlert.textContent = '';
   }
 }
@@ -36,8 +41,10 @@ function prodNameCheck() {
   const prodNameAlert = prodField.querySelector('#prod-alert');
   if (prodName.value.length < 2 || prodName.value.length > 11) {
     prodNameAlert.classList.add('alert');
+    prodName.classList.add('alert-inp');
     prodNameAlert.textContent = '*2~10자 이내여야 합니다.';
   } else {
+    prodName.classList.remove('alert-inp');
     prodNameAlert.textContent = '';
   }
 }
