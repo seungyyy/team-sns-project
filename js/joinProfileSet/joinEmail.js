@@ -16,7 +16,7 @@ function clickDisabled() {
 
 // 버튼 클릭시 프로필 설정으로 화면 보여주기
 function nextProfile() {
-  document.querySelector('#joinForm').style.display = 'none';
+  document.querySelector('#join-form').style.display = 'none';
   document.querySelector('.join-email-tit').style.display = 'none';
   document.querySelector('.main-profile-set').classList.remove('cont--hide');
 }

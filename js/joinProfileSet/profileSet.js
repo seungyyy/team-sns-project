@@ -72,7 +72,8 @@ async function join() {
 }
 
 // 초기에 입력값이 없다면 비활성화
-async function clickDisabled() {
+async function clickDisabled(event) {
+  event.preventDefault();
   if (!userName.value && !accountId.value && !introduce.value) {
     setBtn.disabled = false;
   } else {
@@ -115,4 +116,4 @@ function keyupDisabled() {
 
 document.querySelector('#avatar').addEventListener('change', setThumbnail);
 document.querySelector('.profile-set-field').addEventListener('keyup', keyupDisabled);
-setBtn.addEventListener('click', clickDisabled);
+

@@ -24,7 +24,7 @@
         </a>
       </li>
       <li class="header-item header-upload">
-          <button type="button" class="btn-MS--off btn-MS">업로드</button>
+          <button class="btn-MS--off btn-MS" form="prodform">업로드</button>
       </li>
     </ul>
   </header>
@@ -33,7 +33,7 @@
   <main role="main" class="main-add-prod">
     <h2 class="hidden">상품 등록하기</h2>
     <p class="add-prod-tit">이미지 등록</p>
-    <form method="post">
+    <form method="post" id="prodform" onsubmit="clickDisabled(event)">
       <fieldset class="prod-set-field">
         <legend class="hidden">상품 등록</legend>
         <label for="prodfile" class="prodfile-label">

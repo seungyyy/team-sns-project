@@ -41,7 +41,8 @@ async function addProd(prodLink, price, prodName, img) {
 
 
 // 입력값이 없다면 버튼 비활성화 
-async function clickDisabled() {
+async function clickDisabled(event) {
+  event.preventDefault();
   const img = document.querySelector('.prod-img');
   if (!prodLink.value && !price.value && !prodName.value) {
     btn.disabled = true;
@@ -97,4 +98,3 @@ function keyupDisabled() {
 
 document.querySelector('#prodfile').addEventListener('change', setThumbnail);
 prodField.addEventListener('keyup', keyupDisabled);
-btn.addEventListener('click', clickDisabled);
