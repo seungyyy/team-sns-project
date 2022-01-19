@@ -1,5 +1,5 @@
 const url = 'http://146.56.183.55:5050';
-const btn = document.getElementById('btn');
+const btn = document.querySelector('button');
 const prodLink = prodField.querySelector('#prod-link');
 const price = prodField.querySelector('#price');
 const prodName = prodField.querySelector('#prod-name');
@@ -44,10 +44,12 @@ async function addProd(prodLink, price, prodName, img) {
 async function clickDisabled() {
   const img = document.querySelector('.prod-img');
   if (!prodLink.value && !price.value && !prodName.value) {
-    btn.disabled = false;
+    btn.disabled = true;
   } else if (img === null) {
-    btn.disabled = false;
+    btn.disabled = true;
   } else {
+    btn.classList.remove('btn-MS--off');
+    btn.disabled = false;
     await addProd(prodLink.value, price.value, prodName.value, img.src);
   }
 }
