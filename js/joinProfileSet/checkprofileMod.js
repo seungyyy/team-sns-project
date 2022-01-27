@@ -1,4 +1,5 @@
 const profileField = document.querySelector('.profile-mod-field');
+const saveBtn = document.getElementById('save-btn');
 
 // 소개 글이 없는지 체크
 function userIntroduceCheck() {
@@ -14,7 +15,7 @@ function userIntroduceCheck() {
 
 // 계정 ID 중복 확인, 영문 숫자 밑줄 마침표만 사용 가능 체크
 async function accountNameCheck() {
-  const accountName = profileField.querySelector('#userid').value;
+  const accountName = profileField.querySelector('#user-id').value;
   const accountNameAlert = profileField.querySelector('#userid-alert');
   const regAccountName = /[A-Za-z0-9\_\.]$/;
 
@@ -32,7 +33,11 @@ async function accountNameCheck() {
         let accountCheck = arr.find((check) => check === accountName);
         if (accountCheck === accountName) {
           accountNameAlert.textContent = '*이미 사용 중인 ID입니다.';
+          saveBtn.disabled = true;
+          saveBtn.classList.add('btn-MS--off');
           break;
+        } else if (accountName.length < 2 || accountName.length > 11) {
+          accountNameAlert.textContent = '*2~10자 이내여야 합니다.';
         } else {
           accountNameAlert.textContent = '';
         }
@@ -40,6 +45,8 @@ async function accountNameCheck() {
     }
   } else {
     accountNameAlert.textContent = '*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.';
+    saveBtn.disabled = true;
+    saveBtn.classList.add('btn-MS--off');
   }
 }
 
@@ -47,8 +54,10 @@ async function accountNameCheck() {
 function userNameCheck() {
   const userName = profileField.querySelector('#user-name');
   const userNameAlert = profileField.querySelector('#username-alert');
+
   if (userName.value.length < 2 || userName.value.length > 11) {
     userNameAlert.textContent = '*2~10자 이내여야 합니다.';
+    
   } else {
     userNameAlert.textContent = '';
   }

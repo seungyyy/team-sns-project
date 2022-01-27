@@ -23,13 +23,13 @@ function nextProfile() {
 
 // 이메일, 비밀번호 입력 값이 있다면 버튼 활성화 / 입력 값이 없다면 비활성화
 function keyupDisabled() {
-    if (joinEmail.value && joinPw.value.length >= 6 && joinPw.value) {
-      joinBtn.disabled = false;
-      joinBtn.classList.remove('btn-L--off');
-    } else {
-      joinBtn.classList.add('btn-L--off');
-      joinBtn.disabled = true;
-    }
+  if (joinEmail.value && joinPw.value.length >= 6 && joinPw.value) {
+    joinBtn.disabled = false;
+    joinBtn.classList.remove('btn-L--off');
+  } else {
+    joinBtn.classList.add('btn-L--off');
+    joinBtn.disabled = true;
+  }
 }
 
 // 비밀번호 6자리 미만이라면 경고문구 표시

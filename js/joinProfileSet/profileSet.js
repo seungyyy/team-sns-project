@@ -1,7 +1,6 @@
 const userName = document.querySelector('#user-name');
 const accountId = document.querySelector('#user-id');
 const introduce = document.querySelector('#user-introduce');
-const setBtn = document.getElementById('set-btn');
 let imgUrl = document.querySelector('.profile-img');
 
 // 회원가입시 토큰 없어서 유저 이메일,비밀번호로 로그인해서 토큰 발급받기
@@ -105,7 +104,10 @@ async function imgUpload(file) {
 
 // 입력값이 다 있을 경우 버튼 활성화
 function keyupDisabled() {
-  if (introduce.value && accountId.value && userName.value) {
+  if (accountId.value.length > 11 || userName.value.length > 11) {
+    setBtn.classList.add('btn-L--off');
+    setBtn.disabled = true;
+  } else if (introduce.value && accountId.value && userName.value) {
     setBtn.classList.remove('btn-L--off');
     setBtn.disabled = false;
   } else {

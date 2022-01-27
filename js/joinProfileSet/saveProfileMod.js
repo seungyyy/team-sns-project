@@ -61,11 +61,13 @@ async function imgUpload(file) {
 
 // 입력값이 다 있을 경우 버튼 활성화
 function keyupDisabled() {
-  const saveBtn = document.querySelector('#save-btn');
   const introduce = profileField.querySelector('#introduce').value;
   const accountId = profileField.querySelector('#user-id').value;
   const userName = profileField.querySelector('#user-name').value;
-  if (introduce && accountId && userName) {
+  if (accountId.length > 11 || userName.length > 11) {
+    saveBtn.disabled = true;
+    saveBtn.classList.add('btn-MS--off');
+  } else if (introduce && accountId && userName) {
     saveBtn.disabled = false;
     saveBtn.classList.remove('btn-MS--off');
   } else {
