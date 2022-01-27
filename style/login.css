@@ -42,8 +42,7 @@
   display: block;
   width: 100%;
   height: 5.21vh;
-  min-height: 40px;
-  line-height: 5.5vh;
+  line-height: 5.21vh;
   border-radius: 44px;
   text-align: center;
   color: #767676;
@@ -51,21 +50,21 @@
   font-size: 14px;
 }
 .main-sns-login .link-sns .link-sns-login:nth-child(n+1) {
-  margin-bottom: 12px;
+  margin-bottom: 1.42vh;
 }
 .main-sns-login .link-sns .icon-kakao {
   border: 1px solid #F2C94C;
-  background: url('../../images/icon/icon-kakao.png') no-repeat left 3.58vw center / contain;
+  background: url('../../images/icon/icon-kakao.png') no-repeat left 3.58vw center / cover;
   background-size: 18px 18px;
 }
 .main-sns-login .link-sns .icon-google {
   border: 1px solid #767676;
-  background: url('../../images/icon/icon-google.png') no-repeat left 3.58vw center / contain;
+  background: url('../../images/icon/icon-google.png') no-repeat left 3.58vw center / cover;
   background-size: 18px 18px;
 }
 .main-sns-login .link-sns .icon-facebook {
   border: 1px solid #2D9CDB;
-  background: url('../../images/icon/icon-facebook.png') no-repeat left 3.58vw center / contain;
+  background: url('../../images/icon/icon-facebook.png') no-repeat left 3.58vw center / cover;
   background-size: 11px 20px;
 }
 .main-sns-login .link-singup-box {
