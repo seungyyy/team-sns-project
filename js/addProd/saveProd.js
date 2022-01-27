@@ -1,7 +1,7 @@
 const url = 'http://146.56.183.55:5050';
-const btn = document.querySelector('button');
 const prodLink = prodField.querySelector('#prod-link');
 const price = prodField.querySelector('#price');
+const btn = document.getElementById('prod-save-btn');
 const prodName = prodField.querySelector('#prod-name');
 const prodImg = prodField.querySelector('.prod-set-img');
 
@@ -87,10 +87,14 @@ async function imgUpload(file) {
 // 입력값이 다 있을 경우 버튼 활성화
 function keyupDisabled() {
   const img = document.querySelector('.prod-img');
-  if (prodLink.value && price.value && prodName.value && img !== null) {
+  const regLink = /(http[s]?|ftp):\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}/g;
+  if (prodName.value.length > 11 || regLink.test(prodLink.value) === false) {
+    btn.disabled = true;
+    btn.classList.add('btn-MS--off');
+  } else if (prodLink.value && price.value && prodName.value && img !== null) {
     btn.disabled = false;
     btn.classList.remove('btn-MS--off');
-  } else {
+  }  else {
     btn.disabled = true;
     btn.classList.add('btn-MS--off');
   }
