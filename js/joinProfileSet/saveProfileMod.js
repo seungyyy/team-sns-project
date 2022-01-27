@@ -2,7 +2,8 @@ let imgUrl = document.querySelector('.profile-img');
 
 
 // 회원가입 정보들 서버로 전송하기
-async function saveProfile() {
+async function saveProfile(event) {
+  event.preventDefault();
   const userName = document.querySelector('#user-name').value;
   const accountId = document.querySelector('#user-id').value;
   const introduce = document.querySelector('#introduce').value;
@@ -78,4 +79,3 @@ function keyupDisabled() {
 
 document.querySelector('#avatar').addEventListener('change', setThumbnail);
 profileField.addEventListener('keyup', keyupDisabled);
-document.getElementById('save-btn').addEventListener('click', saveProfile);

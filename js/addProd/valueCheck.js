@@ -1,5 +1,6 @@
 const prodField = document.querySelector('.prod-set-field');
 
+
 // 상품링크 체크
 function linkCheck() {
   const prodLink = prodField.querySelector('#prod-link');
