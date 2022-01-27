@@ -31,7 +31,8 @@
   background-size: 36px 36px;
 }
 .main-profile-mod .profile-mod-field .avatar-label img {
-  min-height: 110px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
 }
