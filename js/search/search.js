@@ -19,11 +19,10 @@ async function showFindUser(json) {
     userInfo.push(`
       <li class="user-search">
         <div data-name="${data.accountname}" class="link">
-        <img src="${imgURL}" alt="${data.username}님의 이미지" onerror="this.src='${basicImg}';" class="user-search-img">
-        <div class="user-search-txt">
-          <p class="search-tit">${txt}</p >
-          <span class="user-searchId">@ ${data.accountname}</span>
-        </div>
+          <img src="${imgURL}" alt="${data.username}님의 이미지" data-name="${data.accountname}" onerror="this.src='${basicImg}';" class="user-search-img">
+          <div class="user-search-txt">
+          <p data-name="${data.accountname}" class="search-tit">${txt}</p>
+          <span data-name="${data.accountname}" class="user-searchId">@ ${data.accountname}</span>
         </div>
       </li>
     `);
@@ -35,6 +34,18 @@ async function showFindUser(json) {
   const links = document.querySelectorAll('.link');
   [].forEach.call(links, function (links) {
     links.addEventListener('click', clickUser, false);
+  });
+  const imgLinks = document.querySelectorAll('.user-search-img');
+  [].forEach.call(imgLinks, function (imgLinks) {
+    imgLinks.addEventListener('click', clickUser, false);
+  });
+  const userInfoLinks = document.querySelectorAll('.search-tit');
+  [].forEach.call(userInfoLinks, function (userInfoLinks) {
+    userInfoLinks.addEventListener('click', clickUser, false);
+  });
+  const userIdLinks = document.querySelectorAll('.user-searchId');
+  [].forEach.call(userIdLinks, function (userIdLinks) {
+    userIdLinks.addEventListener('click', clickUser, false);
   });
   function clickUser(e) {
     if (e.target.dataset.name) { 
