@@ -57,7 +57,7 @@
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #dbdbdb;
-  font-size: 14px;
+  font-size: 16px;
   color: #000;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   box-sizing: border-box;
@@ -76,8 +76,8 @@
   font-size: 12px;
   color: #eb5757;
 }
-.main-add-prod .prod-set-field #prod-link.alert-inp,
-.main-add-prod .prod-set-field #price.alert-inp,
-.main-add-prod .prod-set-field #prod-name.alert-inp {
+#prod-link.alert-inp,
+#price.alert-inp,
+#prod-name.alert-inp {
   border-bottom: 1px solid #eb5757;
 }
