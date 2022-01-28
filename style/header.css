@@ -55,9 +55,9 @@
     background-color: #F2F2F2;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     border-radius: 32px;
-    padding: 7px 16px;
+    padding: 5px 16px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
   }
   .header .header-list .header-item.header-inp input::placeholder {

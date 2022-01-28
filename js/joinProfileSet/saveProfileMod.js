@@ -65,7 +65,12 @@ function keyupDisabled() {
   const introduce = profileField.querySelector('#introduce').value;
   const accountId = profileField.querySelector('#user-id').value;
   const userName = profileField.querySelector('#user-name').value;
-  if (accountId.length > 11 || userName.length > 11) {
+  if (
+    1 === accountId.length ||
+    accountId.length > 11 ||
+    1 === userName.length ||
+    userName.length > 11
+  ) {
     saveBtn.disabled = true;
     saveBtn.classList.add('btn-MS--off');
   } else if (introduce && accountId && userName) {
