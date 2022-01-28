@@ -1,3 +1,7 @@
+if(localStorage.getItem('postId')){
+  const headerName = document.querySelector('.upload-heading');
+
+
 function enterkey() {
   if (window.event.keyCode == 13) {
     fixPost;
@@ -14,11 +18,11 @@ async function getPost() {
   })
   const json = await res.json();
   const posts = json.post;
-    console.log(posts.author._id == localStorage.getItem('_id'))
-    console.log(posts.content)
+  let userImg = document.querySelector('.upload-userimg').src;
+  userImg = posts.author.image;
+  document.querySelector('.upload-userimg').src = userImg;
     
     const getImgs = posts.image.split(',');
-    console.log(getImgs)
     const imgCont = document.querySelector('.upload-imgs');
     if(posts.image){
       for (let i = getImgs.length-1; i >= 0 ; i--) {
@@ -71,9 +75,8 @@ async function fixPost() {
 sendBtn.addEventListener('click', () => {
   if(headerName.textContent === "게시글 작성") {
     createPost();
-    console.log('업로드');
   } else if(headerName.textContent === "게시글 수정") {
     fixPost();
-    console.log('수정');
   }
 });
+}

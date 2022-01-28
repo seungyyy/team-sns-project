@@ -21,6 +21,9 @@ inpTxT.addEventListener('keyup', () => {
   disabledBtn();
 });
 
+sendBtn.addEventListener('click', createPost);
+
+//이미지 미리보기
 async function setThumbnail(e) {
   const childCount = document.querySelector('.upload-imgs').childElementCount;
   const url = "http://146.56.183.55:5050"
@@ -50,10 +53,6 @@ if (childCount + imageUrls.length <= 3){
 
 uploadImages.addEventListener('change', setThumbnail);
 
-//프로필 사진 (내 사진으로) 변경
-const userImage = document.querySelector('.upload-userimg');
-userImage.src = localStorage.image;
-
 async function imageUpload(files,index){
   const formData = new FormData();
   formData.append("image", files[index]);
@@ -67,4 +66,3 @@ async function imageUpload(files,index){
 }
 
 window.addEventListener('click', e => { e.target.className === 'upload-removeimg' ? (e.target.parentNode.remove(), disabledBtn()) : false })
-

@@ -1,5 +1,3 @@
-const headerName = document.querySelector('.upload-heading');
-
 function enterkey() {
   if (window.event.keyCode == 13) {
     createPost;
