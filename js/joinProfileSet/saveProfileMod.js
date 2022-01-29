@@ -44,6 +44,10 @@ async function saveProfile(event) {
 async function setThumbnail(e) {
   const result = await imgUpload(e.target.files);
   imgUrl.src = `${url}/${result}`;
+  if (imgUrl.src !== localStorage.getItem('image')) { 
+    saveBtn.disabled = false;
+    saveBtn.classList.remove('btn-MS--off');
+  };
 }
 
 // 이미지 서버로 업로드 하기
