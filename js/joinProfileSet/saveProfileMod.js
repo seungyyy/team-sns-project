@@ -4,9 +4,9 @@ let imgUrl = document.querySelector('.profile-img');
 // 회원가입 정보들 서버로 전송하기
 async function saveProfile(event) {
   event.preventDefault();
-  const userName = document.querySelector('#user-name').value;
-  const accountId = document.querySelector('#user-id').value;
-  const introduce = document.querySelector('#introduce').value;
+  const userName = document.querySelector('#user-name');
+  const accountId = document.querySelector('#user-id');
+  const introduce = document.querySelector('#introduce');
   const token = localStorage.getItem('token');
 
   if (imgUrl.src === 'http://146.56.183.55:5050/Ellipse.png') {
@@ -22,21 +22,28 @@ async function saveProfile(event) {
       },
       body: JSON.stringify({
         "user": {
-          "username": userName,
-          "accountname": accountId,
-          "intro": introduce,
+          "username": userName.value,
+          "accountname": accountId.value,
+          "intro": introduce.value,
           "image": imgUrl.src,
         },
       }),
     });
     const json = await response.json();
+    const user = json.user;
     if (response.status == 200) {
-      location.href = '../../pages/profile.html';
-    } else {
-      console.log(json);
+      for (const key in user) {
+        if (Object.hasOwnProperty.call(user, key)) {
+          const data = user[key];
+          console.log(data);
+          localStorage.setItem(key, data);
+          location.href = '../../pages/profile.html';
+        }
+      }
     }
   } catch (error) {
     location.href = '../../pages/errPage.html';
+    console.log(error);
   }
 }
 
