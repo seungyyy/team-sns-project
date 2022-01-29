@@ -35,18 +35,6 @@ async function showFindUser(json) {
   [].forEach.call(links, function (links) {
     links.addEventListener('click', clickUser, false);
   });
-  const imgLinks = document.querySelectorAll('.user-search-img');
-  [].forEach.call(imgLinks, function (imgLinks) {
-    imgLinks.addEventListener('click', clickUser, false);
-  });
-  const userInfoLinks = document.querySelectorAll('.search-tit');
-  [].forEach.call(userInfoLinks, function (userInfoLinks) {
-    userInfoLinks.addEventListener('click', clickUser, false);
-  });
-  const userIdLinks = document.querySelectorAll('.user-searchId');
-  [].forEach.call(userIdLinks, function (userIdLinks) {
-    userIdLinks.addEventListener('click', clickUser, false);
-  });
   function clickUser(e) {
     if (e.target.dataset.name) { 
       localStorage.setItem("postuploder", e.target.dataset.name);
