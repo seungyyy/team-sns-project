@@ -92,8 +92,6 @@ async function uploadComment() {
     sendBtn.style.color = '#c4c4c4';
     sendBtn.disabled = true; 
     sendBtn.style.cursor = 'default';
-    
-
 }
 
 getComment();
