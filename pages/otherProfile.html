@@ -16,31 +16,17 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="hidden">청귤마켓</h1>
+      <h1 class="hidden">청귤마켓 프로필</h1>
       <ul class="header-list">
-        <li class='header-item header-feed cont--hide'>
-          <strong>청귤마켓 피드</strong>
-        </li>
         <li class="header-item header-back">
           <a href="./home.html">
             <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
           </a>
         </li>
-        <li class="header-item header-search cont--hide">
-          <a href="./search/search.html">
-            <img src="../images/icon/icon-search.png" alt="검색 버튼">
-          </a>
-        </li>
-        <li class="header-item header-inp cont--hide">
-            <input type="text" name="" placeholder="계정 검색">
-        </li>
         <li class="header-item header-more">
           <button type="button" class="btn--bgNone">
             <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
           </button>
-        </li>
-        <li class="header-item header-upload cont--hide">
-            <button type="button" class="btn-MS--off">업로드</button>
         </li>
       </ul>
     </header>
@@ -48,61 +34,58 @@
     <main class="main-profile">
       <!-- 유저프로필 -->
       <section class="cont-user">
-        <h2 class="hidden">user profile</h2>
+        <ul class="user-list-follow">
+          <li>
+            <a href="./followers.html" class="user-followers">
+              <strong class="user-num-followers"></strong>
+              <p>followers</p>
+            </a>
+          </li>
+          <li>
+            <img src="../images/icon/icon-profile.png" alt="프로필 사진" class="user-img" />
+            <h2 class="user-tit"></h2>
+          </li>
+          <li>
+            <a href="./followings.html" class="user-followings">
+              <strong class="user-num-followings"></strong>
+              <p>followings</p>
+            </a>
+          </li>
+        </ul>
 
-        <article class="user-cont-follow">
-          <h3 class="hidden">follow</h3>
-          <a href="./followers.html"  class="user-followers">
-            <strong class="user-num-followers"></strong>
-            <p>followers</p>
-          </a>
-          <img
-            src="../images/icon/icon-profile.png"
-            alt="프로필 사진"
-            class="user-img"
-          />
-          <a href="./followings.html"  class="user-followings">
-            <p><strong class="user-num-followings"></strong></p>
-            <p>followings</p>
-          </a>
+        <article class="user-info">
+          <p class="user-name"></p>
+          <p class="user-desc"></p>
         </article>
 
-        <p class="user-tit">
-          <strong></strong>
-        </p>
-        <p class="user-name"></p>
-        <p class="user-desc"></p>
-        <!--현재 다른 유저 프로필로 내 프로필일때 cont--hide 붙이기 -->
-        <section class="user-cont-other">
-          <h4 class="hidden">다른 유저 프로필</h4>
-          <div class="user-cont-btnOther">
-            <a href="./chatRoom.html" class="user-btn-chat"
-              ><img
-                src="../images/icon/s-icon-message-circle.png"
-                alt="채팅하기"
-            /></a>
-            <!-- 해당 유저 팔로우 시 cont--hide -->
-            <button type="button" class="user-btn-follow">팔로우</button>
-            <!-- 해당 유저 언팔로우 시 cont--hide -->
-            <button type="button" class="user-btn-unfollow cont--hide">
-              언팔로우
-            </button>
-            <button type="button" class="user-btn-share">
-              <img src="../images/icon/icon-share.png" alt="공유하기" />
-            </button>
-          </div>
+        <div class="user-cont-btnOther">
+          <a href="./chatRoom.html" class="user-btn-chat"
+            ><img
+              src="../images/icon/s-icon-message-circle.png"
+              alt="채팅하기"
+          /></a>
+          <!-- 해당 유저 팔로우 시 cont--hide -->
+          <button type="button" class="user-btn-follow">팔로우</button>
+          <!-- 해당 유저 언팔로우 시 cont--hide -->
+          <button type="button" class="user-btn-unfollow cont--hide">
+            언팔로우
+          </button>
+          <button type="button" class="user-btn-share">
+            <img src="../images/icon/icon-share.png" alt="공유하기" />
+          </button>
+        </div>
         </section>
       </section>
 
       <!-- 게시물과 판매상품이 없을 시 hr에 cont--not을 붙인다. -->
-      <hr class="hr" />
+      <hr class="hr"/>
       <!-- product section에 cont--hide class를 붙일 시 사라짐 -->
       <section class="product">
         <h2 class="product-tit">판매 중인 상품</h2>
         <ul class="product-list">
         </ul>
-        <hr class="hr" />
       </section>
+      <hr class="hr product-hr" />
 
       <!-- 게시글 없을 시 cont--hide css 부착  -->
       <section class="post">
@@ -223,7 +206,7 @@
               alt="게시물 작성"
               class="nav-img nav-img-post--off"
             />
-            <p class="nav-txt">게시물 작성</p>
+            <p class="nav-txt">글쓰기</p>
           </a>
         </li>
         <li class="nav-item">

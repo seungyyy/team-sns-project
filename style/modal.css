@@ -24,6 +24,7 @@
     text-align: center;
     background-color: #fff;
     border-radius: 10px 10px 0 0;
+    animation: slide 0.4s; 
   }
   .modal-logout-outside .modal-logout .modal-bar {
     width: 50px;
@@ -106,6 +107,7 @@
     text-align: center;
     background-color: #fff;
     border-radius: 10px 10px 0 0;
+    animation: slide 0.4s; 
   }
   .modal-post-outside .modal-post .modal-bar {
     width: 50px;

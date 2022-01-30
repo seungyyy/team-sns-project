@@ -3,63 +3,61 @@
   text-align: center;
 }
 .main-profile .cont-user{
-  padding: 78px 55px 16px;
+  /* padding: 78px 55px 16px; */
+  padding: 78px 0 16px;
 }
-.main-profile .cont-user .user-cont-follow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-/* 팔로워 */
-.main-profile .cont-user .user-cont-follow .user-followers,
-.main-profile .cont-user .user-cont-follow .user-followings {
-  text-align: center;
-  display: block;
-  text-align: center;
-  font-size: 10px;
-  font-weight: 400;
-  color: #767676;
-}
-.main-profile .cont-user .user-cont-follow .user-followers strong,
-.main-profile .cont-user .user-cont-follow .user-followings strong {
-  display: inline-block;
-  margin-bottom: 6px;
-  font-size: 18px;
-  font-weight: 700;
-}
-.main-profile .cont-user .user-cont-follow .user-followers strong {
-  color: #000;
-}
-
-/* 유저 이미지 */
-.main-profile .cont-user .user-cont-follow img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-}
-.main-profile .cont-user .user-tit {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.main-profile .cont-user .user-name {
-  font-size: 12px;
-  color: #767676;
-}
-.main-profile .cont-user .user-desc {
-  margin: 16px 0 24px;
-  font-size: 14px;
-  color: #767676;
-}
-/* 팔로워 버튼 모음 */
-.main-profile .cont-user .user-cont-other .user-cont-btnOther {
-  width: 212px;
-  margin: 0 auto 26px;
+.main-profile .cont-user .user-list-follow {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main-profile .cont-user .user-cont-other .user-cont-btnOther .user-btn-chat {
+/* 팔로워 */
+.main-profile .cont-user .user-list-follow li .user-followers,
+.main-profile .cont-user .user-list-follow li .user-followings {
+  text-align: center;
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  color: #767676;
+}
+.main-profile .cont-user .user-list-follow li .user-followers strong,
+.main-profile .cont-user .user-list-follow li .user-followings strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.main-profile .cont-user .user-list-follow li .user-followers strong {
+  color: #000;
+}
+/* 유저 이미지 */
+.main-profile .cont-user .user-list-follow li img {
+  width: 110px;
+  height: 110px;
+  margin: 0 10.51vw 16px;
+  border-radius: 50%;
+}
+.main-profile .cont-user .user-list-follow li .user-tit {
+  font-size: 16px;
+  font-weight: 700;
+}
+.main-profile .cont-user .user-info .user-name {
+  font-size: 12px;
+  color: #767676;
+  margin: 6px 0 16px;
+}
+.main-profile .cont-user .user-info .user-desc {
+  font-size: 14px;
+  color: #767676;
+}
+/* 팔로워 버튼 모음 */
+.main-profile .cont-user .user-cont-btnOther {
+  margin: 24px auto 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-profile .cont-user .user-cont-btnOther .user-btn-chat {
   width: 34px;
   height: 34px;
   position: relative;
@@ -68,7 +66,7 @@
   border-radius: 30px;
   box-sizing: border-box;
 }
-.main-profile .cont-user .user-cont-other .user-cont-btnOther .user-btn-share {
+.main-profile .cont-user .user-cont-btnOther .user-btn-share {
   width: 34px;
   height: 34px;
   position: relative;
@@ -77,7 +75,7 @@
   border-radius: 30px;
   box-sizing: border-box;
 }
-.main-profile .cont-user .user-cont-other .user-cont-btnOther .user-btn-chat img {
+.main-profile .cont-user .user-cont-btnOther .user-btn-chat img {
   width: 20px;
   position: absolute;
   top: 50%;
@@ -85,7 +83,7 @@
   transform: translateY(-50%) translateX(-50%);
 }
 /* 다른 유저 프로필 - 언팔로우시 보이는 버튼 */
-.main-profile .cont-user .user-cont-other .user-cont-btnOther .user-btn-follow {
+.main-profile .cont-user .user-cont-btnOther .user-btn-follow {
   padding: 8px 40px;
   margin: 0 10px;
   border: none;
@@ -97,7 +95,7 @@
   line-height: 18px;
 }
 /* 다른 유저 프로필 - 팔로우시 보이는 버튼 */
-.main-profile .cont-user .user-cont-other .user-cont-btnOther .user-btn-unfollow {
+.main-profile .cont-user .user-cont-btnOther .user-btn-unfollow {
   padding: 8px 34px;
   margin: 0 10px;
   border: 1px solid #dbdbdb;
@@ -107,7 +105,7 @@
   font-size: 14px;
   font-weight: 500;
 }
-.main-profile .cont-user .user-cont-other .user-cont-btnOther .user-btn-share img {
+.main-profile .cont-user  .user-cont-btnOther .user-btn-share img {
   width: 20px;
   position: absolute;
   top: 50%;
@@ -115,15 +113,13 @@
   transform: translateY(-50%) translateX(-50%);
 }
 /* 내 프로필 */
-.main-profile .cont-user .user-cont-me .user-cont-btnMy {
-  width: 232px;
-  margin: 0 auto 26px;
+.main-profile .cont-user .user-cont-btnMe {
+  margin: 24px auto 26px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
-.main-profile .cont-user .user-cont-me .user-cont-btnMy .user-fix {
-  padding: 8px 26px;
+.main-profile .cont-user .user-cont-btnMe a{
   border: 1px solid #dbdbdb;
   border-radius: 30px;
   background-color: white;
@@ -131,30 +127,35 @@
   font-size: 14px;
   font-weight: 500;
 }
-.main-profile .cont-user .user-cont-me .user-cont-btnMy .user-upload-product {
+.main-profile .cont-user .user-cont-btnMe .user-fix {
+  padding: 8px 26px;
+  margin-right: 1.53vw;
+}
+.main-profile .cont-user .user-cont-btnMe .user-upload-product {
   padding: 8px 22px;
-  border: 1px solid #dbdbdb;
-  border-radius: 30px;
-  background-color: white;
-  color: #767676;
-  font-size: 14px;
-  font-weight: 500;
+  margin-left: 1.53vw;
 }
 
 /* product */
-.main-profile .product .product-tit {
-  margin: 20px 21px 16px;
+.main-profile .product{
   text-align: left;
+  padding: 20px 5.38vw 21px;
+}
+.main-profile .product .product-tit {
   font-size: 16px;
   font-weight: 700;
+  margin-bottom: 15px;
 }
 .main-profile .product-list {
-  margin: 0 0 21px 20px;
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
+.main-profile .product-list::-webkit-scrollbar {
+  display: none;
+}
+
 .main-profile .product .product-list .product-item {
-  margin-right: 10px;
+  margin-right: 2.56vw;
 }
 .main-profile .product .product-list .product-item .product-btn{
   border: none;
@@ -163,14 +164,11 @@
 .main-profile .product .product-list .product-item .product-btn .product-cont-img{
   width: 140px;
   height: 90px;
-  border: 0.5px solid #dbdbdb;
+  border: 1px solid #dbdbdb;
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 8px;
   object-fit: 10px;
-}
-.main-profile .product .product-list .product-item .product-btn .product-cont-img .product-img {
-  width: 100%;
 }
 .main-profile .product .product-list .product-item .product-btn .product-desc {
   text-align: left;
@@ -188,7 +186,9 @@
 
 /* post list 형식*/
 .main-profile .post .post-change {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   border-bottom: 0.5px solid #dbdbdb;
 }
 .main-profile .post .post-change .post-btn-list {
@@ -197,7 +197,7 @@
   border: none;
   background: url("../../images/icon/icon-post-list-on.png");
   background-size: contain;
-  margin: 9px 17px 9px 0;
+  margin: 1px 17px 9px 0;
 }
 .main-profile .post .post-change .post-btn-grid {
   width: 26px;
@@ -205,7 +205,7 @@
   border: none;
   background: url("../../images/icon/icon-post-album-on.png");
   background-size: contain;
-  margin: 9px 19px 9px 0;
+  margin: 1px 19px 9px 0;
 }
 .main-profile .post .post-change .post-btn-list--off {
   background: url("../../images/icon/icon-post-list-off.png");
@@ -222,8 +222,7 @@
 }
 .main-profile .post .post-list .post-item {
   position: relative;
-  margin: 16px 16px 0 21px;
-  text-align: right;
+  margin: 16px 4.10vw 0 5.38vw;
 }
 .main-profile .post .post-list .post-item .post-img-user {
   width: 42px;
@@ -247,25 +246,12 @@
   color: #767676;
 }
 .main-profile .post .post-list .post-item .post-cont-txt .post-desc {
-  width: 304px;
   box-sizing: border-box;
   line-height: 17px;
   font-size: 14px;
 }
-.main-profile .post .post-list .post-item .post-cont-img {
-  width: 304px;
-  height: 228px;
-  overflow: hidden;
-  margin: 16px 0 16px 54px;
-  border-radius: 10px;
-}
-/* .main-profile .post .post-list .post-item .space {
-  margin: 16px 0 16px 54px;
-  border-radius: 10px;
-} */
 .main-profile .post .post-list .post-item .post-cont-space .post-cont-imgs{
   position: relative;
-  width: 304px;
   height: 228px;
   overflow: hidden;
   margin: 0;

@@ -19,48 +19,33 @@
   <header class="header">
     <h1 class="hidden">청귤마켓</h1>
     <ul class="header-list">
-      <li class='header-item header-feed cont--hide'>
-        <strong>청귤마켓 피드</strong>
-      </li>
       <li class="header-item header-back">
         <a href="./home.html">
           <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
         </a>
       </li>
-      <li class="header-item header-search cont--hide">
-        <a href="./search/search.html">
-          <img src="../images/icon/icon-search.png" alt="검색 버튼">
-        </a>
-      </li>
-      <li class="header-item header-inp cont--hide">
-          <input type="text" name="" placeholder="계정 검색">
-      </li>
-      <li class="header-item header-more cont--hide">
-        <button type="button" class="btn--bgNone">
-          <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
-        </button>
-      </li>
       <li class="header-item header-upload ">
-        <button id="save-btn" class="btn-MS btn-MS--off">저장</button>
+        <button form="profile-mod-form" id="save-btn" class="btn-MS btn-MS--off">저장</button>
       </li>
     </ul>
   </header>
 
     <!-- profile 수정 -->
     <main class="main-profile-mod">
-      <form method="post">
+      <form method="post" id="profile-mod-form" onsubmit="saveProfile(event)">
         <fieldset class="profile-mod-field">
+          <legend class="hidden">프로필 수정</legend>
           <label for="avatar" class="avatar-label">
             <div>
               <img src="../images/icon/icon-profile.png" alt="기본프로필이미지" class="profile-img">
             </div>
           </label>
           <input type="file" id="avatar" name="avatar" accept="image/*" class="file-inp" onchange="setThumbnail(event);">
-          <label for="username" class="label">사용자 이름</label>
+          <label for="user-name" class="label">사용자 이름</label>
           <input type="text" name="useremail" id="user-name" placeholder="2~10자 이내여야 합니다." class="username-inp inp">
           <p id="username-alert" class="alert"></p>
           <label for="user-id" class="label">계정 ID</label>
-          <input type="text" name="userpw" id="user-id" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." class="userid-inp inp">
+          <input type="text" name="user-id" id="user-id" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." class="userid-inp inp">
           <p id="userid-alert" class="alert"></p>
           <label for="introduce" class="label">소개</label>
           <input type="text" name="userintroduce" id="introduce" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" class="introduce-inp inp">

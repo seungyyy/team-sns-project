@@ -1,3 +1,4 @@
+//하트클릭
 async function heartPlus(id) {
   const res = await fetch(
     "http://146.56.183.55:5050/post/"+id+"/heart",
@@ -9,10 +10,9 @@ async function heartPlus(id) {
       },
     }
   );
-
-  location.reload();
+  getPost();
 };
-
+//하트 취소
 async function heartCancel(id) {
   const res = await fetch(
     "http://146.56.183.55:5050/post/"+id+"/unheart",
@@ -24,5 +24,6 @@ async function heartCancel(id) {
       },
     }
   );    
-  location.reload();
+  
+  getPost();
 }

@@ -1,4 +1,3 @@
-//하단 댓글 입력 창 - 입력되면, 버튼 활성화
 const sendBtn = document.querySelector('.writechat-sendtxt');
 const commentInp = document.querySelector('.writechat-inp');
 //enter를 눌렀을 때도 실행
@@ -7,7 +6,7 @@ function enterkey() {
     uploadComment();
   }
 }
-
+//하단 댓글 입력 창 - 입력되면, 버튼 활성화
 commentInp.addEventListener('keyup', () => {
     switch (!(commentInp.value)) {
         case true: 
@@ -21,15 +20,11 @@ commentInp.addEventListener('keyup', () => {
         enterkey();
         break;
     };
-});
+  });
 
-//전송버튼 누르면 api 안에 있는 유저 정보 가져오고, 인풋 내용이 댓글창에 추가
-//시간도 변경 가능하도록 추가
-let comment = document.querySelector('.post-comment').innerHTML
-
-sendBtn.addEventListener('click', () => {
-  uploadComment(); 
-});
+  sendBtn.addEventListener('click', () => {
+    uploadComment(); 
+  });
 
 //말풍선 버튼을 누르면 게시글 상세로 이동
 async function getPost() {
@@ -43,7 +38,12 @@ async function getPost() {
   const json = await res.json();
   const posts = json.post;
   const pageDetail = document.querySelector('.main-post-page');
-  const postAuthorImg = posts.author.image
+  const postAuthorImg = posts.author.image;
+
+  let heartImg = !posts.hearted
+  ? '../images/icon/icon-heart.png'
+  : '../images/icon/icon-heart-fill.png';
+
   let authorImg
   if(postAuthorImg) {
     if(postAuthorImg.includes('http://146.56.183.55:5050/')){
@@ -101,6 +101,7 @@ async function getPost() {
         `
     }
 
+
     let imgPost = `      <div class="post-wrap">
       <div class="post-user">
         <img src=${authorImg} alt="user image" class="post-userimg">
@@ -116,8 +117,10 @@ async function getPost() {
       </div>
       <div class="post-icon">
         <div class="icon-box">
-          <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
-          <span class="icon-txt">${posts.heartCount}</span>
+          <button type="button" class="like-btn">
+            <img src=${heartImg} alt="좋아요 아이콘" class="like-icon">
+            </button>
+            <span class="icon-txt">${posts.heartCount}</span>
           <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
           <span class="icon-txt">${posts.commentCount}</span>
         </div>
@@ -127,8 +130,12 @@ async function getPost() {
 
     pageDetail.innerHTML = imgPost;
 
-
-
+    if(imgLength>=2){
+      document.querySelector(".space").prepend(postImg);
+      let dots = document.querySelectorAll(".dot-list span");
+      let imgSlide = document.querySelector(".imgSlide");
+      dotClick(dots, imgSlide);
+    }
   } else {
     let imgPost = `      <div class="post-wrap">
     <div class="post-user">
@@ -144,8 +151,11 @@ async function getPost() {
     </div>
     <div class="post-icon">
       <div class="icon-box">
-        <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+        <button type="button" class="like-btn">
+          <img src=${heartImg} alt="좋아요 아이콘" class="like-icon">
+          </button>
         <span class="icon-txt">${posts.heartCount}</span>
+        </button>
         <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
         <span class="icon-txt">${posts.commentCount}</span>
       </div>
@@ -154,108 +164,14 @@ async function getPost() {
   </div>`
   pageDetail.innerHTML = imgPost;
   }
-        document.querySelector(".space").prepend(postImg);
-        let dots = document.querySelectorAll(".dot-list span");
-        let imgSlide = document.querySelector(".imgSlide");
-        dotClick(dots, imgSlide);
+
+    document.querySelector('.like-btn').addEventListener('click', () => {
+      if (!posts.hearted) {
+        heartPlus(posts.id);
+      } else {
+        heartCancel(posts.id);
+      }
+    });
+
 }
 getPost();
-
-//댓글 보여주기
-async function getComment() {
-  const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}/comments`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-type": "application/json",
-    },
-  })
-
-  const json = await res.json();
-  const comments = json.comments;
-  const commentDetail = document.querySelector('.post-comment');
-  if(comments.length === 0) {
-      while(commentDetail.hasChildNodes()) { commentDetail.removeChild(commentDetail.firstChild)}
-  } else {
-    while(commentDetail.hasChildNodes()) { commentDetail.removeChild(commentDetail.firstChild)}
-      for(let i = 0; i < comments.length; i++){
-        const today = new Date();
-        const timeValue = new Date(comments[i].createdAt);
-        let timeForToday
-        const betweenTime = Math.floor((today.getTime() - timeValue.getTime()) / 1000 / 60);
-        const betweenTimeHour = Math.floor(betweenTime / 60);
-        const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
-      
-        if (betweenTime < 1) {
-          timeForToday = '방금전';
-        } else if (betweenTime < 60) {
-          timeForToday =  betweenTime + '분 전';
-        } else if (betweenTimeHour < 24) {
-          timeForToday = betweenTimeHour + '시간 전';
-        } else if (betweenTimeDay < 365) {
-          timeForToday = betweenTimeDay + '일 전';
-        } else {
-          timeForToday = Math.floor(betweenTimeDay / 365) + '년 전'
-        }
-      
-        let imgsrc = comments[i].author.image
-        if(imgsrc) {
-          if(imgsrc.includes('http://146.56.183.55:5050/')){
-            imgsrc = imgsrc
-          } else if(imgsrc.includes('http://146.56.183.55:5050')) {
-            imgsrc = imgsrc.slice(0, 25) + '/' + postAuthorImg.slice(25)
-          } else if(imgsrc.includes('url')) {
-            imgsrc = imgsrc.split('"')[1]
-          } else {
-            imgsrc = 'http://146.56.183.55:5050/' + postAuthorImg
-          }
-      
-        } else {
-          imgsrc = 'http://146.56.183.55:5050/Ellipse.png'
-        }
-        comment = `
-        <div class="comment-wrap">
-        <div class="comment-userwrap">
-          <div class="comment-user">
-            <img src=${imgsrc} alt="" class="comment-userimg">
-            <p class="comment-username">${comments[i].author.username}</p>
-            <p class="comment-usertime">· ${timeForToday}</p>
-          </div>
-          <button class="btn--bgNone"><img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore"></button>
-        </div>
-        <p class="comment-txt">${comments[i].content}</p>
-      </div>`
-        commentDetail.innerHTML = comment + commentDetail.innerHTML
-      }
-}}
-
-// 입력하기
-async function uploadComment() {
-  const url = "http://146.56.183.55:5050"
-  const token = localStorage.getItem("token")
-  const postId = localStorage.getItem("postId")
-  const commentUp = commentInp.value
-
-    const res = await fetch(url+`/post/${postId}/comments`,{
-        method:"POST",
-        headers:{
-                    "Authorization" : `Bearer ${token}`,
-                    "Content-type" : "application/json"
-        },
-        body:JSON.stringify({
-            "comment": {
-                    "content": commentUp,
-            }
-        })
-    })
-    getComment()
-    getPost()
-    commentInp.value = '';
-    sendBtn.style.color = '#c4c4c4';
-    sendBtn.disabled = true; 
-    sendBtn.style.cursor = 'default';
-
-
-}
-
-getComment();

@@ -19,11 +19,10 @@ async function showFindUser(json) {
     userInfo.push(`
       <li class="user-search">
         <div data-name="${data.accountname}" class="link">
-        <img src="${imgURL}" alt="${data.username}님의 이미지" onerror="this.src='${basicImg}';" class="user-search-img">
-        <div class="user-search-txt">
-          <p class="search-tit">${txt}</p >
-          <span class="user-searchId">@ ${data.accountname}</span>
-        </div>
+          <img src="${imgURL}" alt="${data.username}님의 이미지" data-name="${data.accountname}" onerror="this.src='${basicImg}';" class="user-search-img">
+          <div class="user-search-txt">
+          <p data-name="${data.accountname}" class="search-tit">${txt}</p>
+          <span data-name="${data.accountname}" class="user-searchId">@ ${data.accountname}</span>
         </div>
       </li>
     `);

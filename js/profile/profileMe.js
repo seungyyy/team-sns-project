@@ -17,18 +17,21 @@ async function profileMe() {
   let followers = profileMe.querySelector(".user-num-followers");
   let followings = profileMe.querySelector(".user-num-followings");
   let imgMe = profileMe.querySelector(".user-img");
-  let titMe = profileMe.querySelector(".user-tit strong");
+  let titMe = profileMe.querySelector(".user-tit");
   let nameMe = profileMe.querySelector(".user-name");
   let descMe = profileMe.querySelector(".user-desc");
   //팔로워 팔로윙 숫자 기입
   followers.innerHTML = profile.followerCount;
   followings.innerHTML = profile.followingCount;
   //불러온 정보를 이미지에 대입
-  imgMe.setAttribute("src", profile.image);
+  const basicImg = 'http://146.56.183.55:5050/Ellipse.png';
+  let imgURL = profile.image.match(/http:\/\/146.56.183.55:5050\/[0-9]/) === null ? basicImg : profile.image;
+  console.log("이미지 주소 : ", imgMe)
+  imgMe.setAttribute('src', `${imgURL}`);
   //이미지 주소가 오류일 때 나오는 코드
   imgMe.setAttribute(
     "onerror",
-    `this.src="../../images/icon/icon-profile.png"`
+    `this.src="${basicImg}"`
   );
   titMe.innerHTML = profile.username;
   nameMe.innerHTML = "@ " + profile.accountname;

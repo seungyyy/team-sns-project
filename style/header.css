@@ -2,70 +2,71 @@
 .header {
     width: 100%;
     height: 48px;
-    padding: 0 16px;
+    padding: 0 calc(4.1vw - 12px);
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-bottom: 0.5px solid #dbdbdb;
+    left: 0;
+    border-bottom: 1px solid #dbdbdb;
     background: #fff;
     z-index: 10;
     box-sizing: border-box;
   }
   .header .header-list{
-    width: 100%;
-    height: 100%;
+    height: 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   .header .header-list .header-item.header-feed strong{
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
-    padding-right: 16px;
+    padding: 0 16px 0 12px;
+  }
+
+  .header .header-list .header-item.header-back a{
+    padding: 12px;
+    display: block;
   }
   .header .header-list .header-item.header-back a img{
     width: 22px;
     height: 22px;
   }
+
+  .header .header-list .header-item.header-search a{
+    padding: 12px;
+    display: block;
+  }
   .header .header-list .header-item.header-search a img{
     width: 24px;
     height: 24px;
   }
+  
   .header .header-list .header-item.header-inp{
-    margin-left: 24px;
+    margin: 0 12px 0 24px;
     flex-grow: 1;
   }
   .header .header-list .header-item.header-inp input{
+    display: block;
     width: 100%;
     height: 32px;
     border: none;
     background-color: #F2F2F2;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     border-radius: 32px;
-    padding: 7px 16px;
+    padding: 5px 16px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
   }
   .header .header-list .header-item.header-inp input::placeholder {
     color: #c4c4c4;
   }
-  .header .header-list .header-item.header-inp input{
-    width: 100%;
-    height: 32px;
-    border: none;
-    background-color: #F2F2F2;
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-    border-radius: 32px;
-    padding: 7px 16px;
-    box-sizing: border-box;
-    font-size: 14px;
-    font-weight: 400;
-  }
-  .header .header-list .header-item.header-inp input::placeholder {
-    color: #c4c4c4;
+  .header .header-list .header-item.header-more button{
+    display: block;
+    padding: 12px;
+
   }
   .header .header-list .header-item.header-more button img{
     width: 24px;
@@ -79,7 +80,17 @@
     border: none;
     border-radius: 32px;
     font-weight: 500;
+    margin-right: 13px;
   }
   .header .btn-MS--on {
     background-color: #24732f ;
+  }
+  .header .upload-heading, .header .header-username {
+    display: inline-block;
+    position: absolute;
+    font-size: 16px;
+    font-weight: 500;
+    top: 50%;
+    left: calc(4.1vw + 32px);
+    transform: translateY(-50%);
   }

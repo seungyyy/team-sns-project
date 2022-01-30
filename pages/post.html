@@ -15,39 +15,28 @@
     <link rel="stylesheet" href="../style/common.css">
 </head>
 <body>
+  <h1 class="hidden">게시글 상세페이지</h1>
   <header class="header">
-    <h1 class="hidden">청귤마켓</h1>
     <ul class="header-list">
-      <li class='header-item header-feed cont--hide'>
-        <strong>청귤마켓 피드</strong>
-      </li>
       <li class="header-item header-back">
         <a href="./home.html">
           <img src="../images/icon/icon-arrow-left.png" alt="뒤로가기" />
         </a>
       </li>
-      <li class="header-item header-search cont--hide">
-        <a href="./search/search.html">
-          <img src="../images/icon/icon-search.png" alt="검색 버튼">
-        </a>
-      </li>
-      <li class="header-item header-inp cont--hide">
-          <input type="text" name="" placeholder="계정 검색">
-      </li>
+      <li><p class="header-username">상세페이지</p></li>
       <li class="header-item header-more">
         <button type="button" class="btn--bgNone">
           <img src="../images/icon/icon-more-vertical.png" alt="더보기" />
         </button>
       </li>
-      <li class="header-item header-upload cont--hide">
-          <button type="button" class="btn-MS--off">업로드</button>
-      </li>
     </ul>
   </header>
 
   <main class="main-post">
+    <h1 class="hidden">게시글 상세보기</h1>
     <!-- post - text with image-->
     <section class="main-post-page">
+      <h2 class="hidden">게시글</h2>
       <!-- 게시글 부분 -->
       <div class="post-wrap">
         <div class="post-user">
@@ -64,7 +53,10 @@
         </div>
         <div class="post-icon">
           <div class="icon-box">
-            <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+            <button>
+              <img src="../images/icon/icon-heart.png" alt="좋아요 아이콘" class="like-icon">
+            </button>
+            
             <span class="icon-txt">58</span>
             <img src="../images/icon/s-icon-message-circle.png" alt="채팅 아이콘" class="chat-icon">
             <span class="icon-txt">12</span>
@@ -76,7 +68,8 @@
     <!-- post 끝 -->
     <!-- 댓글부분 -->
     <section class="post-comment">
-      <div class="comment-wrap">
+      <h2 class="hidden">댓글</h2>
+      <!-- <div class="comment-wrap">
         <div class="comment-userwrap">
           <div class="comment-user">
             <img src="../images/image/user3.png" alt="" class="comment-userimg">
@@ -97,7 +90,7 @@
           <button class="btn--bgNone"><img src="../images/icon/icon-more-vertical.png" alt="더보기" class="comment-imgmore"></button>
         </div>
         <p class="comment-txt">안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡뻘땡뻘...</p>
-      </div>
+      </div> -->
     </section>
   </main>
 
@@ -117,13 +110,14 @@
   <div class="modal-delete-container">
       <section id="modal-delete" class="sec-modal modal-delete">
         <div class="modal-bar"></div>
-        <p class="modal-txt">삭제하기</p>
+        <p class="modal-txt"><button type="button">삭제</button></p>
+        <p class="modal-txt"><a href="./upload.html" type="button">수정</a></p>
       </section>
   </div>
   <div class="modal-report-container">
     <section id="modal-report" class="sec-modal modal-report">
       <div class="modal-bar"></div>
-      <p class="modal-txt">신고하기</p>
+      <p class="modal-txt"><button type="button">신고</button></p>
     </section>
   </div>
 
@@ -152,9 +146,11 @@
     </article>
 </section>
 
-  <script src="../js/post.js"></script>
+  <script src="../js/post/post.js"></script>
   <script src="../js/modal/modalLogout.js"></script>
-  <script src="../js/postmodal.js"></script>
   <script src="../js/imgProcess.js"></script>
+  <script src="../js/post/postComment.js"></script>
+  <script src="../js/post/postHeart.js"></script>
+  <script src="../js/post/postmodal.js"></script>
 </body>
 </html>

@@ -21,6 +21,17 @@ async function profilePostMe() {
     posts.forEach((post) => {
       //게시물 이미지로 들어온 소스를 구분한다.
       let postImg = imgProcess(post.image);
+      //그리드 이미지
+      let gridImg 
+      if(post.image =="" || post.image==undefined){
+        gridImg="";
+      }else{
+      //이미지가 한개 이상 들어오는 경우, 여러개 들어오는 경우
+        gridImg = post.image.split(",")[0].indexOf("http://146.56.183.55:5050/")>-1 ?
+        post.image.split(",")[0] : 
+        "http://146.56.183.55:5050/" + post.image.split(",")[0]
+      }
+      console.log(gridImg)
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
@@ -59,8 +70,8 @@ async function profilePostMe() {
       <div class="post-cont-icon">
         <button type="button" class="post-btn-heart">
           <img src=${heartImg} alt="좋아요" />
+          </button>
           <span class="post-txt-icon">  ${post.heartCount}</span>
-        </button>
         <a href="../../pages/post.html" class="post-link-comment">
           <img
             src="../images/icon/s-icon-message-circle.png"
@@ -73,18 +84,19 @@ async function profilePostMe() {
         `;
 
       addGridItem.innerHTML = `
-        <a href="#" class="post-link-grid">
+        <a href="../../pages/post.html" class="post-link-grid">
           <img
-            src="${postImg}"
+            src="${gridImg}"
             alt="게시글 이미지"
             class="post-img-grid"
           />
         </a>
     `;
       postList.prepend(addListItem);
-      if (postImg) {
+      if (gridImg) {
         postGrid.prepend(addGridItem);
       }
+      console.log(postGrid)
     //이미지슬라이드와 연결
      document.querySelector(".space").prepend(postImg);
      let dots = document.querySelectorAll(".dot-list span");
@@ -106,6 +118,14 @@ async function profilePostMe() {
         .addEventListener("click", () => {
           localStorage.setItem("postId", post.id);
         });
+
+        if(gridImg){
+          document
+          .querySelector(".post-link-grid")
+          .addEventListener("click", ()=>{
+            localStorage.setItem("postId", post.id);
+          })
+        }
       //글 모달
       let contModal = document.querySelector(".modal-post-outside");
       document
@@ -113,9 +133,9 @@ async function profilePostMe() {
       .addEventListener("click", ()=>{
         contModal.classList.remove("cont--hide");
         modalPost(post.id);
+        localStorage.setItem('postId', post.id);
       })
     });
   }
 }
 profilePostMe();
-

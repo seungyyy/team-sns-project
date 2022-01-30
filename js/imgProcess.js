@@ -24,7 +24,7 @@ function imgProcess(post){
             let normalImg = img.indexOf("http://146.56.183.55:5050/")>-1 ?
             img :  
             "http://146.56.183.55:5050/" + img;
-            if(postArr.length>1){
+            if(postArr.length>=1){
                 imgSlide.innerHTML += `<img src=${normalImg} alt="게시글 이미지" />`;
                 postArr.length == 2 ? imgSlide.classList.add("twoImg") : "";
             }

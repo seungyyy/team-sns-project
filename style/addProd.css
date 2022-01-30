@@ -1,3 +1,10 @@
+/* 상단 헤더 부분 */
+.header .btn-MS {
+  background-color: #24732f ;
+}
+.header .btn-MS--off {
+  background-color: #8ac392;
+}
 
 .main-add-prod {
   width: 100%;
@@ -13,6 +20,7 @@
   margin-top: 18px;
 }
 .main-add-prod .prod-set-field .prodfile-label .prod-set-img {
+  display:block;
   width: 100%;
   height: 204px;
   position: relative;
@@ -41,7 +49,7 @@
   margin-bottom: 6px;
   color: #767676;
 }
-.main-add-prod .prod-set-field .inp {
+.main-add-prod .prod-set-field input {
   width: 100%;
   padding-bottom: 9px;
   margin-bottom: 16px;
@@ -49,7 +57,7 @@
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #dbdbdb;
-  font-size: 14px;
+  font-size: 16px;
   color: #000;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   box-sizing: border-box;
@@ -57,14 +65,19 @@
 .main-add-prod .prod-set-field .email-inp {
   margin-bottom: 16px;
 }
-.main-add-prod .prod-set-field .inp:focus {
+.main-add-prod .prod-set-field input:focus {
   border-bottom: 1px solid #24732f;
 }
-.main-add-prod .prod-set-field .inp::placeholder {
+.main-add-prod .prod-set-field input::placeholder {
   color: #dbdbdb;
 }
 .main-add-prod .prod-set-field .alert {
   margin-top: -10px;
   font-size: 12px;
   color: #eb5757;
+}
+#prod-link.alert-inp,
+#price.alert-inp,
+#prod-name.alert-inp {
+  border-bottom: 1px solid #eb5757;
 }

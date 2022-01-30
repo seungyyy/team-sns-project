@@ -20,7 +20,8 @@ function keyupDisabled() {
 }
 
 // 이메일 비밀번호 입력값이 없는 경우도 버튼 비활성화
-async function clickDisabled() { 
+async function clickDisabled(event) { 
+  event.preventDefault();
   if (!email.value && !pw.value) {
     btn.disabled = false;
   } else { 
@@ -63,4 +64,4 @@ async function login() {
 }
 
 document.querySelector('.email-field').addEventListener('keyup', keyupDisabled);
-document.querySelector('#login-btn').addEventListener('click', clickDisabled);
+
