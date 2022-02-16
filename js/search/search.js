@@ -60,7 +60,7 @@ async function searchUser() {
     return findUser;
   } catch (error) { 
     console.log(error);
-  //  location.href = '../../pages/errPage.html';
+    location.href = '../../pages/errPage.html';
   }
 }
 

@@ -24,29 +24,35 @@ async function accountNameCheck() {
 
 
   if (regAccountName.test(accountName.value) === true ) {
-    const res = await fetch(url + "/user", {
-      method: 'GET',
-    });
-    const json = await res.json();
-    for (const key in json) {
-      let arr = [];
-      if (Object.hasOwnProperty.call(json, key)) {
-        const data = json[key];
-        const account = data.accountname;
-        arr.push(account);
-        let accountCheck = arr.find((check) => check === accountName.value);
-        if (accountCheck === accountName.value) {
-          accountNameAlert.textContent = '*이미 사용 중인 ID입니다.';
-          accountName.classList.add('alert-inp');
-          setBtn.classList.add('btn-L--off');
-          setBtn.disabled = true;
-          break;
-        } else {
-          accountNameAlert.textContent = '';
-          accountName.classList.remove('alert-inp');
+    try {
+      const res = await fetch(url + "/user", {
+        method: 'GET',
+      });
+      const json = await res.json();
+      for (const key in json) {
+        let arr = [];
+        if (Object.hasOwnProperty.call(json, key)) {
+          const data = json[key];
+          const account = data.accountname;
+          arr.push(account);
+          let accountCheck = arr.find((check) => check === accountName.value);
+          if (accountCheck === accountName.value) {
+            accountNameAlert.textContent = '*이미 사용 중인 ID입니다.';
+            accountName.classList.add('alert-inp');
+            setBtn.classList.add('btn-L--off');
+            setBtn.disabled = true;
+            break;
+          } else {
+            accountNameAlert.textContent = '';
+            accountName.classList.remove('alert-inp');
+          }
         }
       }
+    } catch(error) { 
+      console.log(error);
+      location.href = '../../pages/errPage.html';
     }
+  
   } else {
     accountNameAlert.textContent = '*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.';
     accountName.classList.add('alert-inp');
