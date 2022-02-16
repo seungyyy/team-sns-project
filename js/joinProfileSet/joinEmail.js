@@ -12,7 +12,6 @@ function clickDisabled() {
   } else { 
     nextProfile();
   } 
-
 }
 
 // 버튼 클릭시 프로필 설정으로 화면 보여주기
@@ -24,7 +23,7 @@ function nextProfile() {
 
 // 이메일, 비밀번호 입력 값이 있다면 버튼 활성화 / 입력 값이 없다면 비활성화
 function keyupDisabled() {
-  if (joinEmail.value && joinPw.value.length >= 6 && joinPw.value) {
+  if (joinEmail.value && joinPw.value.length > 6 && joinPw.value && emailAlert.textContent === '') {
     joinBtn.disabled = false;
     joinBtn.classList.remove('btn-L--off');
   } else {
