@@ -1,19 +1,18 @@
 async function profileOtherIsFollow() {
   const res = await fetch(
-    "http://146.56.183.55:5050/profile/" +
-      localStorage.getItem("accountname") +
-      "/following",
+    'https://mandarin.api.weniv.co.kr/profile/' +
+      localStorage.getItem('accountname') +
+      '/following',
     {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
       },
     }
   );
   const json = await res.json();
   const followers = json;
-  console.log(followers)
   let btnFollow = document.querySelector(".user-btn-follow");
   let btnUnFollow = document.querySelector(".user-btn-unfollow");
   let isfollower = false;

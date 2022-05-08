@@ -9,8 +9,8 @@ async function saveProfile(event) {
   const introduce = document.querySelector('#introduce');
   const token = localStorage.getItem('token');
 
-  if (imgUrl.src === 'http://146.56.183.55:5050/Ellipse.png') {
-    imgUrl.src = 'http://146.56.183.55:5050/Ellipse.png';
+  if (imgUrl.src === 'https://mandarin.api.weniv.co.kr/Ellipse.png') {
+    imgUrl.src = 'https://mandarin.api.weniv.co.kr/Ellipse.png';
   }
 
   try {

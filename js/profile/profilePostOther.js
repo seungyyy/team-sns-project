@@ -1,18 +1,16 @@
 async function profilePostMe() {
   const res = await fetch(
-    "http://146.56.183.55:5050/post/" +
-    localStorage.getItem("postuploder") +
-    "/userpost", {
-      method: "GET",
+    'https://mandarin.api.weniv.co.kr/post/' + localStorage.getItem('postuploder') + '/userpost',
+    {
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
       },
     }
   );
   const json = await res.json();
   const posts = json.post;
-  console.log("게시글", posts);
   if (posts.length) {
     let postList = document.querySelector(".post-list");
     let postGrid = document.querySelector(".post-list-grid");
@@ -29,9 +27,10 @@ async function profilePostMe() {
          gridImg="";
        }else{
        //이미지가 한개 이상 들어오는 경우, 여러개 들어오는 경우
-         gridImg = post.image.split(",")[0].indexOf("http://146.56.183.55:5050/")>-1 ?
-         post.image.split(",")[0] : 
-         "http://146.56.183.55:5050/" + post.image.split(",")[0]
+         gridImg =
+           post.image.split(',')[0].indexOf('https://mandarin.api.weniv.co.kr/') > -1
+             ? post.image.split(',')[0]
+             : 'https://mandarin.api.weniv.co.kr/' + post.image.split(',')[0];
        }
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");

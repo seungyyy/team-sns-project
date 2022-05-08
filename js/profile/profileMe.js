@@ -1,17 +1,16 @@
 async function profileMe() {
   const res = await fetch(
-    "http://146.56.183.55:5050/profile/" + localStorage.getItem("accountname"),
+    'https://mandarin.api.weniv.co.kr/profile/' + localStorage.getItem('accountname'),
     {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
       },
     }
   );
   const json = await res.json();
   const profile = json.profile;
-  console.log("내프로필 정보", profile);
   localStorage.setItem("postuploder", localStorage.getItem("accountname"));
   let profileMe = document.querySelector(".cont-user");
   let followers = profileMe.querySelector(".user-num-followers");
@@ -24,9 +23,11 @@ async function profileMe() {
   followers.innerHTML = profile.followerCount;
   followings.innerHTML = profile.followingCount;
   //불러온 정보를 이미지에 대입
-  const basicImg = 'http://146.56.183.55:5050/Ellipse.png';
-  let imgURL = profile.image.match(/http:\/\/146.56.183.55:5050\/[0-9]/) === null ? basicImg : profile.image;
-  console.log("이미지 주소 : ", imgMe)
+  const basicImg = 'https://mandarin.api.weniv.co.kr/Ellipse.png';
+  let imgURL =
+    profile.image.match(/https:\/\/mandarin\.api\.weniv.co\.kr\/[0-9]/) === null
+      ? basicImg
+      : profile.image;
   imgMe.setAttribute('src', `${imgURL}`);
   //이미지 주소가 오류일 때 나오는 코드
   imgMe.setAttribute(

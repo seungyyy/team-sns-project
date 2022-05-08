@@ -33,7 +33,7 @@ async function clickDisabled(event) {
 // 버튼 클릭시 서버에 유저가 있다면 로컬스토리지에 저장 후 홈 피드 화면으로 이동
 // 유저가 아니라면 경고 텍스트가 나옵니다
 async function login() {
-  const res = await fetch('http://146.56.183.55:5050/user/login', {
+  const res = await fetch('https://mandarin.api.weniv.co.kr/user/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ async function login() {
         password: pw.value,
       },
     }),
-  })
+  });
   const json = await res.json();
   const user = json.user;
   if (user) {

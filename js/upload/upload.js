@@ -5,7 +5,7 @@ function enterkey() {
 }
 
 async function createPost() {
-    const url = "http://146.56.183.55:5050"
+    const url = 'https://mandarin.api.weniv.co.kr';
     const token = localStorage.getItem("token")
     const contentText = inpTxT.value
 

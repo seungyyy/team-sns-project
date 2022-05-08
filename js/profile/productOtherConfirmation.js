@@ -1,17 +1,16 @@
 async function productConfirmation() {
   const res = await fetch(
-    "http://146.56.183.55:5050/product/" + localStorage.getItem("postuploder"),
+    'https://mandarin.api.weniv.co.kr/product/' + localStorage.getItem('postuploder'),
     {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
       },
     }
   );
   const json = await res.json();
   const products = json;
-  console.log(products);
 
   let productCont = document.querySelector(".product");
   let productList = productCont.querySelector(".product-list");
@@ -27,9 +26,10 @@ async function productConfirmation() {
     productArr = products["product"]
     productArr.forEach((product)=>{
        //게시물 이미지로 들어온 소스를 구분한다.
-       let postImg = product.itemImage.indexOf("http://146.56.183.55:5050/")>-1 ?
-          product.itemImage : 
-          "http://146.56.183.55:5050/" + product.itemImage;
+       let postImg =
+         product.itemImage.indexOf('https://mandarin.api.weniv.co.kr/') > -1
+           ? product.itemImage
+           : 'https://mandarin.api.weniv.co.kr/' + product.itemImage;
       //금액 자릿수 수정
       let price = [];
       (product.price+"").split("").reverse().forEach((data, i)=>{

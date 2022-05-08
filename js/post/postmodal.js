@@ -4,13 +4,16 @@ async function postImgmore() {
   let repModal = document.querySelector('#modal-report')
   let delModalCont = document.querySelector('.modal-delete-container')
   let delModal = document.querySelector('#modal-delete')
-  const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-type": "application/json",
-    },
-  })
+  const res = await fetch(
+    `https://mandarin.api.weniv.co.kr/post/${localStorage.getItem('postId')}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    }
+  );
   const json = await res.json();
   const posts = json.post;
   
@@ -57,17 +60,20 @@ async function commentModal() {
   const commentImgmore = document.querySelectorAll('.comment-imgmore')
   const parent = document.querySelector('.post-comment')
 
-  const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}/comments`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-type": "application/json",
-    },
-  })
+  const res = await fetch(
+    `https://mandarin.api.weniv.co.kr/post/${localStorage.getItem('postId')}/comments`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    }
+  );
 
   const json = await res.json();
   const comments = json.comments;
-
+  
 for(let i = 0; i<comments.length; i++){
   if(comments[i].author._id === localStorage.getItem('_id')){
     parent.children[comments.length-1 - i].children[0].children[1].children[0].classList.add('comment-del')

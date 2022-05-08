@@ -1,17 +1,16 @@
 async function productConfirmation() {
   const res = await fetch(
-    "http://146.56.183.55:5050/product/" + localStorage.getItem("accountname"),
+    'https://mandarin.api.weniv.co.kr/product/' + localStorage.getItem('accountname'),
     {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
       },
     }
   );
   const json = await res.json();
   const products = json;
-  console.log("상품리스트",products);
 
   let productCont = document.querySelector(".product");
   let productList = productCont.querySelector(".product-list");

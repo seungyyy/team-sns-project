@@ -1,12 +1,15 @@
 //댓글 보여주기
 async function getComment() {
-  const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}/comments`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-type": "application/json",
-    },
-  })
+  const res = await fetch(
+    `https://mandarin.api.weniv.co.kr/post/${localStorage.getItem('postId')}/comments`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    }
+  );
 
   const json = await res.json();
   const comments = json.comments;
@@ -38,18 +41,18 @@ async function getComment() {
       
         let imgsrc = comments[i].author.image
         if(imgsrc) {
-          if(imgsrc.includes('http://146.56.183.55:5050/')){
-            imgsrc = imgsrc
-          } else if(imgsrc.includes('http://146.56.183.55:5050')) {
-            imgsrc = imgsrc.slice(0, 25) + '/' + imgsrc.slice(25)
-          } else if(imgsrc.includes('url')) {
-            imgsrc = imgsrc.split('"')[1]
+          if (imgsrc.includes('https://mandarin.api.weniv.co.kr/')) {
+            imgsrc = imgsrc;
+          } else if (imgsrc.includes('https://mandarin.api.weniv.co.kr')) {
+            imgsrc = imgsrc.slice(0, 25) + '/' + imgsrc.slice(25);
+          } else if (imgsrc.includes('url')) {
+            imgsrc = imgsrc.split('"')[1];
           } else {
-            imgsrc = 'http://146.56.183.55:5050/' + imgsrc
+            imgsrc = 'https://mandarin.api.weniv.co.kr/' + imgsrc;
           }
       
         } else {
-          imgsrc = 'http://146.56.183.55:5050/Ellipse.png'
+          imgsrc = 'https://mandarin.api.weniv.co.kr/Ellipse.png';
         }
         comment = `
         <div class="comment-wrap">
@@ -70,7 +73,7 @@ async function getComment() {
 
 // 입력하기
 async function uploadComment() {
-  const url = "http://146.56.183.55:5050"
+  const url = 'https://mandarin.api.weniv.co.kr';
   const token = localStorage.getItem("token")
   const postId = localStorage.getItem("postId")
   const commentUp = commentInp.value

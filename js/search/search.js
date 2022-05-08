@@ -1,5 +1,5 @@
 const searchInp = document.getElementById("search-inp");
-const url = 'http://146.56.183.55:5050';
+const url = 'https://mandarin.api.weniv.co.kr';
 
 // 가져온 정보 화면에 보여주기
 async function showFindUser(json) {
@@ -14,7 +14,7 @@ async function showFindUser(json) {
   const basicImg = `${url}/Ellipse.png`;
   const userInfo = [];
   json.forEach((data) => {
-    let imgURL = data.image.match(/http:\/\/146.56.183.55:5050\/[0-9]/) === null ? basicImg : data.image;
+    let imgURL = data.image.match(/https:\/\/mandarin\.api\.weniv\.co\.kr\/[0-9]/) === null ? basicImg : data.image;
     let txt = data.username.replace(searchInp.value, `<span>${searchInp.value}</span>`);
     userInfo.push(`
       <li class="user-search">
@@ -68,7 +68,7 @@ async function searchUser() {
 async function valueKeyup() { 
   if (searchInp.value) {
     await searchUser();
-  } else { 
+  } else if (document.querySelector('.user-ul')) {
     document.querySelector('.user-ul').remove();
   }
 }

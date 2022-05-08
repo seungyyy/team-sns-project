@@ -1,11 +1,13 @@
 async function followings() {
     const res = await fetch(
-      "http://146.56.183.55:5050/profile/" + localStorage.getItem("postuploder")+"/following",
+      'https://mandarin.api.weniv.co.kr/profile/' +
+        localStorage.getItem('postuploder') +
+        '/following',
       {
-        method: "GET",
+        method: 'GET',
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-          "Content-type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
         },
       }
     );
@@ -38,7 +40,7 @@ async function followings() {
             src="${following.image}"
             alt="팔로워 이미지"
             class="img-followers"
-            onerror='this.src="http://146.56.183.55:5050/Ellipse.png"'
+            onerror='this.src="https://mandarin.api.weniv.co.kr/Ellipse.png"'
             />
             <p class="tit-followers">
                 <strong>${following.username}</strong>

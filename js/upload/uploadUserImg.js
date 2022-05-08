@@ -1,12 +1,12 @@
 //유저이미지 설정
 async function getUserImg() {
   const res = await fetch(
-    "http://146.56.183.55:5050/profile/" + localStorage.getItem("accountname"),
+    'https://mandarin.api.weniv.co.kr/profile/' + localStorage.getItem('accountname'),
     {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
       },
     }
   );

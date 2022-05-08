@@ -21,9 +21,10 @@ function imgProcess(post){
         let postArr = post.split(",");
         postArr.forEach((img, index) => {
             //normalImg는 정상으로 들어온 이미지와 아닌 이미지를 구분하고 정상 경로고 바꿔준다.
-            let normalImg = img.indexOf("http://146.56.183.55:5050/")>-1 ?
-            img :  
-            "http://146.56.183.55:5050/" + img;
+            let normalImg =
+              img.indexOf('https://mandarin.api.weniv.co.kr/') > -1
+                ? img
+                : 'https://mandarin.api.weniv.co.kr/' + img;
             if(postArr.length>=1){
                 imgSlide.innerHTML += `<img src=${normalImg} alt="게시글 이미지" />`;
                 postArr.length == 2 ? imgSlide.classList.add("twoImg") : "";

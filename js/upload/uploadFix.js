@@ -9,13 +9,16 @@ function enterkey() {
 }
 
 async function getPost() {
-  const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-type": "application/json",
-    },
-  })
+  const res = await fetch(
+    `https://mandarin.api.weniv.co.kr/post/${localStorage.getItem('postId')}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    }
+  );
   const json = await res.json();
   const posts = json.post;
   let userImg = document.querySelector('.upload-userimg').src;
@@ -40,7 +43,7 @@ async function getPost() {
 
 
 async function fixPost() {
-  const url = "http://146.56.183.55:5050"
+  const url = 'https://mandarin.api.weniv.co.kr';
   const token = localStorage.getItem("token")
   const contentText = inpTxT.value
 

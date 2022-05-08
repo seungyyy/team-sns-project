@@ -28,13 +28,16 @@ commentInp.addEventListener('keyup', () => {
 
 //말풍선 버튼을 누르면 게시글 상세로 이동
 async function getPost() {
-  const res = await fetch(`http://146.56.183.55:5050/post/${localStorage.getItem("postId")}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-type": "application/json",
-    },
-  })
+  const res = await fetch(
+    `https://mandarin.api.weniv.co.kr/post/${localStorage.getItem('postId')}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
+      },
+    }
+  );
   const json = await res.json();
   const posts = json.post;
   const pageDetail = document.querySelector('.main-post-page');
@@ -46,17 +49,17 @@ async function getPost() {
 
   let authorImg
   if(postAuthorImg) {
-    if(postAuthorImg.includes('http://146.56.183.55:5050/')){
-      authorImg = postAuthorImg
-    } else if(postAuthorImg.includes('http://146.56.183.55:5050')) {
-      authorImg = postAuthorImg.slice(0, 25) + '/' + postAuthorImg.slice(25)
-    } else if(postAuthorImg.includes('url')) {
-      authorImg = postAuthorImg.split('"')[1]
+    if (postAuthorImg.includes('https://mandarin.api.weniv.co.kr/')) {
+      authorImg = postAuthorImg;
+    } else if (postAuthorImg.includes('https://mandarin.api.weniv.co.kr')) {
+      authorImg = postAuthorImg.slice(0, 25) + '/' + postAuthorImg.slice(25);
+    } else if (postAuthorImg.includes('url')) {
+      authorImg = postAuthorImg.split('"')[1];
     } else {
-      authorImg = 'http://146.56.183.55:5050/' + postAuthorImg
+      authorImg = 'https://mandarin.api.weniv.co.kr/' + postAuthorImg;
     }
   } else {
-    authorImg = 'http://146.56.183.55:5050/Ellipse.png'
+    authorImg = 'https://mandarin.api.weniv.co.kr/Ellipse.png';
   }
   const imgSplit = posts.image.split(',')
   const imgLength = posts.image.split(',').length
@@ -65,28 +68,28 @@ async function getPost() {
   let postImg = imgProcess(posts.image);
   let postImgs
   if(posts.image) {
-    if(imgSplit[0].indexOf("http://146.56.183.55:5050/")>-1){
-      if((posts.image).includes('url')) {
-        imgSrc = imgSplit
+    if (imgSplit[0].indexOf('https://mandarin.api.weniv.co.kr/') > -1) {
+      if (posts.image.includes('url')) {
+        imgSrc = imgSplit;
       } else {
-        imgSrc = imgSplit
+        imgSrc = imgSplit;
       }
-    } else if(imgSplit[0].indexOf("http://146.56.183.55:5050")>-1){
-      if(imgSplit[0].slice(-1) === '/') {
-        imgSrc = []
-        for(let i = 0; i<imgLength; i++) {
-          imgSrc.push(imgSplit[i].slice(0, 25) + '/' + imgSplit[i].slice(25).slice(0, -1))
+    } else if (imgSplit[0].indexOf('https://mandarin.api.weniv.co.kr') > -1) {
+      if (imgSplit[0].slice(-1) === '/') {
+        imgSrc = [];
+        for (let i = 0; i < imgLength; i++) {
+          imgSrc.push(imgSplit[i].slice(0, 25) + '/' + imgSplit[i].slice(25).slice(0, -1));
         }
       } else {
-        imgSrc = []
-        for(let i = 0; i<imgLength; i++) {
-          imgSrc.push(imgSplit[i].slice(0, 25) + '/' + imgSplit[i].slice(25))
+        imgSrc = [];
+        for (let i = 0; i < imgLength; i++) {
+          imgSrc.push(imgSplit[i].slice(0, 25) + '/' + imgSplit[i].slice(25));
         }
       }
     } else {
-      imgSrc = []
-      for(let i = 0; i <imgLength; i++) {
-        imgSrc.push("http://146.56.183.55:5050/" + imgSplit[i])
+      imgSrc = [];
+      for (let i = 0; i < imgLength; i++) {
+        imgSrc.push('https://mandarin.api.weniv.co.kr/' + imgSplit[i]);
       }
     }
 

@@ -37,8 +37,8 @@ async function join() {
   const email = document.querySelector('.email-inp').value;
   const pw = document.querySelector('.pw-inp').value;
 
-  if (imgUrl.src === 'http://127.0.0.1:5500/images/icon/icon-profile.png') {
-    imgUrl.src = 'http://146.56.183.55:5050/Ellipse.png';
+  if (imgUrl.src === 'https://mandarin.api.weniv.co.kr/Ellipse.png/images/icon/icon-profile.png') {
+    imgUrl.src = 'https://mandarin.api.weniv.co.kr/Ellipse.png';
   }
 
   try {
