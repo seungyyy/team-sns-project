@@ -1,5 +1,5 @@
 async function getFeed() {
-  const res = await fetch('http://146.56.183.55:5050/post/feed', {
+  const res = await fetch('https://mandarin.api.weniv.co.kr/post/feed', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -8,7 +8,6 @@ async function getFeed() {
   });
   const json = await res.json();
   const posts = json.posts;
-  console.log('홈피드 게시글', posts);
 
   let mainHomeHave = document.querySelector('.main-feed-have');
   let mainHomeNone = document.querySelector('.main-feed-none');

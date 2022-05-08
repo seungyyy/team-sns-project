@@ -1,5 +1,5 @@
 const profileField = document.querySelector('.profile-set-field');
-const url = 'http://146.56.183.55:5050';
+const url = 'https://mandarin.api.weniv.co.kr';
 const setBtn = document.getElementById('set-btn');
 
 // 소개 글이 없는지 체크 

@@ -1,11 +1,11 @@
 async function offFollow(accountname) {
     const res = await fetch(
-      "http://146.56.183.55:5050/profile/" + accountname +"/unfollow",
+      'https://mandarin.api.weniv.co.kr/profile/' + accountname + '/unfollow',
       {
-        method: "DELETE",
+        method: 'DELETE',
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-          "Content-type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-type': 'application/json',
         },
       }
     );

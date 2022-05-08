@@ -1,4 +1,4 @@
-const url = 'http://146.56.183.55:5050';
+const url = 'https://mandarin.api.weniv.co.kr';
 const prodLink = prodField.querySelector('#prod-link');
 const price = prodField.querySelector('#price');
 const btn = document.getElementById('prod-save-btn');

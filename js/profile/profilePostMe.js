@@ -1,19 +1,16 @@
 async function profilePostMe() {
   const res = await fetch(
-    "http://146.56.183.55:5050/post/" +
-    localStorage.getItem("accountname")+
-      "/userpost",
+    'https://mandarin.api.weniv.co.kr/post/' + localStorage.getItem('accountname') + '/userpost',
     {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-type': 'application/json',
       },
     }
   );
   const json = await res.json();
   const posts = json.post;
-  console.log("게시글 정보", posts);
   // 게시글이 없는지 있는지 판단
   if (posts.length) {
     let postList = document.querySelector(".post-list");
@@ -27,11 +24,11 @@ async function profilePostMe() {
         gridImg="";
       }else{
       //이미지가 한개 이상 들어오는 경우, 여러개 들어오는 경우
-        gridImg = post.image.split(",")[0].indexOf("http://146.56.183.55:5050/")>-1 ?
-        post.image.split(",")[0] : 
-        "http://146.56.183.55:5050/" + post.image.split(",")[0]
+        gridImg =
+          post.image.split(',')[0].indexOf('https://mandarin.api.weniv.co.kr/') > -1
+            ? post.image.split(',')[0]
+            : 'https://mandarin.api.weniv.co.kr/' + post.image.split(',')[0];
       }
-      console.log(gridImg)
       //업데이트 날짜 처리
       let yearMonth = post.updatedAt.split("-");
       let day = yearMonth[2].split("T")[0];
@@ -96,7 +93,6 @@ async function profilePostMe() {
       if (gridImg) {
         postGrid.prepend(addGridItem);
       }
-      console.log(postGrid)
     //이미지슬라이드와 연결
      document.querySelector(".space").prepend(postImg);
      let dots = document.querySelectorAll(".dot-list span");

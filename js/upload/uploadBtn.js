@@ -26,7 +26,7 @@ sendBtn.addEventListener('click', createPost);
 //이미지 미리보기
 async function setThumbnail(e) {
   const childCount = document.querySelector('.upload-imgs').childElementCount;
-  const url = "http://146.56.183.55:5050"
+  const url = 'https://mandarin.api.weniv.co.kr';
   const files = e.target.files;
   const imageUrls = [];
   for (let index = 0; index < files.length; index++) {

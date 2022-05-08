@@ -1,4 +1,4 @@
-const url = 'http://146.56.183.55:5050';
+const url = 'https://mandarin.api.weniv.co.kr';
 
 // 유저 프로필 화면에 보여주기
 function showUerInfo(img, username, account, intro) {
